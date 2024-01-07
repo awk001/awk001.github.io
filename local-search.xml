@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>有用的东西</title>
+    <link href="/2024/01/07/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/"/>
+    <url>/2024/01/07/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="小技能，大作用"><a href="#小技能，大作用" class="headerlink" title="小技能，大作用"></a>小技能，大作用</h1><h2 id="一、java命令转bat"><a href="#一、java命令转bat" class="headerlink" title="一、java命令转bat"></a>一、java命令转bat</h2><h3 id="1、新建-bat"><a href="#1、新建-bat" class="headerlink" title="1、新建.bat"></a>1、新建.bat</h3><div class="code-wrapper"><pre><code class="hljs Ini">@echo onF: cd jenkins\java -jar jenkins.warpause</code></pre></div><h3 id="2、开始执行"><a href="#2、开始执行" class="headerlink" title="2、开始执行"></a>2、开始执行</h3><p>双击.bat文件直接执行</p><h3 id="3、bat文件包提权"><a href="#3、bat文件包提权" class="headerlink" title="3、bat文件包提权"></a>3、bat文件包提权</h3><p>默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技能提升</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>deepin安装MySQL8</title>
     <link href="/2024/01/07/Deepin%E5%AE%89%E8%A3%85MySQL8/"/>
     <url>/2024/01/07/Deepin%E5%AE%89%E8%A3%85MySQL8/</url>
