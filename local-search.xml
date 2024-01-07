@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>deepin安装MySQL8</title>
+    <link href="/2024/01/07/Deepin%E5%AE%89%E8%A3%85MySQL8/"/>
+    <url>/2024/01/07/Deepin%E5%AE%89%E8%A3%85MySQL8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1、下载apt安装源"><a href="#1、下载apt安装源" class="headerlink" title="1、下载apt安装源"></a>1、下载apt安装源</h2><p>从MySQL官网下载apt安装包： <a href="https://dev.mysql.com/downloads/repo/apt/">https://dev.mysql.com/downloads/repo/apt/</a></p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070953758.png" alt="apt包下载"></p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951306.png" alt="直接下载"></p><p>下载成功得到这样一个文件：</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951174.png" alt="deb包"></p><h2 id="2、安装MySQL8-x"><a href="#2、安装MySQL8-x" class="headerlink" title="2、安装MySQL8.x"></a>2、安装MySQL8.x</h2><p>安装已下载的deb包</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951398.png" alt="dpkg解析包内容"></p><p>即出现黄色界面，因为deepinV20是基于Debian10,因此我们选择第三项”Debian buster“</p><p>然后选择确认</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951274.png" alt="img"></p><p>确认后出现版本选择界面，选择第一项，并确认</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070954791.png" alt="img"></p><p>选择8.0,再次确认即可</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951107.png" alt="img"></p><p>确认之后会返回该界面，不要怀疑，没有错。</p><p>这次选择OK，和确认。</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951726.png" alt="img"></p><p>确认后会出现警告报错。不用担心，看下一步。</p><p>执行如下命令：sudo apt-get update  如果出现某个连接超时，重新执行该命令重试即可。）</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951819.png" alt="img"></p><p>接下来执行：<code>sudo apt-get install mysql-server</code></p><p>选择【Y&#x2F;N】输入Y</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951986.png" alt="img"></p><p>如果不报错，请略过这一步</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951401.png" alt="img"></p><p>如果出现这样的报错，执行：sudo apt-get update –fix-missing</p><p>完成后，再次执行：sudo apt-get install mysql-server</p><p>同样选择Y。</p><p>等待下载</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401071004186.png" alt="img"></p><p>再次出现黄色界面时，说明成功一半了。</p><p>输入root 密码 确认</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070952078.png" alt="img"></p><p>再次输入密码 确认</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951581.png" alt="img"></p><p>点击退出即可</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951057.png" alt="img"></p><p>点击确认即可</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070952231.png" alt="img"></p><p>等待安装即可</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951822.png" alt="img"></p><p>到这说明安装完了</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951297.png" alt="img"></p><p>确认下MySQL服务器版本，执行：<code>apt policy mysql-server </code></p><p>大功快告成！</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070952563.png" alt="img"></p><p>启动MySQL服务，执行：<code>sudo systemctl start mysql  </code></p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951273.png" alt="img"></p><p>再执行进入命令：mysql -u root -p</p><p>输入密码</p><p>这个就不用说了吧：show databases;</p><p><img src="https://cdn.jsdeliver.net/gh/awk001/hexo_pic/md_pic202401070951043.png" alt="img"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Deepin</tag>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2024/01/06/hello-world/"/>
     <url>/2024/01/06/hello-world/</url>
