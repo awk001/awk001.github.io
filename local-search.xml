@@ -8,7 +8,7 @@
     <link href="/2024/01/07/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/"/>
     <url>/2024/01/07/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/</url>
     
-    <content type="html"><![CDATA[<h1 id="小技能，大作用"><a href="#小技能，大作用" class="headerlink" title="小技能，大作用"></a>小技能，大作用</h1><h2 id="一、java命令转bat"><a href="#一、java命令转bat" class="headerlink" title="一、java命令转bat"></a>一、java命令转bat</h2><h3 id="1、新建-bat"><a href="#1、新建-bat" class="headerlink" title="1、新建.bat"></a>1、新建.bat</h3><div class="code-wrapper"><pre><code class="hljs Ini">@echo onF: cd jenkins\java -jar jenkins.warpause</code></pre></div><h3 id="2、开始执行"><a href="#2、开始执行" class="headerlink" title="2、开始执行"></a>2、开始执行</h3><p>双击.bat文件直接执行</p><h3 id="3、bat文件包提权"><a href="#3、bat文件包提权" class="headerlink" title="3、bat文件包提权"></a>3、bat文件包提权</h3><p>默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="小技能，大作用"><a href="#小技能，大作用" class="headerlink" title="小技能，大作用"></a>小技能，大作用</h1><h2 id="一、java命令转bat"><a href="#一、java命令转bat" class="headerlink" title="一、java命令转bat"></a>一、java命令转bat</h2><h3 id="1、新建-bat"><a href="#1、新建-bat" class="headerlink" title="1、新建.bat"></a>1、新建.bat</h3><div class="code-wrapper"><pre><code class="hljs Ini">@echo onF: cd jenkins\java -jar jenkins.warpause</code></pre></div><h3 id="2、开始执行"><a href="#2、开始执行" class="headerlink" title="2、开始执行"></a>2、开始执行</h3><p>双击.bat文件直接执行</p><h3 id="3、bat文件包提权"><a href="#3、bat文件包提权" class="headerlink" title="3、bat文件包提权"></a>3、bat文件包提权</h3><p>默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动</p><h2 id="二、Linux制作应用快捷方式"><a href="#二、Linux制作应用快捷方式" class="headerlink" title="二、Linux制作应用快捷方式"></a>二、Linux制作应用快捷方式</h2><h3 id="1、先模仿，再超越"><a href="#1、先模仿，再超越" class="headerlink" title="1、先模仿，再超越"></a>1、先模仿，再超越</h3><p>生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷方式在&#x2F;usr&#x2F;share&#x2F;applications中，比如我们要生成火狐的桌面快捷方式，执行下列命令</p><div class="code-wrapper"><pre><code class="hljs Bash"><span class="hljs-built_in">cp</span> /usr/share/applications/firefox-esr.desktop  /home/awk/Desktop</code></pre></div><h3 id="2、生成第三方程序的桌面快捷方式"><a href="#2、生成第三方程序的桌面快捷方式" class="headerlink" title="2、生成第三方程序的桌面快捷方式"></a>2、生成第三方程序的桌面快捷方式</h3><p>首先cd进入&#x2F;usr&#x2F;share&#x2F;applications&#x2F;目录中，比如我们要生成idea的桌面快捷方式，首先执行</p><div class="code-wrapper"><pre><code class="hljs Bash">vim idea.desktop  生成快捷方式文件</code></pre></div><p>然后配置文件，配置如下</p><div class="code-wrapper"><pre><code class="hljs Bash">[Desktop Entry]Encoding=UTF-8   <span class="hljs-comment">#设置编码方式</span>Name=IDEA     <span class="hljs-comment">#快捷方式名称</span>Comment=idea   <span class="hljs-comment">#备注</span>Exec=sh /home/awk/Apps/GoLand-2023.2.3/bin/goland.sh  <span class="hljs-comment">#可执行程序的路径</span>Icon=/home/awk/Apps/GoLand-2023.2.3/bin/goland.png   <span class="hljs-comment">#程序图标的路径</span>Terminal=<span class="hljs-literal">false</span>   <span class="hljs-comment">#后面四行都一样</span>StartupNotify=<span class="hljs-literal">true</span>Type=ApplicationCategories=Application;Development;</code></pre></div><p>然后保存退出，后续操作同上所述</p><h3 id="运行时chrome-sandbox出问题"><a href="#运行时chrome-sandbox出问题" class="headerlink" title="运行时chrome-sandbox出问题"></a>运行时chrome-sandbox出问题</h3><div class="code-wrapper"><pre><code class="hljs Bash"><span class="hljs-comment"># 例如安装Goland  首先使用终端打开软件，查看错误日志</span><span class="hljs-built_in">cd</span> /home/awk/apps/GoLand-2023.2.3/jbr/lib/sudo <span class="hljs-built_in">chown</span> root chrome-sandbox</code></pre></div>]]></content>
     
     
     <categories>
@@ -46,31 +46,6 @@
     <tags>
       
       <tag>Deepin</tag>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Linux制作应用快捷方式</title>
-    <link href="/2024/01/07/Linux%E5%88%B6%E4%BD%9C%E5%BA%94%E7%94%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/"/>
-    <url>/2024/01/07/Linux%E5%88%B6%E4%BD%9C%E5%BA%94%E7%94%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</url>
-    
-    <content type="html"><![CDATA[<h5 id="1-生成通过apt或者dpkg安装的程序的桌面快捷方式"><a href="#1-生成通过apt或者dpkg安装的程序的桌面快捷方式" class="headerlink" title="1.生成通过apt或者dpkg安装的程序的桌面快捷方式"></a>1.生成通过apt或者dpkg安装的程序的桌面快捷方式</h5><p>他们的快捷方式在&#x2F;usr&#x2F;share&#x2F;applications中，比如我们要生成火狐的桌面快捷方式，执行下列命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash"><span class="hljs-built_in">cp</span> /usr/share/applications/firefox-esr.desktop  /home/awk/Desktop<br></code></pre></td></tr></table></figure><h5 id="2-生成第三方程序的桌面快捷方式"><a href="#2-生成第三方程序的桌面快捷方式" class="headerlink" title="2.生成第三方程序的桌面快捷方式"></a>2.生成第三方程序的桌面快捷方式</h5><p>首先cd进入&#x2F;usr&#x2F;share&#x2F;applications&#x2F;目录中，比如我们要生成idea的桌面快捷方式，首先执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">vim idea.desktop  生成快捷方式文件<br></code></pre></td></tr></table></figure><p>然后配置文件，配置如下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Bash">[Desktop Entry]<br>Encoding=UTF-8   <span class="hljs-comment">#设置编码方式</span><br>Name=IDEA     <span class="hljs-comment">#快捷方式名称</span><br>Comment=idea   <span class="hljs-comment">#备注</span><br>Exec=sh /home/awk/Apps/GoLand-2023.2.3/bin/goland.sh  <span class="hljs-comment">#可执行程序的路径</span><br>Icon=/home/awk/Apps/GoLand-2023.2.3/bin/goland.png   <span class="hljs-comment">#程序图标的路径</span><br>Terminal=<span class="hljs-literal">false</span>   <span class="hljs-comment">#后面四行都一样</span><br>StartupNotify=<span class="hljs-literal">true</span><br>Type=Application<br>Categories=Application;Development;<br></code></pre></td></tr></table></figure><p>然后保存退出，后续操作同上所述</p><h5 id="运行时chrome-sandbox出问题"><a href="#运行时chrome-sandbox出问题" class="headerlink" title="运行时chrome-sandbox出问题"></a>运行时chrome-sandbox出问题</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Bash"><span class="hljs-comment"># 例如安装Goland  首先使用终端打开软件，查看错误日志</span><br><span class="hljs-built_in">cd</span> /home/awk/apps/GoLand-2023.2.3/jbr/lib/<br>sudo <span class="hljs-built_in">chown</span> root chrome-sandbox<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>装机必备</category>
-      
-    </categories>
-    
-    
-    <tags>
       
       <tag>Linux</tag>
       
