@@ -12,8 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Awk">
   <meta name="keywords" content="awk">
@@ -63,7 +61,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"awk001.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":7},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"awk001.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -89,7 +87,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Awk Blog</strong>
+      <strong>Fluid</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -155,9 +153,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/" target="_self">
-                <i class="iconfont icon-link-fill"></i>
-                <span>收藏夹</span>
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
               </a>
             </li>
           
@@ -191,7 +189,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="安得广厦千万间，大庇天下寒士俱欢颜！"></span>
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
           
         </div>
 
@@ -243,7 +241,7 @@
       
       <a class="index-excerpt " href="/2024/01/07/Linux%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/" target="_self">
         <div>
-          本文档在使用Linux系统所写，旨在方便Linux环境的安装。主要适用于国产UOS和Deepin系统。  一、APT换源1、保存源文件sudo cp -r /etc/apt/sources.list /etc/apt/sources.list.bak  2、更换源deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted unive
+          本文档在使用Linux系统所写，旨在方便Linux环境的安装。主要适用于国产UOS和Deepin系统。  一、APT换源1、保存源文件1sudo cp -r /etc/apt/sources.list /etc/apt/sources.list.bak  2、更换源1234567891011121314deb http://mirrors.aliyun.com/ubuntu/ bionic m
         </div>
       </a>
 
@@ -293,39 +291,6 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/01/07/Deepin%E5%AE%89%E8%A3%85MySQL8/" target="_self">
-          
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/01/07/Deepin%E5%AE%89%E8%A3%85MySQL8/" target="_self">
-        <div>
-          1、下载apt安装源从MySQL官网下载apt安装包： https://dev.mysql.com/downloads/repo/apt/   下载成功得到这样一个文件：  2、安装MySQL8.x安装已下载的deb包  即出现黄色界面，因为deepinV20是基于Debian10,因此我们选择第三项”Debian buster“ 然后选择确认  确认后出现版本选择界面，选择第一项，并确认  选择
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-01-07 14:50" pubdate>
-              2024-01-07
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2024/01/07/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/" target="_self">
           <img src="/img/idea.jpeg" srcset="/img/loading.gif" lazyload alt="有用的东西">
@@ -343,7 +308,7 @@
       
       <a class="index-excerpt " href="/2024/01/07/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/" target="_self">
         <div>
-          小技能，大作用一、java命令转bat1、新建.bat@echo on F:  cd jenkins\ java -jar jenkins.war pause  2、开始执行双击.bat文件直接执行 3、bat文件包提权默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动 二、Linux制作应用快捷方式1、先模仿，再超越生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷方
+          小技能，大作用一、java命令转bat1、新建.bat12345@echo onF: cd jenkins\java -jar jenkins.warpause  2、开始执行双击.bat文件直接执行 3、bat文件包提权默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动 二、Linux制作应用快捷方式1、先模仿，再超越生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷
         </div>
       </a>
 

@@ -12,22 +12,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Awk">
   <meta name="keywords" content="awk">
   
-    <meta name="description" content="小技能，大作用一、java命令转bat1、新建.bat@echo on F:  cd jenkins\ java -jar jenkins.war pause  2、开始执行双击.bat文件直接执行 3、bat文件包提权默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动 二、Linux制作应用快捷方式1、先模仿，再超越生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷方">
+    <meta name="description" content="小技能，大作用一、java命令转bat1、新建.bat12345@echo onF: cd jenkins\java -jar jenkins.warpause  2、开始执行双击.bat文件直接执行 3、bat文件包提权默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动 二、Linux制作应用快捷方式1、先模仿，再超越生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有用的东西">
 <meta property="og:url" content="https://awk001.github.io/2024/01/07/%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87/index.html">
 <meta property="og:site_name" content="Awk">
-<meta property="og:description" content="小技能，大作用一、java命令转bat1、新建.bat@echo on F:  cd jenkins\ java -jar jenkins.war pause  2、开始执行双击.bat文件直接执行 3、bat文件包提权默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动 二、Linux制作应用快捷方式1、先模仿，再超越生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷方">
+<meta property="og:description" content="小技能，大作用一、java命令转bat1、新建.bat12345@echo onF: cd jenkins\java -jar jenkins.warpause  2、开始执行双击.bat文件直接执行 3、bat文件包提权默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动 二、Linux制作应用快捷方式1、先模仿，再超越生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://awk001.github.io/img/idea.jpeg">
 <meta property="article:published_time" content="2024-01-07T05:03:00.000Z">
-<meta property="article:modified_time" content="2024-01-07T14:24:27.332Z">
+<meta property="article:modified_time" content="2024-01-07T20:02:49.280Z">
 <meta property="article:author" content="Awk">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"awk001.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":7},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"awk001.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -99,7 +97,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Awk Blog</strong>
+      <strong>Fluid</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -165,9 +163,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/" target="_self">
-                <i class="iconfont icon-link-fill"></i>
-                <span>收藏夹</span>
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
               </a>
             </li>
           
@@ -209,11 +207,6 @@
           
   <div class="mt-3">
     
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-author" aria-hidden="true"></i>
-        Awk
-      </span>
-    
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
@@ -229,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          348 字
+          349 字
         
       </span>
     
@@ -282,36 +275,21 @@
             
               <div class="markdown-body">
                 
-                <h1 id="小技能，大作用"><a href="#小技能，大作用" class="headerlink" title="小技能，大作用"></a>小技能，大作用</h1><h2 id="一、java命令转bat"><a href="#一、java命令转bat" class="headerlink" title="一、java命令转bat"></a>一、java命令转bat</h2><h3 id="1、新建-bat"><a href="#1、新建-bat" class="headerlink" title="1、新建.bat"></a>1、新建.bat</h3><div class="code-wrapper"><pre><code class="hljs Ini">@echo on
-F: 
-cd jenkins\
-java -jar jenkins.war
-pause</code></pre></div>
+                <h1 id="小技能，大作用"><a href="#小技能，大作用" class="headerlink" title="小技能，大作用"></a>小技能，大作用</h1><h2 id="一、java命令转bat"><a href="#一、java命令转bat" class="headerlink" title="一、java命令转bat"></a>一、java命令转bat</h2><h3 id="1、新建-bat"><a href="#1、新建-bat" class="headerlink" title="1、新建.bat"></a>1、新建.bat</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Ini">@echo on<br>F: <br>cd jenkins\<br>java -jar jenkins.war<br>pause<br></code></pre></td></tr></table></figure>
 
 <h3 id="2、开始执行"><a href="#2、开始执行" class="headerlink" title="2、开始执行"></a>2、开始执行</h3><p>双击.bat文件直接执行</p>
 <h3 id="3、bat文件包提权"><a href="#3、bat文件包提权" class="headerlink" title="3、bat文件包提权"></a>3、bat文件包提权</h3><p>默认使用管理员权限打开。复制快捷方式，将快捷方式作为运行新任务启动</p>
 <h2 id="二、Linux制作应用快捷方式"><a href="#二、Linux制作应用快捷方式" class="headerlink" title="二、Linux制作应用快捷方式"></a>二、Linux制作应用快捷方式</h2><h3 id="1、先模仿，再超越"><a href="#1、先模仿，再超越" class="headerlink" title="1、先模仿，再超越"></a>1、先模仿，再超越</h3><p>生成通过apt或者dpkg安装的程序的桌面快捷方式。他们的快捷方式在&#x2F;usr&#x2F;share&#x2F;applications中，比如我们要生成火狐的桌面快捷方式，执行下列命令</p>
-<div class="code-wrapper"><pre><code class="hljs Bash"><span class="hljs-built_in">cp</span> /usr/share/applications/firefox-esr.desktop  /home/awk/Desktop</code></pre></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash"><span class="hljs-built_in">cp</span> /usr/share/applications/firefox-esr.desktop  /home/awk/Desktop<br></code></pre></td></tr></table></figure>
 
 <h3 id="2、生成第三方程序的桌面快捷方式"><a href="#2、生成第三方程序的桌面快捷方式" class="headerlink" title="2、生成第三方程序的桌面快捷方式"></a>2、生成第三方程序的桌面快捷方式</h3><p>首先cd进入&#x2F;usr&#x2F;share&#x2F;applications&#x2F;目录中，比如我们要生成idea的桌面快捷方式，首先执行</p>
-<div class="code-wrapper"><pre><code class="hljs Bash">vim idea.desktop  生成快捷方式文件</code></pre></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Bash">vim idea.desktop  生成快捷方式文件<br></code></pre></td></tr></table></figure>
 
 <p>然后配置文件，配置如下</p>
-<div class="code-wrapper"><pre><code class="hljs Bash">[Desktop Entry]
-Encoding=UTF-8   <span class="hljs-comment">#设置编码方式</span>
-Name=IDEA     <span class="hljs-comment">#快捷方式名称</span>
-Comment=idea   <span class="hljs-comment">#备注</span>
-Exec=sh /home/awk/Apps/GoLand-2023.2.3/bin/goland.sh  <span class="hljs-comment">#可执行程序的路径</span>
-Icon=/home/awk/Apps/GoLand-2023.2.3/bin/goland.png   <span class="hljs-comment">#程序图标的路径</span>
-Terminal=<span class="hljs-literal">false</span>   <span class="hljs-comment">#后面四行都一样</span>
-StartupNotify=<span class="hljs-literal">true</span>
-Type=Application
-Categories=Application;Development;</code></pre></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs Bash">[Desktop Entry]<br>Encoding=UTF-8   <span class="hljs-comment">#设置编码方式</span><br>Name=IDEA     <span class="hljs-comment">#快捷方式名称</span><br>Comment=idea   <span class="hljs-comment">#备注</span><br>Exec=sh /home/awk/Apps/GoLand-2023.2.3/bin/goland.sh  <span class="hljs-comment">#可执行程序的路径</span><br>Icon=/home/awk/Apps/GoLand-2023.2.3/bin/goland.png   <span class="hljs-comment">#程序图标的路径</span><br>Terminal=<span class="hljs-literal">false</span>   <span class="hljs-comment">#后面四行都一样</span><br>StartupNotify=<span class="hljs-literal">true</span><br>Type=Application<br>Categories=Application;Development;<br></code></pre></td></tr></table></figure>
 
 <p>然后保存退出，后续操作同上所述</p>
-<h3 id="运行时chrome-sandbox出问题"><a href="#运行时chrome-sandbox出问题" class="headerlink" title="运行时chrome-sandbox出问题"></a>运行时chrome-sandbox出问题</h3><div class="code-wrapper"><pre><code class="hljs Bash"><span class="hljs-comment"># 例如安装Goland  首先使用终端打开软件，查看错误日志</span>
-<span class="hljs-built_in">cd</span> /home/awk/apps/GoLand-2023.2.3/jbr/lib/
-sudo <span class="hljs-built_in">chown</span> root chrome-sandbox</code></pre></div>
+<h3 id="运行时chrome-sandbox出问题"><a href="#运行时chrome-sandbox出问题" class="headerlink" title="运行时chrome-sandbox出问题"></a>运行时chrome-sandbox出问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs Bash"><span class="hljs-comment"># 例如安装Goland  首先使用终端打开软件，查看错误日志</span><br><span class="hljs-built_in">cd</span> /home/awk/apps/GoLand-2023.2.3/jbr/lib/<br>sudo <span class="hljs-built_in">chown</span> root chrome-sandbox<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -382,21 +360,9 @@ sudo <span class="hljs-built_in">chown</span> root chrome-sandbox</code></pre></
             
               
               
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
-                    <i class="iconfont icon-nc"></i>
-                  </span>
-                </a>
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
-                    <i class="iconfont icon-sa"></i>
                   </span>
                 </a>
               
@@ -415,9 +381,9 @@ sudo <span class="hljs-built_in">chown</span> root chrome-sandbox</code></pre></
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/01/07/Deepin%E5%AE%89%E8%A3%85MySQL8/" title="">
+                      <a href="/2024/01/07/Linux%E8%A3%85%E6%9C%BA%E5%BF%85%E5%A4%87/" title="UOS、Deepin安装必备">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">UOS、Deepin安装必备</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
