@@ -19,28 +19,24 @@
   <meta name="author" content="Awk">
   <meta name="keywords" content="">
   
-    <meta name="description" content="英语语法一、基本句型 五种简单的基本句型  主语+谓语  主语+谓语+宾语  主语+连系动词+表语  主语+谓语+间接宾语+直接宾语  主语+谓语+宾语+宾语补足语     1、”主+谓”和”主+谓+宾”  My father works hard.  My father likes football.    2、”主+系+表”  My father is a teacher. My father">
+    <meta name="description" content="布署单节点单磁盘的MinIO服务以下流程部署了由单个MinIO服务器和单个驱动器或存储卷组成的MinIO。  网络文件系统卷打破一致性保证 MinIO强制实施 写入后读取 和 写入后列举 的一致性模型， 需要本地驱动器文件系统。如果底层存储卷是NFS或类似的网络附加存储卷， MinIO无法提供一致性保证。  1、下载MinIO服务器文件从以下URL下载MinIO可执行文件： 1https:&#x2F;&#x2F;dl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="英语语法">
-<meta property="og:url" content="https://awk001.github.io/2024/11/07/%E8%8B%B1%E8%AF%AD/index.html">
+<meta property="og:title" content="WIndows搭建单节点Minio">
+<meta property="og:url" content="https://awk001.github.io/2024/12/31/WIndows%E6%90%AD%E5%BB%BA%E5%8D%95%E8%8A%82%E7%82%B9Minio/index.html">
 <meta property="og:site_name" content="So Cool">
-<meta property="og:description" content="英语语法一、基本句型 五种简单的基本句型  主语+谓语  主语+谓语+宾语  主语+连系动词+表语  主语+谓语+间接宾语+直接宾语  主语+谓语+宾语+宾语补足语     1、”主+谓”和”主+谓+宾”  My father works hard.  My father likes football.    2、”主+系+表”  My father is a teacher. My father">
+<meta property="og:description" content="布署单节点单磁盘的MinIO服务以下流程部署了由单个MinIO服务器和单个驱动器或存储卷组成的MinIO。  网络文件系统卷打破一致性保证 MinIO强制实施 写入后读取 和 写入后列举 的一致性模型， 需要本地驱动器文件系统。如果底层存储卷是NFS或类似的网络附加存储卷， MinIO无法提供一致性保证。  1、下载MinIO服务器文件从以下URL下载MinIO可执行文件： 1https:&#x2F;&#x2F;dl">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411111953356.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112001007.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112106001.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112119755.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112123860.png">
-<meta property="article:published_time" content="2024-11-07T14:06:18.000Z">
-<meta property="article:modified_time" content="2024-11-17T10:08:27.609Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202501010004414.png">
+<meta property="article:published_time" content="2024-12-31T03:56:18.000Z">
+<meta property="article:modified_time" content="2024-12-31T16:12:02.710Z">
 <meta property="article:author" content="Awk">
-<meta property="article:tag" content="自我提升">
+<meta property="article:tag" content="程序员必备">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411111953356.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202501010004414.png">
   
   
   
-  <title>英语语法 - So Cool</title>
+  <title>WIndows搭建单节点Minio - So Cool</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="英语语法"></span>
+            <span id="subtitle" data-typed-text="WIndows搭建单节点Minio"></span>
           
         </div>
 
@@ -234,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-07 22:06" pubdate>
-          2024年11月7日 晚上
+        <time datetime="2024-12-31 11:56" pubdate>
+          2024年12月31日 中午
         </time>
       </span>
     
@@ -246,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          336 字
+          652 字
         
       </span>
     
@@ -257,7 +253,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -294,12 +290,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">英语语法</h1>
+            <h1 id="seo-header">WIndows搭建单节点Minio</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年11月17日 晚上
+                    本文最后更新于 2025年1月1日 凌晨
                   
                 
               </p>
@@ -307,143 +303,27 @@
             
               <div class="markdown-body">
                 
-                <h2 id="英语语法"><a href="#英语语法" class="headerlink" title="英语语法"></a>英语语法</h2><h3 id="一、基本句型"><a href="#一、基本句型" class="headerlink" title="一、基本句型"></a>一、基本句型</h3><ul>
-<li><p>五种简单的基本句型</p>
-<ul>
-<li><p>主语+谓语</p>
-</li>
-<li><p>主语+谓语+宾语</p>
-</li>
-<li><p>主语+连系动词+表语</p>
-</li>
-<li><p>主语+谓语+间接宾语+直接宾语</p>
-</li>
-<li><p>主语+谓语+宾语+宾语补足语</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="1、”主-谓”和”主-谓-宾”"><a href="#1、”主-谓”和”主-谓-宾”" class="headerlink" title="1、”主+谓”和”主+谓+宾”"></a>1、”主+谓”和”主+谓+宾”</h4><blockquote>
-<ol>
-<li><p>My father works hard.</p>
-</li>
-<li><p>My father likes football.</p>
-</li>
-</ol>
-</blockquote>
-<h4 id="2、”主-系-表”"><a href="#2、”主-系-表”" class="headerlink" title="2、”主+系+表”"></a>2、”主+系+表”</h4><blockquote>
-<ol>
-<li>My father is a teacher.</li>
-<li>My father is humorous.</li>
-</ol>
-</blockquote>
+                <h1 id="布署单节点单磁盘的MinIO服务"><a href="#布署单节点单磁盘的MinIO服务" class="headerlink" title="布署单节点单磁盘的MinIO服务"></a><a target="_blank" rel="noopener" href="https://www.minio.org.cn/docs/minio/windows/operations/install-deploy-manage/deploy-minio-single-node-single-drive.html#id14">布署单节点单磁盘的MinIO服务</a></h1><p>以下流程部署了由单个MinIO服务器和单个驱动器或存储卷组成的MinIO。</p>
 <blockquote>
-<p>[!Tip]</p>
-<p>不必翻译的动词：be动词</p>
-<p>My father <code>is</code> humorous. 我的爸爸很幽默。</p>
+<p>网络文件系统卷打破一致性保证</p>
+<p>MinIO强制实施 <strong>写入后读取</strong> 和 <strong>写入后列举</strong> 的一致性模型， 需要本地驱动器文件系统。如果底层存储卷是NFS或类似的网络附加存储卷， MinIO无法提供一致性保证。</p>
 </blockquote>
-<h5 id="2-1-连系动词"><a href="#2-1-连系动词" class="headerlink" title="2.1 连系动词"></a>2.1 连系动词</h5><ol>
-<li>表示特征或状态</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>连系动词</th>
-<th>例句</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>be</td>
-<td>My father is humorous.</td>
-</tr>
-<tr>
-<td>feel</td>
-<td>The metal felt smooth and cold.</td>
-</tr>
-<tr>
-<td>look</td>
-<td>You look tired.</td>
-</tr>
-<tr>
-<td>sound</td>
-<td>That sounds a good idea.</td>
-</tr>
-<tr>
-<td>taste</td>
-<td>The drug tastes bitter.(这药真苦啊！)</td>
-</tr>
-<tr>
-<td>smell</td>
-<td>The cream smells funny.(奶油闻起来好奇怪)</td>
-</tr>
-<tr>
-<td>seem</td>
-<td>She seems nice.</td>
-</tr>
-<tr>
-<td>appear</td>
-<td>His explanation appears unlikely.(他的解释显得很假)</td>
-</tr>
-</tbody></table>
-<ol start="2">
-<li>表示状态转变</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>连系动词</th>
-<th>例句</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>become（成为）</td>
-<td>My father became a teacher ten years ago.</td>
-</tr>
-<tr>
-<td>turn（转变为）</td>
-<td>My father’s hair is turning gray.</td>
-</tr>
-</tbody></table>
-<ol start="3">
-<li>表示状态保持</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>连系动词</th>
-<th>例句</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>prove</td>
-<td>English proved easy.</td>
-</tr>
-<tr>
-<td>remain</td>
-<td>We remained friends.</td>
-</tr>
-</tbody></table>
-<h5 id="2-2-可以做表语的词有哪些"><a href="#2-2-可以做表语的词有哪些" class="headerlink" title="2.2 可以做表语的词有哪些"></a>2.2 可以做表语的词有哪些</h5><ol>
-<li>My father is a <code>teacher</code>. ——名词</li>
-<li>My father is <code>humorous</code>.——形容词</li>
-<li>The first lesson is <code>tonight</code>.——副词</li>
-<li>My father is <code>here</code>.——副词</li>
-<li>The screen is <code>on</code>.——副词</li>
-</ol>
-<h4 id="3、-“主-谓-宾-宾补”"><a href="#3、-“主-谓-宾-宾补”" class="headerlink" title="3、 “主+谓+宾+宾补”"></a>3、 “主+谓+宾+宾补”</h4><p><img src="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411111953356.png" srcset="/img/loading.gif" lazyload alt="宾补"></p>
-<ul>
-<li>主+谓+宾+宾补中，宾语和宾补之间可以使用系动词be代替的句式</li>
-</ul>
-<h4 id="4、“主-谓-间宾-直宾”"><a href="#4、“主-谓-间宾-直宾”" class="headerlink" title="4、“主+谓+间宾+直宾”"></a>4、“主+谓+间宾+直宾”</h4><p><img src="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112001007.png" srcset="/img/loading.gif" lazyload alt="主谓间宾直宾"></p>
-<ul>
-<li>宾语不能使用系动词be代替的句式（与3相反）</li>
-</ul>
-<h3 id="二、名词短语"><a href="#二、名词短语" class="headerlink" title="二、名词短语"></a>二、名词短语</h3><h4 id="1、名称短语的构成"><a href="#1、名称短语的构成" class="headerlink" title="1、名称短语的构成"></a>1、名称短语的构成</h4><p>名词短语 &#x3D; 限定词 + 形容词 + 名词</p>
-<p><img src="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112106001.png" srcset="/img/loading.gif" lazyload alt="名词短语的构成"></p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-params">#</span> 名词短语<br>a handsome teacher       一个帅气的老师<br>many good students       许多好学生<br>my very attractive wife   我非常漂亮的妻子<br>the best answer             最好的答案<br>those sweet roses          那些芬芳的玫瑰<br></code></pre></td></tr></table></figure>
+<h2 id="1、下载MinIO服务器文件"><a href="#1、下载MinIO服务器文件" class="headerlink" title="1、下载MinIO服务器文件"></a>1、下载MinIO服务器文件</h2><p>从以下URL下载MinIO可执行文件：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>dl.minio.org.cn<span class="hljs-regexp">/server/mi</span>nio<span class="hljs-regexp">/release/</span>windows-amd64/minio.exe<br></code></pre></td></tr></table></figure>
 
-<h4 id="2、可数名词"><a href="#2、可数名词" class="headerlink" title="2、可数名词"></a>2、可数名词</h4><p><img src="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112119755.png" srcset="/img/loading.gif" lazyload alt="可数名词"></p>
-<h5 id="可数与不可数的区分"><a href="#可数与不可数的区分" class="headerlink" title="可数与不可数的区分"></a>可数与不可数的区分</h5><p><img src="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202411112123860.png" srcset="/img/loading.gif" lazyload alt="可数、不可数"></p>
+<p>下一步是运行可执行文件的指令。 无法通过资源管理器或双击文件来运行可执行文件。 相反，你需要调用可执行文件来启动服务器。</p>
+<h2 id="2、为-MinIO-准备数据路径"><a href="#2、为-MinIO-准备数据路径" class="headerlink" title="2、为 MinIO 准备数据路径"></a>2、为 MinIO 准备数据路径</h2><p>确保数据路径为空，且不包含任何现有文件，包括隐藏或Windows系统文件。</p>
+<p>如果指定了一个不为MinIO专用的驱动器，考虑创建一个专用于存储MinIO数据的专用文件夹，例如 <code>D:/Minio</code>。</p>
+<h2 id="3、启动-MinIO-服务器"><a href="#3、启动-MinIO-服务器" class="headerlink" title="3、启动 MinIO 服务器"></a>3、启动 MinIO 服务器</h2><p>打开命令提示符或PowerShell，并执行以下命令来在该会话中启动MinIO SNSD 部署：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">minio server D:<span class="hljs-string">/minio</span> <span class="hljs-params">--console-address</span> <span class="hljs-string">&quot;:9001&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>输出应类似于以下内容：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">PS</span> D:\GPT浏览器下载&gt; .\minio.exe server D:/minio <span class="hljs-literal">--console-address</span> <span class="hljs-string">&quot;:9001&quot;</span>                                           INFO: Formatting <span class="hljs-number">1</span>st pool, <span class="hljs-number">1</span> <span class="hljs-built_in">set</span>(s), <span class="hljs-number">1</span> drives per <span class="hljs-built_in">set</span>.                                                                  <br>INFO: WARNING: Host local has more than <span class="hljs-number">0</span> drives of <span class="hljs-built_in">set</span>. A host failure will result <span class="hljs-keyword">in</span> <span class="hljs-keyword">data</span> becoming unavailable.       <br>MinIO Object Storage Server                                                                                             <br>Copyright: <span class="hljs-number">2015</span><span class="hljs-literal">-2024</span> MinIO, Inc.                                                                                        <br>License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl<span class="hljs-literal">-3</span>.<span class="hljs-number">0</span>.html                                                       Version: RELEASE.<span class="hljs-number">2024</span><span class="hljs-literal">-12-18T13-15-44Z</span> (go1.<span class="hljs-number">23.4</span> windows/amd64)                                                                                                                                                                                  <br>API: http://<span class="hljs-number">192.168</span>.<span class="hljs-number">10.220</span>:<span class="hljs-number">9000</span>  http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span>                                                                     RootUser: minioadmin                                                                                                    <br>RootPass: minioadmin                                                                                                                                                                                                                  <br>WebUI: http://<span class="hljs-number">192.168</span>.<span class="hljs-number">10.220</span>:<span class="hljs-number">9001</span> http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9001</span>                                                                   RootUser: minioadmin                                                                                                    <br>RootPass: minioadmin                                                                                                                                                                                                                         <br><span class="hljs-built_in">CLI</span>: https://min.io/docs/minio/linux/reference/minio<span class="hljs-literal">-mc</span>.html<span class="hljs-comment">#quickstart $ mc alias set &#x27;myminio&#x27; &#x27;http://192.168.10.220:9000&#x27; &#x27;minioadmin&#x27; &#x27;minioadmin&#x27;                                                                                                                                                              </span><br>Docs: https://docs.min.io                                                                                               <br>WARN: Detected default credentials <span class="hljs-string">&#x27;minioadmin:minioadmin&#x27;</span>, we recommend that you change these values with <span class="hljs-string">&#x27;MINIO_ROOT_USER&#x27;</span> and <span class="hljs-string">&#x27;MINIO_ROOT_PASSWORD&#x27;</span> environment variables  <br></code></pre></td></tr></table></figure>
+
+<h2 id="4、连接到-MinIO-服务器"><a href="#4、连接到-MinIO-服务器" class="headerlink" title="4、连接到 MinIO 服务器"></a>4、连接到 MinIO 服务器</h2><p>您可以通过在首选的浏览器中输入MinIO服务器 <code>Console控制台</code> 中的任何主机名或IP地址来访问MinIO控制台，例如<a href="http://localhost:9001。">http://localhost:9001。</a></p>
+<p>登录MinIO的用户名和密码配置参数为 <code>MINIO_ROOT_USER</code> 和 <code>MINIO_ROOT_PASSWORD</code> 这些配置可以在在容器指定的环境文件中进行修改。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202501010004414.png" srcset="/img/loading.gif" lazyload alt="访问页面"></p>
+<p>您可以使用MinIO控制台进行一般管理任务，如身份和访问管理、指标和日志监控或服务器配置。每个MinIO服务器都包含其自己的嵌入式MinIO控制台。 如果您的本地主机防火墙允许外部访问控制台端口，则同一网络上的其他主机可以使用您的本地主机的IP地址或主机名访问控制台。</p>
 
                 
               </div>
@@ -462,7 +342,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0/" class="category-chain-item">课程学习</a>
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/" class="category-chain-item">技术基础</a>
   
   
 
@@ -477,7 +357,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/" class="print-no-link">#自我提升</a>
+        <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87/" class="print-no-link">#程序员必备</a>
       
     </div>
   
@@ -489,8 +369,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>英语语法</div>
-      <div>https://awk001.github.io/2024/11/07/英语/</div>
+      <div>WIndows搭建单节点Minio</div>
+      <div>https://awk001.github.io/2024/12/31/WIndows搭建单节点Minio/</div>
     </div>
     <div class="license-meta">
       
@@ -502,7 +382,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月7日</div>
+          <div>2024年12月31日</div>
         </div>
       
       
@@ -534,18 +414,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/31/WIndows%E6%90%AD%E5%BB%BA%E5%8D%95%E8%8A%82%E7%82%B9Minio/" title="WIndows搭建单节点Minio">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">WIndows搭建单节点Minio</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/27/Redis%E5%9F%BA%E4%BA%8EWindows%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%89%E8%A3%85/" title="Redis基于Windows系统的安装">
-                        <span class="hidden-mobile">Redis基于Windows系统的安装</span>
+                      <a href="/2024/11/07/%E8%8B%B1%E8%AF%AD/" title="英语语法">
+                        <span class="hidden-mobile">英语语法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
