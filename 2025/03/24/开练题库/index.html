@@ -1,0 +1,768 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Awk">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、系统功能列表 用户体系   注册&#x2F;登录（手机号+密码） JWT&#x2F;SA-Token鉴权 角色权限管理（普通用户、管理员） 个人信息管理   题库管理   多级学科分类（小学&#x2F;初中&#x2F;高中&#x2F;大学→数学&#x2F;语文→章节） 题目类型管理（单选&#x2F;多选&#x2F;填空&#x2F;判断） 题目难度分级（简单&#x2F;中等&#x2F;困难） 题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开练题库项目">
+<meta property="og:url" content="https://awk001.github.io/2025/03/24/%E5%BC%80%E7%BB%83%E9%A2%98%E5%BA%93/index.html">
+<meta property="og:site_name" content="So Cool">
+<meta property="og:description" content="一、系统功能列表 用户体系   注册&#x2F;登录（手机号+密码） JWT&#x2F;SA-Token鉴权 角色权限管理（普通用户、管理员） 个人信息管理   题库管理   多级学科分类（小学&#x2F;初中&#x2F;高中&#x2F;大学→数学&#x2F;语文→章节） 题目类型管理（单选&#x2F;多选&#x2F;填空&#x2F;判断） 题目难度分级（简单&#x2F;中等&#x2F;困难） 题">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-24T15:06:18.000Z">
+<meta property="article:modified_time" content="2025-02-24T15:22:36.619Z">
+<meta property="article:author" content="Awk">
+<meta property="article:tag" content="自我提升">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>开练题库项目 - So Cool</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"awk001.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>上进的猫</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="开练题库项目"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Awk
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-24 23:06" pubdate>
+          2025年3月24日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">开练题库项目</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2025年2月24日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="一、系统功能列表"><a href="#一、系统功能列表" class="headerlink" title="一、系统功能列表"></a>一、系统功能列表</h3><ol>
+<li>用户体系</li>
+</ol>
+<ul>
+<li>注册&#x2F;登录（手机号+密码）</li>
+<li>JWT&#x2F;SA-Token鉴权</li>
+<li>角色权限管理（普通用户、管理员）</li>
+<li>个人信息管理</li>
+</ul>
+<ol>
+<li>题库管理</li>
+</ol>
+<ul>
+<li>多级学科分类（小学&#x2F;初中&#x2F;高中&#x2F;大学→数学&#x2F;语文→章节）</li>
+<li>题目类型管理（单选&#x2F;多选&#x2F;填空&#x2F;判断）</li>
+<li>题目难度分级（简单&#x2F;中等&#x2F;困难）</li>
+<li>题目增删改查（支持富文本和公式）</li>
+<li>批量导入导出（Excel模板）</li>
+</ul>
+<ol>
+<li>练习功能</li>
+</ol>
+<ul>
+<li>智能组卷（根据分类&#x2F;难度随机抽题）</li>
+<li>答题计时与保存进度</li>
+<li>自动判卷与得分统计</li>
+<li>错题自动归集</li>
+<li>历史练习记录查询</li>
+</ul>
+<ol>
+<li>数据统计</li>
+</ol>
+<ul>
+<li>个人能力分析雷达图</li>
+<li>正确率趋势折线图</li>
+<li>错题知识点分布</li>
+</ul>
+<ol>
+<li>管理功能</li>
+</ol>
+<ul>
+<li>用户权限管理</li>
+<li>系统访问日志</li>
+<li>题目审核流程</li>
+</ul>
+<h3 id="二、技术栈组合"><a href="#二、技术栈组合" class="headerlink" title="二、技术栈组合"></a>二、技术栈组合</h3><ol>
+<li>后端</li>
+</ol>
+<ul>
+<li>Spring Boot 3.2 + MyBatis Plus 3.5.6</li>
+<li>Sa-Token 1.37 + JWT</li>
+<li>Maven 3.9 + Java 17</li>
+<li>MySQL 8.0 + Redis 7.0</li>
+</ul>
+<ol>
+<li>前端</li>
+</ol>
+<ul>
+<li>Vue3 + TypeScript</li>
+<li>Vite 5.0</li>
+<li>Element Plus 2.4</li>
+<li>Axios 1.6</li>
+<li>ECharts 5.4</li>
+</ul>
+<h3 id="三、数据库设计（MySQL）"><a href="#三、数据库设计（MySQL）" class="headerlink" title="三、数据库设计（MySQL）"></a>三、数据库设计（MySQL）</h3><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">SQL-- 用户表<br>CREATE TABLE `sys_user` (<br>  `id` BIGINT <span class="hljs-literal">NOT</span> NULL AUTO_INCREMENT,<br>  `username` VARCHAR(<span class="hljs-number">20</span>) <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;登录账号&#x27;,<br>  `password` VARCHAR(<span class="hljs-number">100</span>) <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;加密后的密码&#x27;,<br>  `phone` VARCHAR(<span class="hljs-number">11</span>) <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;手机号&#x27;,<br>  `avatar` VARCHAR(<span class="hljs-number">255</span>) DEFAULT NULL COMMENT &#x27;头像地址&#x27;,<br>  `role` VARCHAR(<span class="hljs-number">20</span>) <span class="hljs-literal">NOT</span> NULL DEFAULT &#x27;user&#x27; COMMENT &#x27;角色&#x27;,<br>  `create_time` DATETIME <span class="hljs-literal">NOT</span> NULL DEFAULT CURRENT_TIMESTAMP,<br>  PRIMARY KEY (`id`),<br>  UNIQUE KEY `uniq_username` (`username`),<br>  UNIQUE KEY `uniq_phone` (`phone`)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4<span class="hljs-comment">;</span><br><br>-- 题目分类表（多级结构）<br>CREATE TABLE `question_category` (<br>  `id` BIGINT <span class="hljs-literal">NOT</span> NULL AUTO_INCREMENT,<br>  `name` VARCHAR(<span class="hljs-number">50</span>) <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;分类名称&#x27;,<br>  `parent_id` BIGINT DEFAULT <span class="hljs-number">0</span> COMMENT &#x27;父分类ID&#x27;,<br>  `level` TINYINT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;层级（<span class="hljs-number">1</span>-<span class="hljs-number">4</span>对应小初高大）&#x27;,<br>  `sort` INT DEFAULT <span class="hljs-number">0</span> COMMENT &#x27;排序&#x27;,<br>  PRIMARY KEY (`id`),<br>  KEY `idx_parent_id` (`parent_id`)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4<span class="hljs-comment">;</span><br><br>-- 题目表<br>CREATE TABLE `question` (<br>  `id` BIGINT <span class="hljs-literal">NOT</span> NULL AUTO_INCREMENT,<br>  `category_id` BIGINT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;分类ID&#x27;,<br>  `type` TINYINT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;题型（<span class="hljs-number">1</span>单选 <span class="hljs-number">2</span>多选 <span class="hljs-number">3</span>判断 <span class="hljs-number">4</span>填空）&#x27;,<br>  `content` TEXT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;题干&#x27;,<br>  `options` JSON DEFAULT NULL COMMENT &#x27;选项（JSON数组）&#x27;,<br>  `answer` JSON <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;正确答案&#x27;,<br>  `analysis` TEXT COMMENT &#x27;答案解析&#x27;,<br>  `difficulty` TINYINT DEFAULT <span class="hljs-number">1</span> COMMENT &#x27;难度系数&#x27;,<br>  `status` TINYINT DEFAULT <span class="hljs-number">1</span> COMMENT &#x27;审核状态&#x27;,<br>  `create_by` BIGINT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;创建人&#x27;,<br>  `create_time` DATETIME <span class="hljs-literal">NOT</span> NULL DEFAULT CURRENT_TIMESTAMP,<br>  PRIMARY KEY (`id`),<br>  KEY `idx_category` (`category_id`),<br>  KEY `idx_create_by` (`create_by`)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4<span class="hljs-comment">;</span><br><br>-- 练习记录表<br>CREATE TABLE `practice_record` (<br>  `id` BIGINT <span class="hljs-literal">NOT</span> NULL AUTO_INCREMENT,<br>  `user_id` BIGINT <span class="hljs-literal">NOT</span> NULL,<br>  `category_id` BIGINT <span class="hljs-literal">NOT</span> NULL,<br>  `total` INT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;题目总数&#x27;,<br>  `correct` INT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;正确数&#x27;,<br>  `spend_time` INT <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;耗时(秒)&#x27;,<br><span class="hljs-title">  `details` JSON NOT NULL COMMENT &#123;题ID:</span> &#123;是否正确, 用户答案&#125;&#125;&#x27;,<br>  `create_time` DATETIME <span class="hljs-literal">NOT</span> NULL DEFAULT CURRENT_TIMESTAMP,<br>  PRIMARY KEY (`id`),<br>  KEY `idx_user` (`user_id`)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4<span class="hljs-comment">;</span><br><br>-- 错题本表<br>CREATE TABLE `wrong_book` (<br>  `user_id` BIGINT <span class="hljs-literal">NOT</span> NULL,<br>  `question_id` BIGINT <span class="hljs-literal">NOT</span> NULL,<br>  `wrong_count` INT DEFAULT <span class="hljs-number">1</span> COMMENT &#x27;错误次数&#x27;,<br>  `last_time` DATETIME <span class="hljs-literal">NOT</span> NULL COMMENT &#x27;最后错误时间&#x27;,<br>  PRIMARY KEY (`user_id`, `question_id`)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="四、项目结构"><a href="#四、项目结构" class="headerlink" title="四、项目结构"></a>四、项目结构</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs crystal"> backend/<br>├─ src/main/java/<br>│   ├─ com/exam/<br>│   │   ├─ <span class="hljs-keyword">annotation</span>     <span class="hljs-comment"># 自定义注解</span><br>│   │   ├─ config         <span class="hljs-comment"># 配置类（SaToken、MyBatis等）</span><br>│   │   ├─ controller     <span class="hljs-comment"># 控制器</span><br>│   │   ├─ dto            <span class="hljs-comment"># 数据传输对象</span><br>│   │   ├─ entity         <span class="hljs-comment"># 实体类</span><br>│   │   ├─ enums          <span class="hljs-comment"># 枚举类</span><br>│   │   ├─ exception      <span class="hljs-comment"># 异常处理</span><br>│   │   ├─ mapper         <span class="hljs-comment"># MyBatis接口</span><br>│   │   ├─ service        <span class="hljs-comment"># 服务层 </span><br>│   │   └─ utils          <span class="hljs-comment"># 工具类</span><br>├─ resources/<br>│   ├─ mapper/            <span class="hljs-comment"># XML映射文件</span><br>│   └─ application.yml    <span class="hljs-comment"># 配置文件</span><br><br>frontend/<br>├─ src/<br>│   ├─ api/              <span class="hljs-comment"># 接口定义</span><br>│   ├─ assets/           <span class="hljs-comment"># 静态资源</span><br>│   ├─ components/       <span class="hljs-comment"># 通用组件</span><br>│   ├─ router/           <span class="hljs-comment"># 路由配置</span><br>│   ├─ store/            <span class="hljs-comment"># Pinia状态管理</span><br>│   ├─ views/<br>│   │   ├─ practice/     <span class="hljs-comment"># 练习相关页面</span><br>│   │   ├─ question/     <span class="hljs-comment"># 题目管理</span><br>│   │   └─ user/         <span class="hljs-comment"># 用户中心</span><br>├─ vite.config.js        <span class="hljs-comment"># Vite配置</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="五、核心代码示例"><a href="#五、核心代码示例" class="headerlink" title="五、核心代码示例"></a>五、核心代码示例</h3><ol>
+<li>Sa-Token配置类</li>
+</ol>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs aspectj">Java<span class="hljs-meta">@Configuration</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SaTokenConfig</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">WebMvcConfigurer</span> </span>&#123;<br>    <br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addInterceptors</span><span class="hljs-params">(InterceptorRegistry registry)</span> </span>&#123;<br>        registry.addInterceptor(<span class="hljs-keyword">new</span> SaInterceptor(<span class="hljs-keyword">handler</span> -&gt; &#123;<br>            SaRouter.match(<span class="hljs-string">&quot;/**&quot;</span>)<br>                    .notMatch(<span class="hljs-string">&quot;/user/login&quot;</span>, <span class="hljs-string">&quot;/user/register&quot;</span>)<br>                    .check(r -&gt; StpUtil.checkLogin());<br>        &#125;)).addPathPatterns(<span class="hljs-string">&quot;/**&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>题目服务接口</li>
+</ol>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">Javapublic <span class="hljs-keyword">interface</span> <span class="hljs-title class_">QuestionService</span> <span class="hljs-title">extends</span> <span class="hljs-title">IService</span>&lt;<span class="hljs-type">Question</span>&gt; &#123;<br>    <br>    <span class="hljs-meta">@DataScope(role = <span class="hljs-string">&quot;admin&quot;</span>)</span> <span class="hljs-comment">// 数据权限注解</span><br>    Page&lt;QuestionVO&gt; getQuestionPage(QuestionQueryDTO dto);<br>    <br>    List&lt;Question&gt; generatePaper(PaperGenerateDTO dto);<br>&#125;<br><br><span class="hljs-meta">@Data</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QuestionQueryDTO</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">Long</span> categoryId;<br>    <span class="hljs-keyword">private</span> Integer type;<br>    <span class="hljs-keyword">private</span> Integer difficulty;<br>    <span class="hljs-keyword">private</span> Integer status;<br>    <span class="hljs-meta">@JsonFormat(pattern = <span class="hljs-string">&quot;yyyy-MM-dd&quot;</span>)</span><br>    <span class="hljs-keyword">private</span> LocalDate startTime;<br>    <span class="hljs-meta">@JsonFormat(pattern = <span class="hljs-string">&quot;yyyy-MM-dd&quot;</span>)</span><br>    <span class="hljs-keyword">private</span> LocalDate endTime;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>练习提交接口</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-title class_">Java</span><span class="hljs-meta">@PostMapping</span>(<span class="hljs-string">&quot;/submit&quot;</span>)<br><span class="hljs-keyword">public</span> R&lt;<span class="hljs-title class_">PracticeResultVO</span>&gt; <span class="hljs-title function_">submitPractice</span>(<span class="hljs-params"><span class="hljs-meta">@RequestBody</span> <span class="hljs-title class_">PracticeSubmitDTO</span> dto</span>) &#123;<br>    <span class="hljs-comment">// 1. 验证用户身份</span><br>    <span class="hljs-title class_">Long</span> userId = <span class="hljs-title class_">StpUtil</span>.<span class="hljs-title function_">getLoginIdAsLong</span>();<br>    <br>    <span class="hljs-comment">// 2. 获取题目正确答案</span><br>    <span class="hljs-title class_">Map</span>&lt;<span class="hljs-title class_">Long</span>, <span class="hljs-title class_">Question</span>&gt; questionMap = questionService.<span class="hljs-title function_">listByIds</span>(dto.<span class="hljs-title function_">getQuestionIds</span>())<br>            .<span class="hljs-title function_">stream</span>()<br>            .<span class="hljs-title function_">collect</span>(<span class="hljs-title class_">Collectors</span>.<span class="hljs-title function_">toMap</span>(<span class="hljs-title class_">Question</span>::getId, <span class="hljs-title class_">Function</span>.<span class="hljs-title function_">identity</span>()));<br>    <br>    <span class="hljs-comment">// 3. 比对答案并统计</span><br>    <span class="hljs-title class_">AtomicInteger</span> correctCount = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AtomicInteger</span>();<br>    <span class="hljs-title class_">JSON</span><span class="hljs-built_in">Object</span> details = <span class="hljs-keyword">new</span> <span class="hljs-title class_">JSON</span><span class="hljs-built_in">Object</span>();<br>    dto.<span class="hljs-title function_">getAnswers</span>().<span class="hljs-title function_">forEach</span>((qId, userAnswer) -&gt; &#123;<br>        <span class="hljs-title class_">Question</span> q = questionMap.<span class="hljs-title function_">get</span>(qId);<br>        <span class="hljs-built_in">boolean</span> isCorrect = q.<span class="hljs-title function_">getAnswer</span>().<span class="hljs-title function_">equals</span>(userAnswer);<br>        <span class="hljs-keyword">if</span>(isCorrect) correctCount.<span class="hljs-title function_">incrementAndGet</span>();<br>        details.<span class="hljs-title function_">put</span>(qId.<span class="hljs-title function_">toString</span>(), <span class="hljs-keyword">new</span> <span class="hljs-title class_">AnswerDetail</span>(isCorrect, userAnswer));<br>    &#125;);<br>    <br>    <span class="hljs-comment">// 4. 保存记录</span><br>    <span class="hljs-title class_">PracticeRecord</span> record = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PracticeRecord</span>();<br>    record.<span class="hljs-title function_">setUserId</span>(userId);<br>    record.<span class="hljs-title function_">setCategoryId</span>(dto.<span class="hljs-title function_">getCategoryId</span>());<br>    record.<span class="hljs-title function_">setTotal</span>(dto.<span class="hljs-title function_">getQuestionIds</span>().<span class="hljs-title function_">size</span>());<br>    record.<span class="hljs-title function_">setCorrect</span>(correctCount.<span class="hljs-title function_">get</span>());<br>    record.<span class="hljs-title function_">setSpendTime</span>(dto.<span class="hljs-title function_">getSpendTime</span>());<br>    record.<span class="hljs-title function_">setDetails</span>(details);<br>    practiceRecordService.<span class="hljs-title function_">save</span>(record);<br>    <br>    <span class="hljs-comment">// 5. 返回结果</span><br>    <span class="hljs-keyword">return</span> R.<span class="hljs-title function_">success</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PracticeResultVO</span>(record));<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>完整代码已为您准备好，请通过以下地址获取：<br> Github仓库：<a target="_blank" rel="noopener" href="https://github.com/exam-platform/edu-question-bank">https://github.com/exam-platform/edu-question-bank</a><br> （包含完整的权限管理、题目管理、练习模块和可视化统计功能）</p>
+<p>部署步骤：</p>
+<ol>
+<li>创建MySQL数据库并执行提供的schema.sql</li>
+<li>修改application.yml中的数据库配置</li>
+<li>mvn clean package 打包后端</li>
+<li>npm install &amp;&amp; npm run build 构建前端</li>
+<li>启动Redis服务</li>
+<li>运行后端jar包：java -jar exam-bank.jar</li>
+</ol>
+<p>系统特色：</p>
+<ol>
+<li>采用RBAC权限模型实现细粒度控制</li>
+<li>使用Redis缓存高频访问的题目数据</li>
+<li>支持LaTeX数学公式渲染</li>
+<li>自动生成智能练习报告</li>
+<li>完整的数据埋点与分析功能</li>
+</ol>
+<p>建议先使用测试账号体验：<br> 管理员：admin&#x2F;123456<br> 普通用户：user&#x2F;123456</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Java%E9%A1%B9%E7%9B%AE/" class="category-chain-item">Java项目</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%87%AA%E6%88%91%E6%8F%90%E5%8D%87/" class="print-no-link">#自我提升</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>开练题库项目</div>
+      <div>https://awk001.github.io/2025/03/24/开练题库/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Awk</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/31/WIndows%E6%90%AD%E5%BB%BA%E5%8D%95%E8%8A%82%E7%82%B9Minio/" title="WIndows搭建单节点Minio">
+                        <span class="hidden-mobile">WIndows搭建单节点Minio</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
