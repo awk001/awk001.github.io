@@ -19,24 +19,21 @@
   <meta name="author" content="Awk">
   <meta name="keywords" content="">
   
-    <meta name="description" content="布署单节点单磁盘的MinIO服务以下流程部署了由单个MinIO服务器和单个驱动器或存储卷组成的MinIO。  网络文件系统卷打破一致性保证 MinIO强制实施 写入后读取 和 写入后列举 的一致性模型， 需要本地驱动器文件系统。如果底层存储卷是NFS或类似的网络附加存储卷， MinIO无法提供一致性保证。  1、下载MinIO服务器文件从以下URL下载MinIO可执行文件： 1https:&#x2F;&#x2F;dl">
+    <meta name="description" content="ITU-R BT.709 亮度公式说明ITU-R BT.709 是国际电信联盟（ITU）制定的高清电视（HDTV）色彩空间标准，广泛用于广播电视、数字视频和图像处理领域。其核心是 亮度（Luminance）计算公式，用于将RGB颜色空间转换为亮度（Y）通道。 1. 公式定义ITU-R BT.709 亮度公式的数学表达式为： 1Y &#x3D; 0.299 \cdot R + 0.587 \cdot G +">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WIndows搭建单节点Minio">
-<meta property="og:url" content="https://awk001.github.io/2024/12/31/WIndows%E6%90%AD%E5%BB%BA%E5%8D%95%E8%8A%82%E7%82%B9Minio/index.html">
+<meta property="og:title" content="So Cool">
+<meta property="og:url" content="https://awk001.github.io/2025/04/02/IT/index.html">
 <meta property="og:site_name" content="So Cool">
-<meta property="og:description" content="布署单节点单磁盘的MinIO服务以下流程部署了由单个MinIO服务器和单个驱动器或存储卷组成的MinIO。  网络文件系统卷打破一致性保证 MinIO强制实施 写入后读取 和 写入后列举 的一致性模型， 需要本地驱动器文件系统。如果底层存储卷是NFS或类似的网络附加存储卷， MinIO无法提供一致性保证。  1、下载MinIO服务器文件从以下URL下载MinIO可执行文件： 1https:&#x2F;&#x2F;dl">
+<meta property="og:description" content="ITU-R BT.709 亮度公式说明ITU-R BT.709 是国际电信联盟（ITU）制定的高清电视（HDTV）色彩空间标准，广泛用于广播电视、数字视频和图像处理领域。其核心是 亮度（Luminance）计算公式，用于将RGB颜色空间转换为亮度（Y）通道。 1. 公式定义ITU-R BT.709 亮度公式的数学表达式为： 1Y &#x3D; 0.299 \cdot R + 0.587 \cdot G +">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202501010004414.png">
-<meta property="article:published_time" content="2024-12-31T03:56:18.000Z">
-<meta property="article:modified_time" content="2025-01-01T10:37:04.388Z">
+<meta property="article:published_time" content="2025-04-02T09:22:31.900Z">
+<meta property="article:modified_time" content="2025-04-02T09:28:10.869Z">
 <meta property="article:author" content="Awk">
-<meta property="article:tag" content="程序员必备">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202501010004414.png">
   
   
   
-  <title>WIndows搭建单节点Minio - So Cool</title>
+  <title>So Cool</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="WIndows搭建单节点Minio"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -230,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-31 11:56" pubdate>
-          2024年12月31日 中午
+        <time datetime="2025-04-02 17:22" pubdate>
+          2025年4月2日 下午
         </time>
       </span>
     
@@ -242,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          652 字
+          717 字
         
       </span>
     
@@ -290,12 +287,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">WIndows搭建单节点Minio</h1>
+            <h1 id="seo-header"></h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2025年1月1日 晚上
+                    本文最后更新于 2025年4月2日 下午
                   
                 
               </p>
@@ -303,27 +300,105 @@
             
               <div class="markdown-body">
                 
-                <h1 id="布署单节点单磁盘的MinIO服务"><a href="#布署单节点单磁盘的MinIO服务" class="headerlink" title="布署单节点单磁盘的MinIO服务"></a>布署单节点单磁盘的MinIO服务</h1><p>以下流程部署了由单个MinIO服务器和单个驱动器或存储卷组成的MinIO。</p>
-<blockquote>
-<p>网络文件系统卷打破一致性保证</p>
-<p>MinIO强制实施 <strong>写入后读取</strong> 和 <strong>写入后列举</strong> 的一致性模型， 需要本地驱动器文件系统。如果底层存储卷是NFS或类似的网络附加存储卷， MinIO无法提供一致性保证。</p>
-</blockquote>
-<h2 id="1、下载MinIO服务器文件"><a href="#1、下载MinIO服务器文件" class="headerlink" title="1、下载MinIO服务器文件"></a>1、下载MinIO服务器文件</h2><p>从以下URL下载MinIO可执行文件：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>dl.minio.org.cn<span class="hljs-regexp">/server/mi</span>nio<span class="hljs-regexp">/release/</span>windows-amd64/minio.exe<br></code></pre></td></tr></table></figure>
+                <h2 id="ITU-R-BT-709-亮度公式说明"><a href="#ITU-R-BT-709-亮度公式说明" class="headerlink" title="ITU-R BT.709 亮度公式说明"></a>ITU-R BT.709 亮度公式说明</h2><p>ITU-R BT.709 是国际电信联盟（ITU）制定的高清电视（HDTV）色彩空间标准，广泛用于广播电视、数字视频和图像处理领域。其核心是 <strong>亮度（Luminance）计算公式</strong>，用于将RGB颜色空间转换为亮度（Y）通道。</p>
+<h3 id="1-公式定义"><a href="#1-公式定义" class="headerlink" title="1. 公式定义"></a><strong>1. 公式定义</strong></h3><p>ITU-R BT.709 亮度公式的数学表达式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs math">Y = 0.299 \cdot R + 0.587 \cdot G + 0.114 \cdot B<br></code></pre></td></tr></table></figure>
 
-<p>下一步是运行可执行文件的指令。 无法通过资源管理器或双击文件来运行可执行文件。 相反，你需要调用可执行文件来启动服务器。</p>
-<h2 id="2、为-MinIO-准备数据路径"><a href="#2、为-MinIO-准备数据路径" class="headerlink" title="2、为 MinIO 准备数据路径"></a>2、为 MinIO 准备数据路径</h2><p>确保数据路径为空，且不包含任何现有文件，包括隐藏或Windows系统文件。</p>
-<p>如果指定了一个不为MinIO专用的驱动器，考虑创建一个专用于存储MinIO数据的专用文件夹，例如 <code>D:/Minio</code>。</p>
-<h2 id="3、启动-MinIO-服务器"><a href="#3、启动-MinIO-服务器" class="headerlink" title="3、启动 MinIO 服务器"></a>3、启动 MinIO 服务器</h2><p>打开命令提示符或PowerShell，并执行以下命令来在该会话中启动MinIO SNSD 部署：</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">minio server D:<span class="hljs-string">/minio</span> <span class="hljs-params">--console-address</span> <span class="hljs-string">&quot;:9001&quot;</span><br></code></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li>R,G,B<em>R</em>,<em>G</em>,<em>B</em> 表示归一化后的三原色分量（取值范围通常为 <code>[0, 1]</code> 或 <code>[0, 255]</code>）</li>
+<li>Y<em>Y</em> 表示计算得到的亮度值</li>
+</ul>
+<h3 id="2-技术原理"><a href="#2-技术原理" class="headerlink" title="2. 技术原理"></a><strong>2. 技术原理</strong></h3><h4 id="1-人眼感知特性"><a href="#1-人眼感知特性" class="headerlink" title="(1) 人眼感知特性"></a><strong>(1) 人眼感知特性</strong></h4><ul>
+<li><p>权重分配</p>
+<p>：公式中的系数（0.299, 0.587, 0.114）基于人眼对不同波长光的敏感度：</p>
+<ul>
+<li>绿色光（555nm）敏感度最高 → G分量权重最大（58.7%）</li>
+<li>红色光（611nm）次之 → R分量权重29.9%</li>
+<li>蓝色光（464nm）最弱 → B分量权重11.4%</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-色彩空间映射"><a href="#2-色彩空间映射" class="headerlink" title="(2) 色彩空间映射"></a><strong>(2) 色彩空间映射</strong></h4><ul>
+<li><strong>目的</strong>：将非线性感知的RGB颜色映射到线性亮度空间</li>
+<li><strong>兼容性</strong>：与sRGB标准中的亮度计算完全一致</li>
+</ul>
+<h3 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3. 代码实现"></a><strong>3. 代码实现</strong></h3><h4 id="Python示例"><a href="#Python示例" class="headerlink" title="Python示例"></a><strong>Python示例</strong></h4><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ceylon">Pythondef rgb<span class="hljs-number">_</span>to<span class="hljs-number">_</span>luminance(rgb<span class="hljs-number">_</span>array):<br>    <span class="hljs-string">&quot;&quot;&quot;将RGB数组转换为BT.709亮度矩阵&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0.2</span><span class="hljs-number">99</span> * rgb<span class="hljs-number">_</span>array[..., <span class="hljs-number">0</span>] + \<br>           <span class="hljs-number">0.5</span><span class="hljs-number">87</span> * rgb<span class="hljs-number">_</span>array[..., <span class="hljs-number">1</span>] + \<br>           <span class="hljs-number">0.1</span><span class="hljs-number">14</span> * rgb<span class="hljs-number">_</span>array[..., <span class="hljs-number">2</span>]<br></code></pre></td></tr></table></figure>
 
-<p>输出应类似于以下内容：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">PS</span> D:\GPT浏览器下载&gt; .\minio.exe server D:/minio <span class="hljs-literal">--console-address</span> <span class="hljs-string">&quot;:9001&quot;</span>                                           INFO: Formatting <span class="hljs-number">1</span>st pool, <span class="hljs-number">1</span> <span class="hljs-built_in">set</span>(s), <span class="hljs-number">1</span> drives per <span class="hljs-built_in">set</span>.                                                                  <br>INFO: WARNING: Host local has more than <span class="hljs-number">0</span> drives of <span class="hljs-built_in">set</span>. A host failure will result <span class="hljs-keyword">in</span> <span class="hljs-keyword">data</span> becoming unavailable.       <br>MinIO Object Storage Server                                                                                             <br>Copyright: <span class="hljs-number">2015</span><span class="hljs-literal">-2024</span> MinIO, Inc.                                                                                        <br>License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl<span class="hljs-literal">-3</span>.<span class="hljs-number">0</span>.html                                                       Version: RELEASE.<span class="hljs-number">2024</span><span class="hljs-literal">-12-18T13-15-44Z</span> (go1.<span class="hljs-number">23.4</span> windows/amd64)                                                                                                                                                                                  <br>API: http://<span class="hljs-number">192.168</span>.<span class="hljs-number">10.220</span>:<span class="hljs-number">9000</span>  http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9000</span>                                                                     RootUser: minioadmin                                                                                                    <br>RootPass: minioadmin                                                                                                                                                                                                                  <br>WebUI: http://<span class="hljs-number">192.168</span>.<span class="hljs-number">10.220</span>:<span class="hljs-number">9001</span> http://<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">9001</span>                                                                   RootUser: minioadmin                                                                                                    <br>RootPass: minioadmin                                                                                                                                                                                                                         <br><span class="hljs-built_in">CLI</span>: https://min.io/docs/minio/linux/reference/minio<span class="hljs-literal">-mc</span>.html<span class="hljs-comment">#quickstart $ mc alias set &#x27;myminio&#x27; &#x27;http://192.168.10.220:9000&#x27; &#x27;minioadmin&#x27; &#x27;minioadmin&#x27;                                                                                                                                                              </span><br>Docs: https://docs.min.io                                                                                               <br>WARN: Detected default credentials <span class="hljs-string">&#x27;minioadmin:minioadmin&#x27;</span>, we recommend that you change these values with <span class="hljs-string">&#x27;MINIO_ROOT_USER&#x27;</span> and <span class="hljs-string">&#x27;MINIO_ROOT_PASSWORD&#x27;</span> environment variables  <br></code></pre></td></tr></table></figure>
+<h4 id="Java示例（OpenCV）"><a href="#Java示例（OpenCV）" class="headerlink" title="Java示例（OpenCV）"></a><strong>Java示例（OpenCV）</strong></h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs stata">Javapublic static <span class="hljs-keyword">Mat</span> calculateLuminance(<span class="hljs-keyword">Mat</span> rgbMat) &#123;<br>    <span class="hljs-keyword">List</span>&lt;<span class="hljs-keyword">Mat</span>&gt; channels = new ArrayList&lt;&gt;();<br>    Core.<span class="hljs-keyword">split</span>(rgbMat, channels);<br>    <br>    <span class="hljs-keyword">Mat</span> luminance = new <span class="hljs-keyword">Mat</span>();<br>    Core.addWeighted(channels.<span class="hljs-built_in">get</span>(0), 0.299, channels.<span class="hljs-built_in">get</span>(1), 0.587, 0, luminance);<br>    Core.addWeighted(luminance, 1.0, channels.<span class="hljs-built_in">get</span>(2), 0.114, 0, luminance);<br>    <br>    <span class="hljs-keyword">return</span> luminance;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="4、连接到-MinIO-服务器"><a href="#4、连接到-MinIO-服务器" class="headerlink" title="4、连接到 MinIO 服务器"></a>4、连接到 MinIO 服务器</h2><p>您可以通过在首选的浏览器中输入MinIO服务器 <code>Console控制台</code> 中的任何主机名或IP地址来访问MinIO控制台，例如<a href="http://localhost:9001。">http://localhost:9001。</a></p>
-<p>登录MinIO的用户名和密码配置参数为 <code>MINIO_ROOT_USER</code> 和 <code>MINIO_ROOT_PASSWORD</code> 这些配置可以在在容器指定的环境文件中进行修改。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/awk001/hexo_pic/202501010004414.png" srcset="/img/loading.gif" lazyload alt="访问页面"></p>
-<p>您可以使用MinIO控制台进行一般管理任务，如身份和访问管理、指标和日志监控或服务器配置。每个MinIO服务器都包含其自己的嵌入式MinIO控制台。 如果您的本地主机防火墙允许外部访问控制台端口，则同一网络上的其他主机可以使用您的本地主机的IP地址或主机名访问控制台。</p>
+<h3 id="4-验证方法"><a href="#4-验证方法" class="headerlink" title="4. 验证方法"></a><strong>4. 验证方法</strong></h3><h4 id="测试案例"><a href="#测试案例" class="headerlink" title="测试案例"></a><strong>测试案例</strong></h4><table>
+<thead>
+<tr>
+<th>输入RGB值</th>
+<th>预期亮度值 (8-bit)</th>
+<th>允许误差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>(255, 255, 255)</td>
+<td>255</td>
+<td>±0</td>
+</tr>
+<tr>
+<td>(0, 0, 0)</td>
+<td>0</td>
+<td>±0</td>
+</tr>
+<tr>
+<td>(255, 0, 0)</td>
+<td>76.245 → 76</td>
+<td>±1</td>
+</tr>
+<tr>
+<td>(0, 255, 0)</td>
+<td>150.045 → 150</td>
+<td>±1</td>
+</tr>
+</tbody></table>
+<h4 id="Photoshop验证步骤"><a href="#Photoshop验证步骤" class="headerlink" title="Photoshop验证步骤"></a><strong>Photoshop验证步骤</strong></h4><ol>
+<li>在Photoshop中打开测试图像</li>
+<li>使用 <code>图像 → 计算</code> 功能生成亮度通道</li>
+<li>使用取色器对比计算结果</li>
+</ol>
+<h3 id="5-与其他标准的对比"><a href="#5-与其他标准的对比" class="headerlink" title="5. 与其他标准的对比"></a><strong>5. 与其他标准的对比</strong></h3><table>
+<thead>
+<tr>
+<th>标准</th>
+<th>亮度公式</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ITU-R BT.601</td>
+<td>Y &#x3D; 0.299R + 0.587G + 0.114B</td>
+<td>SDTV标清电视</td>
+</tr>
+<tr>
+<td>ITU-R BT.709</td>
+<td>Y &#x3D; 0.2126R + 0.7152G + 0.0722B</td>
+<td>HDTV高清电视</td>
+</tr>
+<tr>
+<td>CIE 1931</td>
+<td>Y &#x3D; 0.265R + 0.670G + 0.065B</td>
+<td>色彩科学研究</td>
+</tr>
+</tbody></table>
+<h3 id="6-常见问题"><a href="#6-常见问题" class="headerlink" title="6. 常见问题"></a><strong>6. 常见问题</strong></h3><h4 id="Q1：为何不用简单的平均值？"><a href="#Q1：为何不用简单的平均值？" class="headerlink" title="Q1：为何不用简单的平均值？"></a><strong>Q1：为何不用简单的平均值？</strong></h4><ul>
+<li>人眼对颜色的感知非线性，简单的 <code>(R+G+B)/3</code> 会导致亮度失真（例如绿色会显得过暗）</li>
+</ul>
+<h4 id="Q2：如何处理超出范围的亮度值？"><a href="#Q2：如何处理超出范围的亮度值？" class="headerlink" title="Q2：如何处理超出范围的亮度值？"></a><strong>Q2：如何处理超出范围的亮度值？</strong></h4><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Python</span># 使用np.clip限制到合法范围<br><span class="hljs-title">y</span> = np.clip(y, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>).<span class="hljs-keyword">as</span><span class="hljs-keyword">type</span>(np.uint8)<br></code></pre></td></tr></table></figure>
+
+<h4 id="Q3：在低光照条件下的优化方法？"><a href="#Q3：在低光照条件下的优化方法？" class="headerlink" title="Q3：在低光照条件下的优化方法？"></a><strong>Q3：在低光照条件下的优化方法？</strong></h4><ul>
+<li><p>使用伽马校正预处理：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Python</span><br><br><span class="hljs-attribute">rgb_array</span> = (rgb_array / <span class="hljs-number">255</span>.<span class="hljs-number">0</span>) ** <span class="hljs-number">2</span>.<span class="hljs-number">2</span>  # 线性化处理<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-扩展应用"><a href="#7-扩展应用" class="headerlink" title="7. 扩展应用"></a><strong>7. 扩展应用</strong></h3><h4 id="色度计算（YCbCr转换）"><a href="#色度计算（YCbCr转换）" class="headerlink" title="色度计算（YCbCr转换）"></a><strong>色度计算（YCbCr转换）</strong></h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">MathCb</span> = <span class="hljs-number">0</span>.<span class="hljs-number">564</span> \cdot (B - Y) + <span class="hljs-number">128</span> \\<br><span class="hljs-attribute">Cr</span> = <span class="hljs-number">0</span>.<span class="hljs-number">713</span> \cdot (R - Y) + <span class="hljs-number">128</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="灰阶图像生成"><a href="#灰阶图像生成" class="headerlink" title="灰阶图像生成"></a><strong>灰阶图像生成</strong></h4><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Python</span><br><br><span class="hljs-title">gray_image</span> = <span class="hljs-type">Image</span>.fromarray(<span class="hljs-type">Y</span>.<span class="hljs-keyword">as</span><span class="hljs-keyword">type</span>(np.uint8), mode=&#x27;<span class="hljs-type">L&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>该公式是数字图像处理中的核心算法之一，正确理解和实现它对色彩空间转换、图像压缩（如JPEG）和计算机视觉任务至关重要。</p>
 
                 
               </div>
@@ -332,34 +407,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/" class="category-chain-item">技术基础</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87/" class="print-no-link">#程序员必备</a>
-      
-    </div>
   
 </div>
 
@@ -369,8 +416,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>WIndows搭建单节点Minio</div>
-      <div>https://awk001.github.io/2024/12/31/WIndows搭建单节点Minio/</div>
+      <div></div>
+      <div>https://awk001.github.io/2025/04/02/IT/</div>
     </div>
     <div class="license-meta">
       
@@ -382,7 +429,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月31日</div>
+          <div>2025年4月2日</div>
         </div>
       
       
@@ -414,18 +461,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/12/%E5%BC%80%E7%BB%83%E9%A2%98%E5%BA%93/" title="Solon">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Solon</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/07/%E8%8B%B1%E8%AF%AD/" title="英语语法">
-                        <span class="hidden-mobile">英语语法</span>
+                      <a href="/2025/04/02/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E5%88%86%E6%9E%90/" title="">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
