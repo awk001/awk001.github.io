@@ -7,13 +7,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pyside6-ui-hang-debug/</loc>
+    <loc>https://awk001.github.io/posts/industrial-vision-moat/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/industrial-vision-moat/</loc>
+    <loc>https://awk001.github.io/posts/pyside6-ui-hang-debug/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -55,24 +55,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/tags/Python/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/PySide6/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E8%B0%83%E8%AF%95/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/tags/%E5%B7%A5%E4%B8%9A%E6%99%BA%E8%83%BD/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,6 +68,24 @@
   </url>
   <url>
     <loc>https://awk001.github.io/tags/%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/Python/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/PySide6/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E8%B0%83%E8%AF%95/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
