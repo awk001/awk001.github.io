@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>悠悠</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>https://awk001.github.io/</id>
+  <link href="https://awk001.github.io/" rel="alternate"/>
+  <link href="https://awk001.github.io/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, 悠悠</rights>
+  <subtitle>光学成像与工业智能的工程笔记</subtitle>
+  <title>光眸笔记</title>
+  <updated>2026-10-04T00:06:00.886Z</updated>
+  <entry>
+    <author>
+      <name>悠悠</name>
+    </author>
+    <category term="Astro" scheme="https://awk001.github.io/tags/Astro/"/>
+    <category term="架构选型" scheme="https://awk001.github.io/tags/%E6%9E%B6%E6%9E%84%E9%80%89%E5%9E%8B/"/>
+    <category term="前端" scheme="https://awk001.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <content>
+      <![CDATA[<p>选博客技术栈时，第一个要分清的不是框架，而是你的站点属于<strong>内容型</strong>还是<strong>应用型</strong>。</p><h2 id="两种站点的本质差异"><a href="#两种站点的本质差异" class="headerlink" title="两种站点的本质差异"></a>两种站点的本质差异</h2><p>内容型站点的核心动作是「读」，用户点进来看文字，然后离开。应用型站点的核心动作是「交互」——登录、填表、实时更新、状态流转。</p><p>这个差异决定了架构：</p><table><thead><tr><th>维度</th><th>内容型</th><th>应用型</th></tr></thead><tbody><tr><td>首屏 JS 预算</td><td>0–12 KB</td><td>80 KB 起</td></tr><tr><td>是否需要服务端</td><td>不需要</td><td>需要</td></tr><tr><td>断网后能否阅读</td><td>能（Service Worker）</td><td>视情况</td></tr><tr><td>攻击面</td><td>几乎为零</td><td>数据库 + 认证 + API</td></tr></tbody></table><h2 id="为什么博客不需要后端"><a href="#为什么博客不需要后端" class="headerlink" title="为什么博客不需要后端"></a>为什么博客不需要后端</h2><p>文章是<strong>发布时确定、发布后不变</strong>的内容。既然不变，就没有理由在每次访问时重新计算。</p><p>把它编译成静态 HTML 之后：</p><ul><li>服务器只是一堆文件，没有可执行逻辑</li><li>没有数据库，就没有 SQL 注入</li><li>没有登录页，就没有暴力破解</li><li>成本从「服务器月租」变成「CDN 免费额度」</li></ul><p>这也是我不建议用 WordPress 的原因。WordPress 承载了全网 43% 的站点，但 2025 年 Patchstack 报告的 13000+ 插件漏洞里，90% 以上来自插件——它把 PHP 执行、MySQL、可写文件系统全部暴露在公网上。</p><h2 id="岛屿架构解决了什么"><a href="#岛屿架构解决了什么" class="headerlink" title="岛屿架构解决了什么"></a>岛屿架构解决了什么</h2><p>Next.js 这类框架的问题不是「慢」，而是它假设你的页面总是应用的。React runtime、路由、hydration 逻辑会无条件发到浏览器，即使页面只有一段文字。</p><p>有实测数据：同类博客页面，Astro 首次加载 0–9 KB JS，Next.js 是 80–463 KB。Lighthouse 上前者 100 分，后者 88 分。</p><p>岛屿架构的思路是反过来：<strong>HTML 是默认状态，JS 是例外</strong>。只有需要交互的组件才标记为 island，其余部分保持纯静态。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs astro">---<br>// 默认不水合<br>import TableOfContents from &#x27;../components/TableOfContents.astro&#x27;;<br>// 只有这个组件会带上 JS<br>import SearchWidget from &#x27;../components/SearchWidget.jsx&#x27;;<br>---<br><br>&lt;TableOfContents /&gt;<br>&lt;SearchWidget client:visible /&gt;<br></code></pre></td></tr></table></figure><p><code>client:visible</code> 意味着用户滚动到视口内才加载脚本，首屏完全不付这个成本。</p><h2 id="一个真实的性能对比"><a href="#一个真实的性能对比" class="headerlink" title="一个真实的性能对比"></a>一个真实的性能对比</h2><p>我在自己的站上做过一次迁移，从 Next.js App Router 换到 Astro：</p><ul><li>首屏 JS：112 KB → 0 KB（博客页）</li><li>Lighthouse Performance：88 → 100</li><li>构建时间：45 s → 2 s</li></ul><p>构建时间的差异在高频发布时才会显现出来——每次改一个错别字都要等 45 秒，一天几十次就是几十分钟的纯等待。</p><h2 id="国内托管的现实约束"><a href="#国内托管的现实约束" class="headerlink" title="国内托管的现实约束"></a>国内托管的现实约束</h2><p>这是很多技术文章不提但绕不开的部分。按国内访问延迟排序：</p><ol><li><strong>EdgeOne Pages（腾讯云，备案后）</strong>：50–90 ms</li><li><strong>Cloudflare Pages</strong>：联通晚高峰 800 ms+</li><li><strong>Vercel</strong>：部分地区不可达</li><li><strong>GitHub Pages</strong>：极慢</li></ol><p>如果不做备案，可用选项是 Cloudflare Pages 或 EdgeOne 国际站，代价是晚高峰延迟。实测有开发者从 Cloudflare 迁到 EdgeOne 后，联通线路从 800 ms 降到 200 ms——但这依赖备案启用国内节点，不备案拿不到这个收益。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>内容型站点选 Astro，应用型站点选 Next.js。这不是哪个框架更好的问题，是匹配工作负载的问题。试图什么都做的框架，通常两件事都做不好。</p>]]>
+    </content>
+    <id>https://awk001.github.io/posts/astro-architecture-decision/</id>
+    <link href="https://awk001.github.io/posts/astro-architecture-decision/"/>
+    <published>2026-10-02T16:00:00.000Z</published>
+    <summary>从内容型静态站与全栈应用的分野出发，说明为什么个人博客应该选零 JS 的岛屿架构，以及这套方案在国内托管上的现实约束。</summary>
+    <title>用 Astro 7 搭建个人博客的架构决策</title>
+    <updated>2026-10-04T00:06:00.886Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>悠悠</name>
+    </author>
+    <category term="工业智能" scheme="https://awk001.github.io/tags/%E5%B7%A5%E4%B8%9A%E6%99%BA%E8%83%BD/"/>
+    <category term="机器视觉" scheme="https://awk001.github.io/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
+    <category term="思考" scheme="https://awk001.github.io/tags/%E6%80%9D%E8%80%83/"/>
+    <content>
+      <![CDATA[<p>做机器视觉项目时，团队通常会把注意力放在算法上：换检测器、调参、跑更高的 mAP。</p><p>但在实际交付中，我看到的失败案例里，相当一部分败在打光上。</p><h2 id="成像质量是算法的输入上限"><a href="#成像质量是算法的输入上限" class="headerlink" title="成像质量是算法的输入上限"></a>成像质量是算法的输入上限</h2><p>一个 YOLOv8 再完美，也无法从一张欠曝、眩光污染的图像里找回信息。</p><p>这个约束的数学形式很简单：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">可提取特征 ⊆ 成像系统传递的信息<br></code></pre></td></tr></table></figure><p>信噪比决定了特征空间的上界。光源的均匀性、频闪抑制、偏振控制，本质上是在优化这个上界。</p><h2 id="三个常被低估的现场问题"><a href="#三个常被低估的现场问题" class="headerlink" title="三个常被低估的现场问题"></a>三个常被低估的现场问题</h2><p><strong>频闪</strong>。相机曝光周期和灯具驱动频率拍频，产生横条纹。解法在照明侧：选频闪范围避开曝光周期的灯具，或者把曝光时间锁到频闪周期的整数倍。</p><p><strong>镜面眩光</strong>。金属件表面把光源直接反射进镜头。解法是偏振：光源加偏振片，镜头前加检偏器，交叉起偏可以把反射光消掉大部分。</p><p><strong>工位漂移</strong>。设备维护后夹具位置变了，产线一致性断了。这是工程问题不是算法问题，但表现出来的现象是「检测率下降」，于是大家去调阈值。</p><h2 id="为什么这是壁垒"><a href="#为什么这是壁垒" class="headerlink" title="为什么这是壁垒"></a>为什么这是壁垒</h2><p>算法层的差距在缩小。开源检测器的能力差距在半年内就会被抹平，YOLO 系列每年两代，指标提升肉眼可见。</p><p>而成像经验是<strong>在产线上积累的</strong>：知道这个零件用什么角度打、这个材质会不会反光、这个工位要多久校准一次。这些知识很难被论文和开源项目覆盖。</p><h2 id="落地路径"><a href="#落地路径" class="headerlink" title="落地路径"></a>落地路径</h2><p>我的建议是先做数据采集，而不是先做 AI。</p><ul><li>采集改造的门槛低，客户愿意开门</li><li>进厂之后能摸到真实产线数据</li><li>数据在手里，后续切视觉质检才有主动权</li></ul><p>而不是反过来——先买 GPU 搭模型，再去找场景。方向错了，投入再多也是沉没成本。</p>]]>
+    </content>
+    <id>https://awk001.github.io/posts/industrial-vision-moat/</id>
+    <link href="https://awk001.github.io/posts/industrial-vision-moat/"/>
+    <published>2026-09-30T16:00:00.000Z</published>
+    <summary>讨论工业 AI 落地时，为什么打光能力比算法更少被提及，却往往决定了项目成败。</summary>
+    <title>工业视觉质检的壁垒到底在哪里</title>
+    <updated>2026-10-04T00:06:00.892Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>悠悠</name>
+    </author>
+    <category term="Python" scheme="https://awk001.github.io/tags/Python/"/>
+    <category term="PySide6" scheme="https://awk001.github.io/tags/PySide6/"/>
+    <category term="调试" scheme="https://awk001.github.io/tags/%E8%B0%83%E8%AF%95/"/>
+    <content>
+      <![CDATA[<p>界面偶尔卡一下，测试的时候偶现，开发者本机完全复现不了。这种问题最耗人。</p><h2 id="先排除错误的方向"><a href="#先排除错误的方向" class="headerlink" title="先排除错误的方向"></a>先排除错误的方向</h2><p>遇到卡顿，第一反应往往是「加点 sleep 让它等等」。这是最坏的开端。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 错误示范</span><br>QTimer.singleShot(<span class="hljs-number">500</span>, <span class="hljs-variable language_">self</span>.refresh_data)  <span class="hljs-comment"># 假装没看见竞态</span><br></code></pre></td></tr></table></figure><p>这不解决任何问题，只是把概率性的时序冲突变成稳定复现。真正的竞态还在那里，只是被推迟了，日后会在更难查的地方冒出来。</p><h2 id="二分法定位"><a href="#二分法定位" class="headerlink" title="二分法定位"></a>二分法定位</h2><p>我的做法是给链路加时间戳，而不是加延迟：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><br>_t0 = time.perf_counter()<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">log_step</span>(<span class="hljs-params">name: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>    elapsed = (time.perf_counter() - _t0) * <span class="hljs-number">1000</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;[perf] <span class="hljs-subst">&#123;name:32s&#125;</span> <span class="hljs-subst">&#123;elapsed:<span class="hljs-number">8.2</span>f&#125;</span> ms&#x27;</span>)<br></code></pre></td></tr></table></figure><p>然后在每个环节前后各打一次。跑二十次，看输出的分布而不是单次结果——偶发问题看的是尾部，不是均值。</p><p>这一步抓到的问题在：设备数据采集的回调里，触发了 UI 线程的同步刷新。</p><h2 id="根因"><a href="#根因" class="headerlink" title="根因"></a>根因</h2><p>回调可能在工作线程上被触发，也可能被 <code>QMetaObject.invokeMethod</code> 切回主线程。两条路径都会走到同一个刷新函数，而其中一条是重入的。</p><p>修法不是加锁，是明确线程归属：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@Slot(<span class="hljs-params"><span class="hljs-built_in">object</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">on_device_data</span>(<span class="hljs-params">self, payload: DeviceData</span>) -&gt; <span class="hljs-literal">None</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;保证只在主线程执行。&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> QThread.currentThread() <span class="hljs-keyword">is</span> <span class="hljs-variable language_">self</span>.thread():<br>        <span class="hljs-comment"># 不在这里判断后再调用，直接转发，</span><br>        <span class="hljs-comment"># 避免 TOCTOU 竞态</span><br>        <span class="hljs-variable language_">self</span>.invokeMethod(<br>            <span class="hljs-keyword">lambda</span>: <span class="hljs-variable language_">self</span>.on_device_data(payload),<br>            Qt.ConnectionType.QueuedConnection,<br>        )<br>        <span class="hljs-keyword">return</span><br><br>    current = <span class="hljs-variable language_">self</span>._current_row<br>    <span class="hljs-comment"># 已有有效数值就跳过，不让合格判定覆盖已写入的数据</span><br>    <span class="hljs-keyword">if</span> current.has_valid_value():<br>        <span class="hljs-keyword">return</span><br><br>    <span class="hljs-variable language_">self</span>._fill_row(current, payload)<br></code></pre></td></tr></table></figure><h2 id="教训"><a href="#教训" class="headerlink" title="教训"></a>教训</h2><ol><li><strong>偶发问题看分布，不看单次。</strong> 单次日志只能证明「这次没问题」。</li><li><strong>不要用 sleep 掩盖时序问题。</strong> 它把问题藏起来，不是修掉。</li><li><strong>线程归属要在入口统一，不要在每一处判断。</strong> 分散的 <code>if</code> 判断迟早会漏一处。</li></ol>]]>
+    </content>
+    <id>https://awk001.github.io/posts/pyside6-ui-hang-debug/</id>
+    <link href="https://awk001.github.io/posts/pyside6-ui-hang-debug/"/>
+    <published>2026-09-27T16:00:00.000Z</published>
+    <summary>从一个界面卡死的现象出发，如何用二分法定位到根因，以及为什么加 sleep 掩盖时序问题是个陷阱。</summary>
+    <title>记一次 PySide6 界面卡顿的排查过程</title>
+    <updated>2026-10-04T00:06:00.901Z</updated>
+  </entry>
+</feed>

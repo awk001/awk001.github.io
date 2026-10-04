@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>用 Astro 7 搭建个人博客的架构决策 | 光眸笔记</title><meta name="author" content="悠悠"><meta name="copyright" content="悠悠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从内容型静态站与全栈应用的分野出发，说明为什么个人博客应该选零 JS 的岛屿架构，以及这套方案在国内托管上的现实约束。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 Astro 7 搭建个人博客的架构决策">
+<meta property="og:url" content="https://awk001.github.io/posts/astro-architecture-decision/">
+<meta property="og:site_name" content="光眸笔记">
+<meta property="og:description" content="从内容型静态站与全栈应用的分野出发，说明为什么个人博客应该选零 JS 的岛屿架构，以及这套方案在国内托管上的现实约束。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://awk001.github.io/favicon.svg">
+<meta property="article:published_time" content="2026-10-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-04T00:06:00.886Z">
+<meta property="article:author" content="悠悠">
+<meta property="article:tag" content="Astro">
+<meta property="article:tag" content="架构选型">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://awk001.github.io/favicon.svg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "用 Astro 7 搭建个人博客的架构决策",
+  "url": "https://awk001.github.io/posts/astro-architecture-decision/",
+  "image": "https://awk001.github.io/favicon.svg",
+  "datePublished": "2026-10-02T16:00:00.000Z",
+  "dateModified": "2026-10-04T00:06:00.886Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "悠悠",
+      "url": "https://awk001.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/favicon.svg"><link rel="canonical" href="https://awk001.github.io/posts/astro-architecture-decision/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://cdn.staticfile.org"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.staticfile.org/egjs-infinitegrid/4.13.0/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '用 Astro 7 搭建个人博客的架构决策',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><script> let HEXO_MMEDIA_DATA = { js: [], css: [], aplayerData: [], metingData: [], artPlayerData: [], dplayerData: []}; </script><link rel="stylesheet" href="/css/code_block/shiki.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="光眸笔记" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/favicon.svg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archive/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">光眸笔记</span></a><a class="nav-page-title" href="/"><span class="site-name">用 Astro 7 搭建个人博客的架构决策</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">用 Astro 7 搭建个人博客的架构决策</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-02T16:00:00.000Z" title="发表于 2026-10-03 00:00:00">2026-10-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-04T00:06:00.886Z" title="更新于 2026-10-04 08:06:00">2026-10-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>选博客技术栈时，第一个要分清的不是框架，而是你的站点属于<strong>内容型</strong>还是<strong>应用型</strong>。</p>
+<h2 id="两种站点的本质差异"><a href="#两种站点的本质差异" class="headerlink" title="两种站点的本质差异"></a>两种站点的本质差异</h2><p>内容型站点的核心动作是「读」，用户点进来看文字，然后离开。应用型站点的核心动作是「交互」——登录、填表、实时更新、状态流转。</p>
+<p>这个差异决定了架构：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>内容型</th>
+<th>应用型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首屏 JS 预算</td>
+<td>0–12 KB</td>
+<td>80 KB 起</td>
+</tr>
+<tr>
+<td>是否需要服务端</td>
+<td>不需要</td>
+<td>需要</td>
+</tr>
+<tr>
+<td>断网后能否阅读</td>
+<td>能（Service Worker）</td>
+<td>视情况</td>
+</tr>
+<tr>
+<td>攻击面</td>
+<td>几乎为零</td>
+<td>数据库 + 认证 + API</td>
+</tr>
+</tbody></table>
+<h2 id="为什么博客不需要后端"><a href="#为什么博客不需要后端" class="headerlink" title="为什么博客不需要后端"></a>为什么博客不需要后端</h2><p>文章是<strong>发布时确定、发布后不变</strong>的内容。既然不变，就没有理由在每次访问时重新计算。</p>
+<p>把它编译成静态 HTML 之后：</p>
+<ul>
+<li>服务器只是一堆文件，没有可执行逻辑</li>
+<li>没有数据库，就没有 SQL 注入</li>
+<li>没有登录页，就没有暴力破解</li>
+<li>成本从「服务器月租」变成「CDN 免费额度」</li>
+</ul>
+<p>这也是我不建议用 WordPress 的原因。WordPress 承载了全网 43% 的站点，但 2025 年 Patchstack 报告的 13000+ 插件漏洞里，90% 以上来自插件——它把 PHP 执行、MySQL、可写文件系统全部暴露在公网上。</p>
+<h2 id="岛屿架构解决了什么"><a href="#岛屿架构解决了什么" class="headerlink" title="岛屿架构解决了什么"></a>岛屿架构解决了什么</h2><p>Next.js 这类框架的问题不是「慢」，而是它假设你的页面总是应用的。React runtime、路由、hydration 逻辑会无条件发到浏览器，即使页面只有一段文字。</p>
+<p>有实测数据：同类博客页面，Astro 首次加载 0–9 KB JS，Next.js 是 80–463 KB。Lighthouse 上前者 100 分，后者 88 分。</p>
+<p>岛屿架构的思路是反过来：<strong>HTML 是默认状态，JS 是例外</strong>。只有需要交互的组件才标记为 island，其余部分保持纯静态。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs astro">---<br>// 默认不水合<br>import TableOfContents from &#x27;../components/TableOfContents.astro&#x27;;<br>// 只有这个组件会带上 JS<br>import SearchWidget from &#x27;../components/SearchWidget.jsx&#x27;;<br>---<br><br>&lt;TableOfContents /&gt;<br>&lt;SearchWidget client:visible /&gt;<br></code></pre></td></tr></table></figure>
+
+<p><code>client:visible</code> 意味着用户滚动到视口内才加载脚本，首屏完全不付这个成本。</p>
+<h2 id="一个真实的性能对比"><a href="#一个真实的性能对比" class="headerlink" title="一个真实的性能对比"></a>一个真实的性能对比</h2><p>我在自己的站上做过一次迁移，从 Next.js App Router 换到 Astro：</p>
+<ul>
+<li>首屏 JS：112 KB → 0 KB（博客页）</li>
+<li>Lighthouse Performance：88 → 100</li>
+<li>构建时间：45 s → 2 s</li>
+</ul>
+<p>构建时间的差异在高频发布时才会显现出来——每次改一个错别字都要等 45 秒，一天几十次就是几十分钟的纯等待。</p>
+<h2 id="国内托管的现实约束"><a href="#国内托管的现实约束" class="headerlink" title="国内托管的现实约束"></a>国内托管的现实约束</h2><p>这是很多技术文章不提但绕不开的部分。按国内访问延迟排序：</p>
+<ol>
+<li><strong>EdgeOne Pages（腾讯云，备案后）</strong>：50–90 ms</li>
+<li><strong>Cloudflare Pages</strong>：联通晚高峰 800 ms+</li>
+<li><strong>Vercel</strong>：部分地区不可达</li>
+<li><strong>GitHub Pages</strong>：极慢</li>
+</ol>
+<p>如果不做备案，可用选项是 Cloudflare Pages 或 EdgeOne 国际站，代价是晚高峰延迟。实测有开发者从 Cloudflare 迁到 EdgeOne 后，联通线路从 800 ms 降到 200 ms——但这依赖备案启用国内节点，不备案拿不到这个收益。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>内容型站点选 Astro，应用型站点选 Next.js。这不是哪个框架更好的问题，是匹配工作负载的问题。试图什么都做的框架，通常两件事都做不好。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://awk001.github.io">悠悠</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://awk001.github.io/posts/astro-architecture-decision/">https://awk001.github.io/posts/astro-architecture-decision/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://awk001.github.io" target="_blank">光眸笔记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Astro/">Astro</a><a class="post-meta__tags" href="/tags/%E6%9E%B6%E6%9E%84%E9%80%89%E5%9E%8B/">架构选型</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post-share"><div class="social-share" data-image="/favicon.svg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.staticfile.org/butterfly-extsrc/1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.staticfile.org/butterfly-extsrc/1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/industrial-vision-moat/" title="工业视觉质检的壁垒到底在哪里"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">工业视觉质检的壁垒到底在哪里</div></div><div class="info-2"><div class="info-item-1">做机器视觉项目时，团队通常会把注意力放在算法上：换检测器、调参、跑更高的 mAP。 但在实际交付中，我看到的失败案例里，相当一部分败在打光上。 成像质量是算法的输入上限一个 YOLOv8 再完美，也无法从一张欠曝、眩光污染的图像里找回信息。 这个约束的数学形式很简单： 1可提取特征 ⊆ 成像系统传递的信息  信噪比决定了特征空间的上界。光源的均匀性、频闪抑制、偏振控制，本质上是在优化这个上界。 三个常被低估的现场问题频闪。相机曝光周期和灯具驱动频率拍频，产生横条纹。解法在照明侧：选频闪范围避开曝光周期的灯具，或者把曝光时间锁到频闪周期的整数倍。 镜面眩光。金属件表面把光源直接反射进镜头。解法是偏振：光源加偏振片，镜头前加检偏器，交叉起偏可以把反射光消掉大部分。 工位漂移。设备维护后夹具位置变了，产线一致性断了。这是工程问题不是算法问题，但表现出来的现象是「检测率下降」，于是大家去调阈值。 为什么这是壁垒算法层的差距在缩小。开源检测器的能力差距在半年内就会被抹平，YOLO 系列每年两代，指标提升肉眼可见。 而成像经验是在产线上积累的：知道这个零件用什么角度打、这个材质会不会反光、这...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/favicon.svg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">悠悠</div><div class="author-info-description">光学成像与工业智能的工程笔记</div><div class="site-data"><a href="/archive/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E7%AB%99%E7%82%B9%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%B7%AE%E5%BC%82"><span class="toc-number">1.</span> <span class="toc-text">两种站点的本质差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8D%9A%E5%AE%A2%E4%B8%8D%E9%9C%80%E8%A6%81%E5%90%8E%E7%AB%AF"><span class="toc-number">2.</span> <span class="toc-text">为什么博客不需要后端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B2%9B%E5%B1%BF%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">3.</span> <span class="toc-text">岛屿架构解决了什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%9C%9F%E5%AE%9E%E7%9A%84%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94"><span class="toc-number">4.</span> <span class="toc-text">一个真实的性能对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BD%E5%86%85%E6%89%98%E7%AE%A1%E7%9A%84%E7%8E%B0%E5%AE%9E%E7%BA%A6%E6%9D%9F"><span class="toc-number">5.</span> <span class="toc-text">国内托管的现实约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/astro-architecture-decision/" title="用 Astro 7 搭建个人博客的架构决策">用 Astro 7 搭建个人博客的架构决策</a><time datetime="2026-10-02T16:00:00.000Z" title="发表于 2026-10-03 00:00:00">2026-10-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/industrial-vision-moat/" title="工业视觉质检的壁垒到底在哪里">工业视觉质检的壁垒到底在哪里</a><time datetime="2026-09-30T16:00:00.000Z" title="发表于 2026-10-01 00:00:00">2026-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/pyside6-ui-hang-debug/" title="记一次 PySide6 界面卡顿的排查过程">记一次 PySide6 界面卡顿的排查过程</a><time datetime="2026-09-27T16:00:00.000Z" title="发表于 2026-09-28 00:00:00">2026-09-28</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By 悠悠</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly@5.7.0/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly@5.7.0/source/js/main.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script src="/assets/mmedia/mmedia-loader.js"></script><script defer src="/js/code_block/shiki.js"></script><!-- hexo injector body_end end --></body></html>

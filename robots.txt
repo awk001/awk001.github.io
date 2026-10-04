@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# 站点地图。部署前必须把域名改成自己的，
+# 路径写错不会报错，只会导致收录失败。
+Sitemap: https://example.com/sitemap.xml

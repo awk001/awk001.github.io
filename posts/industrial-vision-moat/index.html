@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>工业视觉质检的壁垒到底在哪里 | 光眸笔记</title><meta name="author" content="悠悠"><meta name="copyright" content="悠悠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="讨论工业 AI 落地时，为什么打光能力比算法更少被提及，却往往决定了项目成败。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工业视觉质检的壁垒到底在哪里">
+<meta property="og:url" content="https://awk001.github.io/posts/industrial-vision-moat/">
+<meta property="og:site_name" content="光眸笔记">
+<meta property="og:description" content="讨论工业 AI 落地时，为什么打光能力比算法更少被提及，却往往决定了项目成败。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://awk001.github.io/favicon.svg">
+<meta property="article:published_time" content="2026-09-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-04T00:06:00.892Z">
+<meta property="article:author" content="悠悠">
+<meta property="article:tag" content="工业智能">
+<meta property="article:tag" content="机器视觉">
+<meta property="article:tag" content="思考">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://awk001.github.io/favicon.svg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "工业视觉质检的壁垒到底在哪里",
+  "url": "https://awk001.github.io/posts/industrial-vision-moat/",
+  "image": "https://awk001.github.io/favicon.svg",
+  "datePublished": "2026-09-30T16:00:00.000Z",
+  "dateModified": "2026-10-04T00:06:00.892Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "悠悠",
+      "url": "https://awk001.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/favicon.svg"><link rel="canonical" href="https://awk001.github.io/posts/industrial-vision-moat/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://cdn.staticfile.org"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.staticfile.org/egjs-infinitegrid/4.13.0/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '工业视觉质检的壁垒到底在哪里',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><script> let HEXO_MMEDIA_DATA = { js: [], css: [], aplayerData: [], metingData: [], artPlayerData: [], dplayerData: []}; </script><link rel="stylesheet" href="/css/code_block/shiki.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="光眸笔记" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/favicon.svg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archive/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">光眸笔记</span></a><a class="nav-page-title" href="/"><span class="site-name">工业视觉质检的壁垒到底在哪里</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">工业视觉质检的壁垒到底在哪里</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-09-30T16:00:00.000Z" title="发表于 2026-10-01 00:00:00">2026-10-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-04T00:06:00.892Z" title="更新于 2026-10-04 08:06:00">2026-10-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>做机器视觉项目时，团队通常会把注意力放在算法上：换检测器、调参、跑更高的 mAP。</p>
+<p>但在实际交付中，我看到的失败案例里，相当一部分败在打光上。</p>
+<h2 id="成像质量是算法的输入上限"><a href="#成像质量是算法的输入上限" class="headerlink" title="成像质量是算法的输入上限"></a>成像质量是算法的输入上限</h2><p>一个 YOLOv8 再完美，也无法从一张欠曝、眩光污染的图像里找回信息。</p>
+<p>这个约束的数学形式很简单：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">可提取特征 ⊆ 成像系统传递的信息<br></code></pre></td></tr></table></figure>
+
+<p>信噪比决定了特征空间的上界。光源的均匀性、频闪抑制、偏振控制，本质上是在优化这个上界。</p>
+<h2 id="三个常被低估的现场问题"><a href="#三个常被低估的现场问题" class="headerlink" title="三个常被低估的现场问题"></a>三个常被低估的现场问题</h2><p><strong>频闪</strong>。相机曝光周期和灯具驱动频率拍频，产生横条纹。解法在照明侧：选频闪范围避开曝光周期的灯具，或者把曝光时间锁到频闪周期的整数倍。</p>
+<p><strong>镜面眩光</strong>。金属件表面把光源直接反射进镜头。解法是偏振：光源加偏振片，镜头前加检偏器，交叉起偏可以把反射光消掉大部分。</p>
+<p><strong>工位漂移</strong>。设备维护后夹具位置变了，产线一致性断了。这是工程问题不是算法问题，但表现出来的现象是「检测率下降」，于是大家去调阈值。</p>
+<h2 id="为什么这是壁垒"><a href="#为什么这是壁垒" class="headerlink" title="为什么这是壁垒"></a>为什么这是壁垒</h2><p>算法层的差距在缩小。开源检测器的能力差距在半年内就会被抹平，YOLO 系列每年两代，指标提升肉眼可见。</p>
+<p>而成像经验是<strong>在产线上积累的</strong>：知道这个零件用什么角度打、这个材质会不会反光、这个工位要多久校准一次。这些知识很难被论文和开源项目覆盖。</p>
+<h2 id="落地路径"><a href="#落地路径" class="headerlink" title="落地路径"></a>落地路径</h2><p>我的建议是先做数据采集，而不是先做 AI。</p>
+<ul>
+<li>采集改造的门槛低，客户愿意开门</li>
+<li>进厂之后能摸到真实产线数据</li>
+<li>数据在手里，后续切视觉质检才有主动权</li>
+</ul>
+<p>而不是反过来——先买 GPU 搭模型，再去找场景。方向错了，投入再多也是沉没成本。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://awk001.github.io">悠悠</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://awk001.github.io/posts/industrial-vision-moat/">https://awk001.github.io/posts/industrial-vision-moat/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://awk001.github.io" target="_blank">光眸笔记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B7%A5%E4%B8%9A%E6%99%BA%E8%83%BD/">工业智能</a><a class="post-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a><a class="post-meta__tags" href="/tags/%E6%80%9D%E8%80%83/">思考</a></div><div class="post-share"><div class="social-share" data-image="/favicon.svg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.staticfile.org/butterfly-extsrc/1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.staticfile.org/butterfly-extsrc/1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/astro-architecture-decision/" title="用 Astro 7 搭建个人博客的架构决策"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">用 Astro 7 搭建个人博客的架构决策</div></div><div class="info-2"><div class="info-item-1">选博客技术栈时，第一个要分清的不是框架，而是你的站点属于内容型还是应用型。 两种站点的本质差异内容型站点的核心动作是「读」，用户点进来看文字，然后离开。应用型站点的核心动作是「交互」——登录、填表、实时更新、状态流转。 这个差异决定了架构：    维度 内容型 应用型    首屏 JS 预算 0–12 KB 80 KB 起   是否需要服务端 不需要 需要   断网后能否阅读 能（Service Worker） 视情况   攻击面 几乎为零 数据库 + 认证 + API   为什么博客不需要后端文章是发布时确定、发布后不变的内容。既然不变，就没有理由在每次访问时重新计算。 把它编译成静态 HTML 之后：  服务器只是一堆文件，没有可执行逻辑 没有数据库，就没有 SQL 注入 没有登录页，就没有暴力破解 成本从「服务器月租」变成「CDN 免费额度」  这也是我不建议用 WordPress 的原因。WordPress 承载了全网 43% 的站点，但 2025 年 Patchstack 报告的 13000+ 插件漏洞里，90% 以上来自插件——它把 PHP 执行、MySQL、可写文件...</div></div></div></a><a class="pagination-related" href="/posts/pyside6-ui-hang-debug/" title="记一次 PySide6 界面卡顿的排查过程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">记一次 PySide6 界面卡顿的排查过程</div></div><div class="info-2"><div class="info-item-1">界面偶尔卡一下，测试的时候偶现，开发者本机完全复现不了。这种问题最耗人。 先排除错误的方向遇到卡顿，第一反应往往是「加点 sleep 让它等等」。这是最坏的开端。 12# 错误示范QTimer.singleShot(500, self.refresh_data)  # 假装没看见竞态  这不解决任何问题，只是把概率性的时序冲突变成稳定复现。真正的竞态还在那里，只是被推迟了，日后会在更难查的地方冒出来。 二分法定位我的做法是给链路加时间戳，而不是加延迟： 1234567import time_t0 = time.perf_counter()def log_step(name: str) -&gt; None:    elapsed = (time.perf_counter() - _t0) * 1000    print(f&#x27;[perf] &#123;name:32s&#125; &#123;elapsed:8.2f&#125; ms&#x27;)  然后在每个环节前后各打一次。跑二十次，看输出的分布而不是单次结果——偶发问题看的是尾部，不是均值。 这一步抓到的问题在：设...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/favicon.svg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">悠悠</div><div class="author-info-description">光学成像与工业智能的工程笔记</div><div class="site-data"><a href="/archive/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%83%8F%E8%B4%A8%E9%87%8F%E6%98%AF%E7%AE%97%E6%B3%95%E7%9A%84%E8%BE%93%E5%85%A5%E4%B8%8A%E9%99%90"><span class="toc-number">1.</span> <span class="toc-text">成像质量是算法的输入上限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E5%B8%B8%E8%A2%AB%E4%BD%8E%E4%BC%B0%E7%9A%84%E7%8E%B0%E5%9C%BA%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">三个常被低估的现场问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E6%98%AF%E5%A3%81%E5%9E%92"><span class="toc-number">3.</span> <span class="toc-text">为什么这是壁垒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%90%BD%E5%9C%B0%E8%B7%AF%E5%BE%84"><span class="toc-number">4.</span> <span class="toc-text">落地路径</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/astro-architecture-decision/" title="用 Astro 7 搭建个人博客的架构决策">用 Astro 7 搭建个人博客的架构决策</a><time datetime="2026-10-02T16:00:00.000Z" title="发表于 2026-10-03 00:00:00">2026-10-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/industrial-vision-moat/" title="工业视觉质检的壁垒到底在哪里">工业视觉质检的壁垒到底在哪里</a><time datetime="2026-09-30T16:00:00.000Z" title="发表于 2026-10-01 00:00:00">2026-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/pyside6-ui-hang-debug/" title="记一次 PySide6 界面卡顿的排查过程">记一次 PySide6 界面卡顿的排查过程</a><time datetime="2026-09-27T16:00:00.000Z" title="发表于 2026-09-28 00:00:00">2026-09-28</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By 悠悠</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly@5.7.0/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly@5.7.0/source/js/main.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script src="/assets/mmedia/mmedia-loader.js"></script><script defer src="/js/code_block/shiki.js"></script><!-- hexo injector body_end end --></body></html>
