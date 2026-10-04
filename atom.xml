@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <author>
-    <name>悠悠</name>
+    <name>白云苍狗</name>
   </author>
   <generator uri="https://hexo.io/">Hexo</generator>
   <id>https://awk001.github.io/</id>
   <link href="https://awk001.github.io/" rel="alternate"/>
   <link href="https://awk001.github.io/atom.xml" rel="self"/>
-  <rights>All rights reserved 2026, 悠悠</rights>
-  <subtitle>光学成像与工业智能的工程笔记</subtitle>
-  <title>光眸笔记</title>
-  <updated>2026-10-04T00:06:00.886Z</updated>
+  <rights>All rights reserved 2026, 白云苍狗</rights>
+  <subtitle>记录技术学习与生活的点点滴滴。</subtitle>
+  <title>白云苍狗的小站</title>
+  <updated>2026-10-04T16:39:41.431Z</updated>
   <entry>
     <author>
-      <name>悠悠</name>
+      <name>白云苍狗</name>
     </author>
+    <category term="记录类" scheme="https://awk001.github.io/categories/%E8%AE%B0%E5%BD%95%E7%B1%BB/"/>
     <category term="Astro" scheme="https://awk001.github.io/tags/Astro/"/>
     <category term="架构选型" scheme="https://awk001.github.io/tags/%E6%9E%B6%E6%9E%84%E9%80%89%E5%9E%8B/"/>
     <category term="前端" scheme="https://awk001.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -26,12 +27,13 @@
     <published>2026-10-02T16:00:00.000Z</published>
     <summary>从内容型静态站与全栈应用的分野出发，说明为什么个人博客应该选零 JS 的岛屿架构，以及这套方案在国内托管上的现实约束。</summary>
     <title>用 Astro 7 搭建个人博客的架构决策</title>
-    <updated>2026-10-04T00:06:00.886Z</updated>
+    <updated>2026-10-04T16:39:41.431Z</updated>
   </entry>
   <entry>
     <author>
-      <name>悠悠</name>
+      <name>白云苍狗</name>
     </author>
+    <category term="创作类" scheme="https://awk001.github.io/categories/%E5%88%9B%E4%BD%9C%E7%B1%BB/"/>
     <category term="工业智能" scheme="https://awk001.github.io/tags/%E5%B7%A5%E4%B8%9A%E6%99%BA%E8%83%BD/"/>
     <category term="机器视觉" scheme="https://awk001.github.io/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"/>
     <category term="思考" scheme="https://awk001.github.io/tags/%E6%80%9D%E8%80%83/"/>
@@ -43,12 +45,13 @@
     <published>2026-09-30T16:00:00.000Z</published>
     <summary>讨论工业 AI 落地时，为什么打光能力比算法更少被提及，却往往决定了项目成败。</summary>
     <title>工业视觉质检的壁垒到底在哪里</title>
-    <updated>2026-10-04T00:06:00.892Z</updated>
+    <updated>2026-10-04T16:39:41.382Z</updated>
   </entry>
   <entry>
     <author>
-      <name>悠悠</name>
+      <name>白云苍狗</name>
     </author>
+    <category term="记录类" scheme="https://awk001.github.io/categories/%E8%AE%B0%E5%BD%95%E7%B1%BB/"/>
     <category term="Python" scheme="https://awk001.github.io/tags/Python/"/>
     <category term="PySide6" scheme="https://awk001.github.io/tags/PySide6/"/>
     <category term="调试" scheme="https://awk001.github.io/tags/%E8%B0%83%E8%AF%95/"/>
@@ -60,6 +63,6 @@
     <published>2026-09-27T16:00:00.000Z</published>
     <summary>从一个界面卡死的现象出发，如何用二分法定位到根因，以及为什么加 sleep 掩盖时序问题是个陷阱。</summary>
     <title>记一次 PySide6 界面卡顿的排查过程</title>
-    <updated>2026-10-04T00:06:00.901Z</updated>
+    <updated>2026-10-04T16:39:41.431Z</updated>
   </entry>
 </feed>
