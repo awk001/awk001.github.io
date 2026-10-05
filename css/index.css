@@ -1500,6 +1500,67 @@ blockquote:after {
 .trm-main-card-frame .trm-main-card .trm-table li:last-child {
   margin-bottom: 0;
 }
+.trm-main-card-frame .trm-main-card .trm-sidebar-top {
+  flex: 0 0 auto;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--theme-bg2-color, #f4f5f7);
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-header {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: var(--theme-color, #00283a);
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body::-webkit-scrollbar {
+  width: 4px;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body::-webkit-scrollbar-thumb {
+  background-color: var(--theme-bg2-color, #f4f5f7);
+  border-radius: 2px;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body ol {
+  margin: 0;
+  padding: 0 0 0 1em;
+  list-style: none;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body ol ol {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body .trm-toc {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body .trm-toc .trm-toc-link {
+  display: block;
+  line-height: 1.8;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  color: var(--theme-color, #00283a);
+  transition: all 0.4s ease-in-out;
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body .trm-toc .trm-toc-link:hover {
+  color: var(--primary, #afb42b);
+}
+.trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body .trm-toc .trm-toc-level-1 {
+  list-style: none;
+}
 @media (min-width: 992px) {
   .trm-main-card-frame.fixed {
     position: fixed;
