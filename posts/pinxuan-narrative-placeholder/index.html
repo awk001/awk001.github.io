@@ -7,23 +7,22 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="从内容型静态站与全栈应用的分野出发，说明为什么个人博客应该选零 JS 的岛屿架构，以及这套方案在国内托管上的现实约束。">
+<meta name="description" content="本篇为占位文章，用于让「品宣叙事」分类在首页卡片与归档导航中正常显示，正式内容待补充。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用 Astro 7 搭建个人博客的架构决策">
-<meta property="og:url" content="https://awk001.github.io/posts/astro-architecture-decision/">
+<meta property="og:title" content="品宣叙事 · 占位">
+<meta property="og:url" content="https://awk001.github.io/posts/pinxuan-narrative-placeholder/">
 <meta property="og:site_name" content="白云苍狗的小站">
-<meta property="og:description" content="从内容型静态站与全栈应用的分野出发，说明为什么个人博客应该选零 JS 的岛屿架构，以及这套方案在国内托管上的现实约束。">
+<meta property="og:description" content="本篇为占位文章，用于让「品宣叙事」分类在首页卡片与归档导航中正常显示，正式内容待补充。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2026-10-03T03:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-05T05:26:59.011Z">
+<meta property="article:published_time" content="2026-10-05T06:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-05T06:16:40.316Z">
 <meta property="article:author" content="白云苍狗">
-<meta property="article:tag" content="Astro">
-<meta property="article:tag" content="架构选型">
-<meta property="article:tag" content="前端">
+<meta property="article:tag" content="占位">
+<meta property="article:tag" content="待补充">
 <meta name="twitter:card" content="summary">
 
 
-<title >用 Astro 7 搭建个人博客的架构决策</title>
+<title >品宣叙事 · 占位</title>
 
 <!-- Favicon -->
 
@@ -62,7 +61,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"白云苍狗","root":"/","typed_text":["Web Developer"],"theme_version":"0.0.0","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-05 13:26:59"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-05 14:16:40"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=0.0.0" id="trm-switch-style">
@@ -229,7 +228,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            用 Astro 7 搭建个人博客的架构决策
+                            品宣叙事 · 占位
                         </h1>
 
                         
@@ -354,13 +353,13 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            10/03
+            10/05
         </div>
     </div>
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            11:00
+            14:00
         </div>
     </div>
     <div class="col-sm-4">
@@ -372,69 +371,14 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <p>选博客技术栈时，第一个要分清的不是框架，而是你的站点属于<strong>内容型</strong>还是<strong>应用型</strong>。</p>
-<h2 id="两种站点的本质差异"><a href="#两种站点的本质差异" class="headerlink" title="两种站点的本质差异"></a>两种站点的本质差异</h2><p>内容型站点的核心动作是「读」，用户点进来看文字，然后离开。应用型站点的核心动作是「交互」——登录、填表、实时更新、状态流转。</p>
-<p>这个差异决定了架构：</p>
-<table>
-<thead>
-<tr>
-<th>维度</th>
-<th>内容型</th>
-<th>应用型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>首屏 JS 预算</td>
-<td>0–12 KB</td>
-<td>80 KB 起</td>
-</tr>
-<tr>
-<td>是否需要服务端</td>
-<td>不需要</td>
-<td>需要</td>
-</tr>
-<tr>
-<td>断网后能否阅读</td>
-<td>能（Service Worker）</td>
-<td>视情况</td>
-</tr>
-<tr>
-<td>攻击面</td>
-<td>几乎为零</td>
-<td>数据库 + 认证 + API</td>
-</tr>
-</tbody></table>
-<h2 id="为什么博客不需要后端"><a href="#为什么博客不需要后端" class="headerlink" title="为什么博客不需要后端"></a>为什么博客不需要后端</h2><p>文章是<strong>发布时确定、发布后不变</strong>的内容。既然不变，就没有理由在每次访问时重新计算。</p>
-<p>把它编译成静态 HTML 之后：</p>
+    <p>这是一篇<strong>占位文章</strong>，目的是让「品宣叙事」这个分类在站点中正常显示出来。</p>
+<p>后续我会在这里补充正式的品宣 &#x2F; 品牌叙事类内容，例如：</p>
 <ul>
-<li>服务器只是一堆文件，没有可执行逻辑</li>
-<li>没有数据库，就没有 SQL 注入</li>
-<li>没有登录页，就没有暴力破解</li>
-<li>成本从「服务器月租」变成「CDN 免费额度」</li>
+<li>产品与项目的对外介绍</li>
+<li>品牌故事与价值主张</li>
+<li>合作案例与里程碑</li>
 </ul>
-<p>这也是我不建议用 WordPress 的原因。WordPress 承载了全网 43% 的站点，但 2025 年 Patchstack 报告的 13000+ 插件漏洞里，90% 以上来自插件——它把 PHP 执行、MySQL、可写文件系统全部暴露在公网上。</p>
-<h2 id="岛屿架构解决了什么"><a href="#岛屿架构解决了什么" class="headerlink" title="岛屿架构解决了什么"></a>岛屿架构解决了什么</h2><p>Next.js 这类框架的问题不是「慢」，而是它假设你的页面总是应用的。React runtime、路由、hydration 逻辑会无条件发到浏览器，即使页面只有一段文字。</p>
-<p>有实测数据：同类博客页面，Astro 首次加载 0–9 KB JS，Next.js 是 80–463 KB。Lighthouse 上前者 100 分，后者 88 分。</p>
-<p>岛屿架构的思路是反过来：<strong>HTML 是默认状态，JS 是例外</strong>。只有需要交互的组件才标记为 island，其余部分保持纯静态。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs astro">---<br>// 默认不水合<br>import TableOfContents from &#x27;../components/TableOfContents.astro&#x27;;<br>// 只有这个组件会带上 JS<br>import SearchWidget from &#x27;../components/SearchWidget.jsx&#x27;;<br>---<br><br>&lt;TableOfContents /&gt;<br>&lt;SearchWidget client:visible /&gt;<br></code></pre></td></tr></table></figure>
-
-<p><code>client:visible</code> 意味着用户滚动到视口内才加载脚本，首屏完全不付这个成本。</p>
-<h2 id="一个真实的性能对比"><a href="#一个真实的性能对比" class="headerlink" title="一个真实的性能对比"></a>一个真实的性能对比</h2><p>我在自己的站上做过一次迁移，从 Next.js App Router 换到 Astro：</p>
-<ul>
-<li>首屏 JS：112 KB → 0 KB（博客页）</li>
-<li>Lighthouse Performance：88 → 100</li>
-<li>构建时间：45 s → 2 s</li>
-</ul>
-<p>构建时间的差异在高频发布时才会显现出来——每次改一个错别字都要等 45 秒，一天几十次就是几十分钟的纯等待。</p>
-<h2 id="国内托管的现实约束"><a href="#国内托管的现实约束" class="headerlink" title="国内托管的现实约束"></a>国内托管的现实约束</h2><p>这是很多技术文章不提但绕不开的部分。按国内访问延迟排序：</p>
-<ol>
-<li><strong>EdgeOne Pages（腾讯云，备案后）</strong>：50–90 ms</li>
-<li><strong>Cloudflare Pages</strong>：联通晚高峰 800 ms+</li>
-<li><strong>Vercel</strong>：部分地区不可达</li>
-<li><strong>GitHub Pages</strong>：极慢</li>
-</ol>
-<p>如果不做备案，可用选项是 Cloudflare Pages 或 EdgeOne 国际站，代价是晚高峰延迟。实测有开发者从 Cloudflare 迁到 EdgeOne 后，联通线路从 800 ms 降到 200 ms——但这依赖备案启用国内节点，不备案拿不到这个收益。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>内容型站点选 Astro，应用型站点选 Next.js。这不是哪个框架更好的问题，是匹配工作负载的问题。试图什么都做的框架，通常两件事都做不好。</p>
+<p>在正式内容上线前，本篇仅作分类占位用途。</p>
 
 </article>
     
@@ -450,9 +394,10 @@
         </h5>
     </div>
     
+    
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/posts/pinxuan-narrative-placeholder/" class="trm-cover-frame trm-anima-link">
+        <a href="/posts/astro-architecture-decision/" class="trm-cover-frame trm-anima-link">
             
             
                 <img alt="cover" class="no-fancybox" src="/img/block.jpg">
@@ -461,51 +406,19 @@
         
         <div class="trm-card-descr">
             <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E5%93%81%E5%AE%A3%E5%8F%99%E4%BA%8B/">
-                    品宣叙事
+                <a href=" /categories/%E7%9F%A5%E8%A7%81%E6%B2%89%E6%B7%80/">
+                    知见沉淀
                 </a>
             </div>
             <h5>
-                <a href="/posts/pinxuan-narrative-placeholder/" class="trm-anima-link">
-                    品宣叙事 · 占位
+                <a href="/posts/astro-architecture-decision/" class="trm-anima-link">
+                    用 Astro 7 搭建个人博客的架构决策
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>26/10/05</li>
-                <li>14:00</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/posts/industrial-vision-moat/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E8%A7%82%E5%BF%83%E9%9A%8F%E7%AC%94/">
-                    观心随笔
-                </a>
-            </div>
-            <h5>
-                <a href="/posts/industrial-vision-moat/" class="trm-anima-link">
-                    工业视觉质检的壁垒到底在哪里
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>26/10/01</li>
-                <li>10:00</li>
+                <li>26/10/03</li>
+                <li>11:00</li>
                 
                 
             </ul>
