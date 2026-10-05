@@ -996,6 +996,7 @@ html.is-animating .trm-swup-animation {
 .trm-menu nav ul li.current-item:after,
 .trm-menu nav ul li.current-menu-item:after {
   width: 100%;
+  height: 6px;
 }
 .trm-menu-btn {
   transform: scale(1.3);
