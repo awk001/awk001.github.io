@@ -1376,9 +1376,9 @@ blockquote:after {
   box-shadow: var(--box-shadow);
 }
 .trm-card .trm-icon {
-  font-size: 22px;
+  font-size: 28px;
   color: var(--theme-color, #00283a);
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .trm-card:hover {
   box-shadow: var(--box-shadow-hover);
