@@ -1500,12 +1500,9 @@ blockquote:after {
 .trm-main-card-frame .trm-main-card .trm-table li:last-child {
   margin-bottom: 0;
 }
-.trm-main-card-frame .trm-main-card .trm-sidebar-top {
-  flex: 0 0 auto;
-}
 .trm-main-card-frame .trm-main-card .trm-sidebar-toc {
-  flex: 1 1 auto;
-  min-height: 0;
+  flex: 0 0 auto;
+  max-height: 35vh;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -1520,6 +1517,7 @@ blockquote:after {
 }
 .trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body {
   flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   padding-right: 6px;
 }
