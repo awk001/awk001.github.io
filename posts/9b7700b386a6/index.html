@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="现在的前端招聘圈，对前端程序员的能力要求真的是越来越高了（内卷真的太厉害了），出去找工作面试，哪怕是家小公司，大概率都会考一些 JS 手写题，你不会但别人会，自然就被卷死了。其实，对一个前端工程师来说，JS 本就重中之重，我们要掌握的可不仅仅是这些手写题。当然，你不会这些手写题也不能代表你的 JS 编程能力不好，我觉得那是因为你不熟悉而已。现在就跟着作者来一步一步学习，彻底搞懂这些常考的 JS 手">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常考的 JavaScript 手写题">
+<meta property="og:url" content="https://awk001.github.io/posts/9b7700b386a6/">
+<meta property="og:site_name" content="白云苍狗的小站">
+<meta property="og:description" content="现在的前端招聘圈，对前端程序员的能力要求真的是越来越高了（内卷真的太厉害了），出去找工作面试，哪怕是家小公司，大概率都会考一些 JS 手写题，你不会但别人会，自然就被卷死了。其实，对一个前端工程师来说，JS 本就重中之重，我们要掌握的可不仅仅是这些手写题。当然，你不会这些手写题也不能代表你的 JS 编程能力不好，我觉得那是因为你不熟悉而已。现在就跟着作者来一步一步学习，彻底搞懂这些常考的 JS 手">
+<meta property="og:locale">
+<meta property="og:image" content="https://awk001.github.io/img/404.jpg">
+<meta property="article:published_time" content="2022-01-06T12:59:55.000Z">
+<meta property="article:modified_time" content="2026-10-05T01:48:15.369Z">
+<meta property="article:author" content="白云苍狗">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://awk001.github.io/img/404.jpg">
+
+
+<title >常考的 JavaScript 手写题</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=0.0.0' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=0.0.0' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"白云苍狗","root":"/","typed_text":["Web Developer"],"theme_version":"0.0.0","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":false,"el":".trm-banner"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-05 09:48:15"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=0.0.0" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<!-- hexo injector head_end start --><script> let HEXO_MMEDIA_DATA = { js: [], css: [], aplayerData: [], metingData: [], artPlayerData: [], dplayerData: []}; </script><link rel="stylesheet" href="/css/code_block/shiki.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="白云苍狗的小站" type="application/atom+xml">
+</head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            An<span>Wenkang</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/tags/" target="">
+                    标签
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            常考的 JavaScript 手写题
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        posts
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        白云苍狗
+    </h5>
+    
+        <div class="trm-label">
+            I&#39;m
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com/MaLuns" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                Residence:
+            </div>
+            <div class="trm-label trm-label-light">
+                Mars
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                City:
+            </div>
+            <div class="trm-label trm-label-light">
+                WuHan
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                Age:
+            </div>
+            <div class="trm-label trm-label-light">
+                18
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:anwenkang@aliyun.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            01/06
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            20:59
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            XPoet
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p>现在的前端招聘圈，对前端程序员的能力要求真的是越来越高了（<del>内卷真的太厉害了</del>），出去找工作面试，哪怕是家小公司，大概率都会考一些 JS 手写题，你不会但别人会，自然就被卷死了。</p><p>其实，对一个前端工程师来说，JS 本就重中之重，我们要掌握的可不仅仅是这些手写题。</p><p>当然，你不会这些手写题也不能代表你的 JS 编程能力不好，我觉得那是因为你不熟悉而已。</p><span id="more"></span><p>现在就跟着作者来一步一步学习，彻底搞懂这些常考的 JS 手写题，无论是在业务开发还是求职面试中都很实用。</p><p><img src="https://cdn.statically.io/gh/XPoet/image-hosting@master/JS-%E6%89%8B%E5%86%99%E9%A2%98/image.79wc6n86vxw0.webp"   data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p><p>截止目前，市面上超过 98% 的浏览器支持 ES6，ES6 (ECMAScript 2015) 都已经是 2015 年的标准了，所以这些手写题里面能使用 ES6 实现的均采用 ES6 实现。以下的每一道手写题，都经过作者反复检验，也配备了测试代码，小伙伴放心大胆学起来。</p><p>如发现错误或者有更好的实现方式，欢迎大家指正。</p><blockquote><p>代码仓库：<a class="link" target="_blank" rel="noopener" href="https://github.com/XPoet/handwriting-js">https://github.com/XPoet/handwriting-js<i class="fas fa-external-link-alt"></i></a></p></blockquote><h3 id="手写类型判断"><a href="#手写类型判断" class="headerlink" title="手写类型判断"></a>手写类型判断</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">myTypeOf</span> = (<span class="params">data</span>) =&gt; <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(data).<span class="title function_">slice</span>(<span class="number">8</span>, -<span class="number">1</span>).<span class="title function_">toLowerCase</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(<span class="number">1</span>)) <span class="comment">//--&gt; number</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(<span class="string">&#x27;1&#x27;</span>)) <span class="comment">//--&gt; string</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(<span class="literal">true</span>)) <span class="comment">//--&gt; boolean</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>([])) <span class="comment">//--&gt; array</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(&#123;&#125;)) <span class="comment">//--&gt; object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(<span class="regexp">/^/</span>)) <span class="comment">//--&gt; regexp</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(<span class="keyword">new</span> <span class="title class_">Date</span>())) <span class="comment">//--&gt; date</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(<span class="title class_">Math</span>)) <span class="comment">//--&gt; math</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myTypeOf</span>(<span class="function">() =&gt;</span> &#123;&#125;)) <span class="comment">//--&gt; function</span></span><br></pre></td></tr></table></figure><h3 id="手写数组去重"><a href="#手写数组去重" class="headerlink" title="手写数组去重"></a>手写数组去重</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">myUnique</span> = array =&gt; [...<span class="keyword">new</span> <span class="title class_">Set</span>(array)]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">myUnique</span>([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])) <span class="comment">//--&gt; [1, 2, 3]</span></span><br></pre></td></tr></table></figure><h3 id="手写-Ajax-的-GET-方法"><a href="#手写-Ajax-的-GET-方法" class="headerlink" title="手写 Ajax 的 GET 方法"></a>手写 Ajax 的 GET 方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myAjaxGet</span>(<span class="params">url</span>) &#123;</span><br><span class="line">  <span class="comment">// 创建一个 Promise 对象</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新建一个 http 请求</span></span><br><span class="line">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, url, <span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置响应的数据类型</span></span><br><span class="line">    xhr.<span class="property">responseType</span> = <span class="string">&#x27;json&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置请求头信息</span></span><br><span class="line">    xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;Accept&#x27;</span>, <span class="string">&#x27;application/json&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置状态的监听函数</span></span><br><span class="line">    xhr.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">readyState</span> !== <span class="number">4</span>) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 当请求成功或失败时，改变 Promise 的状态</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="variable language_">this</span>.<span class="property">response</span>)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="variable language_">this</span>.<span class="property">statusText</span>))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置错误监听函数</span></span><br><span class="line">    xhr.<span class="property">onerror</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="variable language_">this</span>.<span class="property">statusText</span>))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送 http 请求</span></span><br><span class="line">    xhr.<span class="title function_">send</span>(<span class="literal">null</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="title function_">myAjaxGet</span>(<span class="string">&#x27;https://api.github.com/users/XPoet&#x27;</span>).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;res: &#x27;</span>, res) <span class="comment">//--&gt; &#123;...&#125;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h3 id="手写函数节流"><a href="#手写函数节流" class="headerlink" title="手写函数节流"></a>手写函数节流</h3><p>定义：规定一个单位时间，在这个单位时间内，只能有一次触发事件的回调函数执行，如果在同一个单位时间内某事件被触发多次，只有一次能生效。</p><p>使用场景：窗口 resize、scroll、输入框 input、频繁点击等</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> fn 需要执行的函数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> delay 间隔时间</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">throttle</span> = (<span class="params">fn, delay = <span class="number">1000</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 上一次执行 fn 的时间</span></span><br><span class="line">  <span class="keyword">let</span> prevTime = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将 throttle 处理结果当作函数返回</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="comment">// 获取当前时间，转换成时间戳，单位毫秒 ms</span></span><br><span class="line">    <span class="keyword">const</span> nowTime = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span><br><span class="line">    <span class="comment">// 将当前时间和上一次执行函数的时间进行对比</span></span><br><span class="line">    <span class="comment">// 大于间隔时间就把 prevTime 设置为当前时间并执行函数 fn</span></span><br><span class="line">    <span class="keyword">if</span> (nowTime - prevTime &gt; delay) &#123;</span><br><span class="line">      prevTime = nowTime</span><br><span class="line">      fn.<span class="title function_">apply</span>(<span class="variable language_">this</span>, args)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> testFn = <span class="title function_">throttle</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;函数节流测试 - fn 执行了&#x27;</span>)</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定时器每 100 毫秒执行一次 testFn 函数，但是只有间隔时间差大于 1000 毫秒时才会执行 fn</span></span><br><span class="line"><span class="built_in">setInterval</span>(testFn, <span class="number">100</span>) <span class="comment">//--&gt; 函数节流测试 - fn 执行了</span></span><br></pre></td></tr></table></figure><h3 id="手写函数防抖"><a href="#手写函数防抖" class="headerlink" title="手写函数防抖"></a>手写函数防抖</h3><p>定义：在事件被触发 n 秒后再执行回调，如果在这 n 秒内事件又被触发，则重新计时。<br>使用场景：搜索框输入搜索、点击提交等</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">fn, wait</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timer = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = <span class="variable language_">this</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果此时存在定时器的话，则取消之前的定时器重新记时</span></span><br><span class="line">    <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">      <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">      timer = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置定时器，使事件间隔指定事件后执行</span></span><br><span class="line">    timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      fn.<span class="title function_">apply</span>(ctx, args)</span><br><span class="line">    &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> testFn = <span class="title function_">debounce</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;函数防抖测试 - fn 执行了&#x27;</span>)</span><br><span class="line">&#125;, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定时器每 1000 毫秒执行一次 testFn 函数，等待时间未大于 2000 毫秒，所以 fn 永远不会执行</span></span><br><span class="line"><span class="built_in">setInterval</span>(testFn, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定时器每 3000 毫秒执行一次 testFn 函数，等待时间大于 2000 毫秒，所以 fn 会隔 3000 执行一次</span></span><br><span class="line"><span class="built_in">setInterval</span>(testFn, <span class="number">3000</span>) <span class="comment">//--&gt; 函数防抖测试 - fn 执行了</span></span><br></pre></td></tr></table></figure><h3 id="手写深浅拷贝"><a href="#手写深浅拷贝" class="headerlink" title="手写深浅拷贝"></a>手写深浅拷贝</h3><h4 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">shallowCopy</span>(<span class="params">object</span>) &#123;</span><br><span class="line">  <span class="comment">// 只拷贝对象类型的数据</span></span><br><span class="line">  <span class="keyword">if</span> (!object || <span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span>) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// object 如果是数组类型就新建一个空数组，否则新建空对象</span></span><br><span class="line">  <span class="keyword">const</span> newObject = <span class="title class_">Array</span>.<span class="title function_">isArray</span>(object) ? [] : &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 遍历 object，进行属性拷贝</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    <span class="keyword">if</span> (object.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">      newObject[key] = object[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newObject</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>, <span class="attr">z</span>: <span class="number">3</span> &#125;</span><br><span class="line"><span class="keyword">const</span> obj2 = <span class="title function_">shallowCopy</span>(obj1)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj2) <span class="comment">//--&gt; &#123; x: 1, y: 2, z: 3 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">const</span> arr2 = <span class="title function_">shallowCopy</span>(arr1)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr2) <span class="comment">//--&gt; [1, 2, 3]</span></span><br></pre></td></tr></table></figure><h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepCopy</span>(<span class="params">object</span>) &#123;</span><br><span class="line">  <span class="comment">// 只拷贝对象类型的数据</span></span><br><span class="line">  <span class="keyword">if</span> (!object || <span class="keyword">typeof</span> object !== <span class="string">&#x27;object&#x27;</span>) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// object 如果是数组类型就新建一个空数组，否则新建空对象</span></span><br><span class="line">  <span class="keyword">const</span> newObject = <span class="title class_">Array</span>.<span class="title function_">isArray</span>(object) ? [] : &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    <span class="keyword">if</span> (object.<span class="title function_">hasOwnProperty</span>(key)) &#123;</span><br><span class="line">      <span class="comment">// object[key] 如果是对象类型，则使用递归继续遍历拷贝属性</span></span><br><span class="line">      newObject[key] = <span class="keyword">typeof</span> object[key] === <span class="string">&#x27;object&#x27;</span> ? <span class="title function_">deepCopy</span>(object[key]) : object[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newObject</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: &#123; <span class="attr">z</span>: <span class="number">3</span> &#125; &#125;</span><br><span class="line"><span class="keyword">const</span> obj2 = <span class="title function_">deepCopy</span>(obj1)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj2) <span class="comment">//--&gt; &#123; x: 1, y: &#123; z: 3 &#125; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line"><span class="keyword">const</span> arr2 = <span class="title function_">deepCopy</span>(arr1)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr2) <span class="comment">//--&gt; [1, [2, 3]]</span></span><br></pre></td></tr></table></figure><h3 id="手写-call、apply-和-bind-函数"><a href="#手写-call、apply-和-bind-函数" class="headerlink" title="手写 call、apply 和 bind 函数"></a>手写 call、apply 和 bind 函数</h3><p>在 JavaScript 中，<code>call</code>、<code>apply</code> 和 <code>bind</code> 是 <code>Function</code> 对象自带的三个方法，这三个方法的主要作用是改变函数中的 <code>this</code> 指向。</p><p>共同点：</p><ul><li><code>apply</code> 、 <code>call</code> 、<code>bind</code> 三者都是用来改变函数的 <code>this</code> 对象指向。</li><li><code>apply</code> 、 <code>call</code> 、<code>bind</code> 三者第一个参数都是 <code>this</code> 要指向的对象，也就是想指定的上下文。（函数的每次调用都会拥有一个特殊值——本次调用的上下文（context），这就是 <code>this</code> 关键字的值。）</li><li><code>apply</code> 、 <code>call</code> 、<code>bind</code> 三者都可以利用后续参数传参。</li></ul><p>区别：</p><ul><li><code>bind</code> 是返回对应函数，便于稍后调用。</li><li><code>apply</code> 、<code>call</code> 则是立即调用。</li></ul><p><code>call()</code> 和 <code>apply()</code> 的作用是一样的，都是用于改变 <code>this</code> 的指向，区别在于 <code>call</code> 接受多个参数，而 <code>apply</code> 接受的是一个数组。</p><p>第一个参数的取值有以下 4 种情况：</p><ol><li>不传，或者传 <code>null</code>、<code>undefined</code>，函数中的 <code>this</code> 指向 <code>window</code> 对象。</li><li>传递另一个函数的函数名，函数中的 <code>this</code> 指向这个函数的引用。</li><li>传递字符串、数值或布尔类型等基础类型，函数中的 <code>this</code> 指向其对应的包装对象，如 <code>String</code>、<code>Number</code>、<code>Boolean</code>。</li><li>传递一个对象，函数中的 <code>this</code> 指向这个对象。</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">a</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">b</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c = &#123; <span class="attr">x</span>: <span class="number">1</span> &#125;</span><br><span class="line"></span><br><span class="line">a.<span class="title function_">call</span>() <span class="comment">//--&gt; window</span></span><br><span class="line">a.<span class="title function_">call</span>(<span class="literal">null</span>) <span class="comment">//--&gt; window</span></span><br><span class="line">a.<span class="title function_">call</span>(<span class="literal">undefined</span>) <span class="comment">//window</span></span><br><span class="line">a.<span class="title function_">call</span>(<span class="number">1</span>) <span class="comment">//--&gt; Number &#123;1&#125;</span></span><br><span class="line">a.<span class="title function_">call</span>(<span class="string">&#x27;&#x27;</span>) <span class="comment">//--&gt; String &#123;&#x27;&#x27;&#125;</span></span><br><span class="line">a.<span class="title function_">call</span>(<span class="literal">true</span>) <span class="comment">//--&gt; Boolean &#123;true&#125;</span></span><br><span class="line">a.<span class="title function_">call</span>(b) <span class="comment">//--&gt; function b()&#123;&#125;</span></span><br><span class="line">a.<span class="title function_">call</span>(c) <span class="comment">//--&gt; &#123;x: 1&#125;</span></span><br></pre></td></tr></table></figure><h4 id="手写-call"><a href="#手写-call" class="headerlink" title="手写 call"></a>手写 call</h4><p>call 函数的实现步骤：</p><ol><li>判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 <code>call</code> 等方式调用的情况。</li><li>判断传入上下文对象是否存在，如果不存在，则设置为 <code>window</code>。</li><li>将函数作为上下文对象的一个属性。</li><li>使用上下文对象来调用这个方法，并保存返回结果。</li><li>删除刚才新增的属性。</li><li>返回结果。</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myCall</span> = <span class="keyword">function</span>(<span class="params">ctx, ...args</span>) &#123;</span><br><span class="line">  <span class="comment">// 判断调用对象</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span> !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&#x27;Type Error&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断 ctx 是否传入，如果未传入则设置为 window</span></span><br><span class="line">  ctx = ctx || <span class="variable language_">window</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将调用函数设为对象的方法</span></span><br><span class="line">  ctx.<span class="property">fn</span> = <span class="variable language_">this</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 调用函数</span></span><br><span class="line">  <span class="keyword">const</span> result = ctx.<span class="title function_">fn</span>(...args)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将属性删除</span></span><br><span class="line">  <span class="keyword">delete</span> ctx.<span class="property">fn</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="title function_">test</span>(<span class="params">a, b, c</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>, a, b)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="property">test</span>.<span class="title function_">myCall</span>(obj, <span class="number">4</span>, <span class="number">5</span>) <span class="comment">//--&gt; &#123;test: ƒ, fn: ƒ&#125; 4 5</span></span><br></pre></td></tr></table></figure><h4 id="手写-apply"><a href="#手写-apply" class="headerlink" title="手写 apply"></a>手写 apply</h4><ol><li>判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 <code>call</code> 等方式调用的情况。</li><li>判断传入上下文对象是否存在，如果不存在，则设置为 <code>window</code>。</li><li>将函数作为上下文对象的一个属性。</li><li>判断参数值是否传入。</li><li>使用上下文对象来调用这个方法，并保存返回结果。</li><li>删除刚才新增的属性。</li><li>返回结果。</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myApply</span> = <span class="keyword">function</span>(<span class="params">ctx</span>) &#123;</span><br><span class="line">  <span class="comment">// 判断调用对象是否为函数</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span> !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&#x27;Type Error&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> result = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断 ctx 是否存在，如果未传入则为 window</span></span><br><span class="line">  ctx = ctx || <span class="variable language_">window</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将函数设为对象的方法</span></span><br><span class="line">  ctx.<span class="property">fn</span> = <span class="variable language_">this</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 调用方法</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">arguments</span>[<span class="number">1</span>]) &#123;</span><br><span class="line">    result = ctx.<span class="title function_">fn</span>(...<span class="variable language_">arguments</span>[<span class="number">1</span>])</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result = ctx.<span class="title function_">fn</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将属性删除</span></span><br><span class="line">  <span class="keyword">delete</span> ctx.<span class="property">fn</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="title function_">test</span>(<span class="params">a, b, c</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>, a, b, c)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="property">test</span>.<span class="title function_">myApply</span>(obj, [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]) <span class="comment">//--&gt; &#123;test: ƒ, fn: ƒ&#125; 4 5 6</span></span><br></pre></td></tr></table></figure><h4 id="手写-bind"><a href="#手写-bind" class="headerlink" title="手写 bind"></a>手写 bind</h4><ol><li>判断调用对象是否为函数，即使我们是定义在函数的原型上的，但是可能出现使用 <code>call</code> 等方式调用的情况。</li><li>保存当前函数的引用，获取其余传入参数值。</li><li>创建一个函数返回。</li><li>函数内部使用 <code>apply</code> 来绑定函数调用，需要判断函数作为构造函数的情况，这个时候需要传入当前函数的 <code>this</code> 给 <code>apply</code> 调用，其余情况都传入指定的上下文对象。</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">myBind</span> = <span class="keyword">function</span>(<span class="params">ctx, ...args</span>) &#123;</span><br><span class="line">  <span class="comment">// 判断调用对象是否为函数</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">this</span> !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&#x27;Type Error&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> fn = <span class="variable language_">this</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">Fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 根据调用方式，传入不同绑定值</span></span><br><span class="line">    <span class="keyword">return</span> fn.<span class="title function_">apply</span>(</span><br><span class="line">      <span class="variable language_">this</span> <span class="keyword">instanceof</span> <span class="title class_">Fn</span> ? <span class="variable language_">this</span> : ctx, args.<span class="title function_">concat</span>(...<span class="variable language_">arguments</span>)</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="title function_">test</span>(<span class="params">a, b, c</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>, a + b)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="property">test</span>.<span class="title function_">myBind</span>(obj, <span class="number">4</span>, <span class="number">5</span>)() <span class="comment">//--&gt; &#123;test: ƒ&#125; 9</span></span><br></pre></td></tr></table></figure><h3 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h3><p>函数柯里化指的是一种将使用多个参数的一个函数转换成一系列使用一个参数的函数的技术。例如：<code>add(1, 2, 3, 4, 5)</code> 转换成 <code>add(1)(2)(3)(4)(5)</code></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">curry</span>(<span class="params">fn, ...args</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> fn.<span class="property">length</span> &lt;= args.<span class="property">length</span> ? <span class="title function_">fn</span>(...args) : curry.<span class="title function_">bind</span>(<span class="literal">null</span>, fn, ...args)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="comment">// 普通函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">a, b, c, d, e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c, d, e)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成的柯里化函数</span></span><br><span class="line"><span class="keyword">const</span> _fn = <span class="title function_">curry</span>(fn)</span><br><span class="line"></span><br><span class="line"><span class="title function_">_fn</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>) <span class="comment">//--&gt; 1 2 3 4 5</span></span><br><span class="line"><span class="title function_">_fn</span>(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>) <span class="comment">//--&gt; 1 2 3 4 5</span></span><br><span class="line"><span class="title function_">_fn</span>(<span class="number">1</span>, <span class="number">2</span>)(<span class="number">3</span>, <span class="number">4</span>)(<span class="number">5</span>) <span class="comment">//--&gt; 1 2 3 4 5</span></span><br><span class="line"><span class="title function_">_fn</span>(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)(<span class="number">5</span>) <span class="comment">//--&gt; 1 2 3 4 5</span></span><br></pre></td></tr></table></figure><p>看起来柯里化好像是把简答的问题复杂化了，但是复杂化的同时，我们在使用函数时拥有了更加多的自由度。而这里对于函数参数的自由处理，正是柯里化的核心所在。柯里化本质上是降低通用性，提高适用性。</p><h3 id="手写-EventBus"><a href="#手写-EventBus" class="headerlink" title="手写 EventBus"></a>手写 EventBus</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 手写 EventBus</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">EventBus</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 存储事件及其对应的回调函数</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">events</span> = &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 订阅事件</span></span><br><span class="line">  <span class="title function_">subscribe</span>(<span class="params">eventName, callback</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果事件不存在，则创建一个新的事件数组</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="variable language_">this</span>.<span class="property">events</span>[eventName]) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">events</span>[eventName] = []</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 将回调函数添加到事件数组中</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">events</span>[eventName].<span class="title function_">push</span>(callback)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 取消订阅事件</span></span><br><span class="line">  <span class="title function_">unsubscribe</span>(<span class="params">eventName, callback</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果事件不存在，则直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="variable language_">this</span>.<span class="property">events</span>[eventName]) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 从事件数组中移除指定的回调函数</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">events</span>[eventName] = <span class="variable language_">this</span>.<span class="property">events</span>[eventName].<span class="title function_">filter</span>(<span class="function"><span class="params">cb</span> =&gt;</span> cb !== callback)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 发布事件</span></span><br><span class="line">  <span class="title function_">next</span>(<span class="params">eventName, data</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果事件不存在，则直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="variable language_">this</span>.<span class="property">events</span>[eventName]) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 遍历事件数组，依次执行回调函数</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">events</span>[eventName].<span class="title function_">forEach</span>(<span class="function"><span class="params">callback</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">callback</span>(data)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个新的 EventBus 实例</span></span><br><span class="line"><span class="keyword">const</span> eventBus = <span class="keyword">new</span> <span class="title class_">EventBus</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义事件处理函数</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handler1</span> = data =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Handler 1:&#x27;</span>, data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handler2</span> = data =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Handler 2:&#x27;</span>, data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 订阅事件</span></span><br><span class="line">eventBus.<span class="title function_">subscribe</span>(<span class="string">&#x27;event1&#x27;</span>, handler1)</span><br><span class="line">eventBus.<span class="title function_">subscribe</span>(<span class="string">&#x27;event1&#x27;</span>, handler2)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发布事件</span></span><br><span class="line">eventBus.<span class="title function_">next</span>(<span class="string">&#x27;event1&#x27;</span>, <span class="string">&#x27;Hello, EventBus!&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取消订阅事件</span></span><br><span class="line">eventBus.<span class="title function_">unsubscribe</span>(<span class="string">&#x27;event1&#x27;</span>, handler2)</span><br></pre></td></tr></table></figure><h3 id="手写-Promise"><a href="#手写-Promise" class="headerlink" title="手写 Promise"></a>手写 Promise</h3><p>Promise 是异步编程的一种解决方案，比传统的解决方案回调函数和事件更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了 <code>Promise</code> 对象。</p><p>所谓 <code>Promise</code>，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。</p><p>下面我们用 ES6 语法来手写一个 Promise：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyPromise</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Promise/A+ 规范规定的三种状态</span></span><br><span class="line">  <span class="variable constant_">PENDING</span> = <span class="string">&#x27;pending&#x27;</span> <span class="comment">// 等待状态</span></span><br><span class="line">  <span class="variable constant_">FULFILLED</span> = <span class="string">&#x27;fulfilled&#x27;</span><span class="comment">// 成功状态</span></span><br><span class="line">  <span class="variable constant_">REJECTED</span> = <span class="string">&#x27;rejected&#x27;</span> <span class="comment">// 失败状态</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 构造函数接收一个执行回调</span></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">executor</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_status</span> = <span class="variable language_">this</span>.<span class="property">PENDING</span> <span class="comment">// Promise 初始状态</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_value</span> = <span class="literal">undefined</span> <span class="comment">// then 回调的值</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_resolveQueue</span> = [] <span class="comment">// resolve 时触发的成功队列</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">_rejectQueue</span> = [] <span class="comment">// reject 时触发的失败队列</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用箭头函数固定 this（resolve 函数在 executor 中触发，不然找不到 this）</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">resolve</span> = value =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">run</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">        <span class="comment">// Promise/A+ 规范规定的 Promise 状态只能从 pending 触发，变成 fulfilled</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">_status</span> === <span class="variable language_">this</span>.<span class="property">PENDING</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">_status</span> = <span class="variable language_">this</span>.<span class="property">FULFILLED</span> <span class="comment">// 更改状态</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">_value</span> = value <span class="comment">// 储存当前值，用于 then 回调</span></span><br><span class="line"></span><br><span class="line">          <span class="comment">// 执行 resolve 回调</span></span><br><span class="line">          <span class="keyword">while</span> (<span class="variable language_">this</span>.<span class="property">_resolveQueue</span>.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> callback = <span class="variable language_">this</span>.<span class="property">_resolveQueue</span>.<span class="title function_">shift</span>()</span><br><span class="line">            <span class="title function_">callback</span>(value)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 把 resolve 执行回调的操作封装成一个函数，放进 setTimeout 里，以实现 Promise 异步调用的特性（规范上是微任务，这里是宏任务）</span></span><br><span class="line">      <span class="built_in">setTimeout</span>(run)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 同 resolve</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">reject</span> = value =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">run</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">_status</span> === <span class="variable language_">this</span>.<span class="property">PENDING</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">_status</span> = <span class="variable language_">this</span>.<span class="property">REJECTED</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">_value</span> = value</span><br><span class="line"></span><br><span class="line">          <span class="keyword">while</span> (<span class="variable language_">this</span>.<span class="property">_rejectQueue</span>.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> callback = <span class="variable language_">this</span>.<span class="property">_rejectQueue</span>.<span class="title function_">shift</span>()</span><br><span class="line">            <span class="title function_">callback</span>(value)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">setTimeout</span>(run)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// new Promise() 时立即执行 executor，并传入 resolve 和 reject</span></span><br><span class="line">    <span class="title function_">executor</span>(resolve, reject)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// then 方法，接收一个成功的回调和一个失败的回调</span></span><br><span class="line">  <span class="title function_">then</span>(<span class="params">onFulfilled, onRejected</span>) &#123;</span><br><span class="line">    <span class="comment">// 根据规范，如果 then 的参数不是 function，则忽略它，让值继续往下传递，链式调用继续往下执行</span></span><br><span class="line">    <span class="keyword">typeof</span> onFulfilled !== <span class="string">&#x27;function&#x27;</span> ? onFulfilled = <span class="function"><span class="params">value</span> =&gt;</span> value : <span class="literal">null</span></span><br><span class="line">    <span class="keyword">typeof</span> onRejected !== <span class="string">&#x27;function&#x27;</span> ? onRejected = <span class="function"><span class="params">error</span> =&gt;</span> error : <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// then 返回一个新的 Promise</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">resolveFn</span> = value =&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> x = <span class="title function_">onFulfilled</span>(value)</span><br><span class="line">          <span class="comment">// 分类讨论返回值，如果是 Promise，那么等待 Promise 状态变更，否则直接 resolve</span></span><br><span class="line">          x <span class="keyword">instanceof</span> <span class="title class_">MyPromise</span> ? x.<span class="title function_">then</span>(resolve, reject) : <span class="title function_">resolve</span>(x)</span><br><span class="line">        &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">          <span class="title function_">reject</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> <span class="title function_">rejectFn</span> = error =&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> x = <span class="title function_">onRejected</span>(error)</span><br><span class="line">          x <span class="keyword">instanceof</span> <span class="title class_">MyPromise</span> ? x.<span class="title function_">then</span>(resolve, reject) : <span class="title function_">resolve</span>(x)</span><br><span class="line">        &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">          <span class="title function_">reject</span>(error)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">switch</span> (<span class="variable language_">this</span>.<span class="property">_status</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="variable language_">this</span>.<span class="property">PENDING</span>:</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">_resolveQueue</span>.<span class="title function_">push</span>(resolveFn)</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">_rejectQueue</span>.<span class="title function_">push</span>(rejectFn)</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="variable language_">this</span>.<span class="property">FULFILLED</span>:</span><br><span class="line">          <span class="title function_">resolveFn</span>(<span class="variable language_">this</span>.<span class="property">_value</span>)</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="variable language_">this</span>.<span class="property">REJECTED</span>:</span><br><span class="line">          <span class="title function_">rejectFn</span>(<span class="variable language_">this</span>.<span class="property">_value</span>)</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">catch</span>(onRejected) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="literal">null</span>, onRejected)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">finally</span>(<span class="params">callback</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="function"><span class="params">value</span> =&gt;</span> <span class="title class_">MyPromise</span>.<span class="title function_">resolve</span>(<span class="title function_">callback</span>()).<span class="title function_">then</span>(<span class="function">() =&gt;</span> value), <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">MyPromise</span>.<span class="title function_">resolve</span>(<span class="title function_">callback</span>()).<span class="title function_">then</span>(<span class="function">() =&gt;</span> error)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 静态 resolve 方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">resolve</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> value <span class="keyword">instanceof</span> <span class="title class_">MyPromise</span> ? value : <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> <span class="title function_">resolve</span>(value))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 静态 reject 方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">reject</span>(<span class="params">error</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> <span class="title function_">reject</span>(error))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 静态 all 方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">all</span>(<span class="params">promiseArr</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> result = []</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (!promiseArr.<span class="property">length</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_">resolve</span>(result)</span><br><span class="line">      &#125;</span><br><span class="line">      promiseArr.<span class="title function_">forEach</span>(<span class="function">(<span class="params">p, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">MyPromise</span>.<span class="title function_">resolve</span>(p).<span class="title function_">then</span>(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">          count++</span><br><span class="line">          result[i] = value</span><br><span class="line">          <span class="keyword">if</span> (count === promiseArr.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(result)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>(error)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 静态 race 方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">race</span>(<span class="params">promiseArr</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      promiseArr.<span class="title function_">forEach</span>(<span class="function"><span class="params">p</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">MyPromise</span>.<span class="title function_">resolve</span>(p).<span class="title function_">then</span>(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">resolve</span>(value)</span><br><span class="line">        &#125;, <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>(error)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &gt; <span class="number">0.5</span>) &#123;</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="string">`resolve ***`</span>)</span><br><span class="line">      &#125;, <span class="number">500</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">reject</span>(<span class="string">`reject ***`</span>)</span><br><span class="line">      &#125;, <span class="number">500</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fn</span>().<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;resolve value: &#x27;</span>, res)</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;reject value: &#x27;</span>, err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h3 id="手写-JSONP"><a href="#手写-JSONP" class="headerlink" title="手写 JSONP"></a>手写 JSONP</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">jsonp</span>(<span class="params">url, params, callback</span>) &#123;</span><br><span class="line">  <span class="comment">// 判断是否含有参数</span></span><br><span class="line">  <span class="keyword">let</span> queryString = url.<span class="title function_">indexOf</span>(<span class="string">&#x27;?&#x27;</span>) === <span class="string">&#x27;-1&#x27;</span> ? <span class="string">&#x27;?&#x27;</span> : <span class="string">&#x27;&amp;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 添加参数</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> params) &#123;</span><br><span class="line">    <span class="keyword">if</span> (params.<span class="title function_">hasOwnProperty</span>(k)) &#123;</span><br><span class="line">      queryString += k + <span class="string">&#x27;=&#x27;</span> + params[k] + <span class="string">&#x27;&amp;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 处理回调函数名</span></span><br><span class="line">  <span class="keyword">let</span> random = <span class="title class_">Math</span>.<span class="title function_">random</span>().<span class="title function_">toString</span>().<span class="title function_">replace</span>(<span class="string">&#x27;.&#x27;</span>, <span class="string">&#x27;&#x27;</span>),</span><br><span class="line">    callbackName = <span class="string">&#x27;myJsonp&#x27;</span> + random;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 添加回调函数</span></span><br><span class="line">  queryString += <span class="string">&#x27;callback=&#x27;</span> + callbackName;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 构建请求</span></span><br><span class="line">  <span class="keyword">let</span> scriptNode = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">  scriptNode.<span class="property">src</span> = url + queryString;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">window</span>[callbackName] = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 调用回调函数</span></span><br><span class="line">    <span class="title function_">callback</span>(...<span class="variable language_">arguments</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 删除这个引入的脚本</span></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;head&#x27;</span>)[<span class="number">0</span>].<span class="title function_">removeChild</span>(scriptNode);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 发起请求</span></span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;head&#x27;</span>)[<span class="number">0</span>].<span class="title function_">appendChild</span>(scriptNode);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="手写观察者模式"><a href="#手写观察者模式" class="headerlink" title="手写观察者模式"></a>手写观察者模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> events = (<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> topics = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="comment">// 注册监听函数</span></span><br><span class="line">    <span class="attr">subscribe</span>: <span class="keyword">function</span> (<span class="params">topic, handler</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!topics.<span class="title function_">hasOwnProperty</span>(topic)) &#123;</span><br><span class="line">        topics[topic] = [];</span><br><span class="line">      &#125;</span><br><span class="line">      topics[topic].<span class="title function_">push</span>(handler);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发布事件，触发观察者回调事件</span></span><br><span class="line">    <span class="attr">publish</span>: <span class="keyword">function</span> (<span class="params">topic, info</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (topics.<span class="title function_">hasOwnProperty</span>(topic)) &#123;</span><br><span class="line">        topics[topic].<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">handler</span>) &#123;</span><br><span class="line">          <span class="title function_">handler</span>(info);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 移除主题的一个观察者的回调事件</span></span><br><span class="line">    <span class="attr">remove</span>: <span class="keyword">function</span> (<span class="params">topic, handler</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!topics.<span class="title function_">hasOwnProperty</span>(topic)) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> handlerIndex = -<span class="number">1</span>;</span><br><span class="line">      topics[topic].<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">item, index</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (item === handler) &#123;</span><br><span class="line">          handlerIndex = index;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (handlerIndex &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        topics[topic].<span class="title function_">splice</span>(handlerIndex, <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 移除主题的所有观察者的回调事件</span></span><br><span class="line">    <span class="attr">removeAll</span>: <span class="keyword">function</span> (<span class="params">topic</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (topics.<span class="title function_">hasOwnProperty</span>(topic)) &#123;</span><br><span class="line">        topics[topic] = [];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>本文转载自 XPoet 的《常考的 JavaScript 手写题》，作者 XPoet。原文链接：<a target="_blank" rel="noopener" href="https://xpoet.cn/post/9b7700b386a6/">https://xpoet.cn/post/9b7700b386a6/</a></p>
+</blockquote>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/posts/cbe58a2205e2/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E5%89%8D%E7%AB%AF/">
+                    前端
+                </a>
+            </div>
+            <h5>
+                <a href="/posts/cbe58a2205e2/" class="trm-anima-link">
+                    JavaScript 的并发模型和事件循环
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/05/15</li>
+                <li>16:07</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/posts/a1ea44b079f7/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E5%89%8D%E7%AB%AF/">
+                    前端
+                </a>
+            </div>
+            <h5>
+                <a href="/posts/a1ea44b079f7/" class="trm-anima-link">
+                    JavaScript 的内存管理
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>21/05/14</li>
+                <li>21:56</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v0.0.0
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=0.0.0"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=0.0.0"></script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+<!-- hexo injector body_end start --><script src="/assets/mmedia/mmedia-loader.js"></script><script defer src="/js/code_block/shiki.js"></script><!-- hexo injector body_end end --></body>
+
+</html>
