@@ -15,7 +15,7 @@
 <meta property="og:description" content="在光眸笔记（Hexo + async 主题）中启用 Twikoo 评论的完整步骤：部署腾讯云 CloudBase 后端、获取 envId、配置主题、验证评论区。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-05T12:30:00.000Z">
-<meta property="article:modified_time" content="2026-10-05T12:36:18.988Z">
+<meta property="article:modified_time" content="2026-10-06T05:03:55.936Z">
 <meta property="article:author" content="悠悠">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Twikoo">
@@ -63,7 +63,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"悠悠","root":"/","typed_text":["PySide6 Developer","Industrial Intelligence","Machine Vision"],"theme_version":"0.0.0","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":100,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar.jpg","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar.jpg","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar.jpg","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar.jpg","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar.jpg","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar.jpg","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar.jpg","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar.jpg","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar.jpg","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar.jpg","text":"期待更多工业智能和 PLC 相关的文章"}]},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-05 20:36:18"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-06 13:03:55"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=0.0.0" id="trm-switch-style">
@@ -356,19 +356,30 @@
     <h1 id="为-Hexo-async-主题博客接入-Twikoo-评论系统"><a href="#为-Hexo-async-主题博客接入-Twikoo-评论系统" class="headerlink" title="为 Hexo + async 主题博客接入 Twikoo 评论系统"></a>为 Hexo + async 主题博客接入 Twikoo 评论系统</h1><p>本博客（光眸笔记）用的是 Hexo 7 + async 主题，评论系统选的是 <strong>Twikoo</strong>。它免费、无广告、界面干净，和 <a target="_blank" rel="noopener" href="https://www.imalun.com/">imalun.com</a> 用的是同一套。</p>
 <p>但 Twikoo 需要一个后端环境来存评论数据，所以启用分两步：<strong>部署 Twikoo 后端 → 把环境 ID 填进博客配置</strong>。</p>
 <hr>
-<h2 id="一、部署-Twikoo-后端（推荐腾讯云-CloudBase）"><a href="#一、部署-Twikoo-后端（推荐腾讯云-CloudBase）" class="headerlink" title="一、部署 Twikoo 后端（推荐腾讯云 CloudBase）"></a>一、部署 Twikoo 后端（推荐腾讯云 CloudBase）</h2><h3 id="方式-A：腾讯云-CloudBase（免费额度足够个人博客）"><a href="#方式-A：腾讯云-CloudBase（免费额度足够个人博客）" class="headerlink" title="方式 A：腾讯云 CloudBase（免费额度足够个人博客）"></a>方式 A：腾讯云 CloudBase（免费额度足够个人博客）</h3><ol>
+<h2 id="一、部署-Twikoo-后端（推荐腾讯云-CloudBase）"><a href="#一、部署-Twikoo-后端（推荐腾讯云-CloudBase）" class="headerlink" title="一、部署 Twikoo 后端（推荐腾讯云 CloudBase）"></a>一、部署 Twikoo 后端（推荐腾讯云 CloudBase）</h2><h3 id="方式-A：腾讯云-CloudBase（免费额度足够个人博客）"><a href="#方式-A：腾讯云-CloudBase（免费额度足够个人博客）" class="headerlink" title="方式 A：腾讯云 CloudBase（免费额度足够个人博客）"></a>方式 A：腾讯云 CloudBase（免费额度足够个人博客）</h3><blockquote>
+<p><strong>注意</strong>：不要直接在「腾讯云 SCF 独立云函数」页面创建函数，那样拿不到 Twikoo 需要的 <code>envId</code>。必须走 <strong>CloudBase（云开发）环境</strong>。</p>
+</blockquote>
+<ol>
 <li>打开 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb">腾讯云 CloudBase 控制台</a>。</li>
 <li>登录后点击「新建环境」，选一个离你近的地域（默认 <code>ap-shanghai</code> 即可）。</li>
 <li>进入新建的环境 → 左侧「云函数」→「新建云函数」。</li>
-<li>函数名填 <code>twikoo</code>，运行环境选 <code>Nodejs 18</code> 或更高。</li>
+<li>在创建页：<ul>
+<li><strong>函数类型</strong>：选 <strong>Web 函数</strong>（Twikoo 要接收 HTTP 请求）。</li>
+<li><strong>函数名称</strong>：填 <code>twikoo</code>。</li>
+<li><strong>运行环境</strong>：选 <code>Nodejs 18</code> 或更高，<strong>不要选 Python</strong>。</li>
+</ul>
+</li>
 <li>下载 Twikoo 云函数代码：<ul>
 <li>到 <a target="_blank" rel="noopener" href="https://github.com/imaegoo/twikoo/releases">Twikoo GitHub Releases</a> 下载最新 <code>twikoo-cloudbase.zip</code>。</li>
 <li>解压后把全部文件作为云函数代码上传（或复制粘贴 <code>index.js</code> + <code>package.json</code>）。</li>
 </ul>
 </li>
 <li>点击「完成」部署云函数。</li>
-<li>部署成功后，复制该环境的 <strong>环境 ID</strong>（形如 <code>env-xxxxxxxxxxxxxxxx</code>），后面会用到。</li>
+<li>部署成功后，复制该 CloudBase 环境的 <strong>环境 ID</strong>（形如 <code>env-xxxxxxxxxxxxxxxx</code>），后面会用到。</li>
 </ol>
+<blockquote>
+<p>如果你已经在 <code>console.cloud.tencent.com/scf</code> 这种页面，说明走错了入口。回到 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb">tcb 控制台</a>，从「环境」里进云函数。</p>
+</blockquote>
 <h3 id="方式-B：Vercel-Railway-私有服务器"><a href="#方式-B：Vercel-Railway-私有服务器" class="headerlink" title="方式 B：Vercel &#x2F; Railway &#x2F; 私有服务器"></a>方式 B：Vercel &#x2F; Railway &#x2F; 私有服务器</h3><p>如果你更熟悉境外平台，可以用 Vercel 一键部署：</p>
 <ol>
 <li>Fork <a target="_blank" rel="noopener" href="https://github.com/imaegoo/twikoo">twikoo</a> 仓库。</li>
@@ -413,6 +424,11 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>文章底部有一块空白区域，评论框没出来</td>
+<td><code>envId</code> 未填，或走错了 SCF 独立函数入口</td>
+<td>必须拿到 CloudBase 的 <code>env-xxx</code> 环境 ID 并填入 <code>_config.async.yml</code></td>
+</tr>
+<tr>
 <td>评论区空白，控制台报 <code>envId</code> 错误</td>
 <td>环境 ID 填错或未填</td>
 <td>检查 <code>_config.async.yml</code> 的 <code>envId</code></td>
