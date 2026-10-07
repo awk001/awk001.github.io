@@ -1811,7 +1811,7 @@ blockquote:after {
   padding: var(--card-padding, 40px);
 }
 .trm-blog-card .trm-card-descr h5 a {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 100%;
@@ -1965,16 +1965,24 @@ blockquote:after {
   border-radius: 5px 5px 0 0;
   opacity: 0.3;
 }
+.trm-blog-categories h6 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
 .trm-blog-categories .trm-number {
   color: var(--theme-bg-color, #fcfcfe);
   margin-left: 5px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   display: inline-block;
-  padding: 3px 10px;
+  padding: 4px 12px;
   transform: translateY(-2px);
   background-color: var(--primary, #afb42b);
+}
+.trm-blog-categories .trm-label {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 .trm-price {
   position: relative;
@@ -2509,6 +2517,12 @@ form textarea:focus,
   opacity: 0.8;
   cursor: not-allowed;
 }
+.trm-banner .trm-banner-content .trm-banner-text .trm-hsmb-font {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
 .trm-banner .trm-banner-content .trm-banner-text.trm-text-center {
   text-align: center;
   margin-top: -50px;
@@ -2582,9 +2596,13 @@ form textarea:focus,
   .trm-banner .trm-banner-content .trm-banner-text .trm-hsmb-font {
     font-size: 1.8rem;
     padding: 0 10px;
+    word-break: normal;
+    overflow-wrap: anywhere;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 }
 @keyframes mouse {
