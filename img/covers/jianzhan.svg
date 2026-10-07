@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1320"/>
+      <stop offset="0.55" stop-color="#0f1c30"/>
+      <stop offset="1" stop-color="#16243a"/>
+    </linearGradient>
+    <radialGradient id="pupil" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#488fe0"/>
+      <stop offset="0.45" stop-color="#488fe0" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#0b1320" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#488fe0" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#488fe0" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#488fe0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- 工业网格 -->
+  <g stroke="#ffffff" stroke-opacity="0.045" stroke-width="1">
+    <line x1="0" y1="0" x2="0" y2="675"/><line x1="60" y1="0" x2="60" y2="675"/><line x1="120" y1="0" x2="120" y2="675"/><line x1="180" y1="0" x2="180" y2="675"/><line x1="240" y1="0" x2="240" y2="675"/><line x1="300" y1="0" x2="300" y2="675"/><line x1="360" y1="0" x2="360" y2="675"/><line x1="420" y1="0" x2="420" y2="675"/><line x1="480" y1="0" x2="480" y2="675"/><line x1="540" y1="0" x2="540" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="660" y1="0" x2="660" y2="675"/><line x1="720" y1="0" x2="720" y2="675"/><line x1="780" y1="0" x2="780" y2="675"/><line x1="840" y1="0" x2="840" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/><line x1="960" y1="0" x2="960" y2="675"/><line x1="1020" y1="0" x2="1020" y2="675"/><line x1="1080" y1="0" x2="1080" y2="675"/><line x1="1140" y1="0" x2="1140" y2="675"/>
+    <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/><line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/><line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/><line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/><line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+
+  <!-- 品牌光束 -->
+  <polygon points="0,675 864,0 1104,0 240,675" fill="url(#beam)"/>
+
+  <!-- 瞳孔意象（右上） -->
+  <g transform="translate(970, 210)">
+    <circle r="120" fill="url(#pupil)"/>
+    <circle r="118" fill="none" stroke="#488fe0" stroke-opacity="0.55" stroke-width="2"/>
+    <circle r="34" fill="#488fe0"/>
+    <circle cx="-12" cy="-12" r="10" fill="#ffffff" fill-opacity="0.85"/>
+  </g>
+
+  <!-- 文字（左下） -->
+  <g transform="translate(80, 525)">
+    <text x="0" y="0" fill="#488fe0" font-size="30" letter-spacing="8" font-weight="700">SITE &amp; DEV</text>
+    <text x="0" y="86" fill="#f3f6fb" font-size="104" font-weight="800" letter-spacing="4">建站笔记</text>
+    <text x="4" y="140" fill="#9fb0c4" font-size="26" letter-spacing="2">Hexo · 部署 · 工程化</text>
+  </g>
+
+  <!-- 底部分隔线 -->
+  <rect x="80" y="615" width="120" height="4" rx="2" fill="#488fe0"/>
+</svg>
