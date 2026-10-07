@@ -7,19 +7,21 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="在光眸笔记（Hexo + async 主题）中启用 Twikoo 评论的完整步骤：部署腾讯云 CloudBase 后端、获取 envId、配置主题、验证评论区。">
+<meta name="description" content="在光眸笔记（Hexo + async 主题）中启用 Twikoo 评论的完整步骤：免费 Netlify + MongoDB Atlas 后端、或付费腾讯云 CloudBase、配置主题、验证评论区。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为 Hexo + async 主题博客接入 Twikoo 评论系统">
 <meta property="og:url" content="https://awk001.github.io/posts/twikoo-deploy-guide/">
 <meta property="og:site_name" content="光眸笔记">
-<meta property="og:description" content="在光眸笔记（Hexo + async 主题）中启用 Twikoo 评论的完整步骤：部署腾讯云 CloudBase 后端、获取 envId、配置主题、验证评论区。">
+<meta property="og:description" content="在光眸笔记（Hexo + async 主题）中启用 Twikoo 评论的完整步骤：免费 Netlify + MongoDB Atlas 后端、或付费腾讯云 CloudBase、配置主题、验证评论区。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-05T12:30:00.000Z">
-<meta property="article:modified_time" content="2026-10-06T05:15:09.299Z">
+<meta property="article:modified_time" content="2026-10-07T04:06:52.969Z">
 <meta property="article:author" content="悠悠">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Twikoo">
 <meta property="article:tag" content="评论系统">
+<meta property="article:tag" content="Netlify">
+<meta property="article:tag" content="MongoDB">
 <meta property="article:tag" content="腾讯云">
 <meta name="twitter:card" content="summary">
 
@@ -63,7 +65,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"悠悠","root":"/","typed_text":["PySide6 Developer","Industrial Intelligence","Machine Vision"],"theme_version":"0.0.0","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":100,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar.jpg","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar.jpg","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar.jpg","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar.jpg","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar.jpg","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar.jpg","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar.jpg","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar.jpg","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar.jpg","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar.jpg","text":"期待更多工业智能和 PLC 相关的文章"}]},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-06 13:15:09"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-07 12:06:52"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=0.0.0" id="trm-switch-style">
@@ -354,11 +356,57 @@
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
     <h1 id="为-Hexo-async-主题博客接入-Twikoo-评论系统"><a href="#为-Hexo-async-主题博客接入-Twikoo-评论系统" class="headerlink" title="为 Hexo + async 主题博客接入 Twikoo 评论系统"></a>为 Hexo + async 主题博客接入 Twikoo 评论系统</h1><p>本博客（光眸笔记）用的是 Hexo 7 + async 主题，评论系统选的是 <strong>Twikoo</strong>。它免费、无广告、界面干净，和 <a target="_blank" rel="noopener" href="https://www.imalun.com/">imalun.com</a> 用的是同一套。</p>
-<p>但 Twikoo 需要一个后端环境来存评论数据，所以启用分两步：<strong>部署 Twikoo 后端 → 把环境 ID 填进博客配置</strong>。</p>
+<p>Twikoo 需要一个后端环境来存评论数据，所以启用分两步：<strong>部署 Twikoo 后端 → 把环境标识填进博客配置</strong>。</p>
+<p>后端有两种选择：</p>
+<ul>
+<li><strong>Netlify + MongoDB Atlas（推荐，完全免费）</strong>：Twikoo 官方对免费方案支持最好的是 Netlify，国内访问速度不错。</li>
+<li><strong>腾讯云 CloudBase（付费）</strong>：国内访问最快，但新环境必须买个人版（19.9 元&#x2F;月）才能加跨域域名，免费体验版配不出来。</li>
+</ul>
 <hr>
-<h2 id="一、部署-Twikoo-后端（推荐腾讯云-CloudBase）"><a href="#一、部署-Twikoo-后端（推荐腾讯云-CloudBase）" class="headerlink" title="一、部署 Twikoo 后端（推荐腾讯云 CloudBase）"></a>一、部署 Twikoo 后端（推荐腾讯云 CloudBase）</h2><h3 id="方式-A：腾讯云-CloudBase（需要付费套餐）"><a href="#方式-A：腾讯云-CloudBase（需要付费套餐）" class="headerlink" title="方式 A：腾讯云 CloudBase（需要付费套餐）"></a>方式 A：腾讯云 CloudBase（需要付费套餐）</h3><blockquote>
+<h2 id="一、部署-Twikoo-后端"><a href="#一、部署-Twikoo-后端" class="headerlink" title="一、部署 Twikoo 后端"></a>一、部署 Twikoo 后端</h2><h3 id="方式-A：Netlify-MongoDB-Atlas（免费推荐）"><a href="#方式-A：Netlify-MongoDB-Atlas（免费推荐）" class="headerlink" title="方式 A：Netlify + MongoDB Atlas（免费推荐）"></a>方式 A：Netlify + MongoDB Atlas（免费推荐）</h3><h4 id="1-准备-MongoDB-Atlas-数据库"><a href="#1-准备-MongoDB-Atlas-数据库" class="headerlink" title="1. 准备 MongoDB Atlas 数据库"></a>1. 准备 MongoDB Atlas 数据库</h4><ol>
+<li>打开 <a target="_blank" rel="noopener" href="https://www.mongodb.com/atlas">MongoDB Atlas</a> 注册账号。</li>
+<li>创建一个 <strong>免费的 M0 集群</strong>（512MB 足够个人博客）。</li>
+<li>创建数据库用户，记下用户名和密码。</li>
+<li>进入 <strong>Network Access（网络访问）</strong>，添加 <code>0.0.0.0/0</code>（允许所有 IP 访问，因为 Netlify 函数出口 IP 不固定）。</li>
+<li>点击集群的 <strong>Connect → Drivers</strong>，复制连接字符串，把 <code>&lt;db_password&gt;</code> 换成你的密码。</li>
+</ol>
+<h4 id="2-部署-Twikoo-到-Netlify"><a href="#2-部署-Twikoo-到-Netlify" class="headerlink" title="2. 部署 Twikoo 到 Netlify"></a>2. 部署 Twikoo 到 Netlify</h4><ol>
+<li>打开 <a target="_blank" rel="noopener" href="https://github.com/twikoojs/twikoo-netlify">twikoojs&#x2F;twikoo-netlify</a>，点右上角 <strong>Fork</strong>，把仓库复制到你自己的 GitHub 账号。</li>
+<li>打开 <a target="_blank" rel="noopener" href="https://app.netlify.com/">Netlify 控制台</a>，<strong>Add new site → Import an existing project → Deploy with GitHub</strong>。</li>
+<li>选择你刚才 fork 的 <code>你的用户名/twikoo-netlify</code>。</li>
+<li>在部署配置页找到 <strong>Environment variables</strong>，添加：<ul>
+<li>Key：<code>MONGODB_URI</code></li>
+<li>Value：你复制的 MongoDB 连接字符串</li>
+<li>勾选 <strong>Contains secret values</strong>（保护密码）</li>
+<li>Values 选 <strong>Production</strong>，粘贴连接字符串后保存</li>
+</ul>
+</li>
+<li>点 <strong>Deploy site</strong>，等状态变成 <strong>Published</strong>。</li>
+<li>部署完成后，进入 <strong>Project configuration → General → Visitor access → Project visibility</strong>，把 <strong>Production visibility</strong> 和 <strong>Deploy Preview visibility</strong> 都改成 <strong>Public</strong>。否则外部访问会返回 401，评论框加载不出来。</li>
+<li>点击站点链接测试，看到「Twikoo 云函数运行正常」即成功。</li>
+</ol>
+<h4 id="3-拿到-envId"><a href="#3-拿到-envId" class="headerlink" title="3. 拿到 envId"></a>3. 拿到 envId</h4><p>Netlify 部署的 envId 是一个完整的 URL，形如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://你的站点名.netlify.app/.netlify/functions/twikoo<br></code></pre></td></tr></table></figure>
+
+<p>把这个 URL 复制下来，下一步填进博客配置。</p>
+<blockquote>
+<p>async 主题直接把 <code>comment.twikoo.envId</code> 传给 <code>twikoo.init()</code>，Twikoo JS SDK 同时支持 CloudBase 的 <code>env-xxx</code> 和 Netlify&#x2F;Vercel 的 URL。<strong>不需要改主题文件</strong>。</p>
+</blockquote>
+<hr>
+<h3 id="方式-B：Vercel-MongoDB-Atlas（免费，国内体验一般）"><a href="#方式-B：Vercel-MongoDB-Atlas（免费，国内体验一般）" class="headerlink" title="方式 B：Vercel + MongoDB Atlas（免费，国内体验一般）"></a>方式 B：Vercel + MongoDB Atlas（免费，国内体验一般）</h3><p>步骤和 Netlify 类似，区别是：</p>
+<ol>
+<li>Fork <a target="_blank" rel="noopener" href="https://github.com/twikoojs/twikoo">twikoojs&#x2F;twikoo</a> 仓库。</li>
+<li>在 Vercel 导入，框架预设选 <code>Other</code>，构建命令和输出目录都留空。</li>
+<li>添加环境变量 <code>MONGODB_URI</code>。</li>
+<li>进入 <strong>Settings → Deployment Protection</strong>，把 <strong>Vercel Authentication</strong> 设为 <strong>Disabled</strong>，否则前端调不到函数。</li>
+<li>部署后得到的域名如 <code>https://twikoo-xxx.vercel.app</code> 就是 envId。</li>
+</ol>
+<blockquote>
+<p>Vercel 默认域名 <code>*.vercel.app</code> 在中国大陆访问较慢，建议绑定自己的域名。</p>
+</blockquote>
+<hr>
+<h3 id="方式-C：腾讯云-CloudBase（需付费套餐）"><a href="#方式-C：腾讯云-CloudBase（需付费套餐）" class="headerlink" title="方式 C：腾讯云 CloudBase（需付费套餐）"></a>方式 C：腾讯云 CloudBase（需付费套餐）</h3><blockquote>
 <p><strong>重要</strong>：Twikoo 的 CloudBase 方案现在<strong>需要付费套餐（个人版 19.9 元&#x2F;月起）</strong>。免费体验版无法添加「跨域域名」，评论框无法调用云函数，所以不花钱配不出来。</p>
-<p>如果你不想付费，建议直接看下面的 <strong>方式 B：Vercel &#x2F; Netlify</strong>。</p>
 </blockquote>
 <ol>
 <li>打开 <a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/tcb">腾讯云 CloudBase 控制台</a>。</li>
@@ -384,30 +432,17 @@
 <li>鼠标悬浮到页面左上角的环境名称上，复制 <strong>环境 ID</strong>（形如 <code>env-xxxxxxxxxxxxxxxx</code>），后面填到博客配置里。</li>
 </ol>
 <blockquote>
-<p><strong>不要下载 GitHub Releases 里的任何文件</strong>。CloudBase 部署现在直接在线拉取 npm 包 <code>twikoo-func</code>，不需要本地上传 zip。你截图看到的 <code>twikoo-win-x64.exe</code>、<code>Source code</code> 等都不是云函数代码。</p>
-</blockquote>
-<h3 id="方式-B：Vercel-Netlify（免费，但需要-MongoDB）"><a href="#方式-B：Vercel-Netlify（免费，但需要-MongoDB）" class="headerlink" title="方式 B：Vercel &#x2F; Netlify（免费，但需要 MongoDB）"></a>方式 B：Vercel &#x2F; Netlify（免费，但需要 MongoDB）</h3><p>如果你不想用付费 CloudBase，可以用 Vercel 或 Netlify，但它们需要你自己准备一个 <strong>MongoDB Atlas</strong> 数据库。</p>
-<p>以 Vercel 为例：</p>
-<ol>
-<li>去 <a target="_blank" rel="noopener" href="https://www.mongodb.com/atlas">MongoDB Atlas</a> 注册账号，创建一个免费集群，复制数据库连接字符串。</li>
-<li>打开 <a target="_blank" rel="noopener" href="https://github.com/twikoojs/twikoo">twikoojs&#x2F;twikoo</a> 仓库，fork 一份。</li>
-<li>在 Vercel 导入该仓库，框架预设选 <code>Other</code>，构建命令留空，输出目录留空。</li>
-<li>进入 Settings → Environment Variables，添加 <code>MONGODB_URI</code>，值为你复制的 MongoDB 连接字符串。</li>
-<li>部署后得到域名，如 <code>https://twikoo-xxx.vercel.app</code>。</li>
-</ol>
-<blockquote>
-<p>这种方式得到的不是 <code>envId</code>，而是一个 URL。async 主题目前主要支持腾讯云 <code>envId</code> 形式。如果用 Vercel，需要手动改 <code>themes/async/layout/_third-party/plugin.ejs</code> 里的初始化参数，把 <code>envId</code> 换成 <code>path: &#39;https://twikoo-xxx.vercel.app&#39;</code>。</p>
-<p>另外，Vercel 默认域名 <code>*.vercel.app</code> 在中国大陆访问较慢，建议绑定自己的域名。</p>
+<p><strong>不要下载 GitHub Releases 里的任何文件</strong>。CloudBase 部署现在直接在线拉取 npm 包 <code>twikoo-func</code>，不需要本地上传 zip。</p>
 </blockquote>
 <hr>
-<h2 id="二、配置-async-主题"><a href="#二、配置-async-主题" class="headerlink" title="二、配置 async 主题"></a>二、配置 async 主题</h2><p>拿到腾讯云环境 ID 后，打开博客根目录的 <code>_config.async.yml</code>，找到 <code>comment</code> 配置块：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">## comment</span><br><span class="hljs-attr">comment:</span><br>  <span class="hljs-attr">twikoo:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">envId:</span> <span class="hljs-string">env-xxxxxxxxxxxxxxxx</span>  <span class="hljs-comment"># 替换为你的腾讯云环境 ID</span><br>  <span class="hljs-comment"># region: ap-shanghai          # 如果环境地域不是上海，取消注释并修改</span><br></code></pre></td></tr></table></figure>
+<h2 id="二、配置-async-主题"><a href="#二、配置-async-主题" class="headerlink" title="二、配置 async 主题"></a>二、配置 async 主题</h2><p>拿到环境标识后，打开博客根目录的 <code>_config.async.yml</code>，找到 <code>comment</code> 配置块：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">comment:</span><br>  <span class="hljs-attr">twikoo:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">envId:</span> <span class="hljs-string">&quot;https://你的站点名.netlify.app/.netlify/functions/twikoo&quot;</span>  <span class="hljs-comment"># Netlify 用完整 URL</span><br>    <span class="hljs-comment"># envId: env-xxxxxxxxxxxxxxxx  # CloudBase 用环境 ID</span><br>  <span class="hljs-comment"># region: ap-shanghai          # CloudBase 环境地域不是上海时填</span><br></code></pre></td></tr></table></figure>
 
-<p>同时，async 主题的文章页评论默认已经开启（模板逻辑是 <code>page.comments !== false</code>）。如果某篇文章想单独关闭评论，在该文章 front matter 加：</p>
+<p>async 主题的文章页评论默认开启（模板逻辑是 <code>page.comments !== false</code>）。某篇文章想单独关闭评论，在该文章 front matter 加：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">comments:</span> <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="三、构建并部署"><a href="#三、构建并部署" class="headerlink" title="三、构建并部署"></a>三、构建并部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm run build<br>npm run deploy:manual<br></code></pre></td></tr></table></figure>
+<h2 id="三、构建并部署"><a href="#三、构建并部署" class="headerlink" title="三、构建并部署"></a>三、构建并部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm run clean<br>npm run build<br>npm run deploy:manual<br></code></pre></td></tr></table></figure>
 
 <p>等待 GitHub Pages 刷新（1–3 分钟），然后打开任意文章页，滚动到最底部，应该能看到 Twikoo 评论框。</p>
 <hr>
@@ -433,29 +468,29 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>GitHub Releases 里没有 <code>twikoo-cloudbase.zip</code></td>
-<td>Twikoo 已改为在线 npm 安装</td>
-<td>不需要下载任何文件，直接在 CloudBase 控制台写 <code>index.js</code> + <code>package.json</code></td>
+<td>访问 Netlify 函数返回 401 &#x2F; Login Redirect</td>
+<td>站点可见性还是 Private</td>
+<td>Project configuration → General → Visitor access → 改成 Public</td>
 </tr>
 <tr>
-<td>文章底部有一块空白区域，评论框没出来</td>
-<td><code>envId</code> 未填，或走错了 SCF 独立函数入口</td>
-<td>必须拿到 CloudBase 的 <code>env-xxx</code> 环境 ID 并填入 <code>_config.async.yml</code></td>
-</tr>
-<tr>
-<td>评论区空白，控制台报 <code>envId</code> 错误</td>
-<td>环境 ID 填错或未填</td>
-<td>检查 <code>_config.async.yml</code> 的 <code>envId</code></td>
+<td>文章底部评论框空白，控制台报 <code>envId</code> 错误</td>
+<td><code>envId</code> 未填或填错</td>
+<td>检查 <code>_config.async.yml</code> 的 <code>envId</code>，Netlify 必须是完整 URL</td>
 </tr>
 <tr>
 <td>评论区显示「Twikoo 加载失败」</td>
-<td>云函数未部署或地域不对</td>
-<td>确认云函数状态为「运行中」，必要时填 <code>region</code></td>
+<td>函数未部署、站点未公开、或 CORS 未配置</td>
+<td>确认函数状态正常、Netlify visibility 为 Public、MongoDB 网络访问设为 0.0.0.0&#x2F;0</td>
 </tr>
 <tr>
-<td>提交评论后没反应</td>
-<td>云函数返回错误 &#x2F; 免费版跨域未配置</td>
-<td>去腾讯云 CloudBase 日志里查看具体报错；免费版无法添加跨域域名，需升级个人版</td>
+<td>CloudBase 底部空白且已填 envId</td>
+<td>免费体验版无法添加跨域域名</td>
+<td>升级个人版，或改用 Netlify 免费方案</td>
+</tr>
+<tr>
+<td>GitHub Releases 里没有 <code>twikoo-cloudbase.zip</code></td>
+<td>Twikoo 已改为在线 npm 安装</td>
+<td>CloudBase 不需要下载任何文件，直接写 <code>index.js</code> + <code>package.json</code></td>
 </tr>
 <tr>
 <td>本地预览看不到评论</td>
@@ -466,13 +501,14 @@
 <hr>
 <h2 id="六、关键约定"><a href="#六、关键约定" class="headerlink" title="六、关键约定"></a>六、关键约定</h2><ul>
 <li>评论系统：<strong>Twikoo</strong></li>
-<li>后端：<strong>腾讯云 CloudBase 云函数</strong>（需个人版付费套餐）</li>
+<li>免费后端推荐：<strong>Netlify + MongoDB Atlas</strong></li>
+<li>付费后端备选：<strong>腾讯云 CloudBase 云函数</strong></li>
 <li>主题配置字段：<strong><code>_config.async.yml</code> 的 <code>comment.twikoo.envId</code></strong></li>
+<li><code>envId</code> 可以是 CloudBase 的 <code>env-xxx</code>，也可以是 Netlify&#x2F;Vercel 的完整 URL</li>
 <li>文章开关：默认开启；单独关闭用 <code>comments: false</code></li>
 <li>管理后台：<code>Ctrl + Shift + K</code> 或在评论框右下角进入</li>
-<li>CloudBase 部署<strong>不需要</strong>下载 GitHub Releases 里的任何文件</li>
 </ul>
-<p>按上面步骤拿到 <code>envId</code> 并填好，博客就有了和 imalun 一样的评论功能。</p>
+<p>按上面步骤填好 <code>envId</code>，博客就有了和 imalun 一样的评论功能。</p>
 
 </article>
     
@@ -534,7 +570,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="为 Hexo + async 主题博客接入 Twikoo 评论系统"><a rel="nofollow" class="trm-toc-link" href="#为-Hexo-async-主题博客接入-Twikoo-评论系统"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">为 Hexo + async 主题博客接入 Twikoo 评论系统</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="一、部署 Twikoo 后端（推荐腾讯云 CloudBase）"><a rel="nofollow" class="trm-toc-link" href="#一、部署-Twikoo-后端（推荐腾讯云-CloudBase）"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">一、部署 Twikoo 后端（推荐腾讯云 CloudBase）</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="方式 A：腾讯云 CloudBase（需要付费套餐）"><a rel="nofollow" class="trm-toc-link" href="#方式-A：腾讯云-CloudBase（需要付费套餐）"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">方式 A：腾讯云 CloudBase（需要付费套餐）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="方式 B：Vercel &#x2F; Netlify（免费，但需要 MongoDB）"><a rel="nofollow" class="trm-toc-link" href="#方式-B：Vercel-Netlify（免费，但需要-MongoDB）"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">方式 B：Vercel &#x2F; Netlify（免费，但需要 MongoDB）</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="二、配置 async 主题"><a rel="nofollow" class="trm-toc-link" href="#二、配置-async-主题"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">二、配置 async 主题</span></a></li><li class="trm-toc-item trm-toc-level-2" title="三、构建并部署"><a rel="nofollow" class="trm-toc-link" href="#三、构建并部署"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">三、构建并部署</span></a></li><li class="trm-toc-item trm-toc-level-2" title="四、管理员后台与通知"><a rel="nofollow" class="trm-toc-link" href="#四、管理员后台与通知"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">四、管理员后台与通知</span></a></li><li class="trm-toc-item trm-toc-level-2" title="五、常见问题"><a rel="nofollow" class="trm-toc-link" href="#五、常见问题"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">五、常见问题</span></a></li><li class="trm-toc-item trm-toc-level-2" title="六、关键约定"><a rel="nofollow" class="trm-toc-link" href="#六、关键约定"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">六、关键约定</span></a></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="为 Hexo + async 主题博客接入 Twikoo 评论系统"><a rel="nofollow" class="trm-toc-link" href="#为-Hexo-async-主题博客接入-Twikoo-评论系统"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">为 Hexo + async 主题博客接入 Twikoo 评论系统</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="一、部署 Twikoo 后端"><a rel="nofollow" class="trm-toc-link" href="#一、部署-Twikoo-后端"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">一、部署 Twikoo 后端</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="方式 A：Netlify + MongoDB Atlas（免费推荐）"><a rel="nofollow" class="trm-toc-link" href="#方式-A：Netlify-MongoDB-Atlas（免费推荐）"><span class="trm-toc-number">1.1.1.</span> <span class="trm-toc-text">方式 A：Netlify + MongoDB Atlas（免费推荐）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="方式 B：Vercel + MongoDB Atlas（免费，国内体验一般）"><a rel="nofollow" class="trm-toc-link" href="#方式-B：Vercel-MongoDB-Atlas（免费，国内体验一般）"><span class="trm-toc-number">1.1.2.</span> <span class="trm-toc-text">方式 B：Vercel + MongoDB Atlas（免费，国内体验一般）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="方式 C：腾讯云 CloudBase（需付费套餐）"><a rel="nofollow" class="trm-toc-link" href="#方式-C：腾讯云-CloudBase（需付费套餐）"><span class="trm-toc-number">1.1.3.</span> <span class="trm-toc-text">方式 C：腾讯云 CloudBase（需付费套餐）</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="二、配置 async 主题"><a rel="nofollow" class="trm-toc-link" href="#二、配置-async-主题"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">二、配置 async 主题</span></a></li><li class="trm-toc-item trm-toc-level-2" title="三、构建并部署"><a rel="nofollow" class="trm-toc-link" href="#三、构建并部署"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">三、构建并部署</span></a></li><li class="trm-toc-item trm-toc-level-2" title="四、管理员后台与通知"><a rel="nofollow" class="trm-toc-link" href="#四、管理员后台与通知"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">四、管理员后台与通知</span></a></li><li class="trm-toc-item trm-toc-level-2" title="五、常见问题"><a rel="nofollow" class="trm-toc-link" href="#五、常见问题"><span class="trm-toc-number">1.5.</span> <span class="trm-toc-text">五、常见问题</span></a></li><li class="trm-toc-item trm-toc-level-2" title="六、关键约定"><a rel="nofollow" class="trm-toc-link" href="#六、关键约定"><span class="trm-toc-number">1.6.</span> <span class="trm-toc-text">六、关键约定</span></a></li></ol></li></ol>
       </div>
     </div>
 
