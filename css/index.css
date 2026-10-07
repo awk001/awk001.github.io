@@ -741,6 +741,11 @@ html.is-animating .trm-swup-animation {
     padding: 0 0 20px;
   }
 }
+@media (min-width: 1400px) {
+  .trm-content-start .container {
+    max-width: 1320px;
+  }
+}
 .trm-page-content {
   display: flex;
   align-items: flex-start;
