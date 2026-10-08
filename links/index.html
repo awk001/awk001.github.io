@@ -1666,10 +1666,22 @@
     function showContextMenu(e, card) {
         e.preventDefault();
         e.stopPropagation();
-        var rect = card.getBoundingClientRect();
         $contextMenu.style.display = 'block';
-        $contextMenu.style.left = (rect.left + rect.width / 2 - 50) + 'px';
-        $contextMenu.style.top = (rect.top + rect.height / 2) + 'px';
+
+        var menuWidth = $contextMenu.offsetWidth || 100;
+        var menuHeight = $contextMenu.offsetHeight || 76;
+        var x = e.clientX + 8;
+        var y = e.clientY + 8;
+
+        if (x + menuWidth > window.innerWidth) {
+            x = e.clientX - menuWidth - 8;
+        }
+        if (y + menuHeight > window.innerHeight) {
+            y = e.clientY - menuHeight - 8;
+        }
+
+        $contextMenu.style.left = x + 'px';
+        $contextMenu.style.top = y + 'px';
         $contextMenu.dataset.name = card.dataset.name;
         $contextMenu.dataset.url = card.dataset.url;
         $contextMenu.dataset.desc = card.dataset.desc;
