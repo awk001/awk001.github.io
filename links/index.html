@@ -336,27 +336,41 @@
             <div class="trm-page-content col-xl-9 col-lg-8">
                 <div id="trm-content" class="trm-content">
                     <style>
-.trm-links-page .trm-link-section {
-    margin-bottom: 40px;
-}
-
-.trm-links-page .trm-link-section-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--theme-color, #00283a);
+.trm-links-page .trm-links-tabs {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 32px;
+    justify-content: center;
 }
 
-.trm-links-page .trm-link-section-title::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 18px;
-    border-radius: 2px;
+.trm-links-page .trm-links-tab {
+    border: 1px solid var(--primary-30, rgba(72, 143, 224, 0.3));
+    background: transparent;
+    color: var(--body-color, #7b7b7b);
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+.trm-links-page .trm-links-tab:hover {
+    color: var(--primary, #488fe0);
+    border-color: var(--primary, #488fe0);
+}
+
+.trm-links-page .trm-links-tab.active {
     background: var(--primary, #488fe0);
+    color: #fff;
+    border-color: var(--primary, #488fe0);
+    box-shadow: 0 4px 12px -2px var(--primary-30, rgba(72, 143, 224, 0.35));
+}
+
+.trm-links-page .trm-link-group {
+    margin-bottom: 8px;
 }
 
 .trm-links-page .trm-link-card {
@@ -437,644 +451,690 @@
 <div class="trm-links-page">
     
         
-            
-            <div class="row trm-scroll-animation trm-link-section">
-                <div class="col-lg-12">
-                    <h5 class="trm-link-section-title">常用</h5>
-                </div>
+        
+            <div class="trm-links-tabs">
+                <button type="button" class="trm-links-tab" data-target="all">全部</button>
                 
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.zhihu.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">知</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">知乎</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
+                    <button type="button" class="trm-links-tab" data-target="g0">常用</button>
                 
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.bilibili.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">哔</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">哔哩哔哩</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
+                    <button type="button" class="trm-links-tab" data-target="g1">工具</button>
                 
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.xiaohongshu.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">小</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">小红书</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.toutiao.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">今</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">今日头条</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://mp.weixin.qq.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">微</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">微信公众平台</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://gitee.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">G</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">Gitee</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">G</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">GitCode</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://2.taobao.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">闲</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">闲鱼</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
+                    <button type="button" class="trm-links-tab" data-target="g2">学习笔记</button>
                 
             </div>
-        
-            
-            <div class="row trm-scroll-animation trm-link-section">
-                <div class="col-lg-12">
-                    <h5 class="trm-link-section-title">工具</h5>
-                </div>
+
+            <div class="trm-links-groups">
                 
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">I</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">Idea激活</h6>
+                    <div class="trm-link-group" data-group="g0">
+                        <div class="row">
                             
-                        
-                            </div>
-                        
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.zhihu.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">知</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">知乎</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.bilibili.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">哔</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">哔哩哔哩</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.xiaohongshu.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">小</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">小红书</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.toutiao.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">今</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">今日头条</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://mp.weixin.qq.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">微</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">微信公众平台</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://gitee.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">G</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">Gitee</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">G</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">GitCode</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://2.taobao.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">闲</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">闲鱼</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                        </div>
                     </div>
                 
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">高</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">高清壁纸</h6>
+                    <div class="trm-link-group" data-group="g1">
+                        <div class="row">
                             
-                        
-                            </div>
-                        
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">I</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">Idea激活</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">高</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">高清壁纸</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.lanzou.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">蓝</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">蓝奏云盘</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">货</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">货源终端</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">A</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">AiPPT</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://pan.xunlei.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">迅</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">迅雷云盘</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">星</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">星辰云服务器</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://tinypng.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">T</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">TinyPNG</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">图</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">图片压缩</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">贵</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">贵州大模型云</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">贵</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">贵数算力平台</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">星</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">星光影视大全</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">G</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">GitHub Proxy</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">村</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">村长软件工具箱</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
+                            
+                                
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://dycharts.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">镝</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">镝数图表</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
+                            
+                        </div>
                     </div>
                 
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.lanzou.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">蓝</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">蓝奏云盘</h6>
+                    <div class="trm-link-group" data-group="g2">
+                        <div class="row">
                             
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">货</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">货源终端</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.chsi.com.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">学</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">学信网</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">A</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">AiPPT</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://opensource.tsinghua.edu.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">清</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">清华大学开源</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://pan.xunlei.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">迅</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">迅雷云盘</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.zxx.edu.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">国</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">国家中小学智慧教育平台</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
                             
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">星</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">星辰云服务器</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.nlc.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">国</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">国家图书馆</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://tinypng.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">T</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">TinyPNG</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">全</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">全国计算机技术</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">图</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">图片压缩</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">软</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">软考试题</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">贵</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">贵州大模型云</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">陕</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">陕西技术人员</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">贵</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">贵数算力平台</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <a href="https://www.java.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">J</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">Java Download</h6>
+                                        
+                                    
+                                        </a>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">星</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">星光影视大全</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">图</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">图灵python</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">G</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">GitHub Proxy</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">A</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">Agent Skills</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">村</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">村长软件工具箱</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">I</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">InsCode 快马</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://dycharts.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">镝</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">镝数图表</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">硅</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">硅基流动</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </a>
-                        
-                    </div>
-                
-            </div>
-        
-            
-            <div class="row trm-scroll-animation trm-link-section">
-                <div class="col-lg-12">
-                    <h5 class="trm-link-section-title">学习笔记</h5>
-                </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.chsi.com.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
                                 
-                                    <span class="trm-link-card-letter">学</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">学信网</h6>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    
+                                        <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
+                                    
+                                        <div class="trm-link-card-icon">
+                                            
+                                                <span class="trm-link-card-letter">M</span>
+                                            
+                                        </div>
+                                        <h6 class="trm-link-card-name">MINE</h6>
+                                        
+                                    
+                                        </div>
+                                    
+                                </div>
                             
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://opensource.tsinghua.edu.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">清</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">清华大学开源</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.zxx.edu.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">国</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">国家中小学智慧教育平台</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.nlc.cn" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">国</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">国家图书馆</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">全</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">全国计算机技术</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">软</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">软考试题</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">陕</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">陕西技术人员</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <a href="https://www.java.com" target="_blank" rel="nofollow" class="trm-link-card trm-scroll-animation trm-active-el">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">J</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">Java Download</h6>
-                            
-                        
-                            </a>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">图</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">图灵python</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">A</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">Agent Skills</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">I</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">InsCode 快马</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">硅</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">硅基流动</h6>
-                            
-                        
-                            </div>
-                        
-                    </div>
-                
-                    
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        
-                            <div class="trm-link-card trm-link-card-disabled trm-scroll-animation trm-active-el" title="链接地址待补充">
-                        
-                            <div class="trm-link-card-icon">
-                                
-                                    <span class="trm-link-card-letter">M</span>
-                                
-                            </div>
-                            <h6 class="trm-link-card-name">MINE</h6>
-                            
-                        
-                            </div>
-                        
+                        </div>
                     </div>
                 
             </div>
         
     
 </div>
+
+<script>
+(function () {
+    function initLinksTabs() {
+        var tabs = document.querySelectorAll('.trm-links-tab');
+        var groups = document.querySelectorAll('.trm-link-group');
+        if (!tabs.length || !groups.length) return;
+
+        function activate(target) {
+            tabs.forEach(function (t) {
+                t.classList.toggle('active', t.getAttribute('data-target') === target);
+            });
+            groups.forEach(function (g) {
+                var show = (target === 'all') || (g.getAttribute('data-group') === target);
+                g.style.display = show ? '' : 'none';
+            });
+        }
+
+        tabs.forEach(function (t) {
+            t.addEventListener('click', function () {
+                activate(t.getAttribute('data-target'));
+            });
+        });
+
+        // 默认只显示第一个分类，避免整页堆叠下拉
+        var first = document.querySelector('.trm-links-tab:not([data-target="all"])');
+        activate(first ? first.getAttribute('data-target') : 'all');
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLinksTabs);
+    } else {
+        initLinksTabs();
+    }
+})();
+</script>
 
 
     
@@ -1082,6 +1142,7 @@
     <div class="trm-card trm-scroll-animation comment-container">
     <div id="tcomment"></div>
 </div>
+
 
 
 
