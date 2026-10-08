@@ -1336,6 +1336,9 @@
                         <button type="button" class="trm-links-add" id="trm-links-add">
                             <span>+</span> 新增
                         </button>
+                        <button type="button" class="trm-links-add" id="trm-links-export">导出备份</button>
+                        <button type="button" class="trm-links-add" id="trm-links-import">导入备份</button>
+                        <input type="file" id="trm-links-import-file" accept="application/json,.json" style="display:none">
                     </div>
                 </div>
             </div>
@@ -1441,6 +1444,16 @@
         return (text || '').toString().replace(/[^\w\u4e00-\u9fa5]+/g, '-');
     }
 
+    // 仅放行安全协议，阻断 javascript:/data:/vbscript: 等可执行协议（防自 XSS）
+    function safeUrl(url) {
+        var u = (url || '').toString().trim();
+        if (!u) return '';
+        var lower = u.toLowerCase();
+        if (/^(https?:|mailto:|tel:|#|\/)/.test(lower)) return u;
+        if (/^[a-z][a-z0-9+.\-]*:/i.test(lower)) return ''; // 其它协议一律拒绝
+        return u; // 无协议的相对地址按普通文本处理
+    }
+
     function findGroup(category) {
         var existing = $groups.querySelector('.trm-link-group[data-category="' + category + '"]');
         if (existing) return existing;
@@ -1493,14 +1506,15 @@
     }
 
     function createCardHtml(item, category) {
-        var hasUrl = item.url && item.url.trim();
+        var safe = safeUrl(item.url);
+        var hasUrl = !!safe;
         var tag = hasUrl ? 'a' : 'div';
-        var href = hasUrl ? ' href="' + item.url.replace(/"/g, '&quot;') + '" target="_blank" rel="nofollow"' : '';
+        var href = hasUrl ? ' href="' + safe.replace(/"/g, '&quot;') + '" target="_blank" rel="nofollow"' : '';
         var disabledClass = hasUrl ? '' : ' trm-link-card-disabled';
         var titleAttr = hasUrl ? '' : ' title="链接地址待补充"';
         var descHtml = item.desc ? '<div class="trm-link-card-desc">' + escapeHtml(item.desc).slice(0, 24) + '</div>' : '';
         var closeTag = hasUrl ? '</a>' : '</div>';
-        var urlAttr = hasUrl ? item.url : '';
+        var urlAttr = safe;
         return '<div class="col-lg-3 col-md-4 col-sm-6">' +
             '<' + tag + href + titleAttr + ' class="trm-link-card trm-link-card-custom trm-scroll-animation trm-active-el"' +
             ' data-name="' + escapeHtml(item.name) + '" data-url="' + escapeHtml(urlAttr) + '"' +
@@ -1611,6 +1625,13 @@
             return;
         }
 
+        if (url) {
+            if (/^(javascript|data|vbscript):/i.test(url)) {
+                alert('链接地址使用了不支持的协议，请填写 http(s) 等安全链接');
+                return;
+            }
+        }
+
         var items = getCustomItems();
 
         if ($modal.dataset.editName) {
@@ -1661,6 +1682,38 @@
             }
         }
         window.location.reload();
+    }
+
+    function exportBackup() {
+        var data = {
+            custom: getCustomItems(),
+            hidden: getHiddenItems(),
+            exportedAt: new Date().toISOString()
+        };
+        var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'awk-links-backup.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+    }
+
+    function importBackup(file) {
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                var data = JSON.parse(e.target.result);
+                if (Array.isArray(data.custom)) saveCustomItems(data.custom);
+                if (Array.isArray(data.hidden)) saveHiddenItems(data.hidden);
+                window.location.reload();
+            } catch (err) {
+                alert('备份文件解析失败，请确认是本站导出的 JSON');
+            }
+        };
+        reader.readAsText(file);
     }
 
     function showContextMenu(e, card) {
@@ -1744,6 +1797,14 @@
         activateTab(first ? first.getAttribute('data-target') : 'all');
 
         $addBtn.addEventListener('click', function() { openModal('add'); });
+        document.getElementById('trm-links-export').addEventListener('click', exportBackup);
+        document.getElementById('trm-links-import').addEventListener('click', function() {
+            document.getElementById('trm-links-import-file').click();
+        });
+        document.getElementById('trm-links-import-file').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) importBackup(e.target.files[0]);
+            e.target.value = '';
+        });
         $btnCancel.addEventListener('click', closeModal);
         $btnSave.addEventListener('click', saveLink);
         $inputCategory.addEventListener('change', function() {
@@ -1778,15 +1839,6 @@
     }
 })();
 </script>
-
-
-    
-
-    <div class="trm-card trm-scroll-animation comment-container">
-    <div id="tcomment"></div>
-</div>
-
-
 
 
                     <div class="trm-divider footer-divider"></div>
