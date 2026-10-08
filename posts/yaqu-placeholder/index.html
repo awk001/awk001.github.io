@@ -373,12 +373,33 @@
     
 
     
+<!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
+<script data-swup-reload-script>
+  window.__POST_MD__ = "---\ntitle: \"雅趣探微 · 占位\"\ndescription: 本篇为占位文章，用于让「雅趣探微」分类在首页卡片与归档导航中正常显示，正式内容待补充。\ndate: 2026-10-05 14:00:00\nauthor: AWK\ncategories: [\"雅趣探微\"]\ntags: [\"占位\", \"待补充\"]\npublished: true\n---\n\n这是一篇**占位文章**，目的是让「雅趣探微」这个分类在站点中正常显示出来。\n\n后续我会在这里补充兴趣探索类内容，例如：\n\n- 光学 / 成像之外的小实验与把玩\n- 值得分享的工具、设备与玩法\n- 工作之外的好奇与微光\n\n在正式内容上线前，本篇仅作分类占位用途。\n";
+</script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
-  <p style="font-size:.85rem;color:var(--theme-color,#666);margin:0 0 12px;line-height:1.6;">
+  <p style="font-size:.85rem;color:var(--theme-color,#666);margin:0 0 14px;line-height:1.6;">
     本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color:var(--primary,#488fe0);">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处并保留原文链接。
   </p>
 
+  
+  <div style="margin-bottom:14px;">
+    <div style="font-size:.82rem;color:#888;margin-bottom:7px;">一键分发到（点击复制全文并打开发布页）：</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      
+      <button type="button" onclick="__reprintCopy('https://creator.xiaohongshu.com/publish/publish?source=official')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 小红书</button>
+      
+      <button type="button" onclick="__reprintCopy('https://mp.weixin.qq.com/')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 微信公众号</button>
+      
+      <button type="button" onclick="__reprintCopy('https://member.bilibili.com/plus/article-upload')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 B站</button>
+      
+      <button type="button" onclick="__reprintCopy('https://creator.douyin.com/')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 抖音</button>
+      
+      <button type="button" onclick="__reprintCopy('https://mp.toutiao.com/')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 今日头条</button>
+      
+    </div>
+  </div>
   
 
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
@@ -396,6 +417,15 @@
 </div>
 
 <script data-swup-reload-script>
+function __reprintCopy(url) {
+  var md = window.__POST_MD__ || '';
+  var open = function () { window.open(url, '_blank'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(md).then(open).catch(open);
+  } else {
+    open();
+  }
+}
 (function () {
   function render() {
     var el = document.getElementById('wx-qrcode-canvas');
@@ -408,7 +438,7 @@
   var s = document.createElement('script');
   s.src = 'https://unpkg.com/qrcode@1.5.4/build/qrcode.min.js';
   s.onload = render;
-  s.onerror = function () { /* 二维码 CDN 加载失败则保留文字提示 */ };
+  s.onerror = function () { /* 二维码 CDN 失败则保留文字提示 */ };
   document.head.appendChild(s);
 })();
 </script>

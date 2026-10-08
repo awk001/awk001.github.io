@@ -483,12 +483,33 @@
     
 
     
+<!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
+<script data-swup-reload-script>
+  window.__POST_MD__ = "---\ntitle: 博客文章多平台转载作战手册（光眸笔记 → 自媒体矩阵）\ndate: 2026-10-08 10:30:00\ncategories: [\"知见沉淀\"]\ntags: [运营, 自媒体, 转载, 工作流]\ncover: /img/covers/zhijian.svg\n---\n\n> 一份母稿（博客 Hexo Markdown）吃遍天，平台差异化微调，原创声明 + 原文链接回流。\n> 本文是给「光眸笔记」文章做多平台分发的可执行 SOP，覆盖公众号、朋友圈、今日头条、小红书、B站、抖音。\n\n## 0. 核心原则\n\n1. **母稿唯一**：所有内容以博客 Hexo Markdown 为源头，不各平台分开写。\n2. **差异化微调，禁止原样复制**：全平台一字不差地发，会触发平台查重机制，导致流量下跌、账号降权。每个平台至少改标题、摘要、开头 2 句、封面。\n3. **原创声明 + 回流**：每篇在各平台文末/评论区置顶原文链接，把外部流量引回博客（沉淀私域、利于 SEO）。\n4. **本人实名账号**：所有平台用自己实名注册的账号，不碰未授权账号。\n\n## 1. 平台矩阵与内容形态映射\n\n| 平台 | 内容形态 | 推荐工具 | 半自动环节 | 关键注意 |\n|---|---|---|---|---|\n| 微信公众号 | 长文图文 | OpenWrite / mdnice | 一键扩散 | 不放外链，用「阅读原文」或评论区置顶；朋友圈转发卡片 |\n| 微信朋友圈 | 短链卡片 | 手动 | — | 摘金句 + 博客短链 |\n| 今日头条 | 长文 / 微头条 | OpenWrite | 一键扩散 | 可带外链；标题独立写，别和博客同题 |\n| 小红书 | 图文卡片 | MD2Card / 流光卡片 | 出图后手动发 | 封面 + 关键词 + 话题标签是流量命门 |\n| B站 | 视频 / 专栏 | 蚁小二 / 剪映图文成片 | 脚本 AI + 成片 | 文章 → 口播稿 → 视频 |\n| 抖音 | 短视频 | 蚁小二 AI 视频 / 剪映 | 脚本 AI + 成片 | 前 3 秒必须上钩子 |\n\n## 2. 工具链落地（半自动）\n\n### 2.1 图文主力：OpenWrite（公众号 + 头条）\n- 安装 Chrome 插件，官网 `openwrite.cn`，当前版本 v2.1.24（2026-08 仍在更新）。\n- 绑定「微信公众号」「今日头条」账号（微信扫码授权，安全）。\n- 把博客 Markdown 粘贴进编辑器 → 点「发布」→ 勾选平台 → 各平台编辑器确认即发。\n- 图片自动转平台图床，不会变小红叉。免费版够个人用。\n\n### 2.2 小红书：MD2Card（出图）\n- 完全免费、无水印、不用登录。把文章核心段落整理成 Markdown，选模板生成 3–6 张长图，导出 PNG。\n- 配一句小红书风格标题 + 话题标签，手动发布。\n- 备选：流光卡片（免费版带 AI 文案润色）。\n\n### 2.3 视频平台：蚁小二 + 剪映\n- 蚁小二支持抖音 / 快手 / 小红书 / 视频号 / B站 / 公众号等 40+ 平台，图文+短视频一键发、定时发布、CLI 自动发、AI 视频创作（免费 + 订阅）。\n- 博客纯文字 → 视频的缺口在「脚本」：用豆包 / 通义 / Claude 把文章改成口播稿或分镜，再用剪映「图文成片」或蚁小二 AI 视频生成成片，真人配音/字幕提升原创度。\n\n## 3. 标准转载 SOP（每篇 7 步）\n\n1. **母稿定稿**：博客 Hexo 写好，含 `cover`、规范 front-matter。\n2. **拆平台变体**：准备 N 个标题变体、每平台独立摘要、封面文案（差异化，别复制）。\n3. **图文平台**：OpenWrite 一键扩散到公众号 + 头条，进各编辑器微调后发布。\n4. **小红书**：MD2Card 出 3–6 图 + 小红书风格文案，手动发，挂话题。\n5. **视频平台**：AI 出口播稿 → 剪映 / 蚁小二成片 → 发 B站 / 抖音（前 3 秒钩子）。\n6. **朋友圈**：摘金句 + 博客短链，卡片转发。\n7. **回填回流**：各平台文末 / 评论区置顶原文链接；博客文末加「本文已同步发布于：公众号 / 小红书 / 头条 / B站 / 抖音，搜索 AWK」。\n\n## 4. 排版 / 版权 / SEO 规范\n\n- **原创声明模板**（每平台文末）：\n  > 本文首发于「光眸笔记」博客，转载请注明出处。原文链接：https://awk001.github.io/posts/xxx/\n- **外链限制**：公众号正文不放外链（会被吞），放「阅读原文」或评论区置顶；头条 / 小红书可带链接。\n- **图片图床**：OpenWrite 自动转；小红书用本地导出图，不依赖外链。\n- **敏感词预检**：发布前过一遍平台违禁词，避免审核卡住。\n- **错峰发布**：不一次性全发，见下节奏。\n\n## 5. 发布节奏与数据回收\n\n- **节奏**：博客首发 → 24h 内发图文平台（公众号 + 头条）→ 48h 内发小红书 + 视频（B站 / 抖音）→ 同步朋友圈。\n- **数据回收**：蚁小二后台 / 各平台创作者中心，每周复盘曝光、互动、涨粉、回流点击，汰弱留强。\n\n## 6. 风险与避坑\n\n- ❌ 禁止全平台原样复制（查重降权，最常见雷区）。\n- ❌ 公众号正文塞外链（被系统吞，改用阅读原文 / 评论区）。\n- ❌ 视频平台纯 AI 成片无真人元素（原创度低，易被限流；加配音 / 字幕 / 实拍补原创度）。\n- ❌ 用非本人实名账号（双重风控处罚）。\n\n## 7. 下一步行动清单\n\n- [ ] 确认 6 个平台账号均已注册且本人实名。\n- [ ] 安装 OpenWrite 插件、MD2Card、蚁小二客户端。\n- [ ] 选 1 篇博客（建议「工业视觉壁垒」或「Twikoo 免费部署」）做试点，跑通整条 SOP。\n- [ ] 试点后看数据，再决定是否全量铺开。\n\n> 进阶：可在 Hexo 加一个注入脚本，渲染时自动在文末追加「本文已同步发布于…」声明块，省去每篇手填。需要时再开。\n";
+</script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
-  <p style="font-size:.85rem;color:var(--theme-color,#666);margin:0 0 12px;line-height:1.6;">
+  <p style="font-size:.85rem;color:var(--theme-color,#666);margin:0 0 14px;line-height:1.6;">
     本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color:var(--primary,#488fe0);">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处并保留原文链接。
   </p>
 
+  
+  <div style="margin-bottom:14px;">
+    <div style="font-size:.82rem;color:#888;margin-bottom:7px;">一键分发到（点击复制全文并打开发布页）：</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      
+      <button type="button" onclick="__reprintCopy('https://creator.xiaohongshu.com/publish/publish?source=official')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 小红书</button>
+      
+      <button type="button" onclick="__reprintCopy('https://mp.weixin.qq.com/')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 微信公众号</button>
+      
+      <button type="button" onclick="__reprintCopy('https://member.bilibili.com/plus/article-upload')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 B站</button>
+      
+      <button type="button" onclick="__reprintCopy('https://creator.douyin.com/')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 抖音</button>
+      
+      <button type="button" onclick="__reprintCopy('https://mp.toutiao.com/')" style="display:inline-block;padding:6px 14px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;border:1px solid #dbe3f5;cursor:pointer;">📤 今日头条</button>
+      
+    </div>
+  </div>
   
 
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
@@ -506,6 +527,15 @@
 </div>
 
 <script data-swup-reload-script>
+function __reprintCopy(url) {
+  var md = window.__POST_MD__ || '';
+  var open = function () { window.open(url, '_blank'); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(md).then(open).catch(open);
+  } else {
+    open();
+  }
+}
 (function () {
   function render() {
     var el = document.getElementById('wx-qrcode-canvas');
@@ -518,7 +548,7 @@
   var s = document.createElement('script');
   s.src = 'https://unpkg.com/qrcode@1.5.4/build/qrcode.min.js';
   s.onload = render;
-  s.onerror = function () { /* 二维码 CDN 加载失败则保留文字提示 */ };
+  s.onerror = function () { /* 二维码 CDN 失败则保留文字提示 */ };
   document.head.appendChild(s);
 })();
 </script>
