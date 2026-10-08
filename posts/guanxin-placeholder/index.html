@@ -417,7 +417,7 @@
     <div style="font-weight:800;font-size:1rem;margin-bottom:4px;">微信扫一扫 / 长按识别</div>
     <div style="font-size:.76rem;color:#999;margin-bottom:12px;">非个人 / 公众号二维码，仅用于打开本文</div>
     <div style="padding:8px;background:#fff;border:1px solid #eee;border-radius:10px;display:inline-block;line-height:0;">
-      <canvas id="wx-modal-canvas" width="200" height="200" style="width:200px;height:200px;display:block;"></canvas>
+      <img id="wx-modal-qr" src="/qr/guanxin-placeholder.svg" alt="微信分享二维码" width="200" height="200" style="display:block;width:200px;height:200px;" onerror="this.parentNode.innerHTML='<div style=\'padding:20px;color:#c00;font-size:.8rem;\'>二维码加载失败，请复制链接在微信中打开</div>'">
     </div>
     <div style="font-size:.76rem;color:#888;margin-top:12px;line-height:1.6;">用微信「扫一扫」或长按识别上方二维码，<br>在微信中打开本文后，点击右上角 ···<br>即可分享给好友或朋友圈</div>
   </div>
@@ -433,26 +433,9 @@ function __reprintCopy(url) {
     open();
   }
 }
-var __wxQrLoaded = false;
 function __showWxQr() {
   var m = document.getElementById('wx-reprint-modal');
   if (m) m.style.display = 'flex';
-  if (__wxQrLoaded || (window.QRCode && window.QRCode.toCanvas)) { renderWxQr(); return; }
-  var s = document.createElement('script');
-  s.src = 'https://unpkg.com/qrcode@1.5.4/build/qrcode.min.js';
-  s.onload = function () { __wxQrLoaded = true; renderWxQr(); };
-  s.onerror = function () {
-    var c = document.getElementById('wx-modal-canvas');
-    if (c && c.parentNode) c.parentNode.innerHTML = '<div style="padding:20px;color:#c00;font-size:.8rem;">二维码加载失败，请复制链接在微信中打开</div>';
-  };
-  document.head.appendChild(s);
-}
-function renderWxQr() {
-  var el = document.getElementById('wx-modal-canvas');
-  if (!el || !window.QRCode || !window.QRCode.toCanvas) return;
-  window.QRCode.toCanvas(el, location.href, { width: 200, margin: 1 }, function (err) {
-    if (err) console.error('[reprint] wx qrcode render failed:', err);
-  });
 }
 </script>
 
