@@ -10,12 +10,12 @@
   <rights>All rights reserved 2026, AWK</rights>
   <subtitle>光学成像与工业智能的工程笔记</subtitle>
   <title>光眸笔记</title>
-  <updated>2026-10-07T05:18:17.530Z</updated>
+  <updated>2026-10-08T01:49:43.079Z</updated>
   <entry>
     <author>
       <name>AWK</name>
     </author>
-    <category term="知见沉淀" scheme="https://awk001.github.io/categories/%E7%9F%A5%E8%A7%81%E6%B2%89%E6%B7%80/"/>
+    <category term="建站笔记" scheme="https://awk001.github.io/categories/%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/"/>
     <category term="Hexo" scheme="https://awk001.github.io/tags/Hexo/"/>
     <category term="Twikoo" scheme="https://awk001.github.io/tags/Twikoo/"/>
     <category term="评论系统" scheme="https://awk001.github.io/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
@@ -30,7 +30,7 @@
     <published>2026-10-07T04:30:00.000Z</published>
     <summary>从零开始，把 Twikoo 评论系统部署到 Netlify + MongoDB Atlas 免费后端的完整步骤。涵盖 MongoDB 建库、Netlify 部署、可见性设置、评论框验证、管理员后台，以及所有踩过的坑。</summary>
     <title>Hexo 博客接入 Twikoo 评论系统（Netlify + MongoDB Atlas 完全免费）</title>
-    <updated>2026-10-07T05:18:17.530Z</updated>
+    <updated>2026-10-08T01:49:43.079Z</updated>
   </entry>
   <entry>
     <author>
