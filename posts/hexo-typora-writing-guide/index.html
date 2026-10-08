@@ -468,13 +468,57 @@
   <p style="font-size:.85rem;color:var(--theme-color,#666);margin:0 0 12px;line-height:1.6;">
     本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener" style="color:var(--primary,#488fe0);">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处并保留原文链接。
   </p>
+
+  
+  <div style="margin-bottom:14px;">
+    <div style="font-size:.82rem;color:#888;margin-bottom:7px;">已同步发布平台（点击直达）：</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      
+      <a href="https://mp.weixin.qq.com" target="_blank" rel="noopener" style="display:inline-block;padding:5px 13px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;text-decoration:none;border:1px solid #dbe3f5;">微信公众号</a>
+      
+      <a href="https://www.xiaohongshu.com" target="_blank" rel="noopener" style="display:inline-block;padding:5px 13px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;text-decoration:none;border:1px solid #dbe3f5;">小红书</a>
+      
+      <a href="https://www.toutiao.com" target="_blank" rel="noopener" style="display:inline-block;padding:5px 13px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;text-decoration:none;border:1px solid #dbe3f5;">今日头条</a>
+      
+      <a href="https://space.bilibili.com" target="_blank" rel="noopener" style="display:inline-block;padding:5px 13px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;text-decoration:none;border:1px solid #dbe3f5;">B站</a>
+      
+      <a href="https://www.douyin.com" target="_blank" rel="noopener" style="display:inline-block;padding:5px 13px;border-radius:16px;background:#eef2fb;color:#3a6ea5;font-size:.8rem;text-decoration:none;border:1px solid #dbe3f5;">抖音</a>
+      
+    </div>
+  </div>
+  
+
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
     <button type="button" onclick="var b=this;navigator.clipboard.writeText(location.href).then(function(){b.innerText='✓ 已复制';setTimeout(function(){b.innerText='📋 复制原文链接'},2000)}).catch(function(){b.innerText='复制失败'})" style="display:inline-block;padding:7px 16px;border-radius:20px;background:var(--primary,#488fe0);color:#fff;font-size:.82rem;border:none;cursor:pointer;">📋 复制原文链接</button>
     <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fhexo-typora-writing-guide%2F&title=%E7%94%A8%20Typora%20%E5%86%99%20Markdown%20%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0%20Hexo%20%E5%8D%9A%E5%AE%A2%EF%BC%9A%E8%A7%84%E8%8C%83%E4%B8%8E%E9%81%BF%E5%9D%91" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">微博分享</a>
     <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fhexo-typora-writing-guide%2F&title=%E7%94%A8%20Typora%20%E5%86%99%20Markdown%20%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0%20Hexo%20%E5%8D%9A%E5%AE%A2%EF%BC%9A%E8%A7%84%E8%8C%83%E4%B8%8E%E9%81%BF%E5%9D%91" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">QQ分享</a>
-    <span style="font-size:.78rem;color:#999;">微信：手机端打开本文后点右上角「···」分享</span>
+  </div>
+
+  <div style="margin-top:14px;display:flex;gap:12px;align-items:center;">
+    <div style="padding:6px;background:#fff;border:1px solid #e3e3e3;border-radius:8px;line-height:0;">
+      <canvas id="wx-qrcode-canvas" width="100" height="100" style="width:100px;height:100px;display:block;"></canvas>
+    </div>
+    <div style="font-size:.78rem;color:#999;line-height:1.6;">微信扫码分享<br>手机微信扫上方二维码<br>即可打开本文并分享</div>
   </div>
 </div>
+
+<script data-swup-reload-script>
+(function () {
+  function render() {
+    var el = document.getElementById('wx-qrcode-canvas');
+    if (!el || !window.QRCode || !window.QRCode.toCanvas) return;
+    window.QRCode.toCanvas(el, location.href, { width: 100, margin: 1 }, function (err) {
+      if (err) console.error('[reprint] qrcode render failed:', err);
+    });
+  }
+  if (window.QRCode && window.QRCode.toCanvas) { render(); return; }
+  var s = document.createElement('script');
+  s.src = 'https://unpkg.com/qrcode@1.5.4/build/qrcode.min.js';
+  s.onload = render;
+  s.onerror = function () { /* 二维码 CDN 加载失败则保留文字提示 */ };
+  document.head.appendChild(s);
+})();
+</script>
 
 </div>
 
