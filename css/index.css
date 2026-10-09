@@ -1654,7 +1654,7 @@ blockquote:after {
 .trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body .trm-toc .trm-toc-level-1 {
   list-style: none;
 }
-@media (min-width: 992px) and (min-height: 800px) {
+@media (min-width: 992px) {
   .trm-main-card-frame.fixed {
     position: fixed;
     top: 90px;
