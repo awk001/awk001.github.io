@@ -713,7 +713,6 @@ html.is-animating .trm-swup-animation {
   z-index: 0;
   position: relative;
   z-index: 1;
-  min-height: calc(100vh - 100px);
 }
 @media (max-width: 992px) {
   body {
