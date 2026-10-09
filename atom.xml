@@ -118,23 +118,6 @@
     <author>
       <name>AWK</name>
     </author>
-    <category term="雅趣探微" scheme="https://awk001.github.io/categories/%E9%9B%85%E8%B6%A3%E6%8E%A2%E5%BE%AE/"/>
-    <category term="占位" scheme="https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/"/>
-    <category term="待补充" scheme="https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/"/>
-    <content>
-      <![CDATA[<p>这是一篇<strong>占位文章</strong>，目的是让「雅趣探微」这个分类在站点中正常显示出来。</p><p>后续我会在这里补充兴趣探索类内容，例如：</p><ul><li>光学 &#x2F; 成像之外的小实验与把玩</li><li>值得分享的工具、设备与玩法</li><li>工作之外的好奇与微光</li></ul><p>在正式内容上线前，本篇仅作分类占位用途。</p>]]>
-    </content>
-    <id>https://awk001.github.io/posts/yaqu-placeholder/</id>
-    <link href="https://awk001.github.io/posts/yaqu-placeholder/"/>
-    <published>2026-10-05T06:00:00.000Z</published>
-    <summary>本篇为占位文章，用于让「雅趣探微」分类在首页卡片与归档导航中正常显示，正式内容待补充。</summary>
-    <title>雅趣探微 · 占位</title>
-    <updated>2026-10-08T01:43:57.510Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>AWK</name>
-    </author>
     <category term="品宣叙事" scheme="https://awk001.github.io/categories/%E5%93%81%E5%AE%A3%E5%8F%99%E4%BA%8B/"/>
     <category term="占位" scheme="https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/"/>
     <category term="待补充" scheme="https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/"/>
@@ -147,6 +130,23 @@
     <summary>本篇为占位文章，用于让「品宣叙事」分类在首页卡片与归档导航中正常显示，正式内容待补充。</summary>
     <title>品宣叙事 · 占位</title>
     <updated>2026-10-06T04:19:35.758Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>AWK</name>
+    </author>
+    <category term="雅趣探微" scheme="https://awk001.github.io/categories/%E9%9B%85%E8%B6%A3%E6%8E%A2%E5%BE%AE/"/>
+    <category term="占位" scheme="https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/"/>
+    <category term="待补充" scheme="https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/"/>
+    <content>
+      <![CDATA[<p>这是一篇<strong>占位文章</strong>，目的是让「雅趣探微」这个分类在站点中正常显示出来。</p><p>后续我会在这里补充兴趣探索类内容，例如：</p><ul><li>光学 &#x2F; 成像之外的小实验与把玩</li><li>值得分享的工具、设备与玩法</li><li>工作之外的好奇与微光</li></ul><p>在正式内容上线前，本篇仅作分类占位用途。</p>]]>
+    </content>
+    <id>https://awk001.github.io/posts/yaqu-placeholder/</id>
+    <link href="https://awk001.github.io/posts/yaqu-placeholder/"/>
+    <published>2026-10-05T06:00:00.000Z</published>
+    <summary>本篇为占位文章，用于让「雅趣探微」分类在首页卡片与归档导航中正常显示，正式内容待补充。</summary>
+    <title>雅趣探微 · 占位</title>
+    <updated>2026-10-08T01:43:57.510Z</updated>
   </entry>
   <entry>
     <author>

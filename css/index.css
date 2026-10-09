@@ -750,7 +750,7 @@ html.is-animating .trm-swup-animation {
 }
 .trm-page-content {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 24px;
 }
 .trm-page-content > .trm-content {

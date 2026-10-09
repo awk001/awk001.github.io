@@ -49,18 +49,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/twikoo-deploy-guide/</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/posts/yaqu-placeholder/</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/posts/pinxuan-narrative-placeholder/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -68,6 +56,18 @@
   </url>
   <url>
     <loc>https://awk001.github.io/posts/pyside6-ui-hang-debug/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/twikoo-deploy-guide/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/yaqu-placeholder/</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -223,18 +223,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/tags/MongoDB/</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/tags/Python/</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -248,6 +236,18 @@
   </url>
   <url>
     <loc>https://awk001.github.io/tags/%E8%B0%83%E8%AF%95/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/MongoDB/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
