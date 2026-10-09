@@ -1536,7 +1536,8 @@ blockquote:after {
   padding: var(--card-padding, 40px);
   border-radius: var(--card-border-radius, 10px);
   width: 100%;
-  height: calc(100vh - 100px);
+  height: auto;
+  min-height: 0;
   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.15);
   background-color: var(--theme-bg-color, #fcfcfe);
 }
