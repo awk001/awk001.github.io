@@ -862,6 +862,11 @@ html.is-animating .trm-swup-animation {
 .trm-top-bar .container .trm-left-side .trm-logo-frame .trm-logo-text span {
   color: var(--primary, #afb42b);
 }
+.trm-top-bar .container .trm-left-side .trm-logo-frame .trm-logo-text-large {
+  font-size: 40px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
 .trm-top-bar .container .trm-left-side .trm-logo-frame img {
   width: 32px;
   margin-right: 10px;
@@ -881,7 +886,10 @@ html.is-animating .trm-swup-animation {
 }
 @media (max-width: 1200px) {
   .trm-top-bar .trm-logo-text {
-    display: none;
+    display: block;
+  }
+  .trm-top-bar .trm-logo-text-large {
+    font-size: 28px;
   }
   .trm-top-bar .container .trm-left-side {
     justify-content: start;
