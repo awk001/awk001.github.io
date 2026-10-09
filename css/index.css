@@ -829,7 +829,7 @@ html.is-animating .trm-swup-animation {
   }
   body.layout-links .trm-app-frame,
   body.layout-project .trm-app-frame {
-    height: 100vh;
+    height: calc(100vh - 20px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
