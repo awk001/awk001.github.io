@@ -1527,13 +1527,14 @@ blockquote:after {
 .trm-page-sidebar {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .trm-main-card-frame {
   position: relative;
   z-index: 2;
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
   transform: translateY(-40px);
 }
 .trm-main-card-frame .trm-main-card {
@@ -1543,7 +1544,7 @@ blockquote:after {
   padding: var(--card-padding, 40px);
   border-radius: var(--card-border-radius, 10px);
   width: 100%;
-  height: calc(100% + 40px);
+  height: auto;
   min-height: 0;
   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.15);
   background-color: var(--theme-bg-color, #fcfcfe);
@@ -1650,7 +1651,7 @@ blockquote:after {
 .trm-main-card-frame .trm-main-card .trm-sidebar-toc .trm-sidebar-toc-body .trm-toc .trm-toc-level-1 {
   list-style: none;
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (min-height: 800px) {
   .trm-main-card-frame.fixed {
     position: fixed;
     top: 90px;
