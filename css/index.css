@@ -818,15 +818,6 @@ html.is-animating .trm-swup-animation {
     display: none;
   }
 }
-@media (min-width: 992px) {
-  .layout-links .trm-app-frame .trm-content-start .container .trm-page-content > .trm-content,
-  .layout-project .trm-app-frame .trm-content-start .container .trm-page-content > .trm-content {
-    min-height: 0;
-    max-height: calc(100vh - 540px);
-    padding-bottom: 10px;
-    overflow-y: auto;
-  }
-}
 .trm-top-bar {
   position: fixed;
   left: 10px;
