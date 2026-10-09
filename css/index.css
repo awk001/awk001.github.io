@@ -713,6 +713,7 @@ html.is-animating .trm-swup-animation {
   z-index: 0;
   position: relative;
   z-index: 1;
+  min-height: calc(100vh - 100px);
 }
 @media (max-width: 992px) {
   body {
@@ -730,6 +731,7 @@ html.is-animating .trm-swup-animation {
   }
   .trm-app-frame .trm-content-start .container .trm-content {
     margin-top: 0px;
+    min-height: auto;
   }
 }
 @media (max-width: 768px) {
@@ -739,6 +741,7 @@ html.is-animating .trm-swup-animation {
   .trm-app-frame .trm-content-start .container .trm-content {
     margin-top: 10px;
     padding: 0 0 20px;
+    min-height: auto;
   }
 }
 @media (min-width: 1400px) {
