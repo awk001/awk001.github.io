@@ -842,7 +842,7 @@
             : '<span class="trm-link-card-letter">' + escapeHtml((item.name || '').trim().charAt(0)) + '</span>';
         var descHtml = item.desc ? '<div class="trm-link-card-desc">' + escapeHtml(item.desc).slice(0, 24) + '</div>' : '';
         var closeTag = hasUrl ? '</a>' : '</div>';
-        return '<div class="col-lg-3 col-md-4 col-sm-6">' +
+        return '<div class="col-6 col-md-4 col-lg-3">' +
             '<' + tag + href + titleAttr + ' class="trm-link-card' + (isCustom ? ' trm-link-card-custom' : '') + ' trm-scroll-animation trm-active-el' + disabledClass + '"' +
             ' data-name="' + escapeHtml(item.name) + '" data-url="' + escapeHtml(safe) + '"' +
             ' data-desc="' + escapeHtml(item.desc || '') + '" data-category="' + escapeHtml(category) + '"' +
