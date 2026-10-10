@@ -101,23 +101,6 @@
     <author>
       <name>时安</name>
     </author>
-    <category term="观心随笔" scheme="https://awk001.github.io/categories/%E8%A7%82%E5%BF%83%E9%9A%8F%E7%AC%94/"/>
-    <category term="占位" scheme="https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/"/>
-    <category term="待补充" scheme="https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/"/>
-    <content>
-      <![CDATA[<p>这是一篇<strong>占位文章</strong>，目的是让「观心随笔」这个分类在站点中正常显示出来。</p><p>后续我会在这里补充正式随笔 &#x2F; 思考类内容，例如：</p><ul><li>创业路上的一些真实体感与复盘</li><li>对技术、行业与人生的零散思考</li><li>读书、见人、做事之后的私人记录</li></ul><p>在正式内容上线前，本篇仅作分类占位用途。</p>]]>
-    </content>
-    <id>https://awk001.github.io/posts/guanxin-placeholder/</id>
-    <link href="https://awk001.github.io/posts/guanxin-placeholder/"/>
-    <published>2026-10-05T06:00:00.000Z</published>
-    <summary>本篇为占位文章，用于让「观心随笔」分类在首页卡片与归档导航中正常显示，正式内容待补充。</summary>
-    <title>观心随笔 · 占位</title>
-    <updated>2026-10-10T05:45:00.052Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>时安</name>
-    </author>
     <category term="品宣叙事" scheme="https://awk001.github.io/categories/%E5%93%81%E5%AE%A3%E5%8F%99%E4%BA%8B/"/>
     <category term="占位" scheme="https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/"/>
     <category term="待补充" scheme="https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/"/>
@@ -147,6 +130,23 @@
     <summary>本篇为占位文章，用于让「雅趣探微」分类在首页卡片与归档导航中正常显示，正式内容待补充。</summary>
     <title>雅趣探微 · 占位</title>
     <updated>2026-10-10T05:45:00.109Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>时安</name>
+    </author>
+    <category term="观心随笔" scheme="https://awk001.github.io/categories/%E8%A7%82%E5%BF%83%E9%9A%8F%E7%AC%94/"/>
+    <category term="占位" scheme="https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/"/>
+    <category term="待补充" scheme="https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/"/>
+    <content>
+      <![CDATA[<p>这是一篇<strong>占位文章</strong>，目的是让「观心随笔」这个分类在站点中正常显示出来。</p><p>后续我会在这里补充正式随笔 &#x2F; 思考类内容，例如：</p><ul><li>创业路上的一些真实体感与复盘</li><li>对技术、行业与人生的零散思考</li><li>读书、见人、做事之后的私人记录</li></ul><p>在正式内容上线前，本篇仅作分类占位用途。</p>]]>
+    </content>
+    <id>https://awk001.github.io/posts/guanxin-placeholder/</id>
+    <link href="https://awk001.github.io/posts/guanxin-placeholder/"/>
+    <published>2026-10-05T06:00:00.000Z</published>
+    <summary>本篇为占位文章，用于让「观心随笔」分类在首页卡片与归档导航中正常显示，正式内容待补充。</summary>
+    <title>观心随笔 · 占位</title>
+    <updated>2026-10-10T05:45:00.052Z</updated>
   </entry>
   <entry>
     <author>
