@@ -15,8 +15,8 @@
 <meta property="og:description" content="从一个界面卡死的现象出发，如何用二分法定位到根因，以及为什么加 sleep 掩盖时序问题是个陷阱。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-09-28T07:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-08T01:43:39.048Z">
-<meta property="article:author" content="AWK">
+<meta property="article:modified_time" content="2026-10-10T05:45:00.100Z">
+<meta property="article:author" content="时安">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="PySide6">
 <meta property="article:tag" content="调试">
@@ -61,8 +61,8 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"AWK","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-08 09:43:39"};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-10 13:45:00"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -132,7 +132,7 @@
 <a href="/" class="trm-logo-frame trm-anima-link">
     
         <div class="trm-logo-text trm-logo-text-large">
-            AWK<span></span>
+            时安<span></span>
         </div>
     
 </a>
@@ -265,7 +265,7 @@
         <img alt="Avatar" class="trm-avatar" src="/img/avatar-awk.png">
     </div>
     <h5 class="trm-name trm-mb-15">
-        AWK
+        时安
     </h5>
     
         <div class="trm-label">
@@ -361,7 +361,7 @@
     <div class="col-sm-4">
         <div id="post-author" class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont fas fa-user trm-icon"></i><br>
-            AWK
+            时安
         </div>
     </div>
 </div>
@@ -394,7 +394,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"记一次 PySide6 界面卡顿的排查过程\"\ndescription: 从一个界面卡死的现象出发，如何用二分法定位到根因，以及为什么加 sleep 掩盖时序问题是个陷阱。\ndate: 2026-09-28 15:00:00\nauthor: AWK\ncategories: [\"技术札记\"]\ntags: [\"Python\", \"PySide6\", \"调试\"]\npublished: true\n---\n界面偶尔卡一下，测试的时候偶现，开发者本机完全复现不了。这种问题最耗人。\n\n## 先排除错误的方向\n\n遇到卡顿，第一反应往往是「加点 sleep 让它等等」。这是最坏的开端。\n\n```python\n# 错误示范\nQTimer.singleShot(500, self.refresh_data)  # 假装没看见竞态\n```\n\n这不解决任何问题，只是把概率性的时序冲突变成稳定复现。真正的竞态还在那里，只是被推迟了，日后会在更难查的地方冒出来。\n\n## 二分法定位\n\n我的做法是给链路加时间戳，而不是加延迟：\n\n```python\nimport time\n\n_t0 = time.perf_counter()\n\ndef log_step(name: str) -> None:\n    elapsed = (time.perf_counter() - _t0) * 1000\n    print(f'[perf] {name:32s} {elapsed:8.2f} ms')\n```\n\n然后在每个环节前后各打一次。跑二十次，看输出的分布而不是单次结果——偶发问题看的是尾部，不是均值。\n\n这一步抓到的问题在：设备数据采集的回调里，触发了 UI 线程的同步刷新。\n\n## 根因\n\n回调可能在工作线程上被触发，也可能被 `QMetaObject.invokeMethod` 切回主线程。两条路径都会走到同一个刷新函数，而其中一条是重入的。\n\n修法不是加锁，是明确线程归属：\n\n```python\n@Slot(object)\ndef on_device_data(self, payload: DeviceData) -> None:\n    \"\"\"保证只在主线程执行。\"\"\"\n    if not QThread.currentThread() is self.thread():\n        # 不在这里判断后再调用，直接转发，\n        # 避免 TOCTOU 竞态\n        self.invokeMethod(\n            lambda: self.on_device_data(payload),\n            Qt.ConnectionType.QueuedConnection,\n        )\n        return\n\n    current = self._current_row\n    # 已有有效数值就跳过，不让合格判定覆盖已写入的数据\n    if current.has_valid_value():\n        return\n\n    self._fill_row(current, payload)\n```\n\n## 教训\n\n1. **偶发问题看分布，不看单次。** 单次日志只能证明「这次没问题」。\n2. **不要用 sleep 掩盖时序问题。** 它把问题藏起来，不是修掉。\n3. **线程归属要在入口统一，不要在每一处判断。** 分散的 `if` 判断迟早会漏一处。\n";
+  window.__POST_MD__ = "---\ntitle: \"记一次 PySide6 界面卡顿的排查过程\"\ndescription: 从一个界面卡死的现象出发，如何用二分法定位到根因，以及为什么加 sleep 掩盖时序问题是个陷阱。\ndate: 2026-09-28 15:00:00\nauthor: 时安\ncategories: [\"技术札记\"]\ntags: [\"Python\", \"PySide6\", \"调试\"]\npublished: true\n---\n界面偶尔卡一下，测试的时候偶现，开发者本机完全复现不了。这种问题最耗人。\n\n## 先排除错误的方向\n\n遇到卡顿，第一反应往往是「加点 sleep 让它等等」。这是最坏的开端。\n\n```python\n# 错误示范\nQTimer.singleShot(500, self.refresh_data)  # 假装没看见竞态\n```\n\n这不解决任何问题，只是把概率性的时序冲突变成稳定复现。真正的竞态还在那里，只是被推迟了，日后会在更难查的地方冒出来。\n\n## 二分法定位\n\n我的做法是给链路加时间戳，而不是加延迟：\n\n```python\nimport time\n\n_t0 = time.perf_counter()\n\ndef log_step(name: str) -> None:\n    elapsed = (time.perf_counter() - _t0) * 1000\n    print(f'[perf] {name:32s} {elapsed:8.2f} ms')\n```\n\n然后在每个环节前后各打一次。跑二十次，看输出的分布而不是单次结果——偶发问题看的是尾部，不是均值。\n\n这一步抓到的问题在：设备数据采集的回调里，触发了 UI 线程的同步刷新。\n\n## 根因\n\n回调可能在工作线程上被触发，也可能被 `QMetaObject.invokeMethod` 切回主线程。两条路径都会走到同一个刷新函数，而其中一条是重入的。\n\n修法不是加锁，是明确线程归属：\n\n```python\n@Slot(object)\ndef on_device_data(self, payload: DeviceData) -> None:\n    \"\"\"保证只在主线程执行。\"\"\"\n    if not QThread.currentThread() is self.thread():\n        # 不在这里判断后再调用，直接转发，\n        # 避免 TOCTOU 竞态\n        self.invokeMethod(\n            lambda: self.on_device_data(payload),\n            Qt.ConnectionType.QueuedConnection,\n        )\n        return\n\n    current = self._current_row\n    # 已有有效数值就跳过，不让合格判定覆盖已写入的数据\n    if current.has_valid_value():\n        return\n\n    self._fill_row(current, payload)\n```\n\n## 教训\n\n1. **偶发问题看分布，不看单次。** 单次日志只能证明「这次没问题」。\n2. **不要用 sleep 掩盖时序问题。** 它把问题藏起来，不是修掉。\n3. **线程归属要在入口统一，不要在每一处判断。** 分散的 `if` 判断迟早会漏一处。\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
