@@ -3013,6 +3013,9 @@ form textarea:focus,
 .trm-publication h1 {
   font-size: 2.5em;
 }
+.trm-publication > h1:first-of-type {
+  display: none;
+}
 .trm-publication h2 {
   font-size: 1.7em;
   position: relative;
