@@ -837,30 +837,36 @@
 
     function createIconHtml(item, safeUrl) {
         var letter = '<span class="trm-link-card-letter">' + escapeHtml((item.name || '').trim().charAt(0)) + '</span>';
-        var onload = 'this.style.display=\'\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'none\';}';
-        var onerrorUser = 'this.style.display=\'none\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'\';}';
+        var showIcon = 'this.style.display=\'\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'none\';}';
+        var hideIcon = 'this.style.display=\'none\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'\';}';
 
         if (item.image) {
             return '<img draggable="false" loading="lazy" src="' + escapeHtml(item.image) + '" ' +
-                'onload="' + onload + '" onerror="' + onerrorUser + '" alt="' + escapeHtml(item.name) + '">' + letter;
+                'onload="' + showIcon + '" onerror="' + hideIcon + '" alt="' + escapeHtml(item.name) + '">' + letter;
         }
 
         var domain = extractDomain(safeUrl);
         if (!domain) return letter;
 
-        var faviconUrl = 'https://icon.horse/icon/' + encodeURIComponent(domain);
-        var fallbackUrl = 'https://api.faviconkit.com/' + encodeURIComponent(domain) + '/64';
-        var onloadFav = onload;
-        var onerrorFav = 'if(this.dataset.fallback){this.src=this.dataset.fallback; this.dataset.fallback=\'\';}else{' +
-            'this.style.display=\'none\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'\';}' +
-            '}';
+        // 多级回退：优先直连站点自己的 favicon（国内最稳），再接国内可达代理，最后才回退字母
+        var sources = [
+            'https://' + domain + '/favicon.ico',
+            'https://favicon.im/' + encodeURIComponent(domain),
+            'https://icon.horse/icon/' + encodeURIComponent(domain)
+        ];
 
-        return '<img draggable="false" loading="lazy" ' +
-            'src="' + faviconUrl + '" data-fallback="' + fallbackUrl + '" ' +
-            'style="display:none;" ' +
-            'onload="' + onloadFav + '" ' +
-            'onerror="' + onerrorFav + '" ' +
-            'alt="' + escapeHtml(item.name) + '">' + letter;
+        var html = '';
+        for (var i = 0; i < sources.length; i++) {
+            var next = (i < sources.length - 1) ? sources[i + 1] : '';
+            var onerr = next
+                ? 'if(this.dataset.next){this.src=this.dataset.next; this.dataset.next=\'\';}else{' + hideIcon + '}'
+                : hideIcon;
+            html += '<img draggable="false" loading="lazy" src="' + sources[i] + '" ' +
+                'data-next="' + next + '" style="display:none;" ' +
+                'onload="' + showIcon + '" onerror="' + onerr + '" ' +
+                'alt="' + escapeHtml(item.name) + '">';
+        }
+        return html + letter;
     }
 
     function createCardHtml(item, category, isCustom) {
