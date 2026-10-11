@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="从命令行助手到可编程 Agent 的演进，解析四层架构模型与 Agentic Loop 的运转机制。  本章要点 四层架构：记忆&#x2F;扩展&#x2F;集成&#x2F;编程层 Harness 与 Agentic Loop 的分工 组件关系、数据流与触发机制对比   返回总目录　|　第 2 章 温故知新：记忆系统工程实践">
+<meta name="description" content="从命令行助手到可编程 Agent 的演进，解析四层架构模型与 Agentic Loop 的运转机制。  1.1 从命令行助手到可编程 AgentClaude Code 最初给人的印象是一个「会聊天的终端助手」，但它真正的进化方向是可编程 Agent。区别不在于界面，而在于控制权：前者每一步都需要人类确认，后者可以在给定目标后自主规划、调用工具并完成任务。 这种转变要求我们把 Claude Cod">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 1 章 登高望远：Claude Code技术架构全景">
 <meta property="og:url" content="https://awk001.github.io/posts/claude-ch01/">
 <meta property="og:site_name" content="AWK博客">
-<meta property="og:description" content="从命令行助手到可编程 Agent 的演进，解析四层架构模型与 Agentic Loop 的运转机制。  本章要点 四层架构：记忆&#x2F;扩展&#x2F;集成&#x2F;编程层 Harness 与 Agentic Loop 的分工 组件关系、数据流与触发机制对比   返回总目录　|　第 2 章 温故知新：记忆系统工程实践">
+<meta property="og:description" content="从命令行助手到可编程 Agent 的演进，解析四层架构模型与 Agentic Loop 的运转机制。  1.1 从命令行助手到可编程 AgentClaude Code 最初给人的印象是一个「会聊天的终端助手」，但它真正的进化方向是可编程 Agent。区别不在于界面，而在于控制权：前者每一步都需要人类确认，后者可以在给定目标后自主规划、调用工具并完成任务。 这种转变要求我们把 Claude Cod">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T15:20:55.905Z">
+<meta property="article:modified_time" content="2026-10-11T15:46:14.969Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:20:55"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:46:14"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -365,11 +365,21 @@
     <blockquote>
 <p>从命令行助手到可编程 Agent 的演进，解析四层架构模型与 Agentic Loop 的运转机制。</p>
 </blockquote>
-<h2 id="本章要点"><a href="#本章要点" class="headerlink" title="本章要点"></a>本章要点</h2><ul>
-<li>四层架构：记忆&#x2F;扩展&#x2F;集成&#x2F;编程层</li>
-<li>Harness 与 Agentic Loop 的分工</li>
-<li>组件关系、数据流与触发机制对比</li>
-</ul>
+<h2 id="1-1-从命令行助手到可编程-Agent"><a href="#1-1-从命令行助手到可编程-Agent" class="headerlink" title="1.1 从命令行助手到可编程 Agent"></a>1.1 从命令行助手到可编程 Agent</h2><p>Claude Code 最初给人的印象是一个「会聊天的终端助手」，但它真正的进化方向是可编程 Agent。区别不在于界面，而在于控制权：前者每一步都需要人类确认，后者可以在给定目标后自主规划、调用工具并完成任务。</p>
+<p>这种转变要求我们把 Claude Code 看作「软件工程流水线」的一环，而不是孤立的代码生成器。它的输出会影响代码库、测试、文档，甚至 CI&#x2F;CD 流程，因此需要工程化地管理上下文、权限与可观测性。</p>
+<h2 id="1-2-四层架构模型"><a href="#1-2-四层架构模型" class="headerlink" title="1.2 四层架构模型"></a>1.2 四层架构模型</h2><p>本书提出的四层架构——记忆层、扩展层、集成层、编程层——是理解 Claude Code 工程化的关键。记忆层解决「它知道什么」；扩展层解决「它能做什么」；集成层解决「它如何与外部系统协作」；编程层解决「它如何被编排与复用」。</p>
+<p>四层之间不是线性依赖，而是循环增强。例如，Skills 属于扩展层，但它依赖记忆层的 CLAUDE.md 来保持行为一致；MCP 属于集成层，却通过编程层的 Agent SDK 被调用。</p>
+<h2 id="1-3-Harness-Engineering-的核心问题"><a href="#1-3-Harness-Engineering-的核心问题" class="headerlink" title="1.3 Harness Engineering 的核心问题"></a>1.3 Harness Engineering 的核心问题</h2><p>Harness 强调把 AI 能力「驾驭」在可控的轨道内。核心问题包括：如何防止 Agent 在大型代码库中迷失上下文？如何让多个 Agent 协作而不互相干扰？如何把个人的使用经验沉淀为团队可复用的规范？</p>
+<p>回答这些问题，需要从「单次对话」跃迁到「系统工程」：定义清晰的输入输出边界、建立可回滚的执行策略、保留完整日志供审计与调试。</p>
+<h2 id="1-4-快速自检清单"><a href="#1-4-快速自检清单" class="headerlink" title="1.4 快速自检清单"></a>1.4 快速自检清单</h2><ol>
+<li><p>你是否为项目编写了 CLAUDE.md？</p>
+</li>
+<li><p>你的 Agent 是否能在无人值守时给出可审计的执行轨迹？</p>
+</li>
+<li><p>失败时，它能否回滚到已知安全状态？</p>
+</li>
+</ol>
+<h2 id="1-5-小结"><a href="#1-5-小结" class="headerlink" title="1.5 小结"></a>1.5 小结</h2><p>第 1 章定下了全书基调：Claude Code 不是更聪明的命令行，而是一套需要被工程化驾驭的 Agent 系统。理解四层架构，是后续所有实践的共同语言。</p>
 <hr>
 <a href="/posts/claude-index/" title="《Claude Code实战：Harness工程之道》· 总目录">返回总目录</a>　|　<a href="/posts/claude-ch02/" title="第 2 章 温故知新：记忆系统工程实践">第 2 章 温故知新：记忆系统工程实践</a>
 
@@ -380,7 +390,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 1 章 登高望远：Claude Code技术架构全景\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: claude-ch01\ncategories: [\"读书笔记\", \"ClaudeCode实战Harness工程之道\"]\nlist_hidden: true\n---\n\n> 从命令行助手到可编程 Agent 的演进，解析四层架构模型与 Agentic Loop 的运转机制。\n\n## 本章要点\n\n- 四层架构：记忆/扩展/集成/编程层\n- Harness 与 Agentic Loop 的分工\n- 组件关系、数据流与触发机制对比\n\n---\n\n{% post_link claude-index \"返回总目录\" %}　|　{% post_link claude-ch02 \"第 2 章 温故知新：记忆系统工程实践\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 1 章 登高望远：Claude Code技术架构全景\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: claude-ch01\ncategories: [\"读书笔记\", \"ClaudeCode实战Harness工程之道\"]\nlist_hidden: true\n---\n\n> 从命令行助手到可编程 Agent 的演进，解析四层架构模型与 Agentic Loop 的运转机制。\n\n## 1.1 从命令行助手到可编程 Agent\n\nClaude Code 最初给人的印象是一个「会聊天的终端助手」，但它真正的进化方向是可编程 Agent。区别不在于界面，而在于控制权：前者每一步都需要人类确认，后者可以在给定目标后自主规划、调用工具并完成任务。\n\n这种转变要求我们把 Claude Code 看作「软件工程流水线」的一环，而不是孤立的代码生成器。它的输出会影响代码库、测试、文档，甚至 CI/CD 流程，因此需要工程化地管理上下文、权限与可观测性。\n\n## 1.2 四层架构模型\n\n本书提出的四层架构——记忆层、扩展层、集成层、编程层——是理解 Claude Code 工程化的关键。记忆层解决「它知道什么」；扩展层解决「它能做什么」；集成层解决「它如何与外部系统协作」；编程层解决「它如何被编排与复用」。\n\n四层之间不是线性依赖，而是循环增强。例如，Skills 属于扩展层，但它依赖记忆层的 CLAUDE.md 来保持行为一致；MCP 属于集成层，却通过编程层的 Agent SDK 被调用。\n\n## 1.3 Harness Engineering 的核心问题\n\nHarness 强调把 AI 能力「驾驭」在可控的轨道内。核心问题包括：如何防止 Agent 在大型代码库中迷失上下文？如何让多个 Agent 协作而不互相干扰？如何把个人的使用经验沉淀为团队可复用的规范？\n\n回答这些问题，需要从「单次对话」跃迁到「系统工程」：定义清晰的输入输出边界、建立可回滚的执行策略、保留完整日志供审计与调试。\n\n## 1.4 快速自检清单\n\n1. 你是否为项目编写了 CLAUDE.md？\n\n2. 你的 Agent 是否能在无人值守时给出可审计的执行轨迹？\n\n3. 失败时，它能否回滚到已知安全状态？\n\n## 1.5 小结\n\n第 1 章定下了全书基调：Claude Code 不是更聪明的命令行，而是一套需要被工程化驾驭的 Agent 系统。理解四层架构，是后续所有实践的共同语言。\n\n---\n\n{% post_link claude-index \"返回总目录\" %}　|　{% post_link claude-ch02 \"第 2 章 温故知新：记忆系统工程实践\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -503,7 +513,7 @@ function __showWxQr() {
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="本章要点"><a rel="nofollow" class="trm-toc-link" href="#本章要点"><span class="trm-toc-text">本章要点</span></a></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="1.1 从命令行助手到可编程 Agent"><a rel="nofollow" class="trm-toc-link" href="#1-1-从命令行助手到可编程-Agent"><span class="trm-toc-text">1.1 从命令行助手到可编程 Agent</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.2 四层架构模型"><a rel="nofollow" class="trm-toc-link" href="#1-2-四层架构模型"><span class="trm-toc-text">1.2 四层架构模型</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.3 Harness Engineering 的核心问题"><a rel="nofollow" class="trm-toc-link" href="#1-3-Harness-Engineering-的核心问题"><span class="trm-toc-text">1.3 Harness Engineering 的核心问题</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.4 快速自检清单"><a rel="nofollow" class="trm-toc-link" href="#1-4-快速自检清单"><span class="trm-toc-text">1.4 快速自检清单</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.5 小结"><a rel="nofollow" class="trm-toc-link" href="#1-5-小结"><span class="trm-toc-text">1.5 小结</span></a></li></ol>
       </div>
     </div>
 

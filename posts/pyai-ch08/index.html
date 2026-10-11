@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="读写文件、处理 CSV 与结构化数据。  本章要点 文件读写 CSV &#x2F; JSON 处理 数据清洗   第 7 章 AI 辅助调试与错误处理　|　第 9 章 API 调用与 AI 集成">
+<meta name="description" content="读写文件、处理 CSV 与结构化数据。  8.1 文件读写文件读写是数据处理的基础。Python 用 open() 打开文件，支持读、写、追加等模式。使用 with 语句可以自动关闭文件，避免资源泄漏。 处理文件时要注意编码问题，中文文件通常用 utf-8。 8.2 CSV &#x2F; JSON 处理CSV 和 JSON 是最常见的结构化数据格式。Python 的 csv 和 json 模块可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 8 章 文件与数据处理">
 <meta property="og:url" content="https://awk001.github.io/posts/pyai-ch08/">
 <meta property="og:site_name" content="AWK博客">
-<meta property="og:description" content="读写文件、处理 CSV 与结构化数据。  本章要点 文件读写 CSV &#x2F; JSON 处理 数据清洗   第 7 章 AI 辅助调试与错误处理　|　第 9 章 API 调用与 AI 集成">
+<meta property="og:description" content="读写文件、处理 CSV 与结构化数据。  8.1 文件读写文件读写是数据处理的基础。Python 用 open() 打开文件，支持读、写、追加等模式。使用 with 语句可以自动关闭文件，避免资源泄漏。 处理文件时要注意编码问题，中文文件通常用 utf-8。 8.2 CSV &#x2F; JSON 处理CSV 和 JSON 是最常见的结构化数据格式。Python 的 csv 和 json 模块可">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T15:20:56.072Z">
+<meta property="article:modified_time" content="2026-10-11T15:46:15.242Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:20:56"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:46:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -365,11 +365,21 @@
     <blockquote>
 <p>读写文件、处理 CSV 与结构化数据。</p>
 </blockquote>
-<h2 id="本章要点"><a href="#本章要点" class="headerlink" title="本章要点"></a>本章要点</h2><ul>
-<li>文件读写</li>
-<li>CSV &#x2F; JSON 处理</li>
-<li>数据清洗</li>
-</ul>
+<h2 id="8-1-文件读写"><a href="#8-1-文件读写" class="headerlink" title="8.1 文件读写"></a>8.1 文件读写</h2><p>文件读写是数据处理的基础。Python 用 open() 打开文件，支持读、写、追加等模式。使用 with 语句可以自动关闭文件，避免资源泄漏。</p>
+<p>处理文件时要注意编码问题，中文文件通常用 utf-8。</p>
+<h2 id="8-2-CSV-JSON-处理"><a href="#8-2-CSV-JSON-处理" class="headerlink" title="8.2 CSV &#x2F; JSON 处理"></a>8.2 CSV &#x2F; JSON 处理</h2><p>CSV 和 JSON 是最常见的结构化数据格式。Python 的 csv 和 json 模块可以方便地读写它们。CSV 适合表格数据，JSON 适合嵌套数据。</p>
+<p>AI 项目中，配置文件和数据集常以 JSON 形式存在。</p>
+<h2 id="8-3-数据清洗"><a href="#8-3-数据清洗" class="headerlink" title="8.3 数据清洗"></a>8.3 数据清洗</h2><p>真实数据往往不干净：缺失值、异常值、格式不一致。数据清洗就是把原始数据转换成可用格式的过程。常用操作包括去重、填充、类型转换、标准化。</p>
+<p>可以让 AI 帮你写清洗脚本，但要检查结果是否合理。</p>
+<h2 id="8-4-数据处理练习"><a href="#8-4-数据处理练习" class="headerlink" title="8.4 数据处理练习"></a>8.4 数据处理练习</h2><ol>
+<li><p>读取一个 CSV 文件并打印前 5 行；</p>
+</li>
+<li><p>把字典数据写入 JSON 文件；</p>
+</li>
+<li><p>清洗一个包含空值的列表。</p>
+</li>
+</ol>
+<h2 id="8-5-小结"><a href="#8-5-小结" class="headerlink" title="8.5 小结"></a>8.5 小结</h2><p>文件读写、CSV&#x2F;JSON 处理和数据清洗是 Python 实战必备技能。掌握它们，就能处理真实世界中的数据。</p>
 <hr>
 <a href="/posts/pyai-ch07/" title="第 7 章 AI 辅助调试与错误处理">第 7 章 AI 辅助调试与错误处理</a>　|　<a href="/posts/pyai-ch09/" title="第 9 章 API 调用与 AI 集成">第 9 章 API 调用与 AI 集成</a>
 
@@ -380,7 +390,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 8 章 文件与数据处理\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: pyai-ch08\ncategories: [\"读书笔记\", \"Python应用开发AI辅助编程\"]\nlist_hidden: true\n---\n\n> 读写文件、处理 CSV 与结构化数据。\n\n## 本章要点\n\n- 文件读写\n- CSV / JSON 处理\n- 数据清洗\n\n---\n\n{% post_link pyai-ch07 \"第 7 章 AI 辅助调试与错误处理\" %}　|　{% post_link pyai-ch09 \"第 9 章 API 调用与 AI 集成\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 8 章 文件与数据处理\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: pyai-ch08\ncategories: [\"读书笔记\", \"Python应用开发AI辅助编程\"]\nlist_hidden: true\n---\n\n> 读写文件、处理 CSV 与结构化数据。\n\n## 8.1 文件读写\n\n文件读写是数据处理的基础。Python 用 open() 打开文件，支持读、写、追加等模式。使用 with 语句可以自动关闭文件，避免资源泄漏。\n\n处理文件时要注意编码问题，中文文件通常用 utf-8。\n\n## 8.2 CSV / JSON 处理\n\nCSV 和 JSON 是最常见的结构化数据格式。Python 的 csv 和 json 模块可以方便地读写它们。CSV 适合表格数据，JSON 适合嵌套数据。\n\nAI 项目中，配置文件和数据集常以 JSON 形式存在。\n\n## 8.3 数据清洗\n\n真实数据往往不干净：缺失值、异常值、格式不一致。数据清洗就是把原始数据转换成可用格式的过程。常用操作包括去重、填充、类型转换、标准化。\n\n可以让 AI 帮你写清洗脚本，但要检查结果是否合理。\n\n## 8.4 数据处理练习\n\n1. 读取一个 CSV 文件并打印前 5 行；\n\n2. 把字典数据写入 JSON 文件；\n\n3. 清洗一个包含空值的列表。\n\n## 8.5 小结\n\n文件读写、CSV/JSON 处理和数据清洗是 Python 实战必备技能。掌握它们，就能处理真实世界中的数据。\n\n---\n\n{% post_link pyai-ch07 \"第 7 章 AI 辅助调试与错误处理\" %}　|　{% post_link pyai-ch09 \"第 9 章 API 调用与 AI 集成\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -503,7 +513,7 @@ function __showWxQr() {
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="本章要点"><a rel="nofollow" class="trm-toc-link" href="#本章要点"><span class="trm-toc-text">本章要点</span></a></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="8.1 文件读写"><a rel="nofollow" class="trm-toc-link" href="#8-1-文件读写"><span class="trm-toc-text">8.1 文件读写</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.2 CSV &#x2F; JSON 处理"><a rel="nofollow" class="trm-toc-link" href="#8-2-CSV-JSON-处理"><span class="trm-toc-text">8.2 CSV &#x2F; JSON 处理</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.3 数据清洗"><a rel="nofollow" class="trm-toc-link" href="#8-3-数据清洗"><span class="trm-toc-text">8.3 数据清洗</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.4 数据处理练习"><a rel="nofollow" class="trm-toc-link" href="#8-4-数据处理练习"><span class="trm-toc-text">8.4 数据处理练习</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.5 小结"><a rel="nofollow" class="trm-toc-link" href="#8-5-小结"><span class="trm-toc-text">8.5 小结</span></a></li></ol>
       </div>
     </div>
 

@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="面向存量系统设计知识与代码理解。  本章要点 存量系统认知 代码理解策略 渐进式改造   第 7 章 【进阶】安全加固与前后端联调　|　第 9 章 从氛围编程到 SDD，必由之路与未来图景">
+<meta name="description" content="面向存量系统设计知识与代码理解。  8.1 存量系统认知存量系统往往文档缺失、代码复杂、历史包袱重。改造前首先要建立系统认知：核心业务、关键模块、数据流、风险点。 不要急于改动，先理解再动手。 8.2 代码理解策略理解存量代码可以借助 AI：让它解释模块功能、绘制调用关系、识别高风险变更点。但 AI 的输出需要人工核实，因为它可能误解旧代码的业务含义。 建议结合代码、日志、测试和文档多维度理解。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 8 章 存量系统 Spec-Kit 开发实践">
 <meta property="og:url" content="https://awk001.github.io/posts/spec-ch08/">
 <meta property="og:site_name" content="AWK博客">
-<meta property="og:description" content="面向存量系统设计知识与代码理解。  本章要点 存量系统认知 代码理解策略 渐进式改造   第 7 章 【进阶】安全加固与前后端联调　|　第 9 章 从氛围编程到 SDD，必由之路与未来图景">
+<meta property="og:description" content="面向存量系统设计知识与代码理解。  8.1 存量系统认知存量系统往往文档缺失、代码复杂、历史包袱重。改造前首先要建立系统认知：核心业务、关键模块、数据流、风险点。 不要急于改动，先理解再动手。 8.2 代码理解策略理解存量代码可以借助 AI：让它解释模块功能、绘制调用关系、识别高风险变更点。但 AI 的输出需要人工核实，因为它可能误解旧代码的业务含义。 建议结合代码、日志、测试和文档多维度理解。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T15:20:56.026Z">
+<meta property="article:modified_time" content="2026-10-11T15:46:15.171Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:20:56"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:46:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -365,11 +365,23 @@
     <blockquote>
 <p>面向存量系统设计知识与代码理解。</p>
 </blockquote>
-<h2 id="本章要点"><a href="#本章要点" class="headerlink" title="本章要点"></a>本章要点</h2><ul>
-<li>存量系统认知</li>
-<li>代码理解策略</li>
-<li>渐进式改造</li>
-</ul>
+<h2 id="8-1-存量系统认知"><a href="#8-1-存量系统认知" class="headerlink" title="8.1 存量系统认知"></a>8.1 存量系统认知</h2><p>存量系统往往文档缺失、代码复杂、历史包袱重。改造前首先要建立系统认知：核心业务、关键模块、数据流、风险点。</p>
+<p>不要急于改动，先理解再动手。</p>
+<h2 id="8-2-代码理解策略"><a href="#8-2-代码理解策略" class="headerlink" title="8.2 代码理解策略"></a>8.2 代码理解策略</h2><p>理解存量代码可以借助 AI：让它解释模块功能、绘制调用关系、识别高风险变更点。但 AI 的输出需要人工核实，因为它可能误解旧代码的业务含义。</p>
+<p>建议结合代码、日志、测试和文档多维度理解。</p>
+<h2 id="8-3-渐进式改造"><a href="#8-3-渐进式改造" class="headerlink" title="8.3 渐进式改造"></a>8.3 渐进式改造</h2><p>改造存量系统要循序渐进：先补测试、再抽象接口、再替换实现、最后重构架构。每一步都有回退点。</p>
+<p>Spec-Kit 的规范可以帮助团队统一改造标准，避免各自为政。</p>
+<h2 id="8-4-存量改造节奏"><a href="#8-4-存量改造节奏" class="headerlink" title="8.4 存量改造节奏"></a>8.4 存量改造节奏</h2><ol>
+<li><p>补充核心流程的自动化测试；</p>
+</li>
+<li><p>用 Spec 记录当前行为；</p>
+</li>
+<li><p>小步重构并验证；</p>
+</li>
+<li><p>逐步引入新架构。</p>
+</li>
+</ol>
+<h2 id="8-5-小结"><a href="#8-5-小结" class="headerlink" title="8.5 小结"></a>8.5 小结</h2><p>存量系统改造是高风险活动。先建立认知、再制定规范、最后渐进式改造，是稳妥的路径。</p>
 <hr>
 <a href="/posts/spec-ch07/" title="第 7 章 【进阶】安全加固与前后端联调">第 7 章 【进阶】安全加固与前后端联调</a>　|　<a href="/posts/spec-ch09/" title="第 9 章 从氛围编程到 SDD，必由之路与未来图景">第 9 章 从氛围编程到 SDD，必由之路与未来图景</a>
 
@@ -380,7 +392,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 8 章 存量系统 Spec-Kit 开发实践\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: spec-ch08\ncategories: [\"读书笔记\", \"SpecKit实战AI编程全流程落地\"]\nlist_hidden: true\n---\n\n> 面向存量系统设计知识与代码理解。\n\n## 本章要点\n\n- 存量系统认知\n- 代码理解策略\n- 渐进式改造\n\n---\n\n{% post_link spec-ch07 \"第 7 章 【进阶】安全加固与前后端联调\" %}　|　{% post_link spec-ch09 \"第 9 章 从氛围编程到 SDD，必由之路与未来图景\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 8 章 存量系统 Spec-Kit 开发实践\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: spec-ch08\ncategories: [\"读书笔记\", \"SpecKit实战AI编程全流程落地\"]\nlist_hidden: true\n---\n\n> 面向存量系统设计知识与代码理解。\n\n## 8.1 存量系统认知\n\n存量系统往往文档缺失、代码复杂、历史包袱重。改造前首先要建立系统认知：核心业务、关键模块、数据流、风险点。\n\n不要急于改动，先理解再动手。\n\n## 8.2 代码理解策略\n\n理解存量代码可以借助 AI：让它解释模块功能、绘制调用关系、识别高风险变更点。但 AI 的输出需要人工核实，因为它可能误解旧代码的业务含义。\n\n建议结合代码、日志、测试和文档多维度理解。\n\n## 8.3 渐进式改造\n\n改造存量系统要循序渐进：先补测试、再抽象接口、再替换实现、最后重构架构。每一步都有回退点。\n\nSpec-Kit 的规范可以帮助团队统一改造标准，避免各自为政。\n\n## 8.4 存量改造节奏\n\n1. 补充核心流程的自动化测试；\n\n2. 用 Spec 记录当前行为；\n\n3. 小步重构并验证；\n\n4. 逐步引入新架构。\n\n## 8.5 小结\n\n存量系统改造是高风险活动。先建立认知、再制定规范、最后渐进式改造，是稳妥的路径。\n\n---\n\n{% post_link spec-ch07 \"第 7 章 【进阶】安全加固与前后端联调\" %}　|　{% post_link spec-ch09 \"第 9 章 从氛围编程到 SDD，必由之路与未来图景\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -503,7 +515,7 @@ function __showWxQr() {
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="本章要点"><a rel="nofollow" class="trm-toc-link" href="#本章要点"><span class="trm-toc-text">本章要点</span></a></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="8.1 存量系统认知"><a rel="nofollow" class="trm-toc-link" href="#8-1-存量系统认知"><span class="trm-toc-text">8.1 存量系统认知</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.2 代码理解策略"><a rel="nofollow" class="trm-toc-link" href="#8-2-代码理解策略"><span class="trm-toc-text">8.2 代码理解策略</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.3 渐进式改造"><a rel="nofollow" class="trm-toc-link" href="#8-3-渐进式改造"><span class="trm-toc-text">8.3 渐进式改造</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.4 存量改造节奏"><a rel="nofollow" class="trm-toc-link" href="#8-4-存量改造节奏"><span class="trm-toc-text">8.4 存量改造节奏</span></a></li><li class="trm-toc-item trm-toc-level-2" title="8.5 小结"><a rel="nofollow" class="trm-toc-link" href="#8-5-小结"><span class="trm-toc-text">8.5 小结</span></a></li></ol>
       </div>
     </div>
 

@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="抓取网页数据。  本章要点 requests 基础 解析 HTML 反爬与限速   第 18 章 推箱子游戏　|　第 20 章 火车票分析助手">
+<meta name="description" content="抓取网页数据。  19.1 requests 基础requests 是 Python 最流行的 HTTP 库，用于发送网络请求。常用方法有 get、post。发送请求后可以获取状态码、响应头和响应内容。 网络请求可能失败，要做好异常处理和重试。 19.2 解析 HTML解析 HTML 常用 BeautifulSoup 或 lxml。可以从网页中提取标题、链接、表格、文本等内容。选择器语法如 ta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 19 章 网络爬虫开发">
 <meta property="og:url" content="https://awk001.github.io/posts/pymas-ch19/">
 <meta property="og:site_name" content="AWK博客">
-<meta property="og:description" content="抓取网页数据。  本章要点 requests 基础 解析 HTML 反爬与限速   第 18 章 推箱子游戏　|　第 20 章 火车票分析助手">
+<meta property="og:description" content="抓取网页数据。  19.1 requests 基础requests 是 Python 最流行的 HTTP 库，用于发送网络请求。常用方法有 get、post。发送请求后可以获取状态码、响应头和响应内容。 网络请求可能失败，要做好异常处理和重试。 19.2 解析 HTML解析 HTML 常用 BeautifulSoup 或 lxml。可以从网页中提取标题、链接、表格、文本等内容。选择器语法如 ta">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T15:20:56.115Z">
+<meta property="article:modified_time" content="2026-10-11T15:46:15.312Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:20:56"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:46:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -365,11 +365,21 @@
     <blockquote>
 <p>抓取网页数据。</p>
 </blockquote>
-<h2 id="本章要点"><a href="#本章要点" class="headerlink" title="本章要点"></a>本章要点</h2><ul>
-<li>requests 基础</li>
-<li>解析 HTML</li>
-<li>反爬与限速</li>
-</ul>
+<h2 id="19-1-requests-基础"><a href="#19-1-requests-基础" class="headerlink" title="19.1 requests 基础"></a>19.1 requests 基础</h2><p>requests 是 Python 最流行的 HTTP 库，用于发送网络请求。常用方法有 get、post。发送请求后可以获取状态码、响应头和响应内容。</p>
+<p>网络请求可能失败，要做好异常处理和重试。</p>
+<h2 id="19-2-解析-HTML"><a href="#19-2-解析-HTML" class="headerlink" title="19.2 解析 HTML"></a>19.2 解析 HTML</h2><p>解析 HTML 常用 BeautifulSoup 或 lxml。可以从网页中提取标题、链接、表格、文本等内容。选择器语法如 tag、class、id 等需要熟练掌握。</p>
+<p>解析前要先确认网页结构。</p>
+<h2 id="19-3-反爬与限速"><a href="#19-3-反爬与限速" class="headerlink" title="19.3 反爬与限速"></a>19.3 反爬与限速</h2><p>爬取网页时要遵守网站的 robots.txt，控制请求频率，避免对目标服务器造成压力。遇到反爬时，可以使用 headers、代理、延时等策略。</p>
+<p>合法合规是爬虫开发的前提。</p>
+<h2 id="19-4-爬虫练习"><a href="#19-4-爬虫练习" class="headerlink" title="19.4 爬虫练习"></a>19.4 爬虫练习</h2><ol>
+<li><p>用 requests 获取一个网页的 HTML；</p>
+</li>
+<li><p>用 BeautifulSoup 提取所有标题；</p>
+</li>
+<li><p>实现简单的请求限速。</p>
+</li>
+</ol>
+<h2 id="19-5-小结"><a href="#19-5-小结" class="headerlink" title="19.5 小结"></a>19.5 小结</h2><p>网络爬虫涉及请求、解析和合规。掌握 requests 和 HTML 解析，能获取互联网上的公开数据。</p>
 <hr>
 <a href="/posts/pymas-ch18/" title="第 18 章 推箱子游戏">第 18 章 推箱子游戏</a>　|　<a href="/posts/pymas-ch20/" title="第 20 章 火车票分析助手">第 20 章 火车票分析助手</a>
 
@@ -380,7 +390,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 19 章 网络爬虫开发\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: pymas-ch19\ncategories: [\"读书笔记\", \"Python从入门到精通第3版\"]\nlist_hidden: true\n---\n\n> 抓取网页数据。\n\n## 本章要点\n\n- requests 基础\n- 解析 HTML\n- 反爬与限速\n\n---\n\n{% post_link pymas-ch18 \"第 18 章 推箱子游戏\" %}　|　{% post_link pymas-ch20 \"第 20 章 火车票分析助手\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 19 章 网络爬虫开发\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: pymas-ch19\ncategories: [\"读书笔记\", \"Python从入门到精通第3版\"]\nlist_hidden: true\n---\n\n> 抓取网页数据。\n\n## 19.1 requests 基础\n\nrequests 是 Python 最流行的 HTTP 库，用于发送网络请求。常用方法有 get、post。发送请求后可以获取状态码、响应头和响应内容。\n\n网络请求可能失败，要做好异常处理和重试。\n\n## 19.2 解析 HTML\n\n解析 HTML 常用 BeautifulSoup 或 lxml。可以从网页中提取标题、链接、表格、文本等内容。选择器语法如 tag、class、id 等需要熟练掌握。\n\n解析前要先确认网页结构。\n\n## 19.3 反爬与限速\n\n爬取网页时要遵守网站的 robots.txt，控制请求频率，避免对目标服务器造成压力。遇到反爬时，可以使用 headers、代理、延时等策略。\n\n合法合规是爬虫开发的前提。\n\n## 19.4 爬虫练习\n\n1. 用 requests 获取一个网页的 HTML；\n\n2. 用 BeautifulSoup 提取所有标题；\n\n3. 实现简单的请求限速。\n\n## 19.5 小结\n\n网络爬虫涉及请求、解析和合规。掌握 requests 和 HTML 解析，能获取互联网上的公开数据。\n\n---\n\n{% post_link pymas-ch18 \"第 18 章 推箱子游戏\" %}　|　{% post_link pymas-ch20 \"第 20 章 火车票分析助手\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -503,7 +513,7 @@ function __showWxQr() {
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="本章要点"><a rel="nofollow" class="trm-toc-link" href="#本章要点"><span class="trm-toc-text">本章要点</span></a></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="19.1 requests 基础"><a rel="nofollow" class="trm-toc-link" href="#19-1-requests-基础"><span class="trm-toc-text">19.1 requests 基础</span></a></li><li class="trm-toc-item trm-toc-level-2" title="19.2 解析 HTML"><a rel="nofollow" class="trm-toc-link" href="#19-2-解析-HTML"><span class="trm-toc-text">19.2 解析 HTML</span></a></li><li class="trm-toc-item trm-toc-level-2" title="19.3 反爬与限速"><a rel="nofollow" class="trm-toc-link" href="#19-3-反爬与限速"><span class="trm-toc-text">19.3 反爬与限速</span></a></li><li class="trm-toc-item trm-toc-level-2" title="19.4 爬虫练习"><a rel="nofollow" class="trm-toc-link" href="#19-4-爬虫练习"><span class="trm-toc-text">19.4 爬虫练习</span></a></li><li class="trm-toc-item trm-toc-level-2" title="19.5 小结"><a rel="nofollow" class="trm-toc-link" href="#19-5-小结"><span class="trm-toc-text">19.5 小结</span></a></li></ol>
       </div>
     </div>
 

@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="认识 Python 是什么、能做什么，搭建开发环境。  本章要点 Python 简介与版本 开发环境搭建 第一个程序   返回总目录　|　第 2 章 Python语言基础">
+<meta name="description" content="认识 Python 是什么、能做什么，搭建开发环境。  1.1 Python 简介与版本Python 是一门简洁、易读、应用广泛的编程语言。目前主流版本是 Python 3，建议初学者直接使用 3.10 或更高版本。Python 2 已经停止维护，不要再学习。 Python 的应用领域包括 Web 开发、数据分析、人工智能、自动化运维等。 1.2 开发环境搭建搭建开发环境包括安装 Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 1 章 初识Python">
 <meta property="og:url" content="https://awk001.github.io/posts/pymas-ch01/">
 <meta property="og:site_name" content="AWK博客">
-<meta property="og:description" content="认识 Python 是什么、能做什么，搭建开发环境。  本章要点 Python 简介与版本 开发环境搭建 第一个程序   返回总目录　|　第 2 章 Python语言基础">
+<meta property="og:description" content="认识 Python 是什么、能做什么，搭建开发环境。  1.1 Python 简介与版本Python 是一门简洁、易读、应用广泛的编程语言。目前主流版本是 Python 3，建议初学者直接使用 3.10 或更高版本。Python 2 已经停止维护，不要再学习。 Python 的应用领域包括 Web 开发、数据分析、人工智能、自动化运维等。 1.2 开发环境搭建搭建开发环境包括安装 Python">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T15:20:56.084Z">
+<meta property="article:modified_time" content="2026-10-11T15:46:15.254Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:20:56"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:46:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -365,11 +365,21 @@
     <blockquote>
 <p>认识 Python 是什么、能做什么，搭建开发环境。</p>
 </blockquote>
-<h2 id="本章要点"><a href="#本章要点" class="headerlink" title="本章要点"></a>本章要点</h2><ul>
-<li>Python 简介与版本</li>
-<li>开发环境搭建</li>
-<li>第一个程序</li>
-</ul>
+<h2 id="1-1-Python-简介与版本"><a href="#1-1-Python-简介与版本" class="headerlink" title="1.1 Python 简介与版本"></a>1.1 Python 简介与版本</h2><p>Python 是一门简洁、易读、应用广泛的编程语言。目前主流版本是 Python 3，建议初学者直接使用 3.10 或更高版本。Python 2 已经停止维护，不要再学习。</p>
+<p>Python 的应用领域包括 Web 开发、数据分析、人工智能、自动化运维等。</p>
+<h2 id="1-2-开发环境搭建"><a href="#1-2-开发环境搭建" class="headerlink" title="1.2 开发环境搭建"></a>1.2 开发环境搭建</h2><p>搭建开发环境包括安装 Python 解释器、选择一个代码编辑器或 IDE。常见选择有 PyCharm、VS Code、Jupyter Notebook。初学者推荐 PyCharm Community 版。</p>
+<p>安装时注意把 Python 添加到系统 PATH。</p>
+<h2 id="1-3-第一个程序"><a href="#1-3-第一个程序" class="headerlink" title="1.3 第一个程序"></a>1.3 第一个程序</h2><p>第一个 Python 程序通常是打印「Hello, World!」。通过这个简单程序，可以验证环境是否正常，并理解程序的运行流程。</p>
+<p>尝试修改打印内容，观察运行结果的变化。</p>
+<h2 id="1-4-环境检查"><a href="#1-4-环境检查" class="headerlink" title="1.4 环境检查"></a>1.4 环境检查</h2><ol>
+<li><p>安装 Python 3.10+；</p>
+</li>
+<li><p>安装 PyCharm 或 VS Code；</p>
+</li>
+<li><p>运行 <code>print(&#39;Hello, Python!&#39;)</code> 并看到输出。</p>
+</li>
+</ol>
+<h2 id="1-5-小结"><a href="#1-5-小结" class="headerlink" title="1.5 小结"></a>1.5 小结</h2><p>初识 Python 要了解它的特点、版本选择和开发环境搭建。从 Hello, World! 开始，建立编程的第一印象。</p>
 <hr>
 <a href="/posts/pymas-index/" title="《Python从入门到精通（第3版）》· 总目录">返回总目录</a>　|　<a href="/posts/pymas-ch02/" title="第 2 章 Python语言基础">第 2 章 Python语言基础</a>
 
@@ -380,7 +390,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 1 章 初识Python\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: pymas-ch01\ncategories: [\"读书笔记\", \"Python从入门到精通第3版\"]\nlist_hidden: true\n---\n\n> 认识 Python 是什么、能做什么，搭建开发环境。\n\n## 本章要点\n\n- Python 简介与版本\n- 开发环境搭建\n- 第一个程序\n\n---\n\n{% post_link pymas-index \"返回总目录\" %}　|　{% post_link pymas-ch02 \"第 2 章 Python语言基础\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 1 章 初识Python\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: pymas-ch01\ncategories: [\"读书笔记\", \"Python从入门到精通第3版\"]\nlist_hidden: true\n---\n\n> 认识 Python 是什么、能做什么，搭建开发环境。\n\n## 1.1 Python 简介与版本\n\nPython 是一门简洁、易读、应用广泛的编程语言。目前主流版本是 Python 3，建议初学者直接使用 3.10 或更高版本。Python 2 已经停止维护，不要再学习。\n\nPython 的应用领域包括 Web 开发、数据分析、人工智能、自动化运维等。\n\n## 1.2 开发环境搭建\n\n搭建开发环境包括安装 Python 解释器、选择一个代码编辑器或 IDE。常见选择有 PyCharm、VS Code、Jupyter Notebook。初学者推荐 PyCharm Community 版。\n\n安装时注意把 Python 添加到系统 PATH。\n\n## 1.3 第一个程序\n\n第一个 Python 程序通常是打印「Hello, World!」。通过这个简单程序，可以验证环境是否正常，并理解程序的运行流程。\n\n尝试修改打印内容，观察运行结果的变化。\n\n## 1.4 环境检查\n\n1. 安装 Python 3.10+；\n\n2. 安装 PyCharm 或 VS Code；\n\n3. 运行 `print('Hello, Python!')` 并看到输出。\n\n## 1.5 小结\n\n初识 Python 要了解它的特点、版本选择和开发环境搭建。从 Hello, World! 开始，建立编程的第一印象。\n\n---\n\n{% post_link pymas-index \"返回总目录\" %}　|　{% post_link pymas-ch02 \"第 2 章 Python语言基础\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -503,7 +513,7 @@ function __showWxQr() {
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="本章要点"><a rel="nofollow" class="trm-toc-link" href="#本章要点"><span class="trm-toc-text">本章要点</span></a></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="1.1 Python 简介与版本"><a rel="nofollow" class="trm-toc-link" href="#1-1-Python-简介与版本"><span class="trm-toc-text">1.1 Python 简介与版本</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.2 开发环境搭建"><a rel="nofollow" class="trm-toc-link" href="#1-2-开发环境搭建"><span class="trm-toc-text">1.2 开发环境搭建</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.3 第一个程序"><a rel="nofollow" class="trm-toc-link" href="#1-3-第一个程序"><span class="trm-toc-text">1.3 第一个程序</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.4 环境检查"><a rel="nofollow" class="trm-toc-link" href="#1-4-环境检查"><span class="trm-toc-text">1.4 环境检查</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.5 小结"><a rel="nofollow" class="trm-toc-link" href="#1-5-小结"><span class="trm-toc-text">1.5 小结</span></a></li></ol>
       </div>
     </div>
 

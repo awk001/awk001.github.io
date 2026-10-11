@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="理解 AI 如何重塑编程工作流与角色分工。  本章要点 编程范式的变化 AI 辅助的定位 效率与质量提升   返回总目录　|　第 2 章 如何利用AI学习编程">
+<meta name="description" content="理解 AI 如何重塑编程工作流与角色分工。  1.1 编程范式的变化AI 正在把编程从「逐行手写」推向「意图驱动」。开发者越来越多地扮演「需求描述者、方案选择者、结果验证者」的角色，而具体代码由 AI 生成初稿。 这种变化不是说人不需要懂代码，而是懂代码的方式变了：更需要理解能力、判断能力和调试能力。 1.2 AI 辅助的定位AI 是助手，不是替代者。它擅长快速生成样板代码、解释概念、转换格式、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 1 章 AI时代的编程革新">
 <meta property="og:url" content="https://awk001.github.io/posts/fly-ch01/">
 <meta property="og:site_name" content="AWK博客">
-<meta property="og:description" content="理解 AI 如何重塑编程工作流与角色分工。  本章要点 编程范式的变化 AI 辅助的定位 效率与质量提升   返回总目录　|　第 2 章 如何利用AI学习编程">
+<meta property="og:description" content="理解 AI 如何重塑编程工作流与角色分工。  1.1 编程范式的变化AI 正在把编程从「逐行手写」推向「意图驱动」。开发者越来越多地扮演「需求描述者、方案选择者、结果验证者」的角色，而具体代码由 AI 生成初稿。 这种变化不是说人不需要懂代码，而是懂代码的方式变了：更需要理解能力、判断能力和调试能力。 1.2 AI 辅助的定位AI 是助手，不是替代者。它擅长快速生成样板代码、解释概念、转换格式、">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T15:20:56.033Z">
+<meta property="article:modified_time" content="2026-10-11T15:46:15.178Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:20:56"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:46:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -365,11 +365,23 @@
     <blockquote>
 <p>理解 AI 如何重塑编程工作流与角色分工。</p>
 </blockquote>
-<h2 id="本章要点"><a href="#本章要点" class="headerlink" title="本章要点"></a>本章要点</h2><ul>
-<li>编程范式的变化</li>
-<li>AI 辅助的定位</li>
-<li>效率与质量提升</li>
-</ul>
+<h2 id="1-1-编程范式的变化"><a href="#1-1-编程范式的变化" class="headerlink" title="1.1 编程范式的变化"></a>1.1 编程范式的变化</h2><p>AI 正在把编程从「逐行手写」推向「意图驱动」。开发者越来越多地扮演「需求描述者、方案选择者、结果验证者」的角色，而具体代码由 AI 生成初稿。</p>
+<p>这种变化不是说人不需要懂代码，而是懂代码的方式变了：更需要理解能力、判断能力和调试能力。</p>
+<h2 id="1-2-AI-辅助的定位"><a href="#1-2-AI-辅助的定位" class="headerlink" title="1.2 AI 辅助的定位"></a>1.2 AI 辅助的定位</h2><p>AI 是助手，不是替代者。它擅长快速生成样板代码、解释概念、转换格式、发现明显错误；但不擅长理解复杂业务、做架构决策、承担最终责任。</p>
+<p>正确定位 AI，是提升效率的前提。把它当作「超级实习生」或「结对编程伙伴」比较合适。</p>
+<h2 id="1-3-效率与质量提升"><a href="#1-3-效率与质量提升" class="headerlink" title="1.3 效率与质量提升"></a>1.3 效率与质量提升</h2><p>合理运用 AI，可以把重复性工作的时间压缩 50% 以上，同时通过 AI 的多样性建议发现更多解决方案。但质量提升不是自动的，需要人类审阅和测试。</p>
+<p>关键公式是：AI 提效 × 人类把关 &#x3D; 质量提升。缺了哪一边，效果都会打折。</p>
+<h2 id="1-4-建立-AI-协作习惯"><a href="#1-4-建立-AI-协作习惯" class="headerlink" title="1.4 建立 AI 协作习惯"></a>1.4 建立 AI 协作习惯</h2><ol>
+<li><p>每天选一个可以用 AI 加速的小任务；</p>
+</li>
+<li><p>生成后强制自己阅读并理解代码；</p>
+</li>
+<li><p>为 AI 生成的代码补一个测试；</p>
+</li>
+<li><p>记录哪些提示词效果最好。</p>
+</li>
+</ol>
+<h2 id="1-5-小结"><a href="#1-5-小结" class="headerlink" title="1.5 小结"></a>1.5 小结</h2><p>AI 时代的编程范式正在转变。把 AI 定位为助手，用其提效并由人类把控质量，是新时代的基本工作方式。</p>
 <hr>
 <a href="/posts/fly-index/" title="《让代码飞——用AI快速生成和优化Python代码》· 总目录">返回总目录</a>　|　<a href="/posts/fly-ch02/" title="第 2 章 如何利用AI学习编程">第 2 章 如何利用AI学习编程</a>
 
@@ -380,7 +392,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 1 章 AI时代的编程革新\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: fly-ch01\ncategories: [\"读书笔记\", \"让代码飞用AI快速生成和优化Python代码\"]\nlist_hidden: true\n---\n\n> 理解 AI 如何重塑编程工作流与角色分工。\n\n## 本章要点\n\n- 编程范式的变化\n- AI 辅助的定位\n- 效率与质量提升\n\n---\n\n{% post_link fly-index \"返回总目录\" %}　|　{% post_link fly-ch02 \"第 2 章 如何利用AI学习编程\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 1 章 AI时代的编程革新\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: fly-ch01\ncategories: [\"读书笔记\", \"让代码飞用AI快速生成和优化Python代码\"]\nlist_hidden: true\n---\n\n> 理解 AI 如何重塑编程工作流与角色分工。\n\n## 1.1 编程范式的变化\n\nAI 正在把编程从「逐行手写」推向「意图驱动」。开发者越来越多地扮演「需求描述者、方案选择者、结果验证者」的角色，而具体代码由 AI 生成初稿。\n\n这种变化不是说人不需要懂代码，而是懂代码的方式变了：更需要理解能力、判断能力和调试能力。\n\n## 1.2 AI 辅助的定位\n\nAI 是助手，不是替代者。它擅长快速生成样板代码、解释概念、转换格式、发现明显错误；但不擅长理解复杂业务、做架构决策、承担最终责任。\n\n正确定位 AI，是提升效率的前提。把它当作「超级实习生」或「结对编程伙伴」比较合适。\n\n## 1.3 效率与质量提升\n\n合理运用 AI，可以把重复性工作的时间压缩 50% 以上，同时通过 AI 的多样性建议发现更多解决方案。但质量提升不是自动的，需要人类审阅和测试。\n\n关键公式是：AI 提效 × 人类把关 = 质量提升。缺了哪一边，效果都会打折。\n\n## 1.4 建立 AI 协作习惯\n\n1. 每天选一个可以用 AI 加速的小任务；\n\n2. 生成后强制自己阅读并理解代码；\n\n3. 为 AI 生成的代码补一个测试；\n\n4. 记录哪些提示词效果最好。\n\n## 1.5 小结\n\nAI 时代的编程范式正在转变。把 AI 定位为助手，用其提效并由人类把控质量，是新时代的基本工作方式。\n\n---\n\n{% post_link fly-index \"返回总目录\" %}　|　{% post_link fly-ch02 \"第 2 章 如何利用AI学习编程\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -503,7 +515,7 @@ function __showWxQr() {
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="本章要点"><a rel="nofollow" class="trm-toc-link" href="#本章要点"><span class="trm-toc-text">本章要点</span></a></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="1.1 编程范式的变化"><a rel="nofollow" class="trm-toc-link" href="#1-1-编程范式的变化"><span class="trm-toc-text">1.1 编程范式的变化</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.2 AI 辅助的定位"><a rel="nofollow" class="trm-toc-link" href="#1-2-AI-辅助的定位"><span class="trm-toc-text">1.2 AI 辅助的定位</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.3 效率与质量提升"><a rel="nofollow" class="trm-toc-link" href="#1-3-效率与质量提升"><span class="trm-toc-text">1.3 效率与质量提升</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.4 建立 AI 协作习惯"><a rel="nofollow" class="trm-toc-link" href="#1-4-建立-AI-协作习惯"><span class="trm-toc-text">1.4 建立 AI 协作习惯</span></a></li><li class="trm-toc-item trm-toc-level-2" title="1.5 小结"><a rel="nofollow" class="trm-toc-link" href="#1-5-小结"><span class="trm-toc-text">1.5 小结</span></a></li></ol>
       </div>
     </div>
 

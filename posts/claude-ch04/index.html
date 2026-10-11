@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="用上下文隔离与任务委派驾驭复杂任务，提升可靠性。  本章要点 子智能体的上下文隔离价值 任务委派与编排模式 多智能体协作的边界   第 3 章 授人以渔：Skills工程实践　|　第 5 章 防微杜渐：Hooks事件驱动自动化">
+<meta name="description" content="用上下文隔离与任务委派驾驭复杂任务，提升可靠性。  4.1 为什么需要子智能体单一 Agent 处理复杂任务时，上下文会被各种细节污染，导致注意力分散、错误率上升。子智能体通过上下文隔离，让不同 Agent 专注于各自擅长的子任务。 这就像团队分工：一个人既写前端又写后端又写测试，效率和质量都难保证；拆成专注的小组后，协作反而更顺畅。 4.2 上下文隔离的价值子智能体拥有独立的上下文窗口，只能看">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第 4 章 分而治之：子智能体与任务委派">
 <meta property="og:url" content="https://awk001.github.io/posts/claude-ch04/">
 <meta property="og:site_name" content="AWK博客">
-<meta property="og:description" content="用上下文隔离与任务委派驾驭复杂任务，提升可靠性。  本章要点 子智能体的上下文隔离价值 任务委派与编排模式 多智能体协作的边界   第 3 章 授人以渔：Skills工程实践　|　第 5 章 防微杜渐：Hooks事件驱动自动化">
+<meta property="og:description" content="用上下文隔离与任务委派驾驭复杂任务，提升可靠性。  4.1 为什么需要子智能体单一 Agent 处理复杂任务时，上下文会被各种细节污染，导致注意力分散、错误率上升。子智能体通过上下文隔离，让不同 Agent 专注于各自擅长的子任务。 这就像团队分工：一个人既写前端又写后端又写测试，效率和质量都难保证；拆成专注的小组后，协作反而更顺畅。 4.2 上下文隔离的价值子智能体拥有独立的上下文窗口，只能看">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T15:20:55.910Z">
+<meta property="article:modified_time" content="2026-10-11T15:46:14.980Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:20:55"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 23:46:14"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -365,11 +365,21 @@
     <blockquote>
 <p>用上下文隔离与任务委派驾驭复杂任务，提升可靠性。</p>
 </blockquote>
-<h2 id="本章要点"><a href="#本章要点" class="headerlink" title="本章要点"></a>本章要点</h2><ul>
-<li>子智能体的上下文隔离价值</li>
-<li>任务委派与编排模式</li>
-<li>多智能体协作的边界</li>
-</ul>
+<h2 id="4-1-为什么需要子智能体"><a href="#4-1-为什么需要子智能体" class="headerlink" title="4.1 为什么需要子智能体"></a>4.1 为什么需要子智能体</h2><p>单一 Agent 处理复杂任务时，上下文会被各种细节污染，导致注意力分散、错误率上升。子智能体通过上下文隔离，让不同 Agent 专注于各自擅长的子任务。</p>
+<p>这就像团队分工：一个人既写前端又写后端又写测试，效率和质量都难保证；拆成专注的小组后，协作反而更顺畅。</p>
+<h2 id="4-2-上下文隔离的价值"><a href="#4-2-上下文隔离的价值" class="headerlink" title="4.2 上下文隔离的价值"></a>4.2 上下文隔离的价值</h2><p>子智能体拥有独立的上下文窗口，只能看到与自己任务相关的代码和规则。这种隔离降低了认知负担，也减少了错误修改无关文件的概率。</p>
+<p>隔离不是信息封锁。主 Agent 负责编排，子 Agent 负责执行，结果通过明确的接口返回。</p>
+<h2 id="4-3-任务委派与编排模式"><a href="#4-3-任务委派与编排模式" class="headerlink" title="4.3 任务委派与编排模式"></a>4.3 任务委派与编排模式</h2><p>常见的委派模式包括：串行（一个子 Agent 完成后交给下一个）、并行（多个子 Agent 同时处理不同模块）、评审（一个生成、一个审查）。</p>
+<p>选择模式的关键在于任务之间的依赖关系。强依赖的任务串行，弱依赖的任务并行，质量敏感的任务加入评审。</p>
+<h2 id="4-4-多智能体协作边界"><a href="#4-4-多智能体协作边界" class="headerlink" title="4.4 多智能体协作边界"></a>4.4 多智能体协作边界</h2><ol>
+<li><p>明确每个子 Agent 的输入输出契约；</p>
+</li>
+<li><p>禁止子 Agent 直接修改其他子 Agent 的负责范围；</p>
+</li>
+<li><p>主 Agent 负责冲突裁决与最终合并。</p>
+</li>
+</ol>
+<h2 id="4-5-小结"><a href="#4-5-小结" class="headerlink" title="4.5 小结"></a>4.5 小结</h2><p>子智能体是驾驭复杂任务的利器。通过上下文隔离和清晰的委派模式，可以把大问题拆成可控的小问题。</p>
 <hr>
 <a href="/posts/claude-ch03/" title="第 3 章 授人以渔：Skills工程实践">第 3 章 授人以渔：Skills工程实践</a>　|　<a href="/posts/claude-ch05/" title="第 5 章 防微杜渐：Hooks事件驱动自动化">第 5 章 防微杜渐：Hooks事件驱动自动化</a>
 
@@ -380,7 +390,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 4 章 分而治之：子智能体与任务委派\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: claude-ch04\ncategories: [\"读书笔记\", \"ClaudeCode实战Harness工程之道\"]\nlist_hidden: true\n---\n\n> 用上下文隔离与任务委派驾驭复杂任务，提升可靠性。\n\n## 本章要点\n\n- 子智能体的上下文隔离价值\n- 任务委派与编排模式\n- 多智能体协作的边界\n\n---\n\n{% post_link claude-ch03 \"第 3 章 授人以渔：Skills工程实践\" %}　|　{% post_link claude-ch05 \"第 5 章 防微杜渐：Hooks事件驱动自动化\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 4 章 分而治之：子智能体与任务委派\"\ndate: 2026-10-11 09:00:00\nauthor: 时安\nslug: claude-ch04\ncategories: [\"读书笔记\", \"ClaudeCode实战Harness工程之道\"]\nlist_hidden: true\n---\n\n> 用上下文隔离与任务委派驾驭复杂任务，提升可靠性。\n\n## 4.1 为什么需要子智能体\n\n单一 Agent 处理复杂任务时，上下文会被各种细节污染，导致注意力分散、错误率上升。子智能体通过上下文隔离，让不同 Agent 专注于各自擅长的子任务。\n\n这就像团队分工：一个人既写前端又写后端又写测试，效率和质量都难保证；拆成专注的小组后，协作反而更顺畅。\n\n## 4.2 上下文隔离的价值\n\n子智能体拥有独立的上下文窗口，只能看到与自己任务相关的代码和规则。这种隔离降低了认知负担，也减少了错误修改无关文件的概率。\n\n隔离不是信息封锁。主 Agent 负责编排，子 Agent 负责执行，结果通过明确的接口返回。\n\n## 4.3 任务委派与编排模式\n\n常见的委派模式包括：串行（一个子 Agent 完成后交给下一个）、并行（多个子 Agent 同时处理不同模块）、评审（一个生成、一个审查）。\n\n选择模式的关键在于任务之间的依赖关系。强依赖的任务串行，弱依赖的任务并行，质量敏感的任务加入评审。\n\n## 4.4 多智能体协作边界\n\n1. 明确每个子 Agent 的输入输出契约；\n\n2. 禁止子 Agent 直接修改其他子 Agent 的负责范围；\n\n3. 主 Agent 负责冲突裁决与最终合并。\n\n## 4.5 小结\n\n子智能体是驾驭复杂任务的利器。通过上下文隔离和清晰的委派模式，可以把大问题拆成可控的小问题。\n\n---\n\n{% post_link claude-ch03 \"第 3 章 授人以渔：Skills工程实践\" %}　|　{% post_link claude-ch05 \"第 5 章 防微杜渐：Hooks事件驱动自动化\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -503,7 +513,7 @@ function __showWxQr() {
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="本章要点"><a rel="nofollow" class="trm-toc-link" href="#本章要点"><span class="trm-toc-text">本章要点</span></a></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2" title="4.1 为什么需要子智能体"><a rel="nofollow" class="trm-toc-link" href="#4-1-为什么需要子智能体"><span class="trm-toc-text">4.1 为什么需要子智能体</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4.2 上下文隔离的价值"><a rel="nofollow" class="trm-toc-link" href="#4-2-上下文隔离的价值"><span class="trm-toc-text">4.2 上下文隔离的价值</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4.3 任务委派与编排模式"><a rel="nofollow" class="trm-toc-link" href="#4-3-任务委派与编排模式"><span class="trm-toc-text">4.3 任务委派与编排模式</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4.4 多智能体协作边界"><a rel="nofollow" class="trm-toc-link" href="#4-4-多智能体协作边界"><span class="trm-toc-text">4.4 多智能体协作边界</span></a></li><li class="trm-toc-item trm-toc-level-2" title="4.5 小结"><a rel="nofollow" class="trm-toc-link" href="#4-5-小结"><span class="trm-toc-text">4.5 小结</span></a></li></ol>
       </div>
     </div>
 
