@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600" class="trm-book-cover-svg trm-book-cover-agentic">
+  <style>
+    .trm-book-cover-svg.trm-book-cover-agentic {
+      --agentic-bg1: #fdf6ec;
+      --agentic-bg2: #fbeede;
+      --agentic-bg3: #f6e2c8;
+      --agentic-text: #2b1d0e;
+      --agentic-text-sub: rgba(43, 29, 14, 0.72);
+      --agentic-text-meta: rgba(43, 29, 14, 0.5);
+      --agentic-grid: rgba(0, 0, 0, 0.05);
+      --agentic-spine: rgba(0, 0, 0, 0.06);
+      --agentic-accent-from: #ff8a00;
+      --agentic-accent-to: #ffb300;
+      --agentic-node-a: rgba(255, 138, 0, 0.16);
+      --agentic-node-b: rgba(255, 179, 0, 0.16);
+      --agentic-corner-a: #ff8a00;
+      --agentic-corner-b: #ffb300;
+    }
+    :root.dark .trm-book-cover-svg.trm-book-cover-agentic {
+      --agentic-bg1: #1f1407;
+      --agentic-bg2: #2a1a0a;
+      --agentic-bg3: #3a2410;
+      --agentic-text: #fff8ee;
+      --agentic-text-sub: rgba(255, 248, 238, 0.78);
+      --agentic-text-meta: rgba(255, 248, 238, 0.55);
+      --agentic-grid: rgba(255, 255, 255, 0.04);
+      --agentic-spine: rgba(255, 255, 255, 0.08);
+      --agentic-accent-from: #ffa726;
+      --agentic-accent-to: #ffca28;
+      --agentic-node-a: rgba(255, 167, 38, 0.14);
+      --agentic-node-b: rgba(255, 202, 40, 0.14);
+      --agentic-corner-a: #ffa726;
+      --agentic-corner-b: #ffca28;
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg-agentic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--agentic-bg1)"/>
+      <stop offset="50%" stop-color="var(--agentic-bg2)"/>
+      <stop offset="100%" stop-color="var(--agentic-bg3)"/>
+    </linearGradient>
+    <linearGradient id="accent-agentic" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--agentic-accent-from)"/>
+      <stop offset="100%" stop-color="var(--agentic-accent-to)"/>
+    </linearGradient>
+    <pattern id="grid-agentic" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--agentic-grid)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="600" fill="url(#bg-agentic)"/>
+  <rect width="400" height="600" fill="url(#grid-agentic)"/>
+
+  <!-- Abstract agent orbit -->
+  <g transform="translate(200, 220)" fill="none" stroke="url(#accent-agentic)" stroke-width="2" opacity="0.4">
+    <circle cx="0" cy="-46" r="14" fill="var(--agentic-node-a)"/>
+    <circle cx="44" cy="14" r="12" fill="var(--agentic-node-b)"/>
+    <circle cx="-44" cy="14" r="12" fill="var(--agentic-node-b)"/>
+    <circle cx="0" cy="52" r="10" fill="var(--agentic-node-a)"/>
+    <line x1="0" y1="-46" x2="44" y2="14"/>
+    <line x1="0" y1="-46" x2="-44" y2="14"/>
+    <line x1="44" y1="14" x2="0" y2="52"/>
+    <line x1="-44" y1="14" x2="0" y2="52"/>
+    <line x1="44" y1="14" x2="-44" y2="14"/>
+  </g>
+
+  <!-- Spine highlight -->
+  <rect x="0" y="0" width="14" height="600" fill="var(--agentic-spine)"/>
+
+  <!-- Top accent bar -->
+  <rect x="40" y="60" width="320" height="4" fill="url(#accent-agentic)" opacity="0.9"/>
+
+  <!-- Main title -->
+  <text x="200" y="356" text-anchor="middle" fill="var(--agentic-text)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="33" font-weight="700" letter-spacing="1">
+    智能体式
+  </text>
+  <text x="200" y="400" text-anchor="middle" fill="var(--agentic-text)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="33" font-weight="700" letter-spacing="1">
+    人工智能
+  </text>
+
+  <!-- Subtitle -->
+  <text x="200" y="456" text-anchor="middle" fill="var(--agentic-text-sub)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" letter-spacing="2">
+    读书笔记 · 14 章
+  </text>
+
+  <!-- Bottom meta -->
+  <text x="200" y="540" text-anchor="middle" fill="var(--agentic-text-meta)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" letter-spacing="2">
+    PASCAL BORNET
+  </text>
+
+  <!-- Corner ornaments -->
+  <circle cx="360" cy="100" r="4" fill="var(--agentic-corner-a)" opacity="0.6"/>
+  <circle cx="360" cy="120" r="3" fill="var(--agentic-corner-b)" opacity="0.6"/>
+  <circle cx="360" cy="140" r="2" fill="var(--agentic-corner-a)" opacity="0.4"/>
+</svg>

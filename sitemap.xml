@@ -55,6 +55,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-index/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/posts/book-agent-ai-system-index/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -229,6 +235,90 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch14/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch13/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch12/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch11/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch10/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch09/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch08/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch07/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch06/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch05/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch04/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch03/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch02/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/book-agentic-ai-ch01/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/posts/04962924f0b8/</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -265,43 +355,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/tags/Markdown/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/Vue/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/Vite/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/tags/Hexo/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/Typora/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -319,19 +373,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/tags/%E5%B7%A5%E4%B8%9A%E6%99%BA%E8%83%BD/</loc>
+    <loc>https://awk001.github.io/tags/Markdown/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E6%80%9D%E8%80%83/</loc>
+    <loc>https://awk001.github.io/tags/Vue/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -355,6 +403,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/Vite/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/tags/MongoDB%20Atlas/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -362,6 +422,36 @@
   </url>
   <url>
     <loc>https://awk001.github.io/tags/%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/Typora/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E5%B7%A5%E4%B8%9A%E6%99%BA%E8%83%BD/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E6%80%9D%E8%80%83/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
