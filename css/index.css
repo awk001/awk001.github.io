@@ -3594,6 +3594,7 @@ details p {
 .trm-read-mode .trm-page-content {
   flex: 0 0 100%;
   max-width: 100%;
+  padding-right: 280px;
 }
 .trm-read-mode .trm-page-content .trm-content {
   margin: 0 !important;
@@ -3601,8 +3602,43 @@ details p {
 .trm-read-mode .trm-page-content .trm-content > .trm-card {
   padding: 10px 0 0;
 }
+.trm-read-mode .trm-post-toc {
+  display: flex;
+  opacity: 1;
+  pointer-events: all;
+  transform: none;
+  position: fixed;
+  right: 10px;
+  top: 50px;
+  bottom: 80px;
+  width: 260px;
+  max-width: 260px;
+  max-height: none;
+  z-index: 90;
+}
+.trm-read-mode .trm-post-toc .trm-post-toc-content {
+  padding: 0 6px;
+}
+.trm-read-mode .trm-post-toc .trm-post-toc-content .trm-toc {
+  width: auto;
+  max-width: 100%;
+  padding: 0;
+}
+.trm-read-mode .trm-post-toc .trm-post-toc-content .trm-toc .trm-toc-link {
+  white-space: normal;
+  font-size: 0.82em;
+  line-height: 1.6;
+}
 .trm-read-mode .trm-card {
   box-shadow: none;
+}
+@media (max-width: 991px) {
+  .trm-read-mode .trm-page-content {
+    padding-right: 0;
+  }
+  .trm-read-mode .trm-post-toc {
+    display: none;
+  }
 }
 .trm-exit-readmode {
   position: fixed;
