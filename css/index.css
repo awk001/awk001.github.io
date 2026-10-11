@@ -3136,7 +3136,7 @@ form textarea:focus,
   color: var(--primary, #afb42b);
 }
 .trm-publication {
-  --phycat-accent: #11aa63;
+  --phycat-accent: var(--primary);
   --phycat-accent-soft: color-mix(in srgb, var(--phycat-accent) 22%, transparent);
   --phycat-accent-softer: color-mix(in srgb, var(--phycat-accent) 12%, transparent);
   --phycat-accent-line: color-mix(in srgb, var(--phycat-accent) 55%, transparent);
@@ -3484,13 +3484,13 @@ form textarea:focus,
   transform: scale(1.04);
 }
 .trm-publication strong {
-  color: #e67e22;
+  color: var(--primary);
   font-weight: 700;
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 .trm-publication strong:hover {
-  border-bottom-color: rgba(230, 126, 34, 0.45);
+  border-bottom-color: var(--primary-50);
 }
 .trm-publication em {
   font-style: italic;
