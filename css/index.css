@@ -1392,11 +1392,14 @@ html.is-animating .trm-swup-animation {
   z-index: 1;
 }
 .trm-book-cover img,
+.trm-book-cover svg,
 .trm-book-cover .trm-book-cover-default {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+}
+.trm-book-cover img {
+  object-fit: cover;
 }
 .trm-book-cover .trm-book-cover-default {
   display: flex;
