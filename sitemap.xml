@@ -151,13 +151,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/adp-ch04/</loc>
+    <loc>https://awk001.github.io/posts/adp-ch03/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/adp-ch03/</loc>
+    <loc>https://awk001.github.io/posts/adp-ch04/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -193,6 +193,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/posts/claude-ch05/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/posts/claude-ch06/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -205,19 +211,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/claude-ch05/</loc>
+    <loc>https://awk001.github.io/posts/claude-ch08/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://awk001.github.io/posts/claude-ch09/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/posts/claude-ch08/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -247,13 +247,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/fly-ch05/</loc>
+    <loc>https://awk001.github.io/posts/fly-ch04/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/fly-ch04/</loc>
+    <loc>https://awk001.github.io/posts/fly-ch05/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -271,13 +271,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pyai-ch01/</loc>
+    <loc>https://awk001.github.io/posts/pyai-ch02/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pyai-ch02/</loc>
+    <loc>https://awk001.github.io/posts/pyai-ch01/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -325,13 +325,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pyai-ch10/</loc>
+    <loc>https://awk001.github.io/posts/pyai-ch11/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pyai-ch11/</loc>
+    <loc>https://awk001.github.io/posts/pyai-ch10/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -343,13 +343,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch03/</loc>
+    <loc>https://awk001.github.io/posts/pymas-ch02/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch02/</loc>
+    <loc>https://awk001.github.io/posts/pymas-ch03/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -385,25 +385,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch09/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/posts/pymas-ch10/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch11/</loc>
+    <loc>https://awk001.github.io/posts/pymas-ch09/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch14/</loc>
+    <loc>https://awk001.github.io/posts/pymas-ch11/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -421,7 +415,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch15/</loc>
+    <loc>https://awk001.github.io/posts/pymas-ch14/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -433,13 +427,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch17/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/posts/pymas-ch18/</loc>
+    <loc>https://awk001.github.io/posts/pymas-ch15/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -452,6 +440,18 @@
   </url>
   <url>
     <loc>https://awk001.github.io/posts/pymas-ch20/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/pymas-ch18/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/pymas-ch17/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -475,25 +475,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch24/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/posts/pymas-ch25/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/pymas-ch26/</loc>
+    <loc>https://awk001.github.io/posts/pymas-ch24/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://awk001.github.io/posts/pymas-ch27/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/pymas-ch26/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -523,25 +523,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/rag-ch05/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/posts/rag-ch06/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/rag-ch07/</loc>
+    <loc>https://awk001.github.io/posts/rag-ch05/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/rag-ch08/</loc>
+    <loc>https://awk001.github.io/posts/rag-ch07/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -559,13 +553,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/rag-ch11/</loc>
+    <loc>https://awk001.github.io/posts/rag-ch08/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/skills-ch01/</loc>
+    <loc>https://awk001.github.io/posts/rag-ch11/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -577,13 +571,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/skills-ch03/</loc>
+    <loc>https://awk001.github.io/posts/skills-ch01/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://awk001.github.io/posts/skills-ch04/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/posts/skills-ch03/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -619,6 +619,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/posts/spec-ch01/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/posts/spec-ch02/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -631,19 +637,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/spec-ch01/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/posts/spec-ch04/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/posts/spec-ch05/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -655,19 +649,25 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/posts/spec-ch05/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/posts/spec-ch06/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/spec-ch08/</loc>
+    <loc>https://awk001.github.io/posts/spec-ch09/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/posts/spec-ch09/</loc>
+    <loc>https://awk001.github.io/posts/spec-ch08/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -709,6 +709,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/posts/vibe-ch04/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/posts/vibe-ch02/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -716,12 +722,6 @@
   </url>
   <url>
     <loc>https://awk001.github.io/posts/vibe-ch03/</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/posts/vibe-ch04/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
