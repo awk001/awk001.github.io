@@ -15,7 +15,7 @@
 <meta property="og:description" content="本系列是我梳理《构建智能体 AI 系统：手把手教你开发智能体》（Hello-Agents 系统性智能体学习教程）时整理的读书路线图与章节笔记，不是原书影印或逐字转载。 我会按”从原理到工程、从单智能体到多智能体”的线索，把每一篇拆成核心要点 + 我的结构化梳理 + 少量可运行的原创示例，方便随时回看、也方便你在评论区一起讨论。  关于这本书   项目 内容    书名 构建智能体 AI 系统：手">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-11T10:30:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T12:10:12.016Z">
+<meta property="article:modified_time" content="2026-10-11T12:42:03.917Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 20:10:12"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 20:42:03"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -397,34 +397,34 @@
 <p>全书以”<strong>动手构建一个能干活的多智能体系统</strong>“为目标，循序渐进，强调工程落地而非纯概念。</p>
 <h2 id="全书结构（5-篇-16-章）"><a href="#全书结构（5-篇-16-章）" class="headerlink" title="全书结构（5 篇 16 章）"></a>全书结构（5 篇 16 章）</h2><ul>
 <li><strong>第 1 篇 · 智能体与语言模型基础</strong><ul>
-<li><a href="/posts/book-agent-ai-system-ch01/" title="第 1 章 初识智能体（读书笔记）">第 1 章 初识智能体</a> —— 智能体的定义、类型、范式与典型应用场景</li>
-<li><a href="/posts/book-agent-ai-system-ch02/" title="第 2 章 智能体发展史（读书笔记）">第 2 章 智能体发展史</a> —— 从符号主义到 LLM 驱动智能体的演进脉络</li>
-<li><a href="/posts/book-agent-ai-system-ch03/" title="第 3 章 大语言模型基础（读书笔记）">第 3 章 大语言模型基础</a> —— Transformer、提示（Prompt）、主流 LLM 及其能力与局限</li>
+<li><a href="/posts/book-agent-ai-system-ch01/" title="第 1 章 初识智能体">第 1 章 初识智能体</a> —— 智能体的定义、类型、范式与典型应用场景</li>
+<li><a href="/posts/book-agent-ai-system-ch02/" title="第 2 章 智能体发展史">第 2 章 智能体发展史</a> —— 从符号主义到 LLM 驱动智能体的演进脉络</li>
+<li><a href="/posts/book-agent-ai-system-ch03/" title="第 3 章 大语言模型基础">第 3 章 大语言模型基础</a> —— Transformer、提示（Prompt）、主流 LLM 及其能力与局限</li>
 </ul>
 </li>
 <li><strong>第 2 篇 · 构建你的大语言模型智能体</strong><ul>
-<li><a href="/posts/book-agent-ai-system-ch04/" title="第 4 章 智能体经典范式构建（读书笔记）">第 4 章 智能体经典范式构建</a> —— 手把手实现 ReAct、Plan-and-Solve、Reflection</li>
-<li><a href="/posts/book-agent-ai-system-ch05/" title="第 5 章 基于低代码平台的智能体搭建（读书笔记）">第 5 章 基于低代码平台的智能体搭建</a> —— Coze、Dify、n8n 等平台的使用思路</li>
-<li><a href="/posts/book-agent-ai-system-ch06/" title="第 6 章 框架开发实践（读书笔记）">第 6 章 框架开发实践</a> —— AutoGen、AgentScope、LangGraph 等主流框架应用</li>
-<li><a href="/posts/book-agent-ai-system-ch07/" title="第 7 章 构建你的 Agent 框架（读书笔记）">第 7 章 构建你的 Agent 框架</a> —— 从 0 开始搭建一个智能体框架</li>
+<li><a href="/posts/book-agent-ai-system-ch04/" title="第 4 章 智能体经典范式构建">第 4 章 智能体经典范式构建</a> —— 手把手实现 ReAct、Plan-and-Solve、Reflection</li>
+<li><a href="/posts/book-agent-ai-system-ch05/" title="第 5 章 基于低代码平台的智能体搭建">第 5 章 基于低代码平台的智能体搭建</a> —— Coze、Dify、n8n 等平台的使用思路</li>
+<li><a href="/posts/book-agent-ai-system-ch06/" title="第 6 章 框架开发实践">第 6 章 框架开发实践</a> —— AutoGen、AgentScope、LangGraph 等主流框架应用</li>
+<li><a href="/posts/book-agent-ai-system-ch07/" title="第 7 章 构建你的 Agent 框架">第 7 章 构建你的 Agent 框架</a> —— 从 0 开始搭建一个智能体框架</li>
 </ul>
 </li>
 <li><strong>第 3 篇 · 高级知识扩展</strong><ul>
-<li><a href="/posts/book-agent-ai-system-ch08/" title="第 8 章 记忆与检索（读书笔记）">第 8 章 记忆与检索</a> —— 记忆系统设计、RAG、存储选型</li>
-<li><a href="/posts/book-agent-ai-system-ch09/" title="第 9 章 上下文工程（读书笔记）">第 9 章 上下文工程</a> —— 持续交互中的"情境理解"与上下文管理</li>
-<li><a href="/posts/book-agent-ai-system-ch10/" title="第 10 章 智能体通信协议（读书笔记）">第 10 章 智能体通信协议</a> —— MCP、A2A、ANP 等协议解析</li>
-<li><a href="/posts/book-agent-ai-system-ch11/" title="第 11 章 Agentic-RL（读书笔记）">第 11 章 Agentic-RL</a> —— 从 SFT 到 GRPO 的 LLM 训练实战</li>
-<li><a href="/posts/book-agent-ai-system-ch12/" title="第 12 章 智能体性能评估（读书笔记）">第 12 章 智能体性能评估</a> —— 核心指标、基准测试与评估框架</li>
+<li><a href="/posts/book-agent-ai-system-ch08/" title="第 8 章 记忆与检索">第 8 章 记忆与检索</a> —— 记忆系统设计、RAG、存储选型</li>
+<li><a href="/posts/book-agent-ai-system-ch09/" title="第 9 章 上下文工程">第 9 章 上下文工程</a> —— 持续交互中的"情境理解"与上下文管理</li>
+<li><a href="/posts/book-agent-ai-system-ch10/" title="第 10 章 智能体通信协议">第 10 章 智能体通信协议</a> —— MCP、A2A、ANP 等协议解析</li>
+<li><a href="/posts/book-agent-ai-system-ch11/" title="第 11 章 Agentic-RL">第 11 章 Agentic-RL</a> —— 从 SFT 到 GRPO 的 LLM 训练实战</li>
+<li><a href="/posts/book-agent-ai-system-ch12/" title="第 12 章 智能体性能评估">第 12 章 智能体性能评估</a> —— 核心指标、基准测试与评估框架</li>
 </ul>
 </li>
 <li><strong>第 4 篇 · 综合案例进阶</strong><ul>
-<li><a href="/posts/book-agent-ai-system-ch13/" title="第 13 章 智能旅行助手（读书笔记）">第 13 章 智能旅行助手</a> —— MCP 与多智能体协作的真实世界应用</li>
-<li><a href="/posts/book-agent-ai-system-ch14/" title="第 14 章 自动化深度研究智能体（读书笔记）">第 14 章 自动化深度研究智能体</a> —— DeepResearch Agent 复现与解析</li>
-<li><a href="/posts/book-agent-ai-system-ch15/" title="第 15 章 构建赛博小镇（读书笔记）">第 15 章 构建赛博小镇</a> —— Agent 与游戏引擎结合，模拟社会动态</li>
+<li><a href="/posts/book-agent-ai-system-ch13/" title="第 13 章 智能旅行助手">第 13 章 智能旅行助手</a> —— MCP 与多智能体协作的真实世界应用</li>
+<li><a href="/posts/book-agent-ai-system-ch14/" title="第 14 章 自动化深度研究智能体">第 14 章 自动化深度研究智能体</a> —— DeepResearch Agent 复现与解析</li>
+<li><a href="/posts/book-agent-ai-system-ch15/" title="第 15 章 构建赛博小镇">第 15 章 构建赛博小镇</a> —— Agent 与游戏引擎结合，模拟社会动态</li>
 </ul>
 </li>
 <li><strong>第 5 篇 · 毕业设计及未来展望</strong><ul>
-<li><a href="/posts/book-agent-ai-system-ch16/" title="第 16 章 毕业设计（读书笔记）">第 16 章 毕业设计</a> —— 构建一个完整的、属于你自己的多智能体应用</li>
+<li><a href="/posts/book-agent-ai-system-ch16/" title="第 16 章 毕业设计">第 16 章 毕业设计</a> —— 构建一个完整的、属于你自己的多智能体应用</li>
 </ul>
 </li>
 </ul>
@@ -440,7 +440,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"《构建智能体 AI 系统：手把手教你开发智能体》读书笔记 · 总目录\"\ndate: 2026-10-11 18:30:00\nauthor: 时安\nslug: book-agent-ai-system-index\ncategories: [\"读书笔记\", \"构建智能体AI系统\"]\n---\n\n> 本系列是我梳理《构建智能体 AI 系统：手把手教你开发智能体》（Hello-Agents 系统性智能体学习教程）时整理的**读书路线图与章节笔记**，不是原书影印或逐字转载。\n> 我会按\"从原理到工程、从单智能体到多智能体\"的线索，把每一篇拆成**核心要点 + 我的结构化梳理 + 少量可运行的原创示例**，方便随时回看、也方便你在评论区一起讨论。\n\n## 关于这本书\n\n| 项目 | 内容 |\n|---|---|\n| 书名 | 构建智能体 AI 系统：手把手教你开发智能体 |\n| 别名 | Hello-Agents 系统性智能体学习教程 |\n| 定位 | 面向开发者 / 工程师 / 爱好者的智能体（Agent）工程实战教程 |\n| 主线 | 范式认知 → 环境搭建 → 经典范式 → 主流框架 → 高级扩展 → 综合案例 → 毕业设计 |\n| 特色 | 每一章配套可运行代码，覆盖 ReAct / RAG / MCP / 多智能体协作等当前最主流的能力 |\n\n全书以\"**动手构建一个能干活的多智能体系统**\"为目标，循序渐进，强调工程落地而非纯概念。\n\n## 全书结构（5 篇 16 章）\n\n- **第 1 篇 · 智能体与语言模型基础**\n  - {% post_link book-agent-ai-system-ch01 \"第 1 章 初识智能体\" %} —— 智能体的定义、类型、范式与典型应用场景\n  - {% post_link book-agent-ai-system-ch02 \"第 2 章 智能体发展史\" %} —— 从符号主义到 LLM 驱动智能体的演进脉络\n  - {% post_link book-agent-ai-system-ch03 \"第 3 章 大语言模型基础\" %} —— Transformer、提示（Prompt）、主流 LLM 及其能力与局限\n- **第 2 篇 · 构建你的大语言模型智能体**\n  - {% post_link book-agent-ai-system-ch04 \"第 4 章 智能体经典范式构建\" %} —— 手把手实现 ReAct、Plan-and-Solve、Reflection\n  - {% post_link book-agent-ai-system-ch05 \"第 5 章 基于低代码平台的智能体搭建\" %} —— Coze、Dify、n8n 等平台的使用思路\n  - {% post_link book-agent-ai-system-ch06 \"第 6 章 框架开发实践\" %} —— AutoGen、AgentScope、LangGraph 等主流框架应用\n  - {% post_link book-agent-ai-system-ch07 \"第 7 章 构建你的 Agent 框架\" %} —— 从 0 开始搭建一个智能体框架\n- **第 3 篇 · 高级知识扩展**\n  - {% post_link book-agent-ai-system-ch08 \"第 8 章 记忆与检索\" %} —— 记忆系统设计、RAG、存储选型\n  - {% post_link book-agent-ai-system-ch09 \"第 9 章 上下文工程\" %} —— 持续交互中的\"情境理解\"与上下文管理\n  - {% post_link book-agent-ai-system-ch10 \"第 10 章 智能体通信协议\" %} —— MCP、A2A、ANP 等协议解析\n  - {% post_link book-agent-ai-system-ch11 \"第 11 章 Agentic-RL\" %} —— 从 SFT 到 GRPO 的 LLM 训练实战\n  - {% post_link book-agent-ai-system-ch12 \"第 12 章 智能体性能评估\" %} —— 核心指标、基准测试与评估框架\n- **第 4 篇 · 综合案例进阶**\n  - {% post_link book-agent-ai-system-ch13 \"第 13 章 智能旅行助手\" %} —— MCP 与多智能体协作的真实世界应用\n  - {% post_link book-agent-ai-system-ch14 \"第 14 章 自动化深度研究智能体\" %} —— DeepResearch Agent 复现与解析\n  - {% post_link book-agent-ai-system-ch15 \"第 15 章 构建赛博小镇\" %} —— Agent 与游戏引擎结合，模拟社会动态\n- **第 5 篇 · 毕业设计及未来展望**\n  - {% post_link book-agent-ai-system-ch16 \"第 16 章 毕业设计\" %} —— 构建一个完整的、属于你自己的多智能体应用\n\n## 怎么读这套笔记\n\n建议按篇章顺序推进：先打牢**基础篇**的概念与 LLM 底座，再用**构建篇**把单智能体跑通，随后在**扩展篇**补齐记忆、协议、训练、评估这些\"工业化\"能力，最后用**案例篇 + 毕业设计**把知识融会贯通。\n\n> 笔记章节会随阅读进度陆续补充；当前本页为总目录与阅读路线图，后续每完成一章会在对应位置补上详细笔记与可运行代码。\n";
+  window.__POST_MD__ = "---\ntitle: \"《构建智能体 AI 系统：手把手教你开发智能体》读书笔记 · 总目录\"\ndate: 2026-10-11 18:30:00\nauthor: 时安\nslug: book-agent-ai-system-index\ncategories: [\"读书笔记\", \"构建智能体AI系统\"]\ncover: /img/covers/book-agent-ai-system.svg\n---\n\n> 本系列是我梳理《构建智能体 AI 系统：手把手教你开发智能体》（Hello-Agents 系统性智能体学习教程）时整理的**读书路线图与章节笔记**，不是原书影印或逐字转载。\n> 我会按\"从原理到工程、从单智能体到多智能体\"的线索，把每一篇拆成**核心要点 + 我的结构化梳理 + 少量可运行的原创示例**，方便随时回看、也方便你在评论区一起讨论。\n\n## 关于这本书\n\n| 项目 | 内容 |\n|---|---|\n| 书名 | 构建智能体 AI 系统：手把手教你开发智能体 |\n| 别名 | Hello-Agents 系统性智能体学习教程 |\n| 定位 | 面向开发者 / 工程师 / 爱好者的智能体（Agent）工程实战教程 |\n| 主线 | 范式认知 → 环境搭建 → 经典范式 → 主流框架 → 高级扩展 → 综合案例 → 毕业设计 |\n| 特色 | 每一章配套可运行代码，覆盖 ReAct / RAG / MCP / 多智能体协作等当前最主流的能力 |\n\n全书以\"**动手构建一个能干活的多智能体系统**\"为目标，循序渐进，强调工程落地而非纯概念。\n\n## 全书结构（5 篇 16 章）\n\n- **第 1 篇 · 智能体与语言模型基础**\n  - {% post_link book-agent-ai-system-ch01 \"第 1 章 初识智能体\" %} —— 智能体的定义、类型、范式与典型应用场景\n  - {% post_link book-agent-ai-system-ch02 \"第 2 章 智能体发展史\" %} —— 从符号主义到 LLM 驱动智能体的演进脉络\n  - {% post_link book-agent-ai-system-ch03 \"第 3 章 大语言模型基础\" %} —— Transformer、提示（Prompt）、主流 LLM 及其能力与局限\n- **第 2 篇 · 构建你的大语言模型智能体**\n  - {% post_link book-agent-ai-system-ch04 \"第 4 章 智能体经典范式构建\" %} —— 手把手实现 ReAct、Plan-and-Solve、Reflection\n  - {% post_link book-agent-ai-system-ch05 \"第 5 章 基于低代码平台的智能体搭建\" %} —— Coze、Dify、n8n 等平台的使用思路\n  - {% post_link book-agent-ai-system-ch06 \"第 6 章 框架开发实践\" %} —— AutoGen、AgentScope、LangGraph 等主流框架应用\n  - {% post_link book-agent-ai-system-ch07 \"第 7 章 构建你的 Agent 框架\" %} —— 从 0 开始搭建一个智能体框架\n- **第 3 篇 · 高级知识扩展**\n  - {% post_link book-agent-ai-system-ch08 \"第 8 章 记忆与检索\" %} —— 记忆系统设计、RAG、存储选型\n  - {% post_link book-agent-ai-system-ch09 \"第 9 章 上下文工程\" %} —— 持续交互中的\"情境理解\"与上下文管理\n  - {% post_link book-agent-ai-system-ch10 \"第 10 章 智能体通信协议\" %} —— MCP、A2A、ANP 等协议解析\n  - {% post_link book-agent-ai-system-ch11 \"第 11 章 Agentic-RL\" %} —— 从 SFT 到 GRPO 的 LLM 训练实战\n  - {% post_link book-agent-ai-system-ch12 \"第 12 章 智能体性能评估\" %} —— 核心指标、基准测试与评估框架\n- **第 4 篇 · 综合案例进阶**\n  - {% post_link book-agent-ai-system-ch13 \"第 13 章 智能旅行助手\" %} —— MCP 与多智能体协作的真实世界应用\n  - {% post_link book-agent-ai-system-ch14 \"第 14 章 自动化深度研究智能体\" %} —— DeepResearch Agent 复现与解析\n  - {% post_link book-agent-ai-system-ch15 \"第 15 章 构建赛博小镇\" %} —— Agent 与游戏引擎结合，模拟社会动态\n- **第 5 篇 · 毕业设计及未来展望**\n  - {% post_link book-agent-ai-system-ch16 \"第 16 章 毕业设计\" %} —— 构建一个完整的、属于你自己的多智能体应用\n\n## 怎么读这套笔记\n\n建议按篇章顺序推进：先打牢**基础篇**的概念与 LLM 底座，再用**构建篇**把单智能体跑通，随后在**扩展篇**补齐记忆、协议、训练、评估这些\"工业化\"能力，最后用**案例篇 + 毕业设计**把知识融会贯通。\n\n> 笔记章节会随阅读进度陆续补充；当前本页为总目录与阅读路线图，后续每完成一章会在对应位置补上详细笔记与可运行代码。\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>

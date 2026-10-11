@@ -9,18 +9,18 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
 <meta name="description" content="第 16 章是全书的收口：不教你新知识点，而是给你一张”从 0 到 1 做完一个多智能体应用”的 checklist。把这 16 章串成一次真正的交付。  16.1 毕业设计的目标做一个能跑、能用、能讲清楚的多智能体应用，而不是再抄一遍 Demo。它要同时体现：  范式（你怎么让 Agent 思考）； 工具 &#x2F; 协议（它怎么动手）； 记忆 &#x2F; 检索（它怎么记得住）； 评估（你">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第 16 章 毕业设计（读书笔记）">
+<meta property="og:title" content="第 16 章 毕业设计">
 <meta property="og:url" content="https://awk001.github.io/posts/book-agent-ai-system-ch16/">
 <meta property="og:site_name" content="AWK博客">
 <meta property="og:description" content="第 16 章是全书的收口：不教你新知识点，而是给你一张”从 0 到 1 做完一个多智能体应用”的 checklist。把这 16 章串成一次真正的交付。  16.1 毕业设计的目标做一个能跑、能用、能讲清楚的多智能体应用，而不是再抄一遍 Demo。它要同时体现：  范式（你怎么让 Agent 思考）； 工具 &#x2F; 协议（它怎么动手）； 记忆 &#x2F; 检索（它怎么记得住）； 评估（你">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-10T03:30:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T10:53:46.382Z">
+<meta property="article:modified_time" content="2026-10-11T12:42:31.985Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
 
-<title >第 16 章 毕业设计（读书笔记）</title>
+<title >第 16 章 毕业设计</title>
 
 <!-- Favicon -->
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 18:53:46"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 20:42:31"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -217,7 +217,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            第 16 章 毕业设计（读书笔记）
+                            第 16 章 毕业设计
                         </h1>
 
                         
@@ -413,7 +413,7 @@
 <p><strong>认知 → 底座 → 范式 → 框架 → 记忆&#x2F;协议&#x2F;训练&#x2F;评估 → 四个综合案例 → 毕业交付</strong>。</p>
 <p>希望这套笔记能成为你回看时的地图。也欢迎在评论区聊聊你做的毕业设计。</p>
 <hr>
-<p>上一篇：<a href="/posts/book-agent-ai-system-ch15/" title="第 15 章 构建赛博小镇（读书笔记）">第 15 章 构建赛博小镇</a>　|　下一篇：返回 <a href="/posts/book-agent-ai-system-index/" title="《构建智能体 AI 系统：手把手教你开发智能体》读书笔记 · 总目录">系列总目录</a></p>
+<p>上一篇：<a href="/posts/book-agent-ai-system-ch15/" title="第 15 章 构建赛博小镇">第 15 章 构建赛博小镇</a>　|　下一篇：返回 <a href="/posts/book-agent-ai-system-index/" title="《构建智能体 AI 系统：手把手教你开发智能体》读书笔记 · 总目录">系列总目录</a></p>
 
 </article>
     
@@ -422,7 +422,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 16 章 毕业设计（读书笔记）\"\ndate: 2026-10-10 11:30:00\nauthor: 时安\nslug: book-agent-ai-system-ch16\ncategories: [\"读书笔记\", \"构建智能体AI系统\"]\n---\n\n> 第 16 章是全书的收口：不教你新知识点，而是给你一张\"从 0 到 1 做完一个多智能体应用\"的 checklist。把这 16 章串成一次真正的交付。\n\n## 16.1 毕业设计的目标\n\n做一个**能跑、能用、能讲清楚**的多智能体应用，而不是再抄一遍 Demo。它要同时体现：\n\n- 范式（你怎么让 Agent 思考）；\n- 工具 / 协议（它怎么动手）；\n- 记忆 / 检索（它怎么记得住）；\n- 评估（你怎么证明它行）。\n\n## 16.2 推荐的题目方向\n\n| 方向 | 对应章节 |\n|---|---|\n| 个人知识助手（RAG） | 第 8、9 章 |\n| 自动化周报 / 研究摘要 | 第 14 章 |\n| 多角色代码评审 Agent | 第 6、13 章 |\n| 游戏 / 模拟中的 Agent 社会 | 第 15 章 |\n\n## 16.3 落地 checklist\n\n1. **定边界**：它解决什么具体问题？不解决什么？\n2. **选范式**：单 Agent（ReAct）还是多 Agent（协作）？\n3. **接工具**：用 MCP 还是直接函数调用？\n4. **管记忆**：短期上下文 + 长期存储如何分工？\n5. **加评估**：准备一组真实样例，量化成功率与成本；\n6. **做护栏**：哪些动作必须人工确认？出错怎么回滚？\n\n## 16.4 一个容易翻车的点\n\n> 很多毕设\"Demo 很炫，一上真实输入就崩\"。\n\n防御：从第一天就喂**真实、杂乱、带噪声**的数据，而不是精心构造的样例。\n\n## 16.5 给自己的话\n\n学 Agent 最大的忌讳是\"只会调 API、不懂闭环\"。你亲手写过第 7 章的框架骨架，就该明白：**所有高级能力都是往那个骨架上挂模块**。毕业设计，正是你证明\"我真的懂\"的时刻。\n\n## 16.6 全系列小结\n\n从\"什么是智能体\"到\"做完一个多智能体应用\"，16 章走完了一条完整路径：\n\n**认知 → 底座 → 范式 → 框架 → 记忆/协议/训练/评估 → 四个综合案例 → 毕业交付**。\n\n希望这套笔记能成为你回看时的地图。也欢迎在评论区聊聊你做的毕业设计。\n\n---\n\n上一篇：{% post_link book-agent-ai-system-ch15 \"第 15 章 构建赛博小镇\" %}　|　下一篇：返回 {% post_link book-agent-ai-system-index \"系列总目录\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 16 章 毕业设计\"\ndate: 2026-10-10 11:30:00\nauthor: 时安\nslug: book-agent-ai-system-ch16\ncategories: [\"读书笔记\", \"构建智能体AI系统\"]\n---\n\n> 第 16 章是全书的收口：不教你新知识点，而是给你一张\"从 0 到 1 做完一个多智能体应用\"的 checklist。把这 16 章串成一次真正的交付。\n\n## 16.1 毕业设计的目标\n\n做一个**能跑、能用、能讲清楚**的多智能体应用，而不是再抄一遍 Demo。它要同时体现：\n\n- 范式（你怎么让 Agent 思考）；\n- 工具 / 协议（它怎么动手）；\n- 记忆 / 检索（它怎么记得住）；\n- 评估（你怎么证明它行）。\n\n## 16.2 推荐的题目方向\n\n| 方向 | 对应章节 |\n|---|---|\n| 个人知识助手（RAG） | 第 8、9 章 |\n| 自动化周报 / 研究摘要 | 第 14 章 |\n| 多角色代码评审 Agent | 第 6、13 章 |\n| 游戏 / 模拟中的 Agent 社会 | 第 15 章 |\n\n## 16.3 落地 checklist\n\n1. **定边界**：它解决什么具体问题？不解决什么？\n2. **选范式**：单 Agent（ReAct）还是多 Agent（协作）？\n3. **接工具**：用 MCP 还是直接函数调用？\n4. **管记忆**：短期上下文 + 长期存储如何分工？\n5. **加评估**：准备一组真实样例，量化成功率与成本；\n6. **做护栏**：哪些动作必须人工确认？出错怎么回滚？\n\n## 16.4 一个容易翻车的点\n\n> 很多毕设\"Demo 很炫，一上真实输入就崩\"。\n\n防御：从第一天就喂**真实、杂乱、带噪声**的数据，而不是精心构造的样例。\n\n## 16.5 给自己的话\n\n学 Agent 最大的忌讳是\"只会调 API、不懂闭环\"。你亲手写过第 7 章的框架骨架，就该明白：**所有高级能力都是往那个骨架上挂模块**。毕业设计，正是你证明\"我真的懂\"的时刻。\n\n## 16.6 全系列小结\n\n从\"什么是智能体\"到\"做完一个多智能体应用\"，16 章走完了一条完整路径：\n\n**认知 → 底座 → 范式 → 框架 → 记忆/协议/训练/评估 → 四个综合案例 → 毕业交付**。\n\n希望这套笔记能成为你回看时的地图。也欢迎在评论区聊聊你做的毕业设计。\n\n---\n\n上一篇：{% post_link book-agent-ai-system-ch15 \"第 15 章 构建赛博小镇\" %}　|　下一篇：返回 {% post_link book-agent-ai-system-index \"系列总目录\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -451,8 +451,8 @@
 
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
     <button type="button" onclick="var b=this;navigator.clipboard.writeText(location.href).then(function(){b.innerText='✓ 已复制';setTimeout(function(){b.innerText='📋 复制原文链接'},2000)}).catch(function(){b.innerText='复制失败'})" style="display:inline-block;padding:7px 16px;border-radius:20px;background:var(--primary,#488fe0);color:#fff;font-size:.82rem;border:none;cursor:pointer;">📋 复制原文链接</button>
-    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-agent-ai-system-ch16%2F&title=%E7%AC%AC%2016%20%E7%AB%A0%20%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%EF%BC%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%89" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">微博分享</a>
-    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-agent-ai-system-ch16%2F&title=%E7%AC%AC%2016%20%E7%AB%A0%20%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%EF%BC%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%89" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">QQ分享</a>
+    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-agent-ai-system-ch16%2F&title=%E7%AC%AC%2016%20%E7%AB%A0%20%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">微博分享</a>
+    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-agent-ai-system-ch16%2F&title=%E7%AC%AC%2016%20%E7%AB%A0%20%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">QQ分享</a>
     <button type="button" onclick="__showWxQr()" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#07c160;color:#fff;font-size:.82rem;border:none;cursor:pointer;">💬 微信分享</button>
   </div>
 </div>
