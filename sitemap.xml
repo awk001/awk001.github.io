@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://awk001.github.io/posts/hexo-typora-writing-guide/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -176,31 +176,31 @@
   </url>
   <url>
     <loc>https://awk001.github.io/posts/multi-platform-repost-playbook/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://awk001.github.io/posts/hexo-twikoo-netlify-free/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://awk001.github.io/posts/twikoo-deploy-guide/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://awk001.github.io/posts/guanxin-placeholder/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://awk001.github.io/posts/pinxuan-narrative-placeholder/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://awk001.github.io/posts/industrial-vision-moat/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -284,18 +284,6 @@
   </url>
   <url>
     <loc>https://awk001.github.io/tags/Vite/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -367,6 +355,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://awk001.github.io/tags/%E5%8D%A0%E4%BD%8D/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E5%BE%85%E8%A1%A5%E5%85%85/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://awk001.github.io/tags/%E8%BF%90%E8%90%A5/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -391,18 +391,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://awk001.github.io/tags/MongoDB/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://awk001.github.io/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://awk001.github.io/tags/Python/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -416,6 +404,18 @@
   </url>
   <url>
     <loc>https://awk001.github.io/tags/%E8%B0%83%E8%AF%95/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/MongoDB/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://awk001.github.io/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
