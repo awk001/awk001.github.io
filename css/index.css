@@ -3433,7 +3433,7 @@ form textarea:focus,
   border-color: var(--phycat-accent);
   opacity: 1;
 }
-.trm-publication a {
+.trm-publication a:not(.headerlink) {
   color: var(--theme-color);
   text-decoration: none;
   font-weight: 500;
@@ -3444,7 +3444,7 @@ form textarea:focus,
   border-bottom: none;
   transition: all 0.2s ease;
 }
-.trm-publication a::before {
+.trm-publication a:not(.headerlink)::before {
   content: '';
   display: inline-block;
   width: 1em;
@@ -3456,11 +3456,11 @@ form textarea:focus,
   mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath d='M477.934459 330.486594A50.844091 50.844091 0 0 1 406.752731 258.796425L512 152.532274a254.220457 254.220457 0 0 1 359.467726 359.467726L762.66137 618.772592a50.844091 50.844091 0 1 1-71.690168-71.690169l106.772591-106.772592a152.532274 152.532274 0 0 0-215.578947-215.578947z m70.164846 361.501489A50.844091 50.844091 0 1 1 619.789474 762.66137l-107.281033 107.281033A254.220457 254.220457 0 0 1 152.532274 512L259.813307 406.752731a50.844091 50.844091 0 1 1 72.19861 69.656405l-107.789474 107.281033a152.532274 152.532274 0 0 0 215.578947 215.578947z m-126.601788-16.77855a50.844091 50.844091 0 1 1-71.690168-71.690169l251.678252-251.678252a50.844091 50.844091 0 0 1 71.690169 71.690169z'/%3E%3C/svg%3E") no-repeat center / contain;
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.trm-publication a:hover {
+.trm-publication a:not(.headerlink):hover {
   color: var(--phycat-accent);
   background: var(--phycat-accent-softer);
 }
-.trm-publication a:hover::before {
+.trm-publication a:not(.headerlink):hover::before {
   transform: rotate(180deg);
   background-color: var(--phycat-accent);
 }
@@ -3484,13 +3484,13 @@ form textarea:focus,
   transform: scale(1.04);
 }
 .trm-publication strong {
-  color: var(--phycat-accent);
+  color: #e67e22;
   font-weight: 700;
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 .trm-publication strong:hover {
-  border-bottom-color: var(--phycat-accent-line);
+  border-bottom-color: rgba(230, 126, 34, 0.45);
 }
 .trm-publication em {
   font-style: italic;
