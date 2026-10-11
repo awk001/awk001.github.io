@@ -9,18 +9,18 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
 <meta name="description" content="第 6 章是全书的算法小高潮：卷积运算。原书用最朴素的例子讲清”卷积到底是什么”，避免一上来就被公式劝退。  6.1 卷积的直觉：滑动的”加权小窗”卷积干的活可以一句话说清：  拿一个小窗口（卷积核 &#x2F; kernel）在图像上逐格滑动，每一格把”窗口覆盖的像素 × 对应权重”加总，得到一个新值。  它本质上是一种局部特征提取器。 6.2 最简体验：手写一个 2D 卷积不依赖任何框架，用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第 6 章 最简体验卷积运算（读书笔记）">
+<meta property="og:title" content="第 6 章 最简体验卷积运算">
 <meta property="og:url" content="https://awk001.github.io/posts/book-ai-python-ch06/">
 <meta property="og:site_name" content="AWK博客">
 <meta property="og:description" content="第 6 章是全书的算法小高潮：卷积运算。原书用最朴素的例子讲清”卷积到底是什么”，避免一上来就被公式劝退。  6.1 卷积的直觉：滑动的”加权小窗”卷积干的活可以一句话说清：  拿一个小窗口（卷积核 &#x2F; kernel）在图像上逐格滑动，每一格把”窗口覆盖的像素 × 对应权重”加总，得到一个新值。  它本质上是一种局部特征提取器。 6.2 最简体验：手写一个 2D 卷积不依赖任何框架，用">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-13T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T08:24:09.918Z">
+<meta property="article:modified_time" content="2026-10-11T12:23:15.473Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
 
-<title >第 6 章 最简体验卷积运算（读书笔记）</title>
+<title >第 6 章 最简体验卷积运算</title>
 
 <!-- Favicon -->
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 16:24:09"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 20:23:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -217,7 +217,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            第 6 章 最简体验卷积运算（读书笔记）
+                            第 6 章 最简体验卷积运算
                         </h1>
 
                         
@@ -395,7 +395,7 @@
 <p>这就是原书”前面章节都为后面铺垫”的设计。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>卷积 &#x3D; 滑动加权求和。它看着吓人，写一遍最朴素的实现就祛魅了。下一章换个角度——用”滑动窗口示意图”把这个过程画出来，理解更牢。</p>
 <hr>
-<p>上一篇：<a href="/posts/book-ai-python-ch05/" title="第 5 章 最简体验数组（读书笔记）">第 5 章 最简体验数组</a>　|　下一篇：<a href="/posts/book-ai-python-ch07/" title="第 7 章 综合案例之滑动窗口示意图（读书笔记）">第 7 章 综合案例之滑动窗口示意图</a>　|　<a href="/posts/book-ai-python-index/" title="《人工智能极简编程入门》读书笔记 · 总目录">系列总目录</a></p>
+<p>上一篇：<a href="/posts/book-ai-python-ch05/" title="第 5 章 最简体验数组">第 5 章 最简体验数组</a>　|　下一篇：<a href="/posts/book-ai-python-ch07/" title="第 7 章 综合案例之滑动窗口示意图">第 7 章 综合案例之滑动窗口示意图</a>　|　<a href="/posts/book-ai-python-index/" title="《人工智能极简编程入门》· 内容总览">系列总目录</a></p>
 
 </article>
     
@@ -404,7 +404,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 6 章 最简体验卷积运算（读书笔记）\"\ndate: 2026-10-13 09:00:00\nauthor: 时安\nslug: book-ai-python-ch06\ncategories: [\"读书笔记\", \"人工智能极简编程入门\"]\n---\n\n> 第 6 章是全书的算法小高潮：**卷积运算**。原书用最朴素的例子讲清\"卷积到底是什么\"，避免一上来就被公式劝退。\n\n## 6.1 卷积的直觉：滑动的\"加权小窗\"\n\n卷积干的活可以一句话说清：\n\n> 拿一个小窗口（卷积核 / kernel）在图像上**逐格滑动**，每一格把\"窗口覆盖的像素 × 对应权重\"加总，得到一个新值。\n\n它本质上是一种**局部特征提取器**。\n\n## 6.2 最简体验：手写一个 2D 卷积\n\n不依赖任何框架，用最直白的方式实现，看清楚每一步：\n\n```python\nimport numpy as np\n\nimg = np.array([[1, 2, 3],\n                [4, 5, 6],\n                [7, 8, 9]])\nkernel = np.array([[0, 1, 0],\n                   [1, 1, 1],\n                   [0, 1, 0]])   # 一个\"十字\"边缘检测核\n\nH, W = img.shape\nkH, kW = kernel.shape\nout = np.zeros((H - kH + 1, W - kW + 1))\n\nfor i in range(out.shape[0]):\n    for j in range(out.shape[1]):\n        patch = img[i:i+kH, j:j+kW]\n        out[i, j] = np.sum(patch * kernel)\n\nprint(out)\n```\n\n跑出来你会看到：原图中心被保留、边缘被强调——这就是**边缘检测**的味道。\n\n## 6.3 不同的核 = 不同的特征\n\n- 模糊核：相邻像素取平均\n- 锐化核：突出中心、压周边\n- 边缘核：如上例的十字\n\n> **要点**：卷积的强大不在于\"一个固定的核\"，而在于**让网络自己学出成百上千个有用的核**。\n\n## 6.4 卷积在深度学习中的作用\n\n- **CNN（卷积神经网络）** 由多层卷积堆叠而成\n- 浅层学边缘 / 颜色，中层学纹理 / 部件，深层学语义 / 整体\n- 相比全连接，卷积有**局部连接 + 权值共享**两个特性，参数量大幅减少，更适合图像\n\n## 6.5 和前面章节的联系\n\n- 卷积在**数组**上算（第 5 章 Numpy）✅\n- 输入是**图像数组**（第 4 章）✅\n- 可视化中间结果用 **Matplotlib**（第 4 章）✅\n\n这就是原书\"前面章节都为后面铺垫\"的设计。\n\n## 小结\n\n卷积 = 滑动加权求和。它看着吓人，写一遍最朴素的实现就祛魅了。下一章换个角度——用\"滑动窗口示意图\"把这个过程画出来，理解更牢。\n\n---\n\n上一篇：{% post_link book-ai-python-ch05 \"第 5 章 最简体验数组\" %}　|　下一篇：{% post_link book-ai-python-ch07 \"第 7 章 综合案例之滑动窗口示意图\" %}　|　{% post_link book-ai-python-index \"系列总目录\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 6 章 最简体验卷积运算\"\ndate: 2026-10-13 09:00:00\nauthor: 时安\nslug: book-ai-python-ch06\ncategories: [\"技术札记\", \"人工智能极简编程入门\"]\n---\n\n> 第 6 章是全书的算法小高潮：**卷积运算**。原书用最朴素的例子讲清\"卷积到底是什么\"，避免一上来就被公式劝退。\n\n## 6.1 卷积的直觉：滑动的\"加权小窗\"\n\n卷积干的活可以一句话说清：\n\n> 拿一个小窗口（卷积核 / kernel）在图像上**逐格滑动**，每一格把\"窗口覆盖的像素 × 对应权重\"加总，得到一个新值。\n\n它本质上是一种**局部特征提取器**。\n\n## 6.2 最简体验：手写一个 2D 卷积\n\n不依赖任何框架，用最直白的方式实现，看清楚每一步：\n\n```python\nimport numpy as np\n\nimg = np.array([[1, 2, 3],\n                [4, 5, 6],\n                [7, 8, 9]])\nkernel = np.array([[0, 1, 0],\n                   [1, 1, 1],\n                   [0, 1, 0]])   # 一个\"十字\"边缘检测核\n\nH, W = img.shape\nkH, kW = kernel.shape\nout = np.zeros((H - kH + 1, W - kW + 1))\n\nfor i in range(out.shape[0]):\n    for j in range(out.shape[1]):\n        patch = img[i:i+kH, j:j+kW]\n        out[i, j] = np.sum(patch * kernel)\n\nprint(out)\n```\n\n跑出来你会看到：原图中心被保留、边缘被强调——这就是**边缘检测**的味道。\n\n## 6.3 不同的核 = 不同的特征\n\n- 模糊核：相邻像素取平均\n- 锐化核：突出中心、压周边\n- 边缘核：如上例的十字\n\n> **要点**：卷积的强大不在于\"一个固定的核\"，而在于**让网络自己学出成百上千个有用的核**。\n\n## 6.4 卷积在深度学习中的作用\n\n- **CNN（卷积神经网络）** 由多层卷积堆叠而成\n- 浅层学边缘 / 颜色，中层学纹理 / 部件，深层学语义 / 整体\n- 相比全连接，卷积有**局部连接 + 权值共享**两个特性，参数量大幅减少，更适合图像\n\n## 6.5 和前面章节的联系\n\n- 卷积在**数组**上算（第 5 章 Numpy）✅\n- 输入是**图像数组**（第 4 章）✅\n- 可视化中间结果用 **Matplotlib**（第 4 章）✅\n\n这就是原书\"前面章节都为后面铺垫\"的设计。\n\n## 小结\n\n卷积 = 滑动加权求和。它看着吓人，写一遍最朴素的实现就祛魅了。下一章换个角度——用\"滑动窗口示意图\"把这个过程画出来，理解更牢。\n\n---\n\n上一篇：{% post_link book-ai-python-ch05 \"第 5 章 最简体验数组\" %}　|　下一篇：{% post_link book-ai-python-ch07 \"第 7 章 综合案例之滑动窗口示意图\" %}　|　{% post_link book-ai-python-index \"系列总目录\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -433,8 +433,8 @@
 
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
     <button type="button" onclick="var b=this;navigator.clipboard.writeText(location.href).then(function(){b.innerText='✓ 已复制';setTimeout(function(){b.innerText='📋 复制原文链接'},2000)}).catch(function(){b.innerText='复制失败'})" style="display:inline-block;padding:7px 16px;border-radius:20px;background:var(--primary,#488fe0);color:#fff;font-size:.82rem;border:none;cursor:pointer;">📋 复制原文链接</button>
-    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch06%2F&title=%E7%AC%AC%206%20%E7%AB%A0%20%E6%9C%80%E7%AE%80%E4%BD%93%E9%AA%8C%E5%8D%B7%E7%A7%AF%E8%BF%90%E7%AE%97%EF%BC%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%89" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">微博分享</a>
-    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch06%2F&title=%E7%AC%AC%206%20%E7%AB%A0%20%E6%9C%80%E7%AE%80%E4%BD%93%E9%AA%8C%E5%8D%B7%E7%A7%AF%E8%BF%90%E7%AE%97%EF%BC%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%89" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">QQ分享</a>
+    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch06%2F&title=%E7%AC%AC%206%20%E7%AB%A0%20%E6%9C%80%E7%AE%80%E4%BD%93%E9%AA%8C%E5%8D%B7%E7%A7%AF%E8%BF%90%E7%AE%97" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">微博分享</a>
+    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch06%2F&title=%E7%AC%AC%206%20%E7%AB%A0%20%E6%9C%80%E7%AE%80%E4%BD%93%E9%AA%8C%E5%8D%B7%E7%A7%AF%E8%BF%90%E7%AE%97" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">QQ分享</a>
     <button type="button" onclick="__showWxQr()" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#07c160;color:#fff;font-size:.82rem;border:none;cursor:pointer;">💬 微信分享</button>
   </div>
 </div>

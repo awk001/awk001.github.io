@@ -9,18 +9,18 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
 <meta name="description" content="第 1 章基本不讲代码，而是先帮零基础读者把”AI 到底是什么、该怎么学”这件事想清楚。它奠定了全书”最简体验”的学习哲学。  1.1 AI 极简史（选修）快速回看了 AI 从符号主义、连接主义到深度学习的几次起伏。这部分当作背景故事看即可，不影响后续动手。 1.2 AI 极简介原书用几个很小的切入点把 AI 的几大支柱讲明白，这个视角很适合初学者： 1.2.1 认识颜色：表征学习与深度学习 表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第 1 章 零基础入门 AI 解决方案（读书笔记）">
+<meta property="og:title" content="第 1 章 零基础入门 AI 解决方案">
 <meta property="og:url" content="https://awk001.github.io/posts/book-ai-python-ch01/">
 <meta property="og:site_name" content="AWK博客">
 <meta property="og:description" content="第 1 章基本不讲代码，而是先帮零基础读者把”AI 到底是什么、该怎么学”这件事想清楚。它奠定了全书”最简体验”的学习哲学。  1.1 AI 极简史（选修）快速回看了 AI 从符号主义、连接主义到深度学习的几次起伏。这部分当作背景故事看即可，不影响后续动手。 1.2 AI 极简介原书用几个很小的切入点把 AI 的几大支柱讲明白，这个视角很适合初学者： 1.2.1 认识颜色：表征学习与深度学习 表">
 <meta property="og:locale">
 <meta property="article:published_time" content="2026-10-18T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-11T08:23:28.116Z">
+<meta property="article:modified_time" content="2026-10-11T12:23:15.443Z">
 <meta property="article:author" content="时安">
 <meta name="twitter:card" content="summary">
 
 
-<title >第 1 章 零基础入门 AI 解决方案（读书笔记）</title>
+<title >第 1 章 零基础入门 AI 解决方案</title>
 
 <!-- Favicon -->
 
@@ -59,7 +59,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"awk001.github.io","author":"时安","root":"/","typed_text":["Machine Intelligence"],"theme_version":"2026.10.09.02","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/logo-awk.png","icon16":"/img/logo-awk.png","icon32":"/img/logo-awk.png","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"fas fa-calendar-alt","clock":"fas fa-clock","user":"fas fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","speed":180,"gapWidth":20,"gapHeight":16,"height":34,"delayRange":3000,"align":"center","mode":"half","avatar":true,"data":[{"id":1,"avatar":"/img/avatar-awk.png","text":"大佬，我网站还没到30篇，但是我很想给你留言"},{"id":2,"avatar":"/img/avatar-awk.png","text":"文章不错支持一下，非常喜欢"},{"id":3,"avatar":"/img/avatar-awk.png","text":"大佬我选择了你的主题搭建博客，优化的过程中可以借鉴吗"},{"id":4,"avatar":"/img/avatar-awk.png","text":"之前用了很久的 Github Pages，终于找到一个顺手的主题"},{"id":5,"avatar":"/img/avatar-awk.png","text":"首页视频 banner 太有氛围感了，求教程"},{"id":6,"avatar":"/img/avatar-awk.png","text":"观心随笔这个名字起得真好，有被治愈到"},{"id":7,"avatar":"/img/avatar-awk.png","text":"分类卡片的紫色数字看起来好高级"},{"id":8,"avatar":"/img/avatar-awk.png","text":"刚入门 Hexo，这个主题对新手友好吗"},{"id":9,"avatar":"/img/avatar-awk.png","text":"博主的主题切换动画很丝滑，收藏了"},{"id":10,"avatar":"/img/avatar-awk.png","text":"期待更多工业智能和 PLC 相关的文章"},{"id":11,"avatar":"/img/avatar-awk.png","text":"博主写技术文章的节奏很舒服，已经 follow 了"},{"id":12,"avatar":"/img/avatar-awk.png","text":"这个工业视觉系列正是我想找的，干货满满"},{"id":13,"avatar":"/img/avatar-awk.png","text":"Hexo + async 主题搭出来的效果确实高级"},{"id":14,"avatar":"/img/avatar-awk.png","text":"友链互换可以吗？已发邮件到 About 页邮箱"},{"id":15,"avatar":"/img/avatar-awk.png","text":"想看看博主是怎么把 PLC 和 AI 结合起来的"}],"envId":"https://monumental-beignet-ea8c0e.netlify.app/.netlify/functions/twikoo"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 16:23:28"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2026-10-11 20:23:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2026.10.09.02" id="trm-switch-style">
@@ -217,7 +217,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            第 1 章 零基础入门 AI 解决方案（读书笔记）
+                            第 1 章 零基础入门 AI 解决方案
                         </h1>
 
                         
@@ -439,7 +439,7 @@
 </ul>
 <h2 id="1-8-小结"><a href="#1-8-小结" class="headerlink" title="1.8 小结"></a>1.8 小结</h2><p>第 1 章没写一行代码，但决定了你后面能不能坚持下来：<strong>把”体验”放在”理解”前面，用最小例子维持正反馈</strong>。下一章就正式动手搭环境了。</p>
 <hr>
-<p>上一篇：返回 <a href="/posts/book-ai-python-index/" title="《人工智能极简编程入门》读书笔记 · 总目录">系列总目录</a>　|　下一篇：<a href="/posts/book-ai-python-ch02/" title="第 2 章 环境搭建（读书笔记）">第 2 章 环境搭建</a></p>
+<p>上一篇：返回 <a href="/posts/book-ai-python-index/" title="《人工智能极简编程入门》· 内容总览">系列总目录</a>　|　下一篇：<a href="/posts/book-ai-python-ch02/" title="第 2 章 环境搭建">第 2 章 环境搭建</a></p>
 
 </article>
     
@@ -448,7 +448,7 @@
     
 <!-- 注入本文 Markdown 源，供「一键分发」复制使用 -->
 <script data-swup-reload-script>
-  window.__POST_MD__ = "---\ntitle: \"第 1 章 零基础入门 AI 解决方案（读书笔记）\"\ndate: 2026-10-18 09:00:00\nauthor: 时安\nslug: book-ai-python-ch01\ncategories: [\"读书笔记\", \"人工智能极简编程入门\"]\n---\n\n> 第 1 章基本不讲代码，而是先帮零基础读者把\"AI 到底是什么、该怎么学\"这件事想清楚。它奠定了全书\"最简体验\"的学习哲学。\n\n## 1.1 AI 极简史（选修）\n\n快速回看了 AI 从符号主义、连接主义到深度学习的几次起伏。这部分当作背景故事看即可，不影响后续动手。\n\n## 1.2 AI 极简介\n\n原书用几个很小的切入点把 AI 的几大支柱讲明白，这个视角很适合初学者：\n\n### 1.2.1 认识颜色：表征学习与深度学习\n\n- **表征（Representation）**：模型如何把\"颜色\"\"形状\"之类的原始信息转成计算机能算的数字。\n- **深度学习**：通过多层网络自动学习这种表征，而不是人工设计特征。\n\n### 1.2.2 该往哪边旋转：决策科学\n\n很多 AI 问题本质是\"在可选动作里挑一个最好的\"。强化学习、控制、博弈都绕不开\"决策\"。\n\n### 1.2.3 转起来：控制论\n\n让系统根据反馈持续调整，趋向目标状态——这是自动驾驶、机器人等\"动态系统\"的底层逻辑。\n\n### 1.2.4 自动驾驶与 AI 三大领域\n\n原书把 AI 应用粗略归为三大领域（可理解为 CV / NLP / 决策控制三块），后面章节的工具（图像、数组、卷积）正好对应这些方向。\n\n## 1.3 史上最轻松的入门 AI 完整解决方案\n\n原书把学习路径拆成三类模块，我觉得这个拆解很实用：\n\n- **兴趣模块**：先用好玩的 demo 维持动力（比如看到一张图被识别出来）。\n- **基础模块**：数学 + Python 编程底子。\n- **入门模块**：深度学习框架（如 TensorFlow）与项目实战。\n\n> **要点**：不要一上来就啃数学和框架，先用\"最简体验\"建立正反馈，再补基础。\n\n## 1.4 入门好资源\n\n原书列了几类资源，这里做精简版清单：\n\n| 类型 | 例子 |\n|---|---|\n| MOOC | Coursera / 吴恩达系列、国内高校开源课 |\n| 框架 | TensorFlow、PyTorch |\n| 社区 | GitHub、Stack Overflow、知乎/掘金 |\n| 数据集 | MNIST、ImageNet、Kaggle |\n| 论文 | arXiv |\n| 公司 | 各头部厂 AI 实验室的博客与技术报告 |\n\n## 1.5 学习新主张（最重点）\n\n这一节是全书的方法论核心，我用自己的话重述一遍：\n\n### 1.5.1 什么是\"体验\"\n\n不是\"看懂了\"，而是\"真的跑起来了、看到了结果\"。\n\n### 1.5.2 什么是\"最简\"\n\n只保留能说明问题的**最小必要代码**，去掉一切干扰。\n\n### 1.5.3 \"最简体验\"主张\n\n> **先跑通最小的例子 → 再分步骤叠加知识 → 每一步都有可验证的结果。**\n\n这和我做工程的习惯完全一致：能用 10 行说清的事，绝不先上 100 行框架。\n\n## 1.6 如何使用本书\n\n原书强调几个原则，对你读这套笔记也适用：\n\n- **首要原则**：照着敲、照着跑，别只\"看\"。\n- **\"要点\"**：书里把必须掌握的内容标成要点，笔记里我也会单独拎出来。\n- **用 GitHub 提高效率**：原书配套代码在 GitHub，建议克隆下来边读边对照。\n\n## 1.7 网络词汇简写与昵称\n\n入门会被一堆缩写劝退，先认几个高频的：\n\n- **AI / ML / DL**：人工智能 / 机器学习 / 深度学习\n- **CV**：计算机视觉\n- **NLP**：自然语言处理\n- **RL**：强化学习\n- **NN / CNN / RNN**：神经网络 / 卷积神经网络 / 循环神经网络\n\n## 1.8 小结\n\n第 1 章没写一行代码，但决定了你后面能不能坚持下来：**把\"体验\"放在\"理解\"前面，用最小例子维持正反馈**。下一章就正式动手搭环境了。\n\n---\n\n上一篇：返回 {% post_link book-ai-python-index \"系列总目录\" %}　|　下一篇：{% post_link book-ai-python-ch02 \"第 2 章 环境搭建\" %}\n";
+  window.__POST_MD__ = "---\ntitle: \"第 1 章 零基础入门 AI 解决方案\"\ndate: 2026-10-18 09:00:00\nauthor: 时安\nslug: book-ai-python-ch01\ncategories: [\"技术札记\", \"人工智能极简编程入门\"]\n---\n\n> 第 1 章基本不讲代码，而是先帮零基础读者把\"AI 到底是什么、该怎么学\"这件事想清楚。它奠定了全书\"最简体验\"的学习哲学。\n\n## 1.1 AI 极简史（选修）\n\n快速回看了 AI 从符号主义、连接主义到深度学习的几次起伏。这部分当作背景故事看即可，不影响后续动手。\n\n## 1.2 AI 极简介\n\n原书用几个很小的切入点把 AI 的几大支柱讲明白，这个视角很适合初学者：\n\n### 1.2.1 认识颜色：表征学习与深度学习\n\n- **表征（Representation）**：模型如何把\"颜色\"\"形状\"之类的原始信息转成计算机能算的数字。\n- **深度学习**：通过多层网络自动学习这种表征，而不是人工设计特征。\n\n### 1.2.2 该往哪边旋转：决策科学\n\n很多 AI 问题本质是\"在可选动作里挑一个最好的\"。强化学习、控制、博弈都绕不开\"决策\"。\n\n### 1.2.3 转起来：控制论\n\n让系统根据反馈持续调整，趋向目标状态——这是自动驾驶、机器人等\"动态系统\"的底层逻辑。\n\n### 1.2.4 自动驾驶与 AI 三大领域\n\n原书把 AI 应用粗略归为三大领域（可理解为 CV / NLP / 决策控制三块），后面章节的工具（图像、数组、卷积）正好对应这些方向。\n\n## 1.3 史上最轻松的入门 AI 完整解决方案\n\n原书把学习路径拆成三类模块，我觉得这个拆解很实用：\n\n- **兴趣模块**：先用好玩的 demo 维持动力（比如看到一张图被识别出来）。\n- **基础模块**：数学 + Python 编程底子。\n- **入门模块**：深度学习框架（如 TensorFlow）与项目实战。\n\n> **要点**：不要一上来就啃数学和框架，先用\"最简体验\"建立正反馈，再补基础。\n\n## 1.4 入门好资源\n\n原书列了几类资源，这里做精简版清单：\n\n| 类型 | 例子 |\n|---|---|\n| MOOC | Coursera / 吴恩达系列、国内高校开源课 |\n| 框架 | TensorFlow、PyTorch |\n| 社区 | GitHub、Stack Overflow、知乎/掘金 |\n| 数据集 | MNIST、ImageNet、Kaggle |\n| 论文 | arXiv |\n| 公司 | 各头部厂 AI 实验室的博客与技术报告 |\n\n## 1.5 学习新主张（最重点）\n\n这一节是全书的方法论核心，我用自己的话重述一遍：\n\n### 1.5.1 什么是\"体验\"\n\n不是\"看懂了\"，而是\"真的跑起来了、看到了结果\"。\n\n### 1.5.2 什么是\"最简\"\n\n只保留能说明问题的**最小必要代码**，去掉一切干扰。\n\n### 1.5.3 \"最简体验\"主张\n\n> **先跑通最小的例子 → 再分步骤叠加知识 → 每一步都有可验证的结果。**\n\n这和我做工程的习惯完全一致：能用 10 行说清的事，绝不先上 100 行框架。\n\n## 1.6 如何使用本书\n\n原书强调几个原则，对你读这套笔记也适用：\n\n- **首要原则**：照着敲、照着跑，别只\"看\"。\n- **\"要点\"**：书里把必须掌握的内容标成要点，笔记里我也会单独拎出来。\n- **用 GitHub 提高效率**：原书配套代码在 GitHub，建议克隆下来边读边对照。\n\n## 1.7 网络词汇简写与昵称\n\n入门会被一堆缩写劝退，先认几个高频的：\n\n- **AI / ML / DL**：人工智能 / 机器学习 / 深度学习\n- **CV**：计算机视觉\n- **NLP**：自然语言处理\n- **RL**：强化学习\n- **NN / CNN / RNN**：神经网络 / 卷积神经网络 / 循环神经网络\n\n## 1.8 小结\n\n第 1 章没写一行代码，但决定了你后面能不能坚持下来：**把\"体验\"放在\"理解\"前面，用最小例子维持正反馈**。下一章就正式动手搭环境了。\n\n---\n\n上一篇：返回 {% post_link book-ai-python-index \"系列总目录\" %}　|　下一篇：{% post_link book-ai-python-ch02 \"第 2 章 环境搭建\" %}\n";
 </script>
 <div class="trm-post-reprint" style="margin-top:20px;padding:18px 22px;border-radius:10px;background:var(--theme-bg-color,#fcfcfe);box-shadow:0 2px 12px rgba(20,20,40,.05);">
   <div style="font-weight:800;font-size:1rem;margin-bottom:6px;color:var(--theme-color,#333);">转载与分享</div>
@@ -477,8 +477,8 @@
 
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
     <button type="button" onclick="var b=this;navigator.clipboard.writeText(location.href).then(function(){b.innerText='✓ 已复制';setTimeout(function(){b.innerText='📋 复制原文链接'},2000)}).catch(function(){b.innerText='复制失败'})" style="display:inline-block;padding:7px 16px;border-radius:20px;background:var(--primary,#488fe0);color:#fff;font-size:.82rem;border:none;cursor:pointer;">📋 复制原文链接</button>
-    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch01%2F&title=%E7%AC%AC%201%20%E7%AB%A0%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%20AI%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%89" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">微博分享</a>
-    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch01%2F&title=%E7%AC%AC%201%20%E7%AB%A0%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%20AI%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%89" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">QQ分享</a>
+    <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch01%2F&title=%E7%AC%AC%201%20%E7%AB%A0%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%20AI%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">微博分享</a>
+    <a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fawk001.github.io%2Fposts%2Fbook-ai-python-ch01%2F&title=%E7%AC%AC%201%20%E7%AB%A0%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%20AI%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88" target="_blank" rel="noopener" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#e6e9f2;color:#444;font-size:.82rem;text-decoration:none;">QQ分享</a>
     <button type="button" onclick="__showWxQr()" style="display:inline-block;padding:7px 16px;border-radius:20px;background:#07c160;color:#fff;font-size:.82rem;border:none;cursor:pointer;">💬 微信分享</button>
   </div>
 </div>
