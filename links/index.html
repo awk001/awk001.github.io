@@ -469,7 +469,7 @@
 .trm-links-page .trm-link-card-icon img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .trm-links-page .trm-link-card-letter {
@@ -830,6 +830,39 @@
         });
     }
 
+    function extractDomain(url) {
+        if (!url || !/^https?:\/\//i.test(url)) return '';
+        try { return new URL(url).hostname; } catch (e) { return ''; }
+    }
+
+    function createIconHtml(item, safeUrl) {
+        var letter = '<span class="trm-link-card-letter">' + escapeHtml((item.name || '').trim().charAt(0)) + '</span>';
+        var onload = 'this.style.display=\'\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'none\';}';
+        var onerrorUser = 'this.style.display=\'none\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'\';}';
+
+        if (item.image) {
+            return '<img draggable="false" loading="lazy" src="' + escapeHtml(item.image) + '" ' +
+                'onload="' + onload + '" onerror="' + onerrorUser + '" alt="' + escapeHtml(item.name) + '">' + letter;
+        }
+
+        var domain = extractDomain(safeUrl);
+        if (!domain) return letter;
+
+        var faviconUrl = 'https://icon.horse/icon/' + encodeURIComponent(domain);
+        var fallbackUrl = 'https://api.faviconkit.com/' + encodeURIComponent(domain) + '/64';
+        var onloadFav = onload;
+        var onerrorFav = 'if(this.dataset.fallback){this.src=this.dataset.fallback; this.dataset.fallback=\'\';}else{' +
+            'this.style.display=\'none\'; var l=this.parentNode.querySelector(\'.trm-link-card-letter\'); if(l){l.style.display=\'\';}' +
+            '}';
+
+        return '<img draggable="false" loading="lazy" ' +
+            'src="' + faviconUrl + '" data-fallback="' + fallbackUrl + '" ' +
+            'style="display:none;" ' +
+            'onload="' + onloadFav + '" ' +
+            'onerror="' + onerrorFav + '" ' +
+            'alt="' + escapeHtml(item.name) + '">' + letter;
+    }
+
     function createCardHtml(item, category, isCustom) {
         var safe = safeUrl(item.url);
         var hasUrl = !!safe;
@@ -837,9 +870,7 @@
         var href = hasUrl ? ' href="' + safe.replace(/"/g, '&quot;') + '" target="_blank" rel="nofollow"' : '';
         var disabledClass = hasUrl ? '' : ' trm-link-card-disabled';
         var titleAttr = hasUrl ? '' : ' title="链接地址待补充"';
-        var iconHtml = item.image
-            ? '<img draggable="false" src="' + escapeHtml(item.image) + '" onerror="this.style.display=\'none\'" alt="' + escapeHtml(item.name) + '">'
-            : '<span class="trm-link-card-letter">' + escapeHtml((item.name || '').trim().charAt(0)) + '</span>';
+        var iconHtml = createIconHtml(item, safe);
         var descHtml = item.desc ? '<div class="trm-link-card-desc">' + escapeHtml(item.desc).slice(0, 24) + '</div>' : '';
         var closeTag = hasUrl ? '</a>' : '</div>';
         return '<div class="col-6 col-md-4 col-lg-3">' +
