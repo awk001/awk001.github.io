@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600" class="trm-book-cover-svg trm-book-cover-startup">
+  <style>
+    .trm-book-cover-svg.trm-book-cover-startup {
+      --startup-bg1: #f6eeff;
+      --startup-bg2: #ecdeff;
+      --startup-bg3: #ddc9ff;
+      --startup-text: #1a0d2e;
+      --startup-text-sub: rgba(26,13,46,0.72);
+      --startup-text-meta: rgba(26,13,46,0.5);
+      --startup-grid: rgba(0,0,0,0.05);
+      --startup-spine: rgba(0,0,0,0.06);
+      --startup-accent-from: #8b5cf6;
+      --startup-accent-to: #a78bfa;
+      --startup-node-a: rgba(139,92,246,0.16);
+      --startup-node-b: rgba(167,139,250,0.16);
+      --startup-corner-a: #8b5cf6;
+      --startup-corner-b: #a78bfa;
+    }
+    :root.dark .trm-book-cover-svg.trm-book-cover-startup {
+      --startup-bg1: #1a0d2e;
+      --startup-bg2: #25143f;
+      --startup-bg3: #321a52;
+      --startup-text: #f3ecff;
+      --startup-text-sub: rgba(243,236,255,0.78);
+      --startup-text-meta: rgba(243,236,255,0.55);
+      --startup-grid: rgba(255,255,255,0.04);
+      --startup-spine: rgba(255,255,255,0.08);
+      --startup-accent-from: #a78bfa;
+      --startup-accent-to: #c4b5fd;
+      --startup-node-a: rgba(167,139,250,0.14);
+      --startup-node-b: rgba(196,181,253,0.14);
+      --startup-corner-a: #a78bfa;
+      --startup-corner-b: #c4b5fd;
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg-startup" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--startup-bg1)"/>
+      <stop offset="50%" stop-color="var(--startup-bg2)"/>
+      <stop offset="100%" stop-color="var(--startup-bg3)"/>
+    </linearGradient>
+    <linearGradient id="accent-startup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--startup-accent-from)"/>
+      <stop offset="100%" stop-color="var(--startup-accent-to)"/>
+    </linearGradient>
+    <pattern id="grid-startup" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--startup-grid)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="600" fill="url(#bg-startup)"/>
+  <rect width="400" height="600" fill="url(#grid-startup)"/>
+
+  <g transform="translate(200, 220)" fill="none" stroke="url(#accent-startup)" stroke-width="2" opacity="0.4">
+    <circle cx="0" cy="-46" r="14" fill="var(--startup-node-a)"/>
+    <circle cx="44" cy="14" r="12" fill="var(--startup-node-b)"/>
+    <circle cx="-44" cy="14" r="12" fill="var(--startup-node-b)"/>
+    <circle cx="0" cy="52" r="10" fill="var(--startup-node-a)"/>
+    <line x1="0" y1="-46" x2="44" y2="14"/>
+    <line x1="0" y1="-46" x2="-44" y2="14"/>
+    <line x1="44" y1="14" x2="0" y2="52"/>
+    <line x1="-44" y1="14" x2="0" y2="52"/>
+    <line x1="44" y1="14" x2="-44" y2="14"/>
+  </g>
+
+  <rect x="0" y="0" width="14" height="600" fill="var(--startup-spine)"/>
+  <rect x="40" y="60" width="320" height="4" fill="url(#accent-startup)" opacity="0.9"/>
+
+<text x="200" y="356" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">AI赋能创业</text>
+<text x="200" y="400" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">数字员工与效率跃升</text>
+
+  <text x="200" y="456" text-anchor="middle" fill="var(--startup-text-sub)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" letter-spacing="2">全 5 章</text>
+  <text x="200" y="540" text-anchor="middle" fill="var(--startup-text-meta)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" letter-spacing="2">肖剑涛 · 王纵虎 · 李培</text>
+
+  <circle cx="360" cy="100" r="4" fill="var(--startup-corner-a)" opacity="0.6"/>
+  <circle cx="360" cy="120" r="3" fill="var(--startup-corner-b)" opacity="0.6"/>
+  <circle cx="360" cy="140" r="2" fill="var(--startup-corner-a)" opacity="0.4"/>
+</svg>

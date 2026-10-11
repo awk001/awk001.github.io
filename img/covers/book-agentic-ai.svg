@@ -81,7 +81,7 @@
 
   <!-- Subtitle -->
   <text x="200" y="456" text-anchor="middle" fill="var(--agentic-text-sub)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" letter-spacing="2">
-    读书笔记 · 14 章
+全 14 章
   </text>
 
   <!-- Bottom meta -->

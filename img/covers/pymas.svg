@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600" class="trm-book-cover-svg trm-book-cover-pymas">
+  <style>
+    .trm-book-cover-svg.trm-book-cover-pymas {
+      --pymas-bg1: #eef6ee;
+      --pymas-bg2: #dcebdc;
+      --pymas-bg3: #c9dcc9;
+      --pymas-text: #0a1f0a;
+      --pymas-text-sub: rgba(10,31,10,0.72);
+      --pymas-text-meta: rgba(10,31,10,0.5);
+      --pymas-grid: rgba(0,0,0,0.05);
+      --pymas-spine: rgba(0,0,0,0.06);
+      --pymas-accent-from: #3d7d3d;
+      --pymas-accent-to: #ffd43b;
+      --pymas-node-a: rgba(61,125,61,0.16);
+      --pymas-node-b: rgba(255,212,59,0.16);
+      --pymas-corner-a: #3d7d3d;
+      --pymas-corner-b: #ffd43b;
+    }
+    :root.dark .trm-book-cover-svg.trm-book-cover-pymas {
+      --pymas-bg1: #0a1f0a;
+      --pymas-bg2: #102a10;
+      --pymas-bg3: #163416;
+      --pymas-text: #eaf6ea;
+      --pymas-text-sub: rgba(234,246,234,0.78);
+      --pymas-text-meta: rgba(234,246,234,0.55);
+      --pymas-grid: rgba(255,255,255,0.04);
+      --pymas-spine: rgba(255,255,255,0.08);
+      --pymas-accent-from: #4ade80;
+      --pymas-accent-to: #fde047;
+      --pymas-node-a: rgba(74,222,128,0.14);
+      --pymas-node-b: rgba(253,224,71,0.14);
+      --pymas-corner-a: #4ade80;
+      --pymas-corner-b: #fde047;
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg-pymas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--pymas-bg1)"/>
+      <stop offset="50%" stop-color="var(--pymas-bg2)"/>
+      <stop offset="100%" stop-color="var(--pymas-bg3)"/>
+    </linearGradient>
+    <linearGradient id="accent-pymas" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--pymas-accent-from)"/>
+      <stop offset="100%" stop-color="var(--pymas-accent-to)"/>
+    </linearGradient>
+    <pattern id="grid-pymas" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--pymas-grid)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="600" fill="url(#bg-pymas)"/>
+  <rect width="400" height="600" fill="url(#grid-pymas)"/>
+
+  <g transform="translate(200, 220)" fill="none" stroke="url(#accent-pymas)" stroke-width="2" opacity="0.4">
+    <circle cx="0" cy="-46" r="14" fill="var(--pymas-node-a)"/>
+    <circle cx="44" cy="14" r="12" fill="var(--pymas-node-b)"/>
+    <circle cx="-44" cy="14" r="12" fill="var(--pymas-node-b)"/>
+    <circle cx="0" cy="52" r="10" fill="var(--pymas-node-a)"/>
+    <line x1="0" y1="-46" x2="44" y2="14"/>
+    <line x1="0" y1="-46" x2="-44" y2="14"/>
+    <line x1="44" y1="14" x2="0" y2="52"/>
+    <line x1="-44" y1="14" x2="0" y2="52"/>
+    <line x1="44" y1="14" x2="-44" y2="14"/>
+  </g>
+
+  <rect x="0" y="0" width="14" height="600" fill="var(--pymas-spine)"/>
+  <rect x="40" y="60" width="320" height="4" fill="url(#accent-pymas)" opacity="0.9"/>
+
+<text x="200" y="356" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">Python</text>
+<text x="200" y="400" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">从入门到精通(第3版)</text>
+
+  <text x="200" y="456" text-anchor="middle" fill="var(--pymas-text-sub)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" letter-spacing="2">全 27 章</text>
+  <text x="200" y="540" text-anchor="middle" fill="var(--pymas-text-meta)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" letter-spacing="2">明日科技 · 清华大学</text>
+
+  <circle cx="360" cy="100" r="4" fill="var(--pymas-corner-a)" opacity="0.6"/>
+  <circle cx="360" cy="120" r="3" fill="var(--pymas-corner-b)" opacity="0.6"/>
+  <circle cx="360" cy="140" r="2" fill="var(--pymas-corner-a)" opacity="0.4"/>
+</svg>

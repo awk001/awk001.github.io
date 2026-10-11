@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600" class="trm-book-cover-svg trm-book-cover-rag">
+  <style>
+    .trm-book-cover-svg.trm-book-cover-rag {
+      --rag-bg1: #eef4ff;
+      --rag-bg2: #dce8ff;
+      --rag-bg3: #c8dbff;
+      --rag-text: #0a1f44;
+      --rag-text-sub: rgba(10,31,68,0.72);
+      --rag-text-meta: rgba(10,31,68,0.5);
+      --rag-grid: rgba(0,0,0,0.05);
+      --rag-spine: rgba(0,0,0,0.06);
+      --rag-accent-from: #2f6bff;
+      --rag-accent-to: #4f9bff;
+      --rag-node-a: rgba(47,107,255,0.16);
+      --rag-node-b: rgba(79,155,255,0.16);
+      --rag-corner-a: #2f6bff;
+      --rag-corner-b: #4f9bff;
+    }
+    :root.dark .trm-book-cover-svg.trm-book-cover-rag {
+      --rag-bg1: #0a162e;
+      --rag-bg2: #10203f;
+      --rag-bg3: #16294f;
+      --rag-text: #eaf2ff;
+      --rag-text-sub: rgba(234,242,255,0.78);
+      --rag-text-meta: rgba(234,242,255,0.55);
+      --rag-grid: rgba(255,255,255,0.04);
+      --rag-spine: rgba(255,255,255,0.08);
+      --rag-accent-from: #60a5fa;
+      --rag-accent-to: #93c5fd;
+      --rag-node-a: rgba(96,165,250,0.14);
+      --rag-node-b: rgba(147,197,253,0.14);
+      --rag-corner-a: #60a5fa;
+      --rag-corner-b: #93c5fd;
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg-rag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--rag-bg1)"/>
+      <stop offset="50%" stop-color="var(--rag-bg2)"/>
+      <stop offset="100%" stop-color="var(--rag-bg3)"/>
+    </linearGradient>
+    <linearGradient id="accent-rag" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--rag-accent-from)"/>
+      <stop offset="100%" stop-color="var(--rag-accent-to)"/>
+    </linearGradient>
+    <pattern id="grid-rag" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--rag-grid)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="600" fill="url(#bg-rag)"/>
+  <rect width="400" height="600" fill="url(#grid-rag)"/>
+
+  <g transform="translate(200, 220)" fill="none" stroke="url(#accent-rag)" stroke-width="2" opacity="0.4">
+    <circle cx="0" cy="-46" r="14" fill="var(--rag-node-a)"/>
+    <circle cx="44" cy="14" r="12" fill="var(--rag-node-b)"/>
+    <circle cx="-44" cy="14" r="12" fill="var(--rag-node-b)"/>
+    <circle cx="0" cy="52" r="10" fill="var(--rag-node-a)"/>
+    <line x1="0" y1="-46" x2="44" y2="14"/>
+    <line x1="0" y1="-46" x2="-44" y2="14"/>
+    <line x1="44" y1="14" x2="0" y2="52"/>
+    <line x1="-44" y1="14" x2="0" y2="52"/>
+    <line x1="44" y1="14" x2="-44" y2="14"/>
+  </g>
+
+  <rect x="0" y="0" width="14" height="600" fill="var(--rag-spine)"/>
+  <rect x="40" y="60" width="320" height="4" fill="url(#accent-rag)" opacity="0.9"/>
+
+<text x="200" y="356" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">大模型应用开发</text>
+<text x="200" y="400" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">RAG实战课</text>
+
+  <text x="200" y="456" text-anchor="middle" fill="var(--rag-text-sub)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" letter-spacing="2">全 11 章</text>
+  <text x="200" y="540" text-anchor="middle" fill="var(--rag-text-meta)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" letter-spacing="2">黄佳 · 人民邮电</text>
+
+  <circle cx="360" cy="100" r="4" fill="var(--rag-corner-a)" opacity="0.6"/>
+  <circle cx="360" cy="120" r="3" fill="var(--rag-corner-b)" opacity="0.6"/>
+  <circle cx="360" cy="140" r="2" fill="var(--rag-corner-a)" opacity="0.4"/>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600" class="trm-book-cover-svg trm-book-cover-spec">
+  <style>
+    .trm-book-cover-svg.trm-book-cover-spec {
+      --spec-bg1: #fff7e8;
+      --spec-bg2: #ffeecb;
+      --spec-bg3: #ffe0a8;
+      --spec-text: #33220a;
+      --spec-text-sub: rgba(51,34,10,0.72);
+      --spec-text-meta: rgba(51,34,10,0.5);
+      --spec-grid: rgba(0,0,0,0.05);
+      --spec-spine: rgba(0,0,0,0.06);
+      --spec-accent-from: #f59e0b;
+      --spec-accent-to: #fbbf24;
+      --spec-node-a: rgba(245,158,11,0.16);
+      --spec-node-b: rgba(251,191,36,0.16);
+      --spec-corner-a: #f59e0b;
+      --spec-corner-b: #fbbf24;
+    }
+    :root.dark .trm-book-cover-svg.trm-book-cover-spec {
+      --spec-bg1: #2a1a05;
+      --spec-bg2: #3a2508;
+      --spec-bg3: #4a3110;
+      --spec-text: #fff3df;
+      --spec-text-sub: rgba(255,243,223,0.78);
+      --spec-text-meta: rgba(255,243,223,0.55);
+      --spec-grid: rgba(255,255,255,0.04);
+      --spec-spine: rgba(255,255,255,0.08);
+      --spec-accent-from: #fbbf24;
+      --spec-accent-to: #fcd34d;
+      --spec-node-a: rgba(251,191,36,0.14);
+      --spec-node-b: rgba(252,211,77,0.14);
+      --spec-corner-a: #fbbf24;
+      --spec-corner-b: #fcd34d;
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg-spec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--spec-bg1)"/>
+      <stop offset="50%" stop-color="var(--spec-bg2)"/>
+      <stop offset="100%" stop-color="var(--spec-bg3)"/>
+    </linearGradient>
+    <linearGradient id="accent-spec" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--spec-accent-from)"/>
+      <stop offset="100%" stop-color="var(--spec-accent-to)"/>
+    </linearGradient>
+    <pattern id="grid-spec" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--spec-grid)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="600" fill="url(#bg-spec)"/>
+  <rect width="400" height="600" fill="url(#grid-spec)"/>
+
+  <g transform="translate(200, 220)" fill="none" stroke="url(#accent-spec)" stroke-width="2" opacity="0.4">
+    <circle cx="0" cy="-46" r="14" fill="var(--spec-node-a)"/>
+    <circle cx="44" cy="14" r="12" fill="var(--spec-node-b)"/>
+    <circle cx="-44" cy="14" r="12" fill="var(--spec-node-b)"/>
+    <circle cx="0" cy="52" r="10" fill="var(--spec-node-a)"/>
+    <line x1="0" y1="-46" x2="44" y2="14"/>
+    <line x1="0" y1="-46" x2="-44" y2="14"/>
+    <line x1="44" y1="14" x2="0" y2="52"/>
+    <line x1="-44" y1="14" x2="0" y2="52"/>
+    <line x1="44" y1="14" x2="-44" y2="14"/>
+  </g>
+
+  <rect x="0" y="0" width="14" height="600" fill="var(--spec-spine)"/>
+  <rect x="40" y="60" width="320" height="4" fill="url(#accent-spec)" opacity="0.9"/>
+
+<text x="200" y="356" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">Spec-Kit实战</text>
+<text x="200" y="400" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">AI编程全流程落地</text>
+
+  <text x="200" y="456" text-anchor="middle" fill="var(--spec-text-sub)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" letter-spacing="2">全 9 章</text>
+  <text x="200" y="540" text-anchor="middle" fill="var(--spec-text-meta)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" letter-spacing="2">黄桂钊 · 茹炳晟</text>
+
+  <circle cx="360" cy="100" r="4" fill="var(--spec-corner-a)" opacity="0.6"/>
+  <circle cx="360" cy="120" r="3" fill="var(--spec-corner-b)" opacity="0.6"/>
+  <circle cx="360" cy="140" r="2" fill="var(--spec-corner-a)" opacity="0.4"/>
+</svg>

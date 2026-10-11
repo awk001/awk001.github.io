@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600" class="trm-book-cover-svg trm-book-cover-claude">
+  <style>
+    .trm-book-cover-svg.trm-book-cover-claude {
+      --claude-bg1: #eafbf8;
+      --claude-bg2: #d4f4ef;
+      --claude-bg3: #bdeee7;
+      --claude-text: #06302b;
+      --claude-text-sub: rgba(6,48,43,0.72);
+      --claude-text-meta: rgba(6,48,43,0.5);
+      --claude-grid: rgba(0,0,0,0.05);
+      --claude-spine: rgba(0,0,0,0.06);
+      --claude-accent-from: #00b8a9;
+      --claude-accent-to: #1de9b6;
+      --claude-node-a: rgba(0,184,169,0.16);
+      --claude-node-b: rgba(29,233,182,0.16);
+      --claude-corner-a: #00b8a9;
+      --claude-corner-b: #1de9b6;
+    }
+    :root.dark .trm-book-cover-svg.trm-book-cover-claude {
+      --claude-bg1: #06201d;
+      --claude-bg2: #0a2e2a;
+      --claude-bg3: #103b36;
+      --claude-text: #eafdf9;
+      --claude-text-sub: rgba(234,253,249,0.78);
+      --claude-text-meta: rgba(234,253,249,0.55);
+      --claude-grid: rgba(255,255,255,0.04);
+      --claude-spine: rgba(255,255,255,0.08);
+      --claude-accent-from: #2dd4bf;
+      --claude-accent-to: #5eead4;
+      --claude-node-a: rgba(45,212,191,0.14);
+      --claude-node-b: rgba(94,234,212,0.14);
+      --claude-corner-a: #2dd4bf;
+      --claude-corner-b: #5eead4;
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg-claude" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--claude-bg1)"/>
+      <stop offset="50%" stop-color="var(--claude-bg2)"/>
+      <stop offset="100%" stop-color="var(--claude-bg3)"/>
+    </linearGradient>
+    <linearGradient id="accent-claude" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="var(--claude-accent-from)"/>
+      <stop offset="100%" stop-color="var(--claude-accent-to)"/>
+    </linearGradient>
+    <pattern id="grid-claude" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--claude-grid)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="600" fill="url(#bg-claude)"/>
+  <rect width="400" height="600" fill="url(#grid-claude)"/>
+
+  <g transform="translate(200, 220)" fill="none" stroke="url(#accent-claude)" stroke-width="2" opacity="0.4">
+    <circle cx="0" cy="-46" r="14" fill="var(--claude-node-a)"/>
+    <circle cx="44" cy="14" r="12" fill="var(--claude-node-b)"/>
+    <circle cx="-44" cy="14" r="12" fill="var(--claude-node-b)"/>
+    <circle cx="0" cy="52" r="10" fill="var(--claude-node-a)"/>
+    <line x1="0" y1="-46" x2="44" y2="14"/>
+    <line x1="0" y1="-46" x2="-44" y2="14"/>
+    <line x1="44" y1="14" x2="0" y2="52"/>
+    <line x1="-44" y1="14" x2="0" y2="52"/>
+    <line x1="44" y1="14" x2="-44" y2="14"/>
+  </g>
+
+  <rect x="0" y="0" width="14" height="600" fill="var(--claude-spine)"/>
+  <rect x="40" y="60" width="320" height="4" fill="url(#accent-claude)" opacity="0.9"/>
+
+<text x="200" y="356" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">Claude Code实战</text>
+<text x="200" y="400" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="700" letter-spacing="1" text-anchor="middle" fill="var(--__KEY__-text)" font-size="31">Harness工程之道</text>
+
+  <text x="200" y="456" text-anchor="middle" fill="var(--claude-text-sub)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" letter-spacing="2">全 10 章</text>
+  <text x="200" y="540" text-anchor="middle" fill="var(--claude-text-meta)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" letter-spacing="2">黄佳 · 人民邮电</text>
+
+  <circle cx="360" cy="100" r="4" fill="var(--claude-corner-a)" opacity="0.6"/>
+  <circle cx="360" cy="120" r="3" fill="var(--claude-corner-b)" opacity="0.6"/>
+  <circle cx="360" cy="140" r="2" fill="var(--claude-corner-a)" opacity="0.4"/>
+</svg>
