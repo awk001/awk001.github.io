@@ -1350,6 +1350,57 @@ html.is-animating .trm-swup-animation {
 .trm-reading-list {
   padding: 120px 6px 60px;
 }
+.trm-year-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+.trm-year-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  background: var(--theme-bg-color, #fcfcfe);
+  border: 0.5px solid rgba(0, 0, 0, 0.09);
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--theme-color, #00283a);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.trm-year-btn:hover {
+  background: rgba(83, 74, 183, 0.08);
+  border-color: rgba(83, 74, 183, 0.35);
+  transform: translateY(-1px);
+}
+.trm-year-btn.active {
+  background: var(--theme-color, #00283a);
+  border-color: var(--theme-color, #00283a);
+  color: var(--theme-bg-color, #fcfcfe);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+.trm-year-btn.active .trm-year-count {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--theme-bg-color, #fcfcfe);
+}
+.trm-year-label {
+  font-weight: 500;
+}
+.trm-year-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  padding: 1px 6px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #888;
+}
 .trm-reading-group {
   margin-bottom: 44px;
   padding: 22px 24px 18px;
@@ -1457,6 +1508,28 @@ html.is-animating .trm-swup-animation {
 .trm-reading-link:hover .trm-reading-arrow {
   color: var(--theme-color, #534AB7);
   transform: translateX(4px);
+}
+:root.dark .trm-year-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--theme-color, #fcfcfe);
+}
+:root.dark .trm-year-btn:hover {
+  background: rgba(150, 140, 230, 0.12);
+  border-color: rgba(150, 140, 230, 0.35);
+}
+:root.dark .trm-year-btn.active {
+  background: var(--theme-color, #fcfcfe);
+  border-color: var(--theme-color, #fcfcfe);
+  color: var(--theme-bg2-color, #1a1a1e);
+}
+:root.dark .trm-year-btn.active .trm-year-count {
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--theme-bg2-color, #1a1a1e);
+}
+:root.dark .trm-year-count {
+  background: rgba(255, 255, 255, 0.08);
+  color: #9a9a9a;
 }
 :root.dark .trm-reading-group {
   background: rgba(255, 255, 255, 0.03);
