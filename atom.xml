@@ -10,12 +10,13 @@
   <rights>All rights reserved 2026, 时安</rights>
   <subtitle>AI智能体与工业智能的工程笔记</subtitle>
   <title>AWK博客</title>
-  <updated>2026-10-12T01:01:03.748Z</updated>
+  <updated>2026-10-12T02:42:10.525Z</updated>
   <entry>
     <author>
       <name>时安</name>
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="Python 编程" scheme="https://awk001.github.io/tags/Python-%E7%BC%96%E7%A8%8B/"/>
     <content>
       <![CDATA[<blockquote><p>本系列按《人工智能极简编程入门（基于Python）》（张光华 &#x2F; 贾庸 &#x2F; 李岩 著，机械工业出版社，2019）的章节顺序，逐章呈现书中内容：保留原书”最简体验”主线，每章配可运行示例，方便边读边练、随时回看。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>书名</td><td>人工智能极简编程入门（基于Python）</td></tr><tr><td>作者</td><td>张光华、贾庸、李岩</td></tr><tr><td>出版社</td><td>机械工业出版社（2019.05）</td></tr><tr><td>丛书</td><td>人工智能与大数据技术大讲堂</td></tr><tr><td>定位</td><td>零基础 &#x2F; 弱基础读者跨入 AI 大门的入门书</td></tr></tbody></table><p>全书贯穿一个核心教学主张：<strong>最简体验</strong>——先动手跑通最小例子，再逐步叠加知识点，让学习曲线平滑无碍。</p><h2 id="全书结构（3-篇-8-章）"><a href="#全书结构（3-篇-8-章）" class="headerlink" title="全书结构（3 篇 8 章）"></a>全书结构（3 篇 8 章）</h2><ul><li><strong>第 1 篇 · 语法篇</strong><ul><li><a href="/posts/book-ai-python-ch01/" title="第 1 章 零基础入门 AI 解决方案">第 1 章 零基础入门 AI 解决方案</a></li><li><a href="/posts/book-ai-python-ch02/" title="第 2 章 环境搭建">第 2 章 环境搭建</a></li><li><a href="/posts/book-ai-python-ch03/" title="第 3 章 零点一基础入门 Python">第 3 章 零点一基础入门 Python</a></li><li><a href="/posts/book-ai-python-ch04/" title="第 4 章 最简体验数字图像">第 4 章 最简体验数字图像（Matplotlib）</a></li><li><a href="/posts/book-ai-python-ch05/" title="第 5 章 最简体验数组">第 5 章 最简体验数组（Numpy）</a></li></ul></li><li><strong>第 2 篇 · 算法篇</strong><ul><li><a href="/posts/book-ai-python-ch06/" title="第 6 章 最简体验卷积运算">第 6 章 最简体验卷积运算</a></li><li><a href="/posts/book-ai-python-ch07/" title="第 7 章 综合案例之滑动窗口示意图">第 7 章 综合案例之滑动窗口示意图</a></li></ul></li><li><strong>第 3 篇 · 综合篇</strong><ul><li><a href="/posts/book-ai-python-ch08/" title="第 8 章 源码解读">第 8 章 源码解读（TensorFlow）</a></li></ul></li></ul><h2 id="怎么读这本书"><a href="#怎么读这本书" class="headerlink" title="怎么读这本书"></a>怎么读这本书</h2><p>建议配合原书一起看，边读边动手跑示例；遇到术语可回看第 1 章的词汇表。所有代码都整理成可直接 Copy 运行的短片段。</p>]]>
     </content>
@@ -28,7 +29,7 @@
 </bl]]>
     </summary>
     <title>《人工智能极简编程入门》· 总目录</title>
-    <updated>2026-10-12T01:01:03.748Z</updated>
+    <updated>2026-10-12T02:42:10.525Z</updated>
   </entry>
   <entry>
     <author>
@@ -182,6 +183,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="智能体式人工智能" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="AI 智能体" scheme="https://awk001.github.io/tags/AI-%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     <content>
       <![CDATA[<blockquote><p>本书为 Pascal Bornet 所著 <em>Agentic Artificial Intelligence: Harnessing AI Agents to Reinvent Business, Work, and Life</em>（2024）的中文导读总览。以下按原书「5 篇 14 章」结构，逐章呈现内容脉络，方便随时回看、也方便在评论区一起讨论。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>书名</td><td>智能体式人工智能：用 AI 智能体重塑商业、工作与生活</td></tr><tr><td>原著名</td><td>Agentic Artificial Intelligence: Harnessing AI Agents to Reinvent Business, Work, and Life</td></tr><tr><td>作者</td><td>Pascal Bornet</td></tr><tr><td>视角</td><td>偏商业 &#x2F; 非技术，聚焦 AI 智能体如何重塑商业、工作与日常生活</td></tr></tbody></table><h2 id="全书结构（5-篇-14-章）"><a href="#全书结构（5-篇-14-章）" class="headerlink" title="全书结构（5 篇 14 章）"></a>全书结构（5 篇 14 章）</h2><ul><li><strong>第一篇 · 智能体崛起（The Rise of AI Agents）</strong><ul><li><a href="/posts/book-agentic-ai-ch01/" title="第 1 章 超越 ChatGPT：AI 的下一轮进化">第 1 章 超越 ChatGPT：AI 的下一轮进化</a></li><li><a href="/posts/book-agentic-ai-ch02/" title="第 2 章 AI 智能体的五个层级：从自动化到自主">第 2 章 AI 智能体的五个层级：从自动化到自主</a></li><li><a href="/posts/book-agentic-ai-ch03/" title="第 3 章 走进 AI 智能体的「心智」">第 3 章 走进 AI 智能体的「心智」</a></li><li><a href="/posts/book-agentic-ai-ch04/" title="第 4 章 让 AI 智能体接受检验">第 4 章 让 AI 智能体接受检验</a></li></ul></li><li><strong>第二篇 · 智能体的三大基石（The Three Keystones）</strong><ul><li><a href="/posts/book-agentic-ai-ch05/" title="第 5 章 行动：教会 AI 去做，而不只是想">第 5 章 行动：教会 AI 去做，而不只是想</a></li><li><a href="/posts/book-agentic-ai-ch06/" title="第 6 章 推理：从快速到睿智">第 6 章 推理：从快速到睿智</a></li><li><a href="/posts/book-agentic-ai-ch07/" title="第 7 章 记忆：构建会学习的 AI">第 7 章 记忆：构建会学习的 AI</a></li></ul></li><li><strong>第三篇 · 创业与个人成长（Entrepreneurship &amp; Professional Growth）</strong><ul><li><a href="/posts/book-agentic-ai-ch08/" title="第 8 章 构建成功 AI 智能体的实战指南">第 8 章 构建成功 AI 智能体的实战指南</a></li><li><a href="/posts/book-agentic-ai-ch09/" title="第 9 章 从创意到收益：智能体经济的商业模式">第 9 章 从创意到收益：智能体经济的商业模式</a></li></ul></li><li><strong>第四篇 · 企业转型（Enterprise Transformation）</strong><ul><li><a href="/posts/book-agentic-ai-ch10/" title="第 10 章 人与智能体协作：领导力、信任与变革">第 10 章 人与智能体协作：领导力、信任与变革</a></li><li><a href="/posts/book-agentic-ai-ch11/" title="第 11 章 规模化落地：从愿景到现实">第 11 章 规模化落地：从愿景到现实</a></li><li><a href="/posts/book-agentic-ai-ch12/" title="第 12 章 跨行业案例与应用场景">第 12 章 跨行业案例与应用场景</a></li></ul></li><li><strong>第五篇 · 工作与社会的未来（Future Horizons）</strong><ul><li><a href="/posts/book-agentic-ai-ch13/" title="第 13 章 工作的新世界">第 13 章 工作的新世界</a></li><li><a href="/posts/book-agentic-ai-ch14/" title="第 14 章 智能体时代的全社会">第 14 章 智能体时代的全社会</a></li></ul></li></ul><h2 id="怎么读这本书"><a href="#怎么读这本书" class="headerlink" title="怎么读这本书"></a>怎么读这本书</h2><p>建议配合原书一起看：本总目录与各章「导读」是我基于原书章节结构的整理与串讲，帮你先建立整体框架；想深入某章细节时，回到原书对应章节效果更佳。所有章节均可在总目录内通过「上一篇 &#x2F; 下一篇 &#x2F; 返回总目录」一路读完全书。</p>]]>
     </content>
@@ -193,7 +195,7 @@
 <p>本书为 Pascal Bornet 所著 <em>Agentic Artificial Intelligence: Harnessing AI Agents to Reinvent Business, Work, and Life</em>（202]]>
     </summary>
     <title>《智能体式人工智能：用 AI 智能体重塑商业、工作与生活》· 总目录</title>
-    <updated>2026-10-12T01:01:03.759Z</updated>
+    <updated>2026-10-12T02:42:10.534Z</updated>
   </entry>
   <entry>
     <author>
@@ -201,6 +203,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="构建智能体AI系统" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%84%E5%BB%BA%E6%99%BA%E8%83%BD%E4%BD%93AI%E7%B3%BB%E7%BB%9F/"/>
+    <category term="AI 智能体" scheme="https://awk001.github.io/tags/AI-%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     <content>
       <![CDATA[<blockquote><p>本系列是我梳理《构建智能体 AI 系统：手把手教你开发智能体》（Hello-Agents 系统性智能体学习教程）时整理的<strong>读书路线图与章节笔记</strong>，不是原书影印或逐字转载。我会按”从原理到工程、从单智能体到多智能体”的线索，把每一篇拆成<strong>核心要点 + 我的结构化梳理 + 少量可运行的原创示例</strong>，方便随时回看、也方便你在评论区一起讨论。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>书名</td><td>构建智能体 AI 系统：手把手教你开发智能体</td></tr><tr><td>别名</td><td>Hello-Agents 系统性智能体学习教程</td></tr><tr><td>定位</td><td>面向开发者 &#x2F; 工程师 &#x2F; 爱好者的智能体（Agent）工程实战教程</td></tr><tr><td>主线</td><td>范式认知 → 环境搭建 → 经典范式 → 主流框架 → 高级扩展 → 综合案例 → 毕业设计</td></tr><tr><td>特色</td><td>每一章配套可运行代码，覆盖 ReAct &#x2F; RAG &#x2F; MCP &#x2F; 多智能体协作等当前最主流的能力</td></tr></tbody></table><p>全书以”<strong>动手构建一个能干活的多智能体系统</strong>“为目标，循序渐进，强调工程落地而非纯概念。</p><h2 id="全书结构（5-篇-16-章）"><a href="#全书结构（5-篇-16-章）" class="headerlink" title="全书结构（5 篇 16 章）"></a>全书结构（5 篇 16 章）</h2><ul><li><strong>第 1 篇 · 智能体与语言模型基础</strong><ul><li><a href="/posts/book-agent-ai-system-ch01/" title="第 1 章 初识智能体">第 1 章 初识智能体</a> —— 智能体的定义、类型、范式与典型应用场景</li><li><a href="/posts/book-agent-ai-system-ch02/" title="第 2 章 智能体发展史">第 2 章 智能体发展史</a> —— 从符号主义到 LLM 驱动智能体的演进脉络</li><li><a href="/posts/book-agent-ai-system-ch03/" title="第 3 章 大语言模型基础">第 3 章 大语言模型基础</a> —— Transformer、提示（Prompt）、主流 LLM 及其能力与局限</li></ul></li><li><strong>第 2 篇 · 构建你的大语言模型智能体</strong><ul><li><a href="/posts/book-agent-ai-system-ch04/" title="第 4 章 智能体经典范式构建">第 4 章 智能体经典范式构建</a> —— 手把手实现 ReAct、Plan-and-Solve、Reflection</li><li><a href="/posts/book-agent-ai-system-ch05/" title="第 5 章 基于低代码平台的智能体搭建">第 5 章 基于低代码平台的智能体搭建</a> —— Coze、Dify、n8n 等平台的使用思路</li><li><a href="/posts/book-agent-ai-system-ch06/" title="第 6 章 框架开发实践">第 6 章 框架开发实践</a> —— AutoGen、AgentScope、LangGraph 等主流框架应用</li><li><a href="/posts/book-agent-ai-system-ch07/" title="第 7 章 构建你的 Agent 框架">第 7 章 构建你的 Agent 框架</a> —— 从 0 开始搭建一个智能体框架</li></ul></li><li><strong>第 3 篇 · 高级知识扩展</strong><ul><li><a href="/posts/book-agent-ai-system-ch08/" title="第 8 章 记忆与检索">第 8 章 记忆与检索</a> —— 记忆系统设计、RAG、存储选型</li><li><a href="/posts/book-agent-ai-system-ch09/" title="第 9 章 上下文工程">第 9 章 上下文工程</a> —— 持续交互中的"情境理解"与上下文管理</li><li><a href="/posts/book-agent-ai-system-ch10/" title="第 10 章 智能体通信协议">第 10 章 智能体通信协议</a> —— MCP、A2A、ANP 等协议解析</li><li><a href="/posts/book-agent-ai-system-ch11/" title="第 11 章 Agentic-RL">第 11 章 Agentic-RL</a> —— 从 SFT 到 GRPO 的 LLM 训练实战</li><li><a href="/posts/book-agent-ai-system-ch12/" title="第 12 章 智能体性能评估">第 12 章 智能体性能评估</a> —— 核心指标、基准测试与评估框架</li></ul></li><li><strong>第 4 篇 · 综合案例进阶</strong><ul><li><a href="/posts/book-agent-ai-system-ch13/" title="第 13 章 智能旅行助手">第 13 章 智能旅行助手</a> —— MCP 与多智能体协作的真实世界应用</li><li><a href="/posts/book-agent-ai-system-ch14/" title="第 14 章 自动化深度研究智能体">第 14 章 自动化深度研究智能体</a> —— DeepResearch Agent 复现与解析</li><li><a href="/posts/book-agent-ai-system-ch15/" title="第 15 章 构建赛博小镇">第 15 章 构建赛博小镇</a> —— Agent 与游戏引擎结合，模拟社会动态</li></ul></li><li><strong>第 5 篇 · 毕业设计及未来展望</strong><ul><li><a href="/posts/book-agent-ai-system-ch16/" title="第 16 章 毕业设计">第 16 章 毕业设计</a> —— 构建一个完整的、属于你自己的多智能体应用</li></ul></li></ul><h2 id="怎么读这套笔记"><a href="#怎么读这套笔记" class="headerlink" title="怎么读这套笔记"></a>怎么读这套笔记</h2><p>建议按篇章顺序推进：先打牢<strong>基础篇</strong>的概念与 LLM 底座，再用<strong>构建篇</strong>把单智能体跑通，随后在<strong>扩展篇</strong>补齐记忆、协议、训练、评估这些”工业化”能力，最后用<strong>案例篇 + 毕业设计</strong>把知识融会贯通。</p><blockquote><p>笔记章节会随阅读进度陆续补充；当前本页为总目录与阅读路线图，后续每完成一章会在对应位置补上详细笔记与可运行代码。</p></blockquote>]]>
     </content>
@@ -213,7 +216,7 @@
 我会按”从原理到工程、从单智能体到多智能体”的]]>
     </summary>
     <title>《构建智能体 AI 系统：手把手教你开发智能体》· 总目录</title>
-    <updated>2026-10-12T01:01:03.773Z</updated>
+    <updated>2026-10-12T02:42:10.538Z</updated>
   </entry>
   <entry>
     <author>
@@ -255,6 +258,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="Agent设计模式可复用智能体架构" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Agent%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8F%AF%E5%A4%8D%E7%94%A8%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84/"/>
+    <category term="AI 智能体" scheme="https://awk001.github.io/tags/AI-%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     <content>
       <![CDATA[<blockquote><p>本书被誉为 Agent 领域的《设计模式》（GoF），按设计模式组织智能体工程，将智能体系统拆解为一组可复用模式——提示链、路由、反思、多智能体协作、MCP、RAG、Guardrails 等，每种对应一类反复出现的架构问题。全书约 424 页，分四大部分、覆盖 21 个核心模式。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：Antonio Gulli</li><li><strong>出版社</strong>：Springer（中译《智能体设计模式》）</li><li><strong>出版时间</strong>：2024</li><li><strong>结构</strong>：共 4 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/adp-ch01/" title="第 1 章 第一部分 认知机制：单 Agent 的编排基础">第1章 第一部分 认知机制：单 Agent 的编排基础</a><a href="/posts/adp-ch02/" title="第 2 章 第二部分 容错与扩展：记忆、学习与连接">第2章 第二部分 容错与扩展：记忆、学习与连接</a><a href="/posts/adp-ch03/" title="第 3 章 第三部分 高级架构：异常、人机协同与检索">第3章 第三部分 高级架构：异常、人机协同与检索</a><a href="/posts/adp-ch04/" title="第 4 章 第四部分 生产级保障：协作、治理与评估">第4章 第四部分 生产级保障：协作、治理与评估</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/adp-index/" title="《Agent设计模式：图解可复用智能体架构》· 总目录">《Agent设计模式：图解可复用智能体架构》总目录</a></p>]]>
     </content>
@@ -266,7 +270,7 @@
 <p>本书被誉为 Agent 领域的《设计模式》（GoF），按设计模式组织智能体工程，将智能体系统拆解为一组可复用模式——提示链、路由、反思、多智能体协作、MCP、RAG、Guardrails 等，每种对应一类反复出现的架构问题。全书约 424 页，分四]]>
     </summary>
     <title>《Agent设计模式：图解可复用智能体架构》· 总目录</title>
-    <updated>2026-10-12T01:01:03.773Z</updated>
+    <updated>2026-10-12T02:42:10.542Z</updated>
   </entry>
   <entry>
     <author>
@@ -274,6 +278,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="ClaudeCode实战Harness工程之道" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ClaudeCode%E5%AE%9E%E6%88%98Harness%E5%B7%A5%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
+    <category term="AI 工程实践" scheme="https://awk001.github.io/tags/AI-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/"/>
     <content>
       <![CDATA[<blockquote><p>本书系统介绍 Claude Code 的技术架构与工程化实践，从「软件工程」视角解析从命令行助手到可编程 Agent 的演进，围绕四层架构模型深入剖析记忆系统、Skills、子智能体、Hooks 与 MCP 等核心机制。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：黄佳</li><li><strong>出版社</strong>：人民邮电出版社</li><li><strong>出版时间</strong>：2026-05</li><li><strong>结构</strong>：共 10 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/claude-ch01/" title="第 1 章 登高望远：Claude Code技术架构全景">第1章 登高望远：Claude Code技术架构全景</a><a href="/posts/claude-ch02/" title="第 2 章 温故知新：记忆系统工程实践">第2章 温故知新：记忆系统工程实践</a><a href="/posts/claude-ch03/" title="第 3 章 授人以渔：Skills工程实践">第3章 授人以渔：Skills工程实践</a><a href="/posts/claude-ch04/" title="第 4 章 分而治之：子智能体与任务委派">第4章 分而治之：子智能体与任务委派</a><a href="/posts/claude-ch05/" title="第 5 章 防微杜渐：Hooks事件驱动自动化">第5章 防微杜渐：Hooks事件驱动自动化</a><a href="/posts/claude-ch06/" title="第 6 章 海纳百川：MCP">第6章 海纳百川：MCP</a><a href="/posts/claude-ch07/" title="第 7 章 无为而治：Headless模式与CI&#x2F;CD集成">第7章 无为而治：Headless模式与CI&#x2F;CD集成</a><a href="/posts/claude-ch08/" title="第 8 章 器以载道：Agent SDK智能体开发套件">第8章 器以载道：Agent SDK智能体开发套件</a><a href="/posts/claude-ch09/" title="第 9 章 集腋成裘：Plugins生态">第9章 集腋成裘：Plugins生态</a><a href="/posts/claude-ch10/" title="第 10 章 炉火纯青：工程化实战——从个人到团队">第10章 炉火纯青：工程化实战——从个人到团队</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/claude-index/" title="《Claude Code实战：Harness工程之道》· 总目录">《Claude Code实战：Harness工程之道》总目录</a></p>]]>
     </content>
@@ -286,7 +291,7 @@
 </blockqu]]>
     </summary>
     <title>《Claude Code实战：Harness工程之道》· 总目录</title>
-    <updated>2026-10-12T01:01:03.789Z</updated>
+    <updated>2026-10-12T02:42:10.552Z</updated>
   </entry>
   <entry>
     <author>
@@ -294,6 +299,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="让代码飞用AI快速生成和优化Python代码" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A9%E4%BB%A3%E7%A0%81%E9%A3%9E%E7%94%A8AI%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E5%92%8C%E4%BC%98%E5%8C%96Python%E4%BB%A3%E7%A0%81/"/>
+    <category term="Python 编程" scheme="https://awk001.github.io/tags/Python-%E7%BC%96%E7%A8%8B/"/>
     <content>
       <![CDATA[<blockquote><p>以 Python 为基础，深入探讨如何用 AI 技术生成和优化代码，通过 100 个典型示例与 8 个实战案例展示 AI 在 Python 编程中的具体应用，提供从初学者到全栈工程师的学习路径。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：心易</li><li><strong>出版社</strong>：清华大学出版社</li><li><strong>出版时间</strong>：2025-05</li><li><strong>结构</strong>：共 7 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/fly-ch01/" title="第 1 章 AI时代的编程革新">第1章 AI时代的编程革新</a><a href="/posts/fly-ch02/" title="第 2 章 如何利用AI学习编程">第2章 如何利用AI学习编程</a><a href="/posts/fly-ch03/" title="第 3 章 AI编程中的 Prompt 设计">第3章 AI编程中的 Prompt 设计</a><a href="/posts/fly-ch04/" title="第 4 章 用AI构建自己的第一个Python项目">第4章 用AI构建自己的第一个Python项目</a><a href="/posts/fly-ch05/" title="第 5 章 PlugLink项目开发与应用">第5章 PlugLink项目开发与应用</a><a href="/posts/fly-ch06/" title="第 6 章 AI模型性能测试">第6章 AI模型性能测试</a><a href="/posts/fly-ch07/" title="第 7 章 AI编程展望">第7章 AI编程展望</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/fly-index/" title="《让代码飞——用AI快速生成和优化Python代码》· 总目录">《让代码飞——用AI快速生成和优化Python代码》总目录</a></p>]]>
     </content>
@@ -307,7 +313,7 @@
 <h2 id="]]>
     </summary>
     <title>《让代码飞——用AI快速生成和优化Python代码》· 总目录</title>
-    <updated>2026-10-12T01:01:03.741Z</updated>
+    <updated>2026-10-12T02:42:10.521Z</updated>
   </entry>
   <entry>
     <author>
@@ -315,6 +321,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="Python应用开发AI辅助编程" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Python%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91AI%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/"/>
+    <category term="AI 工程实践" scheme="https://awk001.github.io/tags/AI-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/"/>
     <content>
       <![CDATA[<blockquote><p>一本「如何用 AI 学 Python」的指南：把 AI 当作全天候编程助教、解释器与调试伙伴，从环境搭建到控制流、数据结构、API 集成与实战项目，层层递进，帮助零基础读者建立计算思维。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：郭躬德、王林（结构参照《AI辅助Python程序设计》）</li><li><strong>出版社</strong>：厦门大学出版社</li><li><strong>出版时间</strong>：2026-02</li><li><strong>结构</strong>：共 11 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/pyai-ch01/" title="第 1 章 环境搭建与第一个程序：Hello, AI!">第1章 环境搭建与第一个程序：Hello, AI!</a><a href="/posts/pyai-ch02/" title="第 2 章 Python 基础语法">第2章 Python 基础语法</a><a href="/posts/pyai-ch03/" title="第 3 章 控制流：让 AI 帮你理清逻辑">第3章 控制流：让 AI 帮你理清逻辑</a><a href="/posts/pyai-ch04/" title="第 4 章 数据结构：列表、元组、字典">第4章 数据结构：列表、元组、字典</a><a href="/posts/pyai-ch05/" title="第 5 章 函数与模块：可复用单元">第5章 函数与模块：可复用单元</a><a href="/posts/pyai-ch06/" title="第 6 章 面向对象与模块化">第6章 面向对象与模块化</a><a href="/posts/pyai-ch07/" title="第 7 章 AI 辅助调试与错误处理">第7章 AI 辅助调试与错误处理</a><a href="/posts/pyai-ch08/" title="第 8 章 文件与数据处理">第8章 文件与数据处理</a><a href="/posts/pyai-ch09/" title="第 9 章 API 调用与 AI 集成">第9章 API 调用与 AI 集成</a><a href="/posts/pyai-ch10/" title="第 10 章 实战项目（一）：小工具开发">第10章 实战项目（一）：小工具开发</a><a href="/posts/pyai-ch11/" title="第 11 章 AI 时代的程序员（展望）">第11章 AI 时代的程序员（展望）</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/pyai-index/" title="《Python应用开发——AI辅助编程》· 总目录">《Python应用开发——AI辅助编程》总目录</a></p>]]>
     </content>
@@ -328,7 +335,7 @@
 <h2 id="关于这本]]>
     </summary>
     <title>《Python应用开发——AI辅助编程》· 总目录</title>
-    <updated>2026-10-12T01:01:03.815Z</updated>
+    <updated>2026-10-12T02:42:10.572Z</updated>
   </entry>
   <entry>
     <author>
@@ -336,6 +343,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="Python从入门到精通第3版" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%E7%AC%AC3%E7%89%88/"/>
+    <category term="Python 编程" scheme="https://awk001.github.io/tags/Python-%E7%BC%96%E7%A8%8B/"/>
     <content>
       <![CDATA[<blockquote><p>从初学者角度出发，通过通俗易懂的语言与丰富实例，系统介绍使用 Python 进行程序开发的技术。全书 27 章，涵盖基础知识、进阶提高与项目应用三大板块，所有知识均结合实例并给出详细注释。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：明日科技</li><li><strong>出版社</strong>：清华大学出版社</li><li><strong>出版时间</strong>：2023-06</li><li><strong>结构</strong>：共 27 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/pymas-ch01/" title="第 1 章 初识Python">第1章 初识Python</a><a href="/posts/pymas-ch02/" title="第 2 章 Python语言基础">第2章 Python语言基础</a><a href="/posts/pymas-ch03/" title="第 3 章 运算符与表达式">第3章 运算符与表达式</a><a href="/posts/pymas-ch04/" title="第 4 章 流程控制语句">第4章 流程控制语句</a><a href="/posts/pymas-ch05/" title="第 5 章 列表和元组">第5章 列表和元组</a><a href="/posts/pymas-ch06/" title="第 6 章 字典和集合">第6章 字典和集合</a><a href="/posts/pymas-ch07/" title="第 7 章 字符串">第7章 字符串</a><a href="/posts/pymas-ch08/" title="第 8 章 Python中使用正则表达式">第8章 Python中使用正则表达式</a><a href="/posts/pymas-ch09/" title="第 9 章 函数">第9章 函数</a><a href="/posts/pymas-ch10/" title="第 10 章 面向对象程序设计">第10章 面向对象程序设计</a><a href="/posts/pymas-ch11/" title="第 11 章 模块">第11章 模块</a><a href="/posts/pymas-ch12/" title="第 12 章 文件及目录操作">第12章 文件及目录操作</a><a href="/posts/pymas-ch13/" title="第 13 章 操作数据库">第13章 操作数据库</a><a href="/posts/pymas-ch14/" title="第 14 章 使用进程和线程">第14章 使用进程和线程</a><a href="/posts/pymas-ch15/" title="第 15 章 网络编程">第15章 网络编程</a><a href="/posts/pymas-ch16/" title="第 16 章 异常处理及程序调试">第16章 异常处理及程序调试</a><a href="/posts/pymas-ch17/" title="第 17 章 Pygame游戏编程">第17章 Pygame游戏编程</a><a href="/posts/pymas-ch18/" title="第 18 章 推箱子游戏">第18章 推箱子游戏</a><a href="/posts/pymas-ch19/" title="第 19 章 网络爬虫开发">第19章 网络爬虫开发</a><a href="/posts/pymas-ch20/" title="第 20 章 火车票分析助手">第20章 火车票分析助手</a><a href="/posts/pymas-ch21/" title="第 21 章 数据可视化">第21章 数据可视化</a><a href="/posts/pymas-ch22/" title="第 22 章 京东电商销售数据分析与预测">第22章 京东电商销售数据分析与预测</a><a href="/posts/pymas-ch23/" title="第 23 章 Web编程">第23章 Web编程</a><a href="/posts/pymas-ch24/" title="第 24 章 Flask框架">第24章 Flask框架</a><a href="/posts/pymas-ch25/" title="第 25 章 e起去旅行网站">第25章 e起去旅行网站</a><a href="/posts/pymas-ch26/" title="第 26 章 Python自动化办公">第26章 Python自动化办公</a><a href="/posts/pymas-ch27/" title="第 27 章 AI图像识别工具">第27章 AI图像识别工具</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/pymas-index/" title="《Python从入门到精通（第3版）》· 总目录">《Python从入门到精通（第3版）》总目录</a></p>]]>
     </content>
@@ -349,7 +357,7 @@
 <h2 id="关于这]]>
     </summary>
     <title>《Python从入门到精通（第3版）》· 总目录</title>
-    <updated>2026-10-12T01:01:03.752Z</updated>
+    <updated>2026-10-12T02:42:10.529Z</updated>
   </entry>
   <entry>
     <author>
@@ -357,6 +365,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="大模型应用开发RAG实战课" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91RAG%E5%AE%9E%E6%88%98%E8%AF%BE/"/>
+    <category term="AI 工程实践" scheme="https://awk001.github.io/tags/AI-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/"/>
     <content>
       <![CDATA[<blockquote><p>咖哥继 AI Agent 之后的 RAG 实战课：从零搭建个人与企业知识库，不使用框架深入解析 RAG 十大组件，纯手工打造 RAG 系统，并基于 DeepSeek、LangChain、LlamaIndex 与开源嵌入模型、Milvus 给出落地指南。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：黄佳</li><li><strong>出版社</strong>：人民邮电出版社</li><li><strong>出版时间</strong>：2026</li><li><strong>结构</strong>：共 11 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/rag-ch01/" title="第 1 章 开篇 RAG三问">第1章 开篇 RAG三问</a><a href="/posts/rag-ch02/" title="第 2 章 数据导入">第2章 数据导入</a><a href="/posts/rag-ch03/" title="第 3 章 文档解析与多模态">第3章 文档解析与多模态</a><a href="/posts/rag-ch04/" title="第 4 章 文本分块策略">第4章 文本分块策略</a><a href="/posts/rag-ch05/" title="第 5 章 嵌入与向量化">第5章 嵌入与向量化</a><a href="/posts/rag-ch06/" title="第 6 章 向量数据库选型">第6章 向量数据库选型</a><a href="/posts/rag-ch07/" title="第 7 章 检索与重排">第7章 检索与重排</a><a href="/posts/rag-ch08/" title="第 8 章 生成与回答">第8章 生成与回答</a><a href="/posts/rag-ch09/" title="第 9 章 纯手工 RAG（不使用框架）">第9章 纯手工 RAG（不使用框架）</a><a href="/posts/rag-ch10/" title="第 10 章 使用框架：LangChain &#x2F; LlamaIndex">第10章 使用框架：LangChain &#x2F; LlamaIndex</a><a href="/posts/rag-ch11/" title="第 11 章 企业级 RAG 优化">第11章 企业级 RAG 优化</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/rag-index/" title="《大模型应用开发 RAG实战课》· 总目录">《大模型应用开发 RAG实战课》总目录</a></p>]]>
     </content>
@@ -368,7 +377,7 @@
 <p>咖哥继 AI Agent 之后的 RAG 实战课：从零搭建个人与企业知识库，不使用框架深入解析 RAG 十大组件，纯手工打造 RAG 系统，并基于 DeepSeek、LangChain、LlamaIndex 与开源嵌入模型、Milvus 给出落地指]]>
     </summary>
     <title>《大模型应用开发 RAG实战课》· 总目录</title>
-    <updated>2026-10-12T01:01:03.789Z</updated>
+    <updated>2026-10-12T02:42:10.562Z</updated>
   </entry>
   <entry>
     <author>
@@ -376,6 +385,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="AgentSkills开发实战" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/AgentSkills%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"/>
+    <category term="AI 智能体" scheme="https://awk001.github.io/tags/AI-%E6%99%BA%E8%83%BD%E4%BD%93/"/>
     <content>
       <![CDATA[<blockquote><p>基于吴恩达与 Anthropic 在 DeepLearning.AI 合作的官方课程，深度解读 Claude Code 源码、Harness Engineering、MCP 与 Context Engineering，手把手创建可复用 Skills 并结合 MCP 与 Subagents 构建复杂工作流。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：Andrew Ng × Anthropic（DeepLearning.AI）</li><li><strong>出版社</strong>：DeepLearning.AI 课程</li><li><strong>出版时间</strong>：2025</li><li><strong>结构</strong>：共 9 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/skills-ch01/" title="第 1 章 课程导论：什么是 Skills">第1章 课程导论：什么是 Skills</a><a href="/posts/skills-ch02/" title="第 2 章 为什么使用 Skills（上）">第2章 为什么使用 Skills（上）</a><a href="/posts/skills-ch03/" title="第 3 章 为什么使用 Skills（下）">第3章 为什么使用 Skills（下）</a><a href="/posts/skills-ch04/" title="第 4 章 Skills vs Tools、MCP 与 Subagents">第4章 Skills vs Tools、MCP 与 Subagents</a><a href="/posts/skills-ch05/" title="第 5 章 探索内置 Skills">第5章 探索内置 Skills</a><a href="/posts/skills-ch06/" title="第 6 章 创建自定义 Skills">第6章 创建自定义 Skills</a><a href="/posts/skills-ch07/" title="第 7 章 Skills 与 Claude API">第7章 Skills 与 Claude API</a><a href="/posts/skills-ch08/" title="第 8 章 Skills 与 Claude Code">第8章 Skills 与 Claude Code</a><a href="/posts/skills-ch09/" title="第 9 章 Skills 与 Agent SDK">第9章 Skills 与 Agent SDK</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/skills-index/" title="《Agent Skills开发实战》· 总目录">《Agent Skills开发实战》总目录</a></p>]]>
     </content>
@@ -387,7 +397,7 @@
 <p>基于吴恩达与 Anthropic 在 DeepLearning.AI 合作的官方课程，深度解读 Claude Code 源码、Harness Engineering、MCP 与 Context Engineering，手把手创建可复用 Skills]]>
     </summary>
     <title>《Agent Skills开发实战》· 总目录</title>
-    <updated>2026-10-12T01:01:03.786Z</updated>
+    <updated>2026-10-12T02:42:10.547Z</updated>
   </entry>
   <entry>
     <author>
@@ -395,6 +405,7 @@
     </author>
     <category term="读书笔记" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     <category term="SpecKit实战AI编程全流程落地" scheme="https://awk001.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/SpecKit%E5%AE%9E%E6%88%98AI%E7%BC%96%E7%A8%8B%E5%85%A8%E6%B5%81%E7%A8%8B%E8%90%BD%E5%9C%B0/"/>
+    <category term="AI 工程实践" scheme="https://awk001.github.io/tags/AI-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/"/>
     <content>
       <![CDATA[<blockquote><p>规范驱动开发（SDD）是应对 AI 编程代理挑战的方法论。本书聚焦 Spec-Kit，从理论基础、核心概念到环境配置与实战案例，展示如何用标准化流程提升代码质量、可维护性与团队协作效率。</p></blockquote><h2 id="关于这本书"><a href="#关于这本书" class="headerlink" title="关于这本书"></a>关于这本书</h2><ul><li><strong>作者</strong>：黄桂钊、茹炳晟</li><li><strong>出版社</strong>：人民邮电出版社</li><li><strong>出版时间</strong>：2026-08</li><li><strong>结构</strong>：共 9 章</li></ul><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><a href="/posts/spec-ch01/" title="第 1 章 AI编程的范式转移">第1章 AI编程的范式转移</a><a href="/posts/spec-ch02/" title="第 2 章 深入理解 Spec-Kit">第2章 深入理解 Spec-Kit</a><a href="/posts/spec-ch03/" title="第 3 章 环境配置与AI编程代理">第3章 环境配置与AI编程代理</a><a href="/posts/spec-ch04/" title="第 4 章 【基础】组件驱动开发：用户名片组件">第4章 【基础】组件驱动开发：用户名片组件</a><a href="/posts/spec-ch05/" title="第 5 章 【进阶】状态管理：任务看板">第5章 【进阶】状态管理：任务看板</a><a href="/posts/spec-ch06/" title="第 6 章 【基础】构建后端API与前后端联调">第6章 【基础】构建后端API与前后端联调</a><a href="/posts/spec-ch07/" title="第 7 章 【进阶】安全加固与前后端联调">第7章 【进阶】安全加固与前后端联调</a><a href="/posts/spec-ch08/" title="第 8 章 存量系统 Spec-Kit 开发实践">第8章 存量系统 Spec-Kit 开发实践</a><a href="/posts/spec-ch09/" title="第 9 章 从氛围编程到 SDD，必由之路与未来图景">第9章 从氛围编程到 SDD，必由之路与未来图景</a><h2 id="阅读说明"><a href="#阅读说明" class="headerlink" title="阅读说明"></a>阅读说明</h2><p>以下按原书章节结构梳理书中内容，便于逐章阅读；各章隐藏于列表、仅可通过本目录调用。</p><hr><p>返回书架：<a href="/posts/spec-index/" title="《Spec-Kit实战：AI编程全流程落地》· 总目录">《Spec-Kit实战：AI编程全流程落地》总目录</a></p>]]>
     </content>
@@ -408,6 +419,6 @@
 <h2 id="关于这本]]>
     </summary>
     <title>《Spec-Kit实战：AI编程全流程落地》· 总目录</title>
-    <updated>2026-10-12T01:01:03.789Z</updated>
+    <updated>2026-10-12T02:42:10.557Z</updated>
   </entry>
 </feed>
