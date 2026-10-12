@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, 时安</rights>
   <subtitle>AI智能体与工业智能的工程笔记</subtitle>
   <title>AWK博客</title>
-  <updated>2026-10-11T14:48:50.060Z</updated>
+  <updated>2026-10-12T01:01:03.748Z</updated>
   <entry>
     <author>
       <name>时安</name>
@@ -28,7 +28,7 @@
 </bl]]>
     </summary>
     <title>《人工智能极简编程入门》· 总目录</title>
-    <updated>2026-10-11T14:48:50.060Z</updated>
+    <updated>2026-10-12T01:01:03.748Z</updated>
   </entry>
   <entry>
     <author>
@@ -193,7 +193,7 @@
 <p>本书为 Pascal Bornet 所著 <em>Agentic Artificial Intelligence: Harnessing AI Agents to Reinvent Business, Work, and Life</em>（202]]>
     </summary>
     <title>《智能体式人工智能：用 AI 智能体重塑商业、工作与生活》· 总目录</title>
-    <updated>2026-10-11T15:08:38.186Z</updated>
+    <updated>2026-10-12T01:01:03.759Z</updated>
   </entry>
   <entry>
     <author>
@@ -213,7 +213,7 @@
 我会按”从原理到工程、从单智能体到多智能体”的]]>
     </summary>
     <title>《构建智能体 AI 系统：手把手教你开发智能体》· 总目录</title>
-    <updated>2026-10-11T12:54:22.448Z</updated>
+    <updated>2026-10-12T01:01:03.773Z</updated>
   </entry>
   <entry>
     <author>
@@ -266,7 +266,7 @@
 <p>本书被誉为 Agent 领域的《设计模式》（GoF），按设计模式组织智能体工程，将智能体系统拆解为一组可复用模式——提示链、路由、反思、多智能体协作、MCP、RAG、Guardrails 等，每种对应一类反复出现的架构问题。全书约 424 页，分四]]>
     </summary>
     <title>《Agent设计模式：图解可复用智能体架构》· 总目录</title>
-    <updated>2026-10-11T15:20:55.924Z</updated>
+    <updated>2026-10-12T01:01:03.773Z</updated>
   </entry>
   <entry>
     <author>
@@ -286,7 +286,7 @@
 </blockqu]]>
     </summary>
     <title>《Claude Code实战：Harness工程之道》· 总目录</title>
-    <updated>2026-10-11T15:20:55.904Z</updated>
+    <updated>2026-10-12T01:01:03.789Z</updated>
   </entry>
   <entry>
     <author>
@@ -307,7 +307,7 @@
 <h2 id="]]>
     </summary>
     <title>《让代码飞——用AI快速生成和优化Python代码》· 总目录</title>
-    <updated>2026-10-11T15:20:56.031Z</updated>
+    <updated>2026-10-12T01:01:03.741Z</updated>
   </entry>
   <entry>
     <author>
@@ -328,7 +328,7 @@
 <h2 id="关于这本]]>
     </summary>
     <title>《Python应用开发——AI辅助编程》· 总目录</title>
-    <updated>2026-10-11T15:20:56.057Z</updated>
+    <updated>2026-10-12T01:01:03.815Z</updated>
   </entry>
   <entry>
     <author>
@@ -349,7 +349,7 @@
 <h2 id="关于这]]>
     </summary>
     <title>《Python从入门到精通（第3版）》· 总目录</title>
-    <updated>2026-10-11T15:20:56.082Z</updated>
+    <updated>2026-10-12T01:01:03.752Z</updated>
   </entry>
   <entry>
     <author>
@@ -368,7 +368,7 @@
 <p>咖哥继 AI Agent 之后的 RAG 实战课：从零搭建个人与企业知识库，不使用框架深入解析 RAG 十大组件，纯手工打造 RAG 系统，并基于 DeepSeek、LangChain、LlamaIndex 与开源嵌入模型、Milvus 给出落地指]]>
     </summary>
     <title>《大模型应用开发 RAG实战课》· 总目录</title>
-    <updated>2026-10-11T15:20:55.936Z</updated>
+    <updated>2026-10-12T01:01:03.789Z</updated>
   </entry>
   <entry>
     <author>
@@ -387,7 +387,7 @@
 <p>基于吴恩达与 Anthropic 在 DeepLearning.AI 合作的官方课程，深度解读 Claude Code 源码、Harness Engineering、MCP 与 Context Engineering，手把手创建可复用 Skills]]>
     </summary>
     <title>《Agent Skills开发实战》· 总目录</title>
-    <updated>2026-10-11T15:20:55.991Z</updated>
+    <updated>2026-10-12T01:01:03.786Z</updated>
   </entry>
   <entry>
     <author>
@@ -408,6 +408,6 @@
 <h2 id="关于这本]]>
     </summary>
     <title>《Spec-Kit实战：AI编程全流程落地》· 总目录</title>
-    <updated>2026-10-11T15:20:56.012Z</updated>
+    <updated>2026-10-12T01:01:03.789Z</updated>
   </entry>
 </feed>
